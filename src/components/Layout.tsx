@@ -95,8 +95,8 @@ export default function Layout({ children }: LayoutProps) {
               <p className="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
                 We build automation tools and SaaS products for UK small and medium businesses. Simple software that solves real problems in construction, trades, property, and regulated industries.
               </p>
-              <a href="mailto:hello@autaimate.co.uk" className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium">
-                hello@autaimate.co.uk
+              <a href="mailto:hello@autaimate.com" className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium">
+                hello@autaimate.com
               </a>
             </div>
             
