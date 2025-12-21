@@ -11,8 +11,7 @@ const products = [
     pricing: 'Free',
     icon: '⚡',
     gradient: 'from-amber-500 to-orange-600',
-    industry: 'Electrical & Heating',
-    users: '2,000+ monthly users',
+    industry: 'Electrical and Heating',
   },
   {
     name: 'SnagLog',
@@ -24,8 +23,7 @@ const products = [
     pricing: '£19.99/report',
     icon: '🏠',
     gradient: 'from-sky-500 to-blue-600',
-    industry: 'Property & Construction',
-    users: 'Used by surveyors & landlords',
+    industry: 'Property and Construction',
   },
   {
     name: 'DetailRecon',
@@ -37,8 +35,7 @@ const products = [
     pricing: '£29.99/report',
     icon: '🛡️',
     gradient: 'from-slate-600 to-slate-800',
-    industry: 'Security & Close Protection',
-    users: 'Used by CP professionals',
+    industry: 'Security and Close Protection',
   },
   {
     name: 'LeadFortress',
@@ -50,8 +47,7 @@ const products = [
     pricing: 'From £99/mo',
     icon: '📱',
     gradient: 'from-violet-500 to-purple-600',
-    industry: 'Trades & Services',
-    users: 'Multi-channel capture',
+    industry: 'Trades and Services',
   },
   {
     name: 'HorseCost',
@@ -64,7 +60,6 @@ const products = [
     icon: '🐴',
     gradient: 'from-emerald-500 to-teal-600',
     industry: 'Equestrian',
-    users: 'UK-focused pricing',
   },
   {
     name: 'EquipSafety',
@@ -76,8 +71,7 @@ const products = [
     pricing: '£199/mo',
     icon: '📋',
     gradient: 'from-rose-500 to-pink-600',
-    industry: 'Healthcare & Care Homes',
-    users: 'CQC compliance ready',
+    industry: 'Healthcare and Care Homes',
   },
   {
     name: 'ClearProof',
@@ -89,16 +83,15 @@ const products = [
     pricing: 'Coming 2025',
     icon: '✅',
     gradient: 'from-cyan-500 to-blue-600',
-    industry: 'Construction H&S',
-    users: 'In development',
+    industry: 'Construction Health and Safety',
   },
 ]
 
 const industries = [
-  { name: 'Construction & Trades', icon: '🔧', description: 'Calculators, lead capture, and compliance tools for electricians, plumbers, and builders.' },
-  { name: 'Property & Surveying', icon: '🏗️', description: 'AI-powered inspection reports and snagging tools for surveyors and landlords.' },
-  { name: 'Healthcare & Care', icon: '🏥', description: 'Multilingual safety training and equipment compliance for care homes.' },
-  { name: 'Security & CP', icon: '🛡️', description: 'Reconnaissance and advance reporting tools for close protection professionals.' },
+  { name: 'Construction and Trades', icon: '🔧', description: 'Calculators, lead capture, and compliance tools for electricians, plumbers, and builders.' },
+  { name: 'Property and Surveying', icon: '🏗️', description: 'AI-powered inspection reports and snagging tools for surveyors and landlords.' },
+  { name: 'Healthcare and Care', icon: '🏥', description: 'Multilingual safety training and equipment compliance for care homes.' },
+  { name: 'Security and CP', icon: '🛡️', description: 'Reconnaissance and advance reporting tools for close protection professionals.' },
 ]
 
 const statusConfig: Record<string, { label: string; bg: string; text: string; border: string }> = {
@@ -114,14 +107,12 @@ function App() {
     <div className="min-h-screen relative bg-slate-950">
       <div className="noise-overlay"></div>
       
-      {/* Background effects */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-500/8 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-green-600/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -157,13 +148,12 @@ function App() {
         )}
       </nav>
 
-      {/* Hero Section */}
       <section className="pt-32 lg:pt-40 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-8">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-green-400 text-sm font-medium">5 products live • Serving UK businesses</span>
+              <span className="text-green-400 text-sm font-medium">5 products live - Serving UK businesses</span>
             </div>
             
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-[1.1]">
@@ -183,7 +173,6 @@ function App() {
               </a>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-slate-800/50">
               <div>
                 <div className="text-3xl lg:text-4xl font-display font-bold text-white mb-1">7</div>
@@ -191,7 +180,7 @@ function App() {
               </div>
               <div>
                 <div className="text-3xl lg:text-4xl font-display font-bold text-white mb-1">5</div>
-                <div className="text-slate-500 text-sm">Live & Shipping</div>
+                <div className="text-slate-500 text-sm">Live and Shipping</div>
               </div>
               <div>
                 <div className="text-3xl lg:text-4xl font-display font-bold text-white mb-1">4</div>
@@ -199,14 +188,13 @@ function App() {
               </div>
               <div>
                 <div className="text-3xl lg:text-4xl font-display font-bold text-green-400 mb-1">UK</div>
-                <div className="text-slate-500 text-sm">Focused & Compliant</div>
+                <div className="text-slate-500 text-sm">Focused and Compliant</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industries Section */}
       <section id="industries" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
@@ -214,7 +202,7 @@ function App() {
               Built for industries that get overlooked
             </h2>
             <p className="text-lg text-slate-400">
-              Enterprise software is expensive and overcomplicated. Generic tools don't understand your compliance requirements. We build focused solutions for specific UK industries.
+              Enterprise software is expensive and overcomplicated. Generic tools do not understand your compliance requirements. We build focused solutions for specific UK industries.
             </p>
           </div>
 
@@ -230,7 +218,6 @@ function App() {
         </div>
       </section>
 
-      {/* Products Section */}
       <section id="products" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
@@ -246,7 +233,7 @@ function App() {
             {products.map((product) => {
               const status = statusConfig[product.status]
               return (
-                
+                <a
                   key={product.name}
                   href={product.url}
                   target="_blank"
@@ -254,7 +241,6 @@ function App() {
                   className="group block bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-800/50 p-6 lg:p-8 hover:border-slate-700/50 hover:bg-slate-900/70 transition-all"
                 >
                   <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                    {/* Icon and basic info */}
                     <div className="flex items-start gap-4 lg:w-72 flex-shrink-0">
                       <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl shadow-lg flex-shrink-0`}>
                         {product.icon}
@@ -271,7 +257,6 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Problem / Solution */}
                     <div className="flex-1 grid sm:grid-cols-2 gap-6">
                       <div>
                         <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">The Problem</div>
@@ -283,7 +268,6 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Arrow */}
                     <div className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -297,7 +281,6 @@ function App() {
         </div>
       </section>
 
-      {/* Approach Section */}
       <section id="approach" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -307,10 +290,10 @@ function App() {
               </h2>
               <div className="space-y-6 text-slate-400">
                 <p className="text-lg">
-                  We don't build software looking for problems. We find businesses drowning in spreadsheets, paper forms, and manual processes — then build exactly what they need.
+                  We do not build software looking for problems. We find businesses drowning in spreadsheets, paper forms, and manual processes — then build exactly what they need.
                 </p>
                 <p>
-                  Every product starts with a real pain point we've seen firsthand. We talk to the people doing the work, understand their workflows, and build tools that fit into how they already operate.
+                  Every product starts with a real pain point we have seen firsthand. We talk to the people doing the work, understand their workflows, and build tools that fit into how they already operate.
                 </p>
                 <p>
                   No feature bloat. No enterprise pricing. No 6-month implementations. Just simple tools that work, priced so small businesses can actually afford them.
@@ -331,7 +314,7 @@ function App() {
                   <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 font-display font-bold">2</div>
                   <h3 className="font-display text-lg font-bold text-white">Build focused solutions</h3>
                 </div>
-                <p className="text-slate-500 text-sm pl-14">One problem, one tool. We don't add features for the sake of it. Every product does one thing exceptionally well.</p>
+                <p className="text-slate-500 text-sm pl-14">One problem, one tool. We do not add features for the sake of it. Every product does one thing exceptionally well.</p>
               </div>
               <div className="bg-slate-900/50 rounded-2xl border border-slate-800/50 p-6">
                 <div className="flex items-center gap-4 mb-3">
@@ -345,7 +328,6 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center">
@@ -353,7 +335,7 @@ function App() {
               Got a process that needs automating?
             </h2>
             <p className="text-lg text-slate-400 mb-10">
-              We're always looking for the next problem to solve. If you're stuck with manual processes, compliance headaches, or software that doesn't fit — let's talk.
+              We are always looking for the next problem to solve. If you are stuck with manual processes, compliance headaches, or software that does not fit — let us talk.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -378,7 +360,6 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
