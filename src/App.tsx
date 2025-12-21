@@ -473,7 +473,7 @@ function App() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500">Email us</div>
-                    <a href="mailto:hello@autaimate.co.uk" className="text-white hover:text-green-400 transition-colors font-medium">hello@autaimate.co.uk</a>
+                    <a href="mailto:hello@autaimate.com" className="text-white hover:text-green-400 transition-colors font-medium">hello@autaimate.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -484,7 +484,7 @@ function App() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500">Visit our website</div>
-                    <a href="https://autaimate.co.uk" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-400 transition-colors font-medium">autaimate.co.uk</a>
+                    <a href="https://autaimate.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-400 transition-colors font-medium">autaimate.com</a>
                   </div>
                 </div>
               </div>
