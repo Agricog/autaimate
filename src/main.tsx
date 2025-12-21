@@ -15,5 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/terms" element={<Terms />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
