@@ -1,6 +1,7 @@
 import Layout from './components/Layout'
 
 const products = [
+  { name: 'AutoReplyChat', url: 'https://autoreplychat.com', desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.', color: 'blue' },
   { name: 'TradeCalcs', url: 'https://tradecalcs.co.uk', desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.', color: 'yellow' },
   { name: 'SnagLog', url: 'https://app.snaglog.co.uk', desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.', color: 'teal' },
   { name: 'DetailRecon', url: 'https://detailrecon.co.uk', desc: 'AI security reconnaissance for close protection. Professional advance reports in minutes.', color: 'purple' },
@@ -10,15 +11,17 @@ const products = [
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
-  yellow: { border: 'border-yellow-500/50', glow: 'hover:shadow-[0_0_60px_rgba(251,191,36,0.3)]', stroke: 'stroke-yellow-400', text: 'text-yellow-400' },
-  teal: { border: 'border-teal-500/60', glow: 'hover:shadow-[0_0_60px_rgba(45,138,138,0.4)]', stroke: 'stroke-teal-400', text: 'text-teal-400' },
-  purple: { border: 'border-purple-500/50', glow: 'hover:shadow-[0_0_60px_rgba(168,85,247,0.3)]', stroke: 'stroke-purple-400', text: 'text-purple-400' },
-  orange: { border: 'border-orange-500/50', glow: 'hover:shadow-[0_0_60px_rgba(249,115,22,0.3)]', stroke: 'stroke-orange-400', text: 'text-orange-400' },
-  green: { border: 'border-green-500/50', glow: 'hover:shadow-[0_0_60px_rgba(34,197,94,0.3)]', stroke: 'stroke-green-400', text: 'text-green-400' },
-  pink: { border: 'border-pink-500/50', glow: 'hover:shadow-[0_0_60px_rgba(236,72,153,0.3)]', stroke: 'stroke-pink-400', text: 'text-pink-400' },
+  blue: { border: 'border-blue-500/50', glow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]', stroke: 'stroke-blue-400', text: 'text-blue-400' },
+  yellow: { border: 'border-yellow-500/50', glow: 'hover:shadow-[0_0_50px_rgba(251,191,36,0.3)]', stroke: 'stroke-yellow-400', text: 'text-yellow-400' },
+  teal: { border: 'border-teal-500/60', glow: 'hover:shadow-[0_0_50px_rgba(45,138,138,0.4)]', stroke: 'stroke-teal-400', text: 'text-teal-400' },
+  purple: { border: 'border-purple-500/50', glow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.3)]', stroke: 'stroke-purple-400', text: 'text-purple-400' },
+  orange: { border: 'border-orange-500/50', glow: 'hover:shadow-[0_0_50px_rgba(249,115,22,0.3)]', stroke: 'stroke-orange-400', text: 'text-orange-400' },
+  green: { border: 'border-green-500/50', glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]', stroke: 'stroke-green-400', text: 'text-green-400' },
+  pink: { border: 'border-pink-500/50', glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]', stroke: 'stroke-pink-400', text: 'text-pink-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
+  AutoReplyChat: <><rect x="20" y="25" width="60" height="45" rx="8"/><path d="M35 45h30M35 55h20"/><circle cx="70" cy="80" r="12"/><path d="M66 80h8M70 76v8"/></>,
   TradeCalcs: <><circle cx="50" cy="50" r="20" /><line x1="50" y1="20" x2="50" y2="10" /><line x1="50" y1="90" x2="50" y2="80" /><line x1="20" y1="50" x2="10" y2="50" /><line x1="90" y1="50" x2="80" y2="50" /><line x1="29" y1="29" x2="22" y2="22" /><line x1="78" y1="78" x2="71" y2="71" /><circle cx="50" cy="50" r="35" strokeDasharray="4 4" /></>,
   SnagLog: <><rect x="25" y="15" width="50" height="70" rx="4" /><line x1="35" y1="35" x2="65" y2="35" /><line x1="35" y1="50" x2="55" y2="50" /><line x1="35" y1="65" x2="60" y2="65" /><circle cx="70" cy="70" r="18" /><path d="M64 70l4 4 8-8" /></>,
   DetailRecon: <><circle cx="50" cy="50" r="35" /><circle cx="50" cy="50" r="25" /><circle cx="50" cy="50" r="8" /><line x1="50" y1="5" x2="50" y2="15" /><line x1="50" y1="85" x2="50" y2="95" /><line x1="5" y1="50" x2="15" y2="50" /><line x1="85" y1="50" x2="95" y2="50" /></>,
@@ -59,7 +62,7 @@ export default function App() {
           </p>
           
           <p className="text-xl lg:text-2xl text-white/85 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            We build automation tools specifically for UK trades, construction, property and regulated industries.
+            We build automation tools and AI chatbots for UK trades, construction, property and regulated industries.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -73,21 +76,21 @@ export default function App() {
       </section>
 
       {/* Products */}
-      <section id="products" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+      <section id="products" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+        <div className="text-center mb-16">
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Our <span className="text-orange-500">Products</span></h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto">Each tool solves one specific problem exceptionally well. No bloat, no enterprise pricing.</p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((p) => {
             const c = colorClasses[p.color]
             return (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={`product-card text-center transition-transform duration-300 hover:-translate-y-2.5`}>
-                <div className={`product-circle mx-auto mb-8 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
-                  <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-24 h-24 ${c.stroke}`}>{icons[p.name]}</svg>
+                <div className={`product-circle mx-auto mb-6 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
+                  <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-20 h-20 ${c.stroke}`}>{icons[p.name]}</svg>
                 </div>
-                <h3 className={`font-display text-lg font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
+                <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
                 <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
               </a>
             )
@@ -96,8 +99,8 @@ export default function App() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+      <section id="process" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+        <div className="text-center mb-14">
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">How We <span className="text-orange-500">Work</span></h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto">We don't build software looking for problems. We find real pain and fix it.</p>
         </div>
@@ -114,11 +117,11 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section id="contact" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Let's talk about your business</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-10">Got a manual process eating your time? Drowning in compliance paperwork? We'd love to hear what's slowing you down.</p>
+            <p className="text-white/60 text-lg leading-relaxed mb-10">Got a manual process eating your time? Drowning in compliance paperwork? Need a chatbot to handle enquiries? We'd love to hear what's slowing you down.</p>
             
             <div className="space-y-6">
               <div className="flex items-center gap-5">
@@ -127,7 +130,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="text-sm text-white/50 mb-1">Email us</div>
-                  <div className="text-lg font-semibold">hello@autaimate.com</div>
+                  <a href="mailto:hello@autaimate.com" className="text-lg font-semibold hover:text-orange-500 transition-colors">hello@autaimate.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-5">
@@ -142,29 +145,22 @@ export default function App() {
             </div>
           </div>
           
-          <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-10">
-            <h3 className="font-display text-2xl font-bold mb-8">Send a message</h3>
-            <form className="space-y-5" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-              <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Name</label>
-                <input type="text" name="name" required placeholder="Your name" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Email</label>
-                <input type="email" name="email" required placeholder="you@company.co.uk" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">How can we help?</label>
-                <textarea name="message" rows={4} required placeholder="Tell us about your business..." className="resize-none" />
-              </div>
-              <button type="submit" className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl font-semibold text-white hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-shadow">Send Message</button>
-            </form>
+          <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-2 overflow-hidden">
+            <iframe 
+              src="https://app.smartsuite.com/form/sba974gi/0TfuCx5I40?header=false" 
+              width="100%" 
+              height="600" 
+              frameBorder="0"
+              title="Contact Form"
+              className="rounded-2xl"
+            />
           </div>
         </div>
       </section>
     </Layout>
   )
 }
+
 
 
 
