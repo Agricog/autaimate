@@ -30,7 +30,7 @@ const products = [
     tagline: 'AI security reconnaissance reports',
     problem: 'Close protection operatives spend hours manually writing advance reports, analysing venue photos for security considerations.',
     solution: 'Upload venue or route photos. AI analyses entry/exit points, cover positions, crowd flow, and lighting. Professional PDF report generated in minutes.',
-    url: 'https://detailrecon.co.uk',
+    url: 'https://detailrecon.com',
     status: 'live',
     pricing: '£29.99/report',
     icon: '🛡️',
