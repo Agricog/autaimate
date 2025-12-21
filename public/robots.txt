@@ -1,0 +1,15 @@
+# Robots.txt for Autaimate
+# https://autaimate.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://autaimate.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow any admin or private areas (if added later)
+Disallow: /api/
+Disallow: /admin/
