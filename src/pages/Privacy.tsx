@@ -35,7 +35,7 @@ export default function Privacy() {
               <section>
                 <h2 className="font-display text-2xl font-bold text-white mb-4">1. Introduction</h2>
                 <p className="leading-relaxed mb-4">
-                  Autaimate ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website autaimate.co.uk and use our products and services.
+                  Autaimate ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website autaimate.com and use our products and services.
                 </p>
                 <p className="leading-relaxed">
                   We are registered in England and Wales and comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
@@ -163,7 +163,7 @@ export default function Privacy() {
                   <li><strong className="text-white">Right to withdraw consent:</strong> Where we rely on consent, you can withdraw it at any time</li>
                 </ul>
                 <p className="leading-relaxed">
-                  To exercise any of these rights, please contact us at hello@autaimate.co.uk. We will respond to your request within one month.
+                  To exercise any of these rights, please contact us at hello@autaimate.com. We will respond to your request within one month.
                 </p>
               </section>
 
@@ -201,8 +201,8 @@ export default function Privacy() {
                   If you have any questions about this Privacy Policy or our data practices, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong className="text-white">Email:</strong> hello@autaimate.co.uk</li>
-                  <li><strong className="text-white">Website:</strong> autaimate.co.uk</li>
+                  <li><strong className="text-white">Email:</strong> hello@autaimate.com</li>
+                  <li><strong className="text-white">Website:</strong> autaimate.com</li>
                 </ul>
               </section>
 
