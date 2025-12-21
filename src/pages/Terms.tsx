@@ -10,62 +10,99 @@ export default function Terms() {
 
   return (
     <Layout>
-      <section className="pt-32 lg:pt-40 pb-20 lg:pb-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="cosmic-bg" />
+      <div className="stars" />
+      <section className="pt-32 lg:pt-40 pb-20 px-6 lg:px-12">
+        <div className="max-w-3xl mx-auto">
           <nav className="mb-8">
-            <ol className="flex items-center gap-2 text-sm">
-              <li><Link to="/" className="text-surface-500 hover:text-brand-600">Home</Link></li>
-              <li className="text-surface-400">/</li>
-              <li className="text-surface-700">Terms of Service</li>
+            <ol className="flex gap-2 text-sm text-white/50">
+              <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
+              <li>/</li>
+              <li className="text-white/70">Terms of Service</li>
             </ol>
           </nav>
-
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-surface-900 mb-4">Terms of Service</h1>
-          <p className="text-surface-500 mb-12">Last updated: December 2024</p>
-
-          <div className="prose prose-lg max-w-none">
-            <div className="space-y-8 text-surface-600">
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">1. Introduction</h2>
-                <p>These Terms of Service govern your use of autaimate.com and all related products and services operated by Autaimate. By accessing our Services, you agree to be bound by these Terms.</p>
-                <p className="mt-4">We are a company registered in England and Wales. These Terms are governed by English law.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">2. Use of Services</h2>
-                <p>You may use our Services only for lawful purposes. You agree not to use the Services in any way that violates any applicable law, transmit malicious code, attempt unauthorised access, or interfere with the Services.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">3. Products and Pricing</h2>
-                <p>Some products are free. Paid products require payment and prices are in British Pounds Sterling (GBP) including VAT. Pay-per-use products require payment before delivery. Once a report is generated, no refund is provided as the service is complete.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">4. Intellectual Property</h2>
-                <p>The Services and all content are owned by Autaimate and protected by intellectual property laws. You retain ownership of content you upload. Reports and outputs generated are yours to use for business purposes.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">5. Disclaimers</h2>
-                <p>Our Services are provided "as is" without warranties. Our products are tools to assist your work, not a substitute for professional judgement. AI-generated content may contain errors and should be verified.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">6. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, we shall not be liable for indirect, incidental, or consequential damages. Our total liability shall not exceed the amount paid to us in the 12 months preceding the claim, or £100, whichever is greater.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">7. Governing Law</h2>
-                <p>These Terms are governed by English law. Disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-2xl font-bold text-surface-900 mb-4">8. Contact Us</h2>
-                <p>If you have questions about these Terms, please contact us at hello@autaimate.com.</p>
-              </section>
-            </div>
+          
+          <h1 className="font-display text-4xl lg:text-5xl font-extrabold mb-4">Terms of Service</h1>
+          <p className="text-white/50 mb-12">Last updated: December 2024</p>
+          
+          <div className="space-y-8 text-white/70 leading-relaxed">
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">1. Introduction</h2>
+              <p>These Terms of Service ("Terms") govern your use of autaimate.com and all related products and services (collectively, "Services") operated by Autaimate ("we", "our", or "us"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">2. Use of Services</h2>
+              <p className="mb-4">You may use our Services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Use the Services in any way that violates any applicable law or regulation</li>
+                <li>Transmit any malicious code, viruses, or harmful data</li>
+                <li>Attempt to gain unauthorised access to our systems</li>
+                <li>Interfere with or disrupt the integrity or performance of the Services</li>
+                <li>Reproduce, duplicate, copy, sell, or resell any part of the Services</li>
+              </ul>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">3. Products and Pricing</h2>
+              <p className="mb-4">Some of our products are free to use, while others require payment. For paid products:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Prices are in British Pounds Sterling (GBP) and include VAT where applicable</li>
+                <li>Payment is processed securely through Stripe</li>
+                <li>For per-report products (e.g., SnagLog, DetailRecon), payment is required before report generation</li>
+                <li>Once a report is generated, no refund will be provided as the service has been rendered</li>
+              </ul>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">4. Accounts</h2>
+              <p>Some Services require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorised use.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">5. Intellectual Property</h2>
+              <p>The Services and their original content, features, and functionality are owned by Autaimate and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our express written permission.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">6. User Content</h2>
+              <p>You retain ownership of any content you upload to our Services (e.g., photos for snagging reports). By uploading content, you grant us a limited licence to process and store it for the purpose of providing our Services. We do not share your content with third parties except as necessary to provide the Services.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">7. Disclaimers</h2>
+              <p className="mb-4">Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that:</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>The Services will be uninterrupted or error-free</li>
+                <li>Results obtained from the Services will be accurate or reliable</li>
+                <li>Any errors will be corrected</li>
+              </ul>
+              <p className="mt-4">Our products (calculators, reports, etc.) are tools to assist your work and are not a substitute for professional judgement or advice.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">8. Limitation of Liability</h2>
+              <p>To the maximum extent permitted by law, Autaimate shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Services.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">9. Governing Law</h2>
+              <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">10. Changes to Terms</h2>
+              <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes by posting a notice on our website. Continued use of the Services after changes constitutes acceptance of the modified Terms.</p>
+            </section>
+            
+            <section>
+              <h2 className="font-display text-2xl font-bold text-white mb-4">11. Contact Us</h2>
+              <p>If you have questions about these Terms, please contact us at:</p>
+              <p className="mt-4">
+                <strong className="text-white">Email:</strong> hello@autaimate.com<br />
+                <strong className="text-white">Location:</strong> United Kingdom
+              </p>
+            </section>
           </div>
         </div>
       </section>
