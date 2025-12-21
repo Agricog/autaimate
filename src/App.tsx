@@ -130,7 +130,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="text-sm text-white/50 mb-1">Email us</div>
-                  <a href="mailto:hello@autaimate.com" className="text-lg font-semibold hover:text-orange-500 transition-colors">hello@autaimate.com</a>
+                  <a href="mailto:mick@autaimate.com" className="text-lg font-semibold hover:text-orange-500 transition-colors">mick@autaimate.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-5">
