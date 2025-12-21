@@ -35,7 +35,7 @@ export default function Terms() {
               <section>
                 <h2 className="font-display text-2xl font-bold text-white mb-4">1. Introduction</h2>
                 <p className="leading-relaxed mb-4">
-                  Welcome to Autaimate. These Terms of Service ("Terms") govern your use of our website at autaimate.co.uk and all related products, services, and applications (collectively, the "Services") operated by Autaimate ("we", "our", or "us").
+                  Welcome to Autaimate. These Terms of Service ("Terms") govern your use of our website at autaimate.com and all related products, services, and applications (collectively, the "Services") operated by Autaimate ("we", "our", or "us").
                 </p>
                 <p className="leading-relaxed mb-4">
                   By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access our Services.
@@ -268,8 +268,8 @@ export default function Terms() {
                   If you have any questions about these Terms, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong className="text-white">Email:</strong> hello@autaimate.co.uk</li>
-                  <li><strong className="text-white">Website:</strong> autaimate.co.uk</li>
+                  <li><strong className="text-white">Email:</strong> hello@autaimate.com</li>
+                  <li><strong className="text-white">Website:</strong> autaimate.com</li>
                 </ul>
               </section>
 
