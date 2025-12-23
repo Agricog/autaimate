@@ -8,6 +8,7 @@ const products = [
   { name: 'LeadFortress', url: 'https://leadfortress.co.uk', desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.', color: 'orange' },
   { name: 'HorseCost', url: 'https://horsecost.co.uk', desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.', color: 'green' },
   { name: 'EquipSafety', url: 'https://equipsafety.co.uk', desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.', color: 'pink' },
+  { name: 'ClearProof', url: 'https://clearproof.co.uk', desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.', color: 'lime' },
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
@@ -18,6 +19,7 @@ const colorClasses: Record<string, { border: string; glow: string; stroke: strin
   orange: { border: 'border-orange-500/50', glow: 'hover:shadow-[0_0_50px_rgba(249,115,22,0.3)]', stroke: 'stroke-orange-400', text: 'text-orange-400' },
   green: { border: 'border-green-500/50', glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]', stroke: 'stroke-green-400', text: 'text-green-400' },
   pink: { border: 'border-pink-500/50', glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]', stroke: 'stroke-pink-400', text: 'text-pink-400' },
+  lime: { border: 'border-lime-500/50', glow: 'hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]', stroke: 'stroke-lime-400', text: 'text-lime-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
@@ -28,6 +30,7 @@ const icons: Record<string, JSX.Element> = {
   LeadFortress: <><circle cx="30" cy="40" r="15" /><circle cx="70" cy="40" r="15" /><circle cx="50" cy="70" r="15" /><line x1="42" y1="48" x2="42" y2="62" /><line x1="58" y1="48" x2="58" y2="62" /><line x1="45" y1="40" x2="55" y2="40" /></>,
   HorseCost: <><path d="M30 70 Q35 40 50 35 Q65 40 70 70" /><circle cx="50" cy="30" r="12" /><line x1="38" y1="30" x2="30" y2="20" /><line x1="62" y1="30" x2="70" y2="20" /><ellipse cx="50" cy="75" rx="25" ry="10" /></>,
   EquipSafety: <><rect x="30" y="20" width="40" height="50" rx="4" /><rect x="35" y="25" width="30" height="20" rx="2" /><line x1="38" y1="55" x2="62" y2="55" /><line x1="38" y1="62" x2="55" y2="62" /><path d="M45 75 L50 85 L70 65" strokeWidth="2" /></>,
+  ClearProof: <><rect x="20" y="15" width="35" height="45" rx="3" /><line x1="27" y1="28" x2="48" y2="28" /><line x1="27" y1="38" x2="45" y2="38" /><line x1="27" y1="48" x2="42" y2="48" /><path d="M60 35 L60 85 L90 85 L90 45 L80 35 L60 35" /><line x1="80" y1="35" x2="80" y2="45" /><line x1="80" y1="45" x2="90" y2="45" /><circle cx="75" cy="62" r="10" /><path d="M71 62 l3 3 6-6" /></>,
 }
 
 const steps = [
@@ -160,7 +163,6 @@ export default function App() {
     </Layout>
   )
 }
-
 
 
 
