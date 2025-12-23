@@ -4,7 +4,7 @@ const products = [
   { name: 'AutoReplyChat', url: 'https://autoreplychat.com', desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.', color: 'blue' },
   { name: 'TradeCalcs', url: 'https://tradecalcs.co.uk', desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.', color: 'yellow' },
   { name: 'SnagLog', url: 'https://app.snaglog.co.uk', desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.', color: 'teal' },
-  { name: 'DetailRecon', url: 'https://detailrecon.co.uk', desc: 'AI security reconnaissance for close protection. Professional advance reports in minutes.', color: 'purple' },
+  { name: 'DetailRecon', url: 'https://detailrecon.com', desc: 'AI security reconnaissance for close protection. Professional advance reports in minutes.', color: 'purple' },
   { name: 'LeadFortress', url: 'https://leadfortress.co.uk', desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.', color: 'orange' },
   { name: 'HorseCost', url: 'https://horsecost.co.uk', desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.', color: 'green' },
   { name: 'EquipSafety', url: 'https://equipsafety.co.uk', desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.', color: 'pink' },
