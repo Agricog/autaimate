@@ -73,7 +73,7 @@ export default function Layout({ children }: LayoutProps) {
             <img 
               src={logoImg}
               alt="Autaimate" 
-              className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              className="h-12 md:h-16 w-auto opacity-80 hover:opacity-100 transition-opacity"
             />
           </Link>
           <div className="flex gap-6 text-sm">
