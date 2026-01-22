@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import logoImg from '/public/logo.png'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -17,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="/logo.png" 
+              src={logoImg}
               alt="Autaimate" 
               className="h-10 md:h-12 w-auto"
             />
@@ -70,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <Link to="/" className="flex items-center">
             <img 
-              src="/logo.png" 
+              src={logoImg}
               alt="Autaimate" 
               className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
             />
@@ -85,5 +86,6 @@ export default function Layout({ children }: LayoutProps) {
     </div>
   )
 }
+
 
 
