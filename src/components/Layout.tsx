@@ -15,12 +15,8 @@ export default function Layout({ children }: LayoutProps) {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 bg-[#0a0a12]/85 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/logo.png" 
-              alt="Autaimate" 
-              className="h-10 md:h-12 w-auto"
-            />
+          <Link to="/" className="logo-text">
+            aut<span>AI</span>mate
           </Link>
 
           {/* Desktop */}
@@ -50,46 +46,32 @@ export default function Layout({ children }: LayoutProps) {
           <div className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4 flex flex-col gap-4">
             {isHome ? (
               <>
-                <a href="#products" onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-orange-500 font-medium">Products</a>
-                <a href="#process" onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-orange-500 font-medium">How We Work</a>
-                <a href="#contact" onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-orange-500 font-medium">Contact</a>
+                <a href="#products" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">Products</a>
+                <a href="#process" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">How We Work</a>
+                <a href="#contact" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">Contact</a>
               </>
             ) : (
-              <Link to="/" className="text-white/70 hover:text-orange-500 font-medium">Home</Link>
+              <Link to="/" className="text-white/70 font-medium">Home</Link>
             )}
             <a href={isHome ? '#contact' : '/#contact'} className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl font-semibold text-center">Get Started</a>
           </div>
         )}
       </nav>
 
-      {/* Main content */}
-      <main className="flex-1 pt-20">{children}</main>
+      {/* Content */}
+      <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 bg-[#0a0a12]/90">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/logo.png" 
-                alt="Autaimate" 
-                className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </Link>
-
-            {/* Links */}
-            <div className="flex items-center gap-8">
-              <Link to="/privacy" className="text-white/50 hover:text-orange-500 text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-white/50 hover:text-orange-500 text-sm transition-colors">Terms of Service</Link>
-              <a href="mailto:hello@autaimate.co.uk" className="text-white/50 hover:text-orange-500 text-sm transition-colors">hello@autaimate.co.uk</a>
-            </div>
-
-            {/* Copyright */}
-            <p className="text-white/40 text-sm">
-              © {new Date().getFullYear()} Autaimate
-            </p>
+      <footer className="border-t border-white/5 py-12 px-6 lg:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <Link to="/" className="logo-text text-2xl">
+            aut<span>AI</span>mate
+          </Link>
+          <div className="flex gap-6 text-sm">
+            <Link to="/privacy" className="text-white/50 hover:text-orange-500 transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-white/50 hover:text-orange-500 transition-colors">Terms of Service</Link>
           </div>
+          <p className="text-white/40 text-sm">© {new Date().getFullYear()} Autaimate. United Kingdom.</p>
         </div>
       </footer>
     </div>
