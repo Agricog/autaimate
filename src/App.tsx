@@ -9,6 +9,10 @@ const products = [
   { name: 'HorseCost', url: 'https://horsecost.co.uk', desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.', color: 'green' },
   { name: 'EquipSafety', url: 'https://equipsafety.co.uk', desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.', color: 'pink' },
   { name: 'ClearProof', url: 'https://clearproof.co.uk', desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.', color: 'lime' },
+  { name: 'Approv', url: 'https://approv.co.uk', desc: 'Client approval workflow for architects and designers. One-click approvals via email, no client login required.', color: 'sky' },
+  { name: 'ShootSync', url: 'https://shootsync.co.uk', desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.', color: 'emerald' },
+  { name: 'CraneQuote', url: 'https://cranequote.co.uk', desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.', color: 'amber' },
+  { name: 'LabCalcs', url: '#', desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.', color: 'indigo' },
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
@@ -20,6 +24,10 @@ const colorClasses: Record<string, { border: string; glow: string; stroke: strin
   green: { border: 'border-green-500/50', glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]', stroke: 'stroke-green-400', text: 'text-green-400' },
   pink: { border: 'border-pink-500/50', glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]', stroke: 'stroke-pink-400', text: 'text-pink-400' },
   lime: { border: 'border-lime-500/50', glow: 'hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]', stroke: 'stroke-lime-400', text: 'text-lime-400' },
+  sky: { border: 'border-sky-500/50', glow: 'hover:shadow-[0_0_50px_rgba(14,165,233,0.3)]', stroke: 'stroke-sky-400', text: 'text-sky-400' },
+  emerald: { border: 'border-emerald-500/50', glow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.3)]', stroke: 'stroke-emerald-400', text: 'text-emerald-400' },
+  amber: { border: 'border-amber-500/50', glow: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]', stroke: 'stroke-amber-400', text: 'text-amber-400' },
+  indigo: { border: 'border-indigo-500/50', glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]', stroke: 'stroke-indigo-400', text: 'text-indigo-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
@@ -31,6 +39,10 @@ const icons: Record<string, JSX.Element> = {
   HorseCost: <><path d="M30 70 Q35 40 50 35 Q65 40 70 70" /><circle cx="50" cy="30" r="12" /><line x1="38" y1="30" x2="30" y2="20" /><line x1="62" y1="30" x2="70" y2="20" /><ellipse cx="50" cy="75" rx="25" ry="10" /></>,
   EquipSafety: <><rect x="30" y="20" width="40" height="50" rx="4" /><rect x="35" y="25" width="30" height="20" rx="2" /><line x1="38" y1="55" x2="62" y2="55" /><line x1="38" y1="62" x2="55" y2="62" /><path d="M45 75 L50 85 L70 65" strokeWidth="2" /></>,
   ClearProof: <><rect x="20" y="15" width="35" height="45" rx="3" /><line x1="27" y1="28" x2="48" y2="28" /><line x1="27" y1="38" x2="45" y2="38" /><line x1="27" y1="48" x2="42" y2="48" /><path d="M60 35 L60 85 L90 85 L90 45 L80 35 L60 35" /><line x1="80" y1="35" x2="80" y2="45" /><line x1="80" y1="45" x2="90" y2="45" /><circle cx="75" cy="62" r="10" /><path d="M71 62 l3 3 6-6" /></>,
+  Approv: <><rect x="20" y="20" width="60" height="50" rx="4" /><path d="M35 45 l8 8 17-17" strokeWidth="3" /><circle cx="70" cy="75" r="12" /><path d="M70 70v10M65 75h10" /></>,
+  ShootSync: <><circle cx="50" cy="30" r="15" /><path d="M35 50 Q50 70 65 50" /><line x1="50" y1="45" x2="50" y2="85" /><line x1="30" y1="65" x2="50" y2="55" /><line x1="70" y1="65" x2="50" y2="55" /><circle cx="30" cy="80" r="8" /><circle cx="70" cy="80" r="8" /></>,
+  CraneQuote: <><line x1="50" y1="15" x2="50" y2="85" strokeWidth="3" /><line x1="50" y1="25" x2="85" y2="25" strokeWidth="2" /><line x1="75" y1="25" x2="75" y2="50" /><rect x="65" y="50" width="20" height="15" rx="2" /><rect x="35" y="70" width="30" height="15" rx="2" /></>,
+  LabCalcs: <><path d="M35 20 L35 45 L25 75 Q23 85 35 85 L65 85 Q77 85 75 75 L65 45 L65 20" /><line x1="35" y1="20" x2="65" y2="20" /><line x1="38" y1="45" x2="62" y2="45" /><ellipse cx="50" cy="70" rx="15" ry="8" /><circle cx="45" cy="68" r="3" /><circle cx="55" cy="72" r="2" /></>,
 }
 
 const steps = [
