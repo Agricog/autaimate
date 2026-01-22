@@ -15,8 +15,12 @@ export default function Layout({ children }: LayoutProps) {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 bg-[#0a0a12]/85 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="logo-text">
-            aut<span>AI</span>mate
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Autaimate" 
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop */}
@@ -64,8 +68,12 @@ export default function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <footer className="border-t border-white/5 py-12 px-6 lg:px-12 relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <Link to="/" className="logo-text text-2xl">
-            aut<span>AI</span>mate
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Autaimate" 
+              className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            />
           </Link>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-white/50 hover:text-orange-500 transition-colors">Privacy Policy</Link>
