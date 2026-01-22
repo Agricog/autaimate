@@ -20,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
             <img 
               src={logoImg}
               alt="Autaimate" 
-              className="h-22 md:h-42 w-auto"
+              className="h-16 md:h-32 w-auto"
             />
           </Link>
 
