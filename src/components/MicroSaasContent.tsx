@@ -34,15 +34,16 @@ const PRODUCTS: Product[] = [
   { name: 'ShootSync', industry: 'Shooting Syndicates', desc: 'Member management, shoot days, payments', url: 'https://shootsync.co.uk', external: true },
   { name: 'Approv', industry: 'Architecture/Design', desc: 'One-click client approvals via email', url: 'https://approv.co.uk', external: true },
   { name: 'CraneQuote', industry: 'Construction/Logistics', desc: 'Crane hire cost calculators', url: 'https://cranequote.co.uk', external: true },
-  { name: 'LabCalcs', industry: 'Research/Science', desc: 'Molarity, dilutions, buffer prep', url: '/products/labcalcs', external: false },
+  { name: 'LabCalcs', industry: 'Research/Science', desc: 'Molarity, dilutions, buffer prep (private commission)', url: 'https://autaimate.com', external: true },
   { name: 'ClearProof', industry: 'Health & Safety', desc: 'Multilingual comprehension verification', url: 'https://clearproof.co.uk', external: true },
   { name: 'LeadFortress', industry: 'Trade Contractors', desc: 'Six-channel lead capture system', url: 'https://leadfortress.co.uk', external: true },
   { name: 'AutoReplyChat', industry: 'Small Business', desc: 'AI chatbots for customer enquiries', url: 'https://autoreplychat.com', external: true },
-  { name: 'TradeCalcs', industry: 'Construction Trades', desc: '100+ professional calculators', url: '/products/tradecalcs', external: false },
-  { name: 'EquipSafety', industry: 'Care Homes/Facilities', desc: 'Equipment compliance tracking', url: '/products/equipsafety', external: false },
-  { name: 'HorseCost / DogCost', industry: 'Pet Industry', desc: 'Cost analysis calculators', url: '/products/horsecost', external: false },
+  { name: 'TradeCalcs', industry: 'Construction Trades', desc: '100+ professional calculators', url: 'https://tradecalcs.co.uk', external: true },
+  { name: 'EquipSafety', industry: 'Care Homes/Facilities', desc: 'Equipment compliance tracking', url: 'https://equipsafety.co.uk', external: true },
+  { name: 'HorseCost', industry: 'Equestrian', desc: 'Horse ownership cost calculators', url: 'https://horsecost.co.uk', external: true },
+  { name: 'WorkProof', industry: 'Electrical Compliance', desc: 'GPS-tagged, timestamped, tamper-proof evidence photos for NICEIC audits', url: 'https://workproof.co.uk', external: true },
   { name: 'SnagLog', industry: 'Property/Construction', desc: 'AI-powered snagging reports', url: 'https://app.snaglog.co.uk', external: true },
-  { name: 'DetailRecon', industry: 'Close Protection', desc: 'AI security reconnaissance reports', url: 'https://detailrecon.co.uk', external: true },
+  { name: 'DetailRecon', industry: 'Close Protection', desc: 'AI security reconnaissance reports', url: 'https://detailrecon.com', external: true },
 ]
 
 interface ProcessStep {
@@ -181,7 +182,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: 'What if the project takes longer than 4 weeks?',
-    a: 'Fixed price includes reasonable scope. If you change requirements mid-project, we discuss timeline and cost adjustments. I\'m incentivised to deliver on time — I\'ve done this 11 times and know how to scope correctly.',
+    a: 'Fixed price includes reasonable scope. If you change requirements mid-project, we discuss timeline and cost adjustments. I\'m incentivised to deliver on time — I\'ve done this 13 times and know how to scope correctly.',
   },
   {
     q: 'Do I need technical knowledge?',
@@ -241,8 +242,8 @@ export default function MicroSaasContent() {
             className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white mb-7"
           >
             I&apos;ve Built{' '}
-            <span className="text-orange-400">11+</span> Micro-SaaS Products
-            Across <span className="text-orange-400">11</span> Different
+            <span className="text-orange-400">13</span> Micro-SaaS Products
+            Across <span className="text-orange-400">12</span> Different
             Industries.
             <br />
             <span className="bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
@@ -283,6 +284,12 @@ export default function MicroSaasContent() {
               <ChevronDown className="w-4 h-4" />
             </a>
           </div>
+          <p className="mt-6 text-sm text-slate-500">
+            Or call directly:{' '}
+            <a href="tel:+447501439406" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors">
+              07501 439406
+            </a>
+          </p>
         </div>
       </section>
 
@@ -380,7 +387,7 @@ export default function MicroSaasContent() {
             How It Works
           </h2>
           <p className="text-base text-slate-400 max-w-xl leading-relaxed mb-4">
-            A proven 5-week process, refined across 11 successful builds. The
+            A proven 5-week process, refined across 13 successful builds. The
             methodology has been iterated and improved with every project
             delivery, eliminating bottlenecks and ensuring consistent,
             predictable outcomes. Unlike traditional development agencies that
@@ -599,7 +606,7 @@ export default function MicroSaasContent() {
               {
                 icon: Clock,
                 title: 'Faster Than Traditional Development',
-                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. This service delivers in 4 weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With 11 completed builds, the fastest path from idea to deployed product has been mapped and optimised. The AI-assisted approach does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
+                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. This service delivers in 4 weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With 13 completed builds, the fastest path from idea to deployed product has been mapped and optimised. The AI-assisted approach does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
                 stat: 'Traditional: 3–6 months, £30K–£50K → With me: 4 weeks, £8.5K–£18.5K',
               },
               {
@@ -843,7 +850,7 @@ export default function MicroSaasContent() {
               I&apos;m 58 years old. I spent 40 years working in construction, trades,
               and business operations across the United Kingdom. Three years ago,
               I could not write a single line of code. Today, I have built and
-              deployed <strong className="text-white font-semibold">11 operational SaaS products</strong> across
+              deployed <strong className="text-white font-semibold">13 operational SaaS products</strong> across
               wildly different industries — from shooting syndicates to
               laboratories, from architects to tradespeople.
             </p>
@@ -854,7 +861,7 @@ export default function MicroSaasContent() {
               clean and maintainable code, a simple and repeatable deployment
               process using GitHub and Railway that requires no terminal or
               command line knowledge, and the pattern recognition that comes from
-              having done this 11 times across 11 different industries.
+              having done this 13 times across 12 different industries.
             </p>
             <p className="text-base text-slate-400 leading-relaxed">
               Each of those four elements compounds with every new project. The
@@ -870,7 +877,7 @@ export default function MicroSaasContent() {
                 'Domain expertise — I understand real business problems',
                 'AI-assisted development — Claude generates the code',
                 'Simple deployment — GitHub + Railway, no terminal',
-                'Pattern recognition — I\'ve done this 11 times',
+                'Pattern recognition — I\'ve done this 13 times',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
                   <span className="w-2 h-2 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true" />
@@ -910,6 +917,12 @@ export default function MicroSaasContent() {
               Book Discovery Call
               <ArrowRight className="w-5 h-5" />
             </a>
+            <p className="relative mt-4 text-sm text-slate-500">
+              Or call directly:{' '}
+              <a href="tel:+447501439406" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors">
+                07501 439406
+              </a>
+            </p>
           </div>
         </div>
       </section>
@@ -926,18 +939,21 @@ export default function MicroSaasContent() {
             <Link to="/" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               Autaimate Home &rarr;
             </Link>
-            <Link to="/products/tradecalcs" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <a href="https://tradecalcs.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               TradeCalcs — BS 7671 Calculators &rarr;
-            </Link>
-            <Link to="/products/equipsafety" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            </a>
+            <a href="https://equipsafety.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               EquipSafety — Care Home Compliance &rarr;
-            </Link>
-            <Link to="/products/horsecost" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            </a>
+            <a href="https://horsecost.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               HorseCost — UK Horse Ownership Costs &rarr;
-            </Link>
-            <Link to="/products/snaglog" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            </a>
+            <a href="https://workproof.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+              WorkProof — Electrical Compliance Evidence &rarr;
+            </a>
+            <a href="https://app.snaglog.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               SnagLog — AI Snagging Reports &rarr;
-            </Link>
+            </a>
           </div>
         </div>
       </section>
