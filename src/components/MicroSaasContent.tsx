@@ -14,7 +14,6 @@ import {
   Code2,
   Users,
   Clock,
-  PoundSterling,
   ExternalLink,
   Zap,
   Target,
@@ -268,7 +267,9 @@ export default function MicroSaasContent() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#start"
+              href="https://calendar.app.google/8Yq1jNXtPFhF3YCr7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-xl shadow-[0_0_30px_rgba(251,146,60,0.3)] hover:shadow-[0_0_50px_rgba(251,146,60,0.5)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Book Discovery Call
@@ -901,7 +902,9 @@ export default function MicroSaasContent() {
               spots available for February–March delivery.
             </p>
             <a
-              href="#"
+              href="https://calendar.app.google/8Yq1jNXtPFhF3YCr7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-xl shadow-[0_0_30px_rgba(251,146,60,0.3)] hover:shadow-[0_0_50px_rgba(251,146,60,0.5)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Book Discovery Call
