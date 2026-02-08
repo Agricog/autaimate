@@ -35,6 +35,7 @@ export default function Layout({ children }: LayoutProps) {
             ) : (
               <Link to="/" className="text-white/70 hover:text-orange-500 font-medium transition-colors">Home</Link>
             )}
+            <Link to="/micro-saas" className="text-white/70 hover:text-orange-500 font-medium transition-colors">Micro-SaaS Builds</Link>
             <a href={isHome ? '#contact' : '/#contact'} className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-7 py-3 rounded-xl font-semibold hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-shadow">Get Started</a>
           </div>
 
@@ -56,8 +57,9 @@ export default function Layout({ children }: LayoutProps) {
                 <a href="#contact" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">Contact</a>
               </>
             ) : (
-              <Link to="/" className="text-white/70 font-medium">Home</Link>
+              <Link to="/" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">Home</Link>
             )}
+            <Link to="/micro-saas" onClick={() => setMenuOpen(false)} className="text-white/70 font-medium">Micro-SaaS Builds</Link>
             <a href={isHome ? '#contact' : '/#contact'} className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl font-semibold text-center">Get Started</a>
           </div>
         )}
