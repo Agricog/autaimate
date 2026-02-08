@@ -16,10 +16,10 @@ export default function MicroSaasPage() {
   const siteName = 'Autaimate'
   const authorName = 'Autaimate'
   const pageTitle = 'Custom Micro-SaaS Builds in 4 Weeks | From £8,500 | Autaimate'
-  const pageDescription = 'Get a fully deployed micro-SaaS product built in 4 weeks. 11+ products shipped across 11 industries. React, TypeScript, Railway. Full code ownership. Fixed price from £8,500.'
+  const pageDescription = 'Get a fully deployed micro-SaaS product built in 4 weeks. 13 products shipped across 12 industries. React, TypeScript, Railway. Full code ownership. Fixed price from £8,500.'
 
   // Quick Answer Box content (120-160 chars) — Point 14
-  const quickAnswer = 'Autaimate builds custom micro-SaaS products in 4 weeks from £8,500. 11+ products shipped. Full code ownership. React + TypeScript + Railway.'
+  const quickAnswer = 'Autaimate builds custom micro-SaaS products in 4 weeks from £8,500. 13 products shipped. Full code ownership. React + TypeScript + Railway.'
 
   // JSON-LD Structured Data — Point 11 (all 8 schema types)
   const structuredData = {
@@ -71,7 +71,7 @@ export default function MicroSaasPage() {
             'name': 'How do I know you can build something for my industry?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, and AI chatbots across 11 different industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
+              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, and AI chatbots across 12 different industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
             }
           },
           {
@@ -87,7 +87,7 @@ export default function MicroSaasPage() {
             'name': 'What if the project takes longer than 4 weeks?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The fixed price includes reasonable scope. If requirements change mid-project, timeline and cost adjustments are discussed. Autaimate has delivered 11 projects and knows how to scope correctly.'
+              'text': 'The fixed price includes reasonable scope. If requirements change mid-project, timeline and cost adjustments are discussed. Autaimate has delivered 13 projects and knows how to scope correctly.'
             }
           },
           {
@@ -334,7 +334,7 @@ export default function MicroSaasPage() {
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Autaimate Micro-SaaS Build Service — 11+ products shipped across 11 industries" />
+        <meta property="og:image:alt" content="Autaimate Micro-SaaS Build Service — 13 products shipped across 12 industries" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content="en_GB" />
