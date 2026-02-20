@@ -41,6 +41,7 @@ const PRODUCTS: Product[] = [
   { name: 'TradeCalcs', industry: 'Construction Trades', desc: '100+ professional calculators', url: 'https://tradecalcs.co.uk', external: true },
   { name: 'EquipSafety', industry: 'Care Homes/Facilities', desc: 'Equipment compliance tracking', url: 'https://equipsafety.co.uk', external: true },
   { name: 'HorseCost', industry: 'Equestrian', desc: 'Horse ownership cost calculators', url: 'https://horsecost.co.uk', external: true },
+  { name: 'CertVoice', industry: 'Electrical Certification', desc: 'Voice-first BS 7671 EICR, Minor Works, and EIC certificates', url: 'https://certvoice.co.uk', external: true },
   { name: 'WorkProof', industry: 'Electrical Compliance', desc: 'GPS-tagged, timestamped, tamper-proof evidence photos for NICEIC audits', url: 'https://workproof.co.uk', external: true },
   { name: 'SnagLog', industry: 'Property/Construction', desc: 'AI-powered snagging reports', url: 'https://app.snaglog.co.uk', external: true },
   { name: 'DetailRecon', industry: 'Close Protection', desc: 'AI security reconnaissance reports', url: 'https://detailrecon.com', external: true },
@@ -174,7 +175,7 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     q: 'How do I know you can build something for MY industry?',
-    a: 'I\'ve built for shooting clubs, architects, laboratories, construction, care homes, and AI chatbots. If I can learn those, I can learn yours. The key is YOU have the domain expertise — I just need to understand the workflow and build the tool.',
+    a: 'I\'ve built for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, close protection, and more. If I can learn those, I can learn yours. The key is YOU have the domain expertise — I just need to understand the workflow and build the tool.',
   },
   {
     q: 'What if I want changes after handover?',
@@ -182,7 +183,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: 'What if the project takes longer than 4 weeks?',
-    a: 'Fixed price includes reasonable scope. If you change requirements mid-project, we discuss timeline and cost adjustments. I\'m incentivised to deliver on time — I\'ve done this 13 times and know how to scope correctly.',
+    a: 'Fixed price includes reasonable scope. If you change requirements mid-project, we discuss timeline and cost adjustments. I have a strong track record of scoping correctly and delivering on time.',
   },
   {
     q: 'Do I need technical knowledge?',
@@ -241,20 +242,18 @@ export default function MicroSaasContent() {
             id="hero-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white mb-7"
           >
-            I&apos;ve Built{' '}
-            <span className="text-orange-400">13</span> Micro-SaaS Products
-            Across <span className="text-orange-400">12</span> Different
-            Industries.
+            Niche After Niche, I Keep{' '}
+            <span className="text-orange-400">Shipping</span>.
             <br />
             <span className="bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
-              Now I&apos;ll Build Yours.
+              Yours Is Next.
             </span>
           </h1>
 
           <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-5 leading-relaxed">
             From shooting syndicates to laboratory researchers. From crane hire
-            to AI chatbots. From architects to tradespeople. I&apos;ve proven the
-            same process works across wildly different niches.
+            to AI chatbots. From architects to electricians. I&apos;ve proven the
+            same process works across wildly different industries.
           </p>
 
           <p className="text-base text-slate-500 italic mb-4">
@@ -316,11 +315,11 @@ export default function MicroSaasContent() {
           <p className="text-base text-slate-400 max-w-xl leading-relaxed mb-12">
             The diversity of the portfolio demonstrates a critical advantage:
             the methodology is industry-agnostic. Whether the domain is
-            agriculture, architecture, healthcare compliance, or close
-            protection security, the core approach of identifying a pain point,
-            validating demand, and shipping a focused MVP translates across
-            every sector. What changes is the domain knowledge — and that is
-            what you bring to the table.
+            agriculture, architecture, healthcare compliance, electrical
+            certification, or close protection security, the core approach of
+            identifying a pain point, validating demand, and shipping a focused
+            MVP translates across every sector. What changes is the domain
+            knowledge — and that is what you bring to the table.
           </p>
 
           {/* Product table */}
@@ -387,7 +386,7 @@ export default function MicroSaasContent() {
             How It Works
           </h2>
           <p className="text-base text-slate-400 max-w-xl leading-relaxed mb-4">
-            A proven 5-week process, refined across 13 successful builds. The
+            A proven 5-week process, refined across every successful build. The
             methodology has been iterated and improved with every project
             delivery, eliminating bottlenecks and ensuring consistent,
             predictable outcomes. Unlike traditional development agencies that
@@ -606,7 +605,7 @@ export default function MicroSaasContent() {
               {
                 icon: Clock,
                 title: 'Faster Than Traditional Development',
-                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. This service delivers in 4 weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With 13 completed builds, the fastest path from idea to deployed product has been mapped and optimised. The AI-assisted approach does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
+                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. This service delivers in 4 weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With a growing portfolio of completed builds, the fastest path from idea to deployed product has been mapped and optimised. The AI-assisted approach does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
                 stat: 'Traditional: 3–6 months, £30K–£50K → With me: 4 weeks, £8.5K–£18.5K',
               },
               {
@@ -850,9 +849,9 @@ export default function MicroSaasContent() {
               I&apos;m 58 years old. I spent 40 years working in construction, trades,
               and business operations across the United Kingdom. Three years ago,
               I could not write a single line of code. Today, I have built and
-              deployed <strong className="text-white font-semibold">13 operational SaaS products</strong> across
+              deployed <strong className="text-white font-semibold">a growing portfolio of operational SaaS products</strong> across
               wildly different industries — from shooting syndicates to
-              laboratories, from architects to tradespeople.
+              laboratories, from architects to electricians.
             </p>
             <p className="text-base text-slate-400 leading-relaxed">
               The secret is not coding talent. It never was. The real advantages
@@ -861,11 +860,11 @@ export default function MicroSaasContent() {
               clean and maintainable code, a simple and repeatable deployment
               process using GitHub and Railway that requires no terminal or
               command line knowledge, and the pattern recognition that comes from
-              having done this 13 times across 12 different industries.
+              having done this repeatedly across a wide range of industries.
             </p>
             <p className="text-base text-slate-400 leading-relaxed">
-              Each of those four elements compounds with every new project. The
-              twelfth build benefits from everything learned in the first eleven.
+              Each of those four elements compounds with every new project. Every
+              new build benefits from everything learned in the ones before it.
               Industry-specific compliance requirements, user interface patterns
               that work in field conditions, data management strategies for
               non-technical end users — all of this accumulated knowledge
@@ -877,7 +876,7 @@ export default function MicroSaasContent() {
                 'Domain expertise — I understand real business problems',
                 'AI-assisted development — Claude generates the code',
                 'Simple deployment — GitHub + Railway, no terminal',
-                'Pattern recognition — I\'ve done this 13 times',
+                'Pattern recognition — proven across multiple industries',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
                   <span className="w-2 h-2 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true" />
@@ -950,6 +949,9 @@ export default function MicroSaasContent() {
             </a>
             <a href="https://workproof.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               WorkProof — Electrical Compliance Evidence &rarr;
+            </a>
+            <a href="https://certvoice.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+              CertVoice — Voice-First Electrical Certs &rarr;
             </a>
             <a href="https://app.snaglog.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               SnagLog — AI Snagging Reports &rarr;
