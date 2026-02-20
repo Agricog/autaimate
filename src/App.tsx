@@ -13,6 +13,8 @@ const products = [
   { name: 'ShootSync', url: 'https://shootsync.co.uk', desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.', color: 'emerald' },
   { name: 'CraneQuote', url: 'https://cranequote.co.uk', desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.', color: 'amber' },
   { name: 'LabCalcs', url: '#', desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.', color: 'indigo' },
+  { name: 'CertVoice', url: 'https://certvoice.co.uk', desc: 'Voice-first electrical certification. Speak your findings on-site and AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.', color: 'rose' },
+  { name: 'WorkProof', url: 'https://workproof.co.uk', desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.', color: 'cyan' },
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
@@ -28,6 +30,8 @@ const colorClasses: Record<string, { border: string; glow: string; stroke: strin
   emerald: { border: 'border-emerald-500/50', glow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.3)]', stroke: 'stroke-emerald-400', text: 'text-emerald-400' },
   amber: { border: 'border-amber-500/50', glow: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]', stroke: 'stroke-amber-400', text: 'text-amber-400' },
   indigo: { border: 'border-indigo-500/50', glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]', stroke: 'stroke-indigo-400', text: 'text-indigo-400' },
+  rose: { border: 'border-rose-500/50', glow: 'hover:shadow-[0_0_50px_rgba(244,63,94,0.3)]', stroke: 'stroke-rose-400', text: 'text-rose-400' },
+  cyan: { border: 'border-cyan-500/50', glow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]', stroke: 'stroke-cyan-400', text: 'text-cyan-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
@@ -43,6 +47,8 @@ const icons: Record<string, JSX.Element> = {
   ShootSync: <><circle cx="50" cy="30" r="15" /><path d="M35 50 Q50 70 65 50" /><line x1="50" y1="45" x2="50" y2="85" /><line x1="30" y1="65" x2="50" y2="55" /><line x1="70" y1="65" x2="50" y2="55" /><circle cx="30" cy="80" r="8" /><circle cx="70" cy="80" r="8" /></>,
   CraneQuote: <><line x1="50" y1="15" x2="50" y2="85" strokeWidth="3" /><line x1="50" y1="25" x2="85" y2="25" strokeWidth="2" /><line x1="75" y1="25" x2="75" y2="50" /><rect x="65" y="50" width="20" height="15" rx="2" /><rect x="35" y="70" width="30" height="15" rx="2" /></>,
   LabCalcs: <><path d="M35 20 L35 45 L25 75 Q23 85 35 85 L65 85 Q77 85 75 75 L65 45 L65 20" /><line x1="35" y1="20" x2="65" y2="20" /><line x1="38" y1="45" x2="62" y2="45" /><ellipse cx="50" cy="70" rx="15" ry="8" /><circle cx="45" cy="68" r="3" /><circle cx="55" cy="72" r="2" /></>,
+  CertVoice: <><path d="M50 20 L50 50" strokeWidth="3" /><rect x="42" y="15" width="16" height="40" rx="8" /><path d="M32 45 Q32 65 50 65 Q68 65 68 45" /><line x1="50" y1="65" x2="50" y2="75" /><line x1="40" y1="75" x2="60" y2="75" /><rect x="62" y="25" width="20" height="28" rx="3" /><line x1="67" y1="33" x2="77" y2="33" /><line x1="67" y1="39" x2="75" y2="39" /><line x1="67" y1="45" x2="77" y2="45" /></>,
+  WorkProof: <><rect x="28" y="18" width="30" height="45" rx="4" /><circle cx="43" cy="35" r="10" /><path d="M33 50h20" /><circle cx="68" cy="28" r="8" /><path d="M64 28h8M68 24v8" /><path d="M60 55 L25 70 L25 82 L75 82 L75 70 Z" /><path d="M35 75 l5 5 10-10" strokeWidth="2" /></>,
 }
 
 const steps = [
@@ -52,6 +58,19 @@ const steps = [
   { num: '4', title: 'Launch', desc: 'Priced for small businesses, not enterprises' },
   { num: '5', title: 'Iterate', desc: 'Real feedback shapes every update' },
 ]
+
+function ProductCard({ p }: { p: typeof products[0] }) {
+  const c = colorClasses[p.color]
+  return (
+    <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={`product-card text-center transition-transform duration-300 hover:-translate-y-2.5`}>
+      <div className={`product-circle mx-auto mb-6 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
+        <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-20 h-20 ${c.stroke}`}>{icons[p.name]}</svg>
+      </div>
+      <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
+      <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
+    </a>
+  )
+}
 
 export default function App() {
   return (
@@ -98,18 +117,11 @@ export default function App() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((p) => {
-            const c = colorClasses[p.color]
-            return (
-              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={`product-card text-center transition-transform duration-300 hover:-translate-y-2.5`}>
-                <div className={`product-circle mx-auto mb-6 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
-                  <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-20 h-20 ${c.stroke}`}>{icons[p.name]}</svg>
-                </div>
-                <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
-                <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
-              </a>
-            )
-          })}
+          {products.map((p, i) => (
+            <div key={p.name} className={p.name === 'CertVoice' ? 'xl:col-start-2' : ''}>
+              <ProductCard p={p} />
+            </div>
+          ))}
         </div>
       </section>
 
