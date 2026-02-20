@@ -117,7 +117,7 @@ export default function App() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((p, i) => (
+          {products.map((p) => (
             <div key={p.name} className={p.name === 'CertVoice' ? 'xl:col-start-2' : ''}>
               <ProductCard p={p} />
             </div>
