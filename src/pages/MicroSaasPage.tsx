@@ -16,10 +16,10 @@ export default function MicroSaasPage() {
   const siteName = 'Autaimate'
   const authorName = 'Autaimate'
   const pageTitle = 'Custom Micro-SaaS Builds in 4 Weeks | From £8,500 | Autaimate'
-  const pageDescription = 'Get a fully deployed micro-SaaS product built in 4 weeks. 13 products shipped across 12 industries. React, TypeScript, Railway. Full code ownership. Fixed price from £8,500.'
+  const pageDescription = 'Get a fully deployed micro-SaaS product built in 4 weeks. Proven across dozens of niche industries from construction to labs. React, TypeScript, Railway. Full code ownership. Fixed price from £8,500.'
 
   // Quick Answer Box content (120-160 chars) — Point 14
-  const quickAnswer = 'Autaimate builds custom micro-SaaS products in 4 weeks from £8,500. 13 products shipped. Full code ownership. React + TypeScript + Railway.'
+  const quickAnswer = 'Autaimate builds custom micro-SaaS products in 4 weeks from £8,500. Proven across multiple niche industries. Full code ownership. React + TypeScript + Railway.'
 
   // JSON-LD Structured Data — Point 11 (all 8 schema types)
   const structuredData = {
@@ -71,7 +71,7 @@ export default function MicroSaasPage() {
             'name': 'How do I know you can build something for my industry?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, and AI chatbots across 12 different industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
+              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, close protection, and more across a wide range of industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
             }
           },
           {
@@ -87,7 +87,7 @@ export default function MicroSaasPage() {
             'name': 'What if the project takes longer than 4 weeks?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The fixed price includes reasonable scope. If requirements change mid-project, timeline and cost adjustments are discussed. Autaimate has delivered 13 projects and knows how to scope correctly.'
+              'text': 'The fixed price includes reasonable scope. If requirements change mid-project, timeline and cost adjustments are discussed. Autaimate has a strong track record of scoping correctly and delivering on time.'
             }
           },
           {
@@ -208,7 +208,7 @@ export default function MicroSaasPage() {
           'url': 'https://autaimate.com'
         },
         'datePublished': '2026-01-15',
-        'dateModified': '2026-02-08',
+        'dateModified': '2026-02-20',
         'mainEntityOfPage': pageUrl,
         'image': ogImage
       },
@@ -230,7 +230,9 @@ export default function MicroSaasPage() {
           'UK Business Automation',
           'Construction Technology',
           'Trade Industry Software',
-          'AI-Assisted Development'
+          'AI-Assisted Development',
+          'Electrical Certification Software',
+          'Compliance Evidence Tools'
         ],
         'sameAs': [
           'https://autaimate.com'
@@ -259,7 +261,9 @@ export default function MicroSaasPage() {
           'https://leadfortress.co.uk',
           'https://autoreplychat.com',
           'https://app.snaglog.co.uk',
-          'https://detailrecon.co.uk'
+          'https://detailrecon.co.uk',
+          'https://certvoice.co.uk',
+          'https://workproof.co.uk'
         ]
       },
       // 8. DefinedTermSet
@@ -334,7 +338,7 @@ export default function MicroSaasPage() {
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Autaimate Micro-SaaS Build Service — 13 products shipped across 12 industries" />
+        <meta property="og:image:alt" content="Autaimate Micro-SaaS Build Service — proven across multiple niche industries" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content="en_GB" />
