@@ -71,7 +71,7 @@ export default function MicroSaasPage() {
             'name': 'How do I know you can build something for my industry?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, close protection, and more across a wide range of industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
+              'text': 'Autaimate has built products for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, playground inspectors, councils, close protection, and more across a wide range of industries. The key is that you have the domain expertise — Autaimate understands the workflow and builds the tool.'
             }
           },
           {
@@ -208,7 +208,7 @@ export default function MicroSaasPage() {
           'url': 'https://autaimate.com'
         },
         'datePublished': '2026-01-15',
-        'dateModified': '2026-02-20',
+        'dateModified': '2026-03-08',
         'mainEntityOfPage': pageUrl,
         'image': ogImage
       },
@@ -232,7 +232,9 @@ export default function MicroSaasPage() {
           'Trade Industry Software',
           'AI-Assisted Development',
           'Electrical Certification Software',
-          'Compliance Evidence Tools'
+          'Compliance Evidence Tools',
+          'Playground Inspection Software',
+          'Trade Software Directory'
         ],
         'sameAs': [
           'https://autaimate.com'
@@ -263,7 +265,9 @@ export default function MicroSaasPage() {
           'https://app.snaglog.co.uk',
           'https://detailrecon.co.uk',
           'https://certvoice.co.uk',
-          'https://workproof.co.uk'
+          'https://workproof.co.uk',
+          'https://inspectvoice.co.uk',
+          'https://uktradeapps.co.uk'
         ]
       },
       // 8. DefinedTermSet
