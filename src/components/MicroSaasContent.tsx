@@ -108,52 +108,56 @@ const PRICING: PricingTier[] = [
   {
     tier: 'Basic',
     price: '8,500',
-    best: 'Simple tools & calculators',
+    best: 'Simple tools, calculators, and single-purpose automations',
     features: [
-      'Single-purpose tool or calculator',
-      'Up to 5 core features',
-      '3–4 week delivery',
-      'Mobile-responsive design',
-      'Full code ownership',
-      'Documentation included',
+      'One focused custom tool or workflow',
+      'Up to 5 core features within agreed scope',
+      '1 primary user type',
+      'Mobile-responsive web app',
+      'Basic data capture, calculations, or workflow logic',
+      'Up to 2 revision rounds during build',
+      'Deployment support and handover documentation',
+      'Full ownership of the delivered codebase',
     ],
-    examples: 'Quote generators, ROI calculators, booking forms, simple trackers',
+    examples: 'Quoting tools, material calculators, site forms, snagging logs, simple trackers',
     popular: false,
   },
   {
     tier: 'Standard',
     price: '12,500',
-    best: 'Multi-feature applications',
+    best: 'Multi-feature systems that improve day-to-day operations',
     features: [
-      'Multi-feature application',
+      'One custom application with a defined scope',
       'Up to 10 core features',
-      '4–5 week delivery',
-      'User authentication (Clerk)',
-      'Data management (SmartSuite)',
-      'Mobile-responsive design',
-      'Full code ownership',
-      'Documentation included',
+      'User authentication and account access',
+      'Structured data management setup',
+      'Up to 2 user roles',
+      'Up to 2 standard third-party integrations',
+      'Mobile-responsive web app',
+      'Up to 2 revision rounds during build',
+      'Deployment support and handover documentation',
+      'Full ownership of the delivered codebase',
     ],
-    examples: 'Compliance tracking, client portals, inventory management, CRM systems',
+    examples: 'Job tracking systems, client portals, compliance tools, workforce admin dashboards',
     popular: true,
   },
   {
     tier: 'Premium',
     price: '18,500',
-    best: 'Complex platforms',
+    best: 'Advanced platforms with integrations and multi-step workflows',
     features: [
-      'Complex app with integrations',
+      'One complex application with agreed feature specification',
       'Up to 15 core features',
-      '5–6 week delivery',
-      'Payment processing (Stripe)',
-      'API integrations',
-      'Advanced workflows',
-      'Multi-user permissions',
-      'Mobile-responsive design',
-      'Full code ownership',
-      'Documentation included',
+      'Multi-step workflows and approvals',
+      'Role-based user access',
+      'Payment processing where required',
+      'Up to 3 supported third-party integrations',
+      'Mobile-responsive web app',
+      'Up to 3 revision rounds during build',
+      'Deployment support and handover documentation',
+      'Full ownership of the delivered codebase',
     ],
-    examples: 'Full SaaS products, multi-user platforms, industry-specific tools with integrations',
+    examples: 'Operations platforms, subcontractor management, inspection systems, multi-user business apps',
     popular: false,
   },
 ]
@@ -164,9 +168,9 @@ interface RetainerOption {
 }
 
 const RETAINERS: RetainerOption[] = [
-  { price: '500', desc: 'Basic updates and bug fixes' },
-  { price: '1,000', desc: 'Regular feature additions and support' },
-  { price: '1,500', desc: 'Priority support + ongoing development' },
+  { price: '500', desc: 'Basic updates, bug fixes, and light support' },
+  { price: '1,000', desc: 'Ongoing support plus regular small feature improvements' },
+  { price: '1,500', desc: 'Priority support, faster turnaround, and ongoing development input' },
 ]
 
 interface FaqItem {
@@ -185,7 +189,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: 'What if the project takes longer than 4 weeks?',
-    a: 'Fixed price includes reasonable scope. If you change requirements mid-project, we discuss timeline and cost adjustments. I have a strong track record of scoping correctly and delivering on time.',
+    a: 'The fixed price covers the agreed scope. If you change requirements mid-project, we discuss timeline and cost adjustments before any extra work begins. Scope is locked during Week 1 validation specifically to avoid this.',
   },
   {
     q: 'Do I need technical knowledge?',
@@ -205,7 +209,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: 'How much does a micro-SaaS build cost?',
-    a: 'Fixed pricing with three tiers: Basic from £8,500 for simple tools, Standard from £12,500 for multi-feature apps, and Premium from £18,500 for complex platforms with integrations. Payment terms are 50% upfront, 50% on delivery.',
+    a: 'Fixed pricing for a clearly defined scope. Three tiers: Basic from £8,500 for simple tools, Standard from £12,500 for multi-feature apps, and Premium from £18,500 for complex platforms with integrations. Payment terms are 50% upfront, 50% on delivery. Anything outside the agreed scope is quoted separately.',
   },
   {
     q: 'Do I need to use a terminal or command line?',
@@ -452,14 +456,15 @@ export default function MicroSaasContent() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Pricing</SectionLabel>
           <h2 id="pricing-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-            Fixed Price. No Surprises.
+            Fixed Price. Clear Scope.
           </h2>
           <p className="text-base text-slate-400 max-w-xl leading-relaxed mb-12">
-            50% upfront, 50% on delivery. You own everything. Every price
-            includes full code ownership, documentation, deployment to Railway,
-            and a training walkthrough. There are no hidden fees, no hourly
+            50% upfront, 50% on delivery. Every project includes a clearly
+            agreed scope, deployment support, documentation, and full ownership
+            of the delivered codebase. Anything outside the agreed scope is
+            quoted separately before work begins. No hidden fees, no hourly
             billing surprises, and no ongoing licence costs for the software
-            itself. The price you agree to is the price you pay.
+            itself.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -508,16 +513,36 @@ export default function MicroSaasContent() {
             ))}
           </div>
 
+          {/* Scope protection */}
+          <div className="mt-8 bg-white/[0.01] border border-white/5 rounded-xl px-6 py-5">
+            <p className="font-mono text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Scope &amp; Terms</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+              {[
+                'Prices apply to clearly defined project scopes only',
+                'Anything outside scope is quoted separately',
+                'Discovery may be required before final sign-off',
+                'Timeline starts once requirements and access are provided',
+                'Complex integrations and data migrations may require a separate quote',
+                'Post-delivery support requires a maintenance plan',
+              ].map((item, i) => (
+                <p key={i} className="flex items-start gap-2 text-xs text-slate-500 leading-relaxed">
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-600 flex-shrink-0" aria-hidden="true" />
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+
           {/* Retainer */}
           <div className="mt-12 bg-white/[0.02] border border-white/5 rounded-2xl p-9">
             <h3 className="text-xl font-bold text-white mb-2">
               Optional: Maintenance Retainer
             </h3>
             <p className="text-sm text-slate-400 mb-6">
-              Don&apos;t want to manage updates yourself? You submit requests, I
-              implement. Simple as that. Retainer clients receive priority
-              response times and regular check-ins to discuss feature roadmaps
-              and improvements.
+              Post-delivery support is not included unless covered by a
+              maintenance plan. You submit requests, I implement. Retainer
+              clients receive priority response times and regular check-ins to
+              discuss feature roadmaps and improvements.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {RETAINERS.map((r, i) => (
