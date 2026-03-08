@@ -87,7 +87,7 @@ export default function MicroSaasPage() {
             'name': 'What if the project takes longer than 4 weeks?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'The fixed price includes reasonable scope. If requirements change mid-project, timeline and cost adjustments are discussed. Autaimate has a strong track record of scoping correctly and delivering on time.'
+              'text': 'The fixed price covers the agreed scope. If requirements change mid-project, timeline and cost adjustments are discussed before any extra work begins. Scope is locked during Week 1 validation specifically to avoid this.'
             }
           },
           {
@@ -127,7 +127,7 @@ export default function MicroSaasPage() {
             'name': 'How much does a micro-SaaS build cost?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Fixed pricing: Basic (simple tools) from £8,500, Standard (multi-feature apps) from £12,500, Premium (complex platforms with integrations) from £18,500. Payment terms are 50% upfront, 50% on delivery. Optional maintenance retainers from £500/month.'
+              'text': 'Fixed pricing for a clearly defined scope: Basic (simple tools) from £8,500, Standard (multi-feature apps) from £12,500, Premium (complex platforms with integrations) from £18,500. Payment terms are 50% upfront, 50% on delivery. Anything outside the agreed scope is quoted separately. Optional maintenance retainers from £500/month.'
             }
           },
           {
