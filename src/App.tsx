@@ -15,6 +15,8 @@ const products = [
   { name: 'LabCalcs', url: '#', desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.', color: 'indigo' },
   { name: 'CertVoice', url: 'https://certvoice.co.uk', desc: 'Voice-first electrical certification. Speak your findings on-site and AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.', color: 'rose' },
   { name: 'WorkProof', url: 'https://workproof.co.uk', desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.', color: 'cyan' },
+  { name: 'InspectVoice', url: 'https://inspectvoice.co.uk', desc: 'Voice-to-report for playground inspectors. Dictate findings on-site, AI generates BS EN 1176/1177 compliant reports.', color: 'violet' },
+  { name: 'UKTradeApps', url: 'https://uktradeapps.co.uk', desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.', color: 'fuchsia' },
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
@@ -32,6 +34,8 @@ const colorClasses: Record<string, { border: string; glow: string; stroke: strin
   indigo: { border: 'border-indigo-500/50', glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]', stroke: 'stroke-indigo-400', text: 'text-indigo-400' },
   rose: { border: 'border-rose-500/50', glow: 'hover:shadow-[0_0_50px_rgba(244,63,94,0.3)]', stroke: 'stroke-rose-400', text: 'text-rose-400' },
   cyan: { border: 'border-cyan-500/50', glow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]', stroke: 'stroke-cyan-400', text: 'text-cyan-400' },
+  violet: { border: 'border-violet-500/50', glow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.3)]', stroke: 'stroke-violet-400', text: 'text-violet-400' },
+  fuchsia: { border: 'border-fuchsia-500/50', glow: 'hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]', stroke: 'stroke-fuchsia-400', text: 'text-fuchsia-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
@@ -49,6 +53,8 @@ const icons: Record<string, JSX.Element> = {
   LabCalcs: <><path d="M35 20 L35 45 L25 75 Q23 85 35 85 L65 85 Q77 85 75 75 L65 45 L65 20" /><line x1="35" y1="20" x2="65" y2="20" /><line x1="38" y1="45" x2="62" y2="45" /><ellipse cx="50" cy="70" rx="15" ry="8" /><circle cx="45" cy="68" r="3" /><circle cx="55" cy="72" r="2" /></>,
   CertVoice: <><path d="M50 20 L50 50" strokeWidth="3" /><rect x="42" y="15" width="16" height="40" rx="8" /><path d="M32 45 Q32 65 50 65 Q68 65 68 45" /><line x1="50" y1="65" x2="50" y2="75" /><line x1="40" y1="75" x2="60" y2="75" /><rect x="62" y="25" width="20" height="28" rx="3" /><line x1="67" y1="33" x2="77" y2="33" /><line x1="67" y1="39" x2="75" y2="39" /><line x1="67" y1="45" x2="77" y2="45" /></>,
   WorkProof: <><rect x="28" y="18" width="30" height="45" rx="4" /><circle cx="43" cy="35" r="10" /><path d="M33 50h20" /><circle cx="68" cy="28" r="8" /><path d="M64 28h8M68 24v8" /><path d="M60 55 L25 70 L25 82 L75 82 L75 70 Z" /><path d="M35 75 l5 5 10-10" strokeWidth="2" /></>,
+  InspectVoice: <><path d="M50 15 L50 40" strokeWidth="3" /><rect x="43" y="10" width="14" height="35" rx="7" /><path d="M35 38 Q35 55 50 55 Q65 55 65 38" /><line x1="50" y1="55" x2="50" y2="62" /><line x1="42" y1="62" x2="58" y2="62" /><rect x="20" y="68" width="60" height="22" rx="3" /><path d="M28 75 l4 4 8-8" strokeWidth="2" /><line x1="48" y1="76" x2="72" y2="76" /><line x1="48" y1="82" x2="65" y2="82" /></>,
+  UKTradeApps: <><rect x="15" y="20" width="28" height="22" rx="3" /><rect x="57" y="20" width="28" height="22" rx="3" /><rect x="15" y="56" width="28" height="22" rx="3" /><rect x="57" y="56" width="28" height="22" rx="3" /><path d="M25 31h8M25 36h5" /><path d="M67 31h8M67 36h5" /><path d="M25 67h8M25 72h5" /><path d="M67 67h8M67 72h5" /><circle cx="50" cy="50" r="10" /><path d="M46 50h8M50 46v8" /></>,
 }
 
 const steps = [
@@ -118,9 +124,7 @@ export default function App() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((p) => (
-            <div key={p.name} className={p.name === 'CertVoice' ? 'xl:col-start-2' : ''}>
-              <ProductCard p={p} />
-            </div>
+            <ProductCard key={p.name} p={p} />
           ))}
         </div>
       </section>
