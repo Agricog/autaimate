@@ -45,6 +45,8 @@ const PRODUCTS: Product[] = [
   { name: 'WorkProof', industry: 'Electrical Compliance', desc: 'GPS-tagged, timestamped, tamper-proof evidence photos for NICEIC audits', url: 'https://workproof.co.uk', external: true },
   { name: 'SnagLog', industry: 'Property/Construction', desc: 'AI-powered snagging reports', url: 'https://app.snaglog.co.uk', external: true },
   { name: 'DetailRecon', industry: 'Close Protection', desc: 'AI security reconnaissance reports', url: 'https://detailrecon.com', external: true },
+  { name: 'InspectVoice', industry: 'Playground Safety', desc: 'Voice-to-report for RPII inspectors. BS EN 1176/1177 compliant reports', url: 'https://inspectvoice.co.uk', external: true },
+  { name: 'UKTradeApps', industry: 'Construction Trades', desc: 'Independent software directory with compliance verification and recommendation quiz', url: 'https://uktradeapps.co.uk', external: true },
 ]
 
 interface ProcessStep {
@@ -175,7 +177,7 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     q: 'How do I know you can build something for MY industry?',
-    a: 'I\'ve built for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, close protection, and more. If I can learn those, I can learn yours. The key is YOU have the domain expertise — I just need to understand the workflow and build the tool.',
+    a: 'I\'ve built for shooting clubs, architects, laboratories, construction, care homes, electricians, equestrians, playground inspectors, close protection, and more. If I can learn those, I can learn yours. The key is YOU have the domain expertise — I just need to understand the workflow and build the tool.',
   },
   {
     q: 'What if I want changes after handover?',
@@ -252,7 +254,7 @@ export default function MicroSaasContent() {
 
           <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-5 leading-relaxed">
             From shooting syndicates to laboratory researchers. From crane hire
-            to AI chatbots. From architects to electricians. I&apos;ve proven the
+            to AI chatbots. From architects to playground inspectors. I&apos;ve proven the
             same process works across wildly different industries.
           </p>
 
@@ -952,6 +954,12 @@ export default function MicroSaasContent() {
             </a>
             <a href="https://certvoice.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               CertVoice — Voice-First Electrical Certs &rarr;
+            </a>
+            <a href="https://inspectvoice.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+              InspectVoice — Playground Inspection Reports &rarr;
+            </a>
+            <a href="https://uktradeapps.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+              UKTradeApps — Trade Software Directory &rarr;
             </a>
             <a href="https://app.snaglog.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
               SnagLog — AI Snagging Reports &rarr;
