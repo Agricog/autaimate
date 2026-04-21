@@ -1,123 +1,97 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { ArrowRight, PhoneMissed, MessageSquare, MessageCircle, Bot, CheckCircle2, Shield, Zap, Star, ChevronRight, PoundSterling } from 'lucide-react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
 
-const channels = [
+const FAQS = [
   {
-    title: 'Missed call text-back',
-    desc: 'You miss a call while you\'re working. TradGo picks up, plays a short voice message in your tone, and texts the customer within seconds. The AI takes over from there — finds out what they need, gives a ballpark, keeps them warm until you\'re free.',
+    q: 'What is TradGo?',
+    a: 'TradGo is an AI agent for UK electricians and trades that catches the customers you can\'t get to while you\'re working. It handles missed calls, WhatsApp messages, and website chat from one inbox, replies in your voice, and holds customers warm until you\'re free.',
   },
   {
-    title: 'WhatsApp enquiries',
-    desc: 'Same AI agent, responding instantly to WhatsApp messages. Customers get an answer at ten at night or six in the morning, before they move on to the next tradesman on the search results.',
+    q: 'Do I need to change my phone number?',
+    a: 'No. You keep the same number on your van, cards, Google listing, and Facebook page. TradGo slots in behind your existing number using call forwarding on unanswered calls. Setup takes minutes, not days.',
   },
   {
-    title: 'Website chat widget',
-    desc: 'One line of code on your existing site. Same agent handling enquiries from visitors — finding out postcode, scope, urgency, and getting it into your dashboard before you\'ve seen the email notification.',
-  },
-]
-
-const differentiators = [
-  {
-    title: 'Keep your number. Keep your marketing.',
-    desc: 'Van signage, business cards, Google Business Profile, existing website — none of it changes. You set call forwarding on your phone so unanswered calls go to TradGo. That\'s the entire setup.',
+    q: 'How does missed call text-back work?',
+    a: 'When you don\'t pick up a call, TradGo answers with a short voice message explaining you\'re on a job and will be in touch. It then texts the caller within seconds, asks what they need, and starts a conversation. The AI handles the rest until you\'re free to take over.',
   },
   {
-    title: 'Sounds like you, not a bot.',
-    desc: 'The AI is trained on your tone and the way you talk to customers. No "Please hold while I transfer you to a relevant department" nonsense. Just the way a decent tradesman actually speaks.',
+    q: 'Does the AI really sound like me?',
+    a: 'Yes. TradGo is trained on the way you talk — your phrases, your tone, the specifics of your trade. It doesn\'t read a generic corporate script. Customers report feeling like they\'re chatting with the tradesman, not a call centre.',
   },
   {
-    title: 'You approve every price that goes out.',
-    desc: 'Ballpark quotes are drafted by the AI and sent to your dashboard for approval. Edit, approve, or reject with a tap. The customer gets a professional reply with a number you\'ve signed off on — not a guess.',
+    q: 'Can TradGo give customers prices?',
+    a: 'Yes, but only prices you\'ve approved. Every pricing response is surfaced to your dashboard before it\'s sent. You can edit, approve, or reject in one tap. No rogue quotes, no AI cocking up your margins.',
   },
   {
-    title: '£59/month. Cancel anytime.',
-    desc: '14-day free trial. No annual contract, no setup fee, no "sorry, you\'re locked in for twelve months." Because you shouldn\'t have to pay for software you\'ve stopped using.',
-  },
-]
-
-const flowSteps = [
-  { num: '1', title: 'Phone rings', desc: 'You\'re up a ladder, in a loft, or elbow-deep in a fuse board. Can\'t answer.' },
-  { num: '2', title: 'Call forwards', desc: 'After X rings, the call goes to TradGo. You set that once on your phone and forget.' },
-  { num: '3', title: 'AI answers', desc: 'Short voice message to the caller, then an instant text back in your tone.' },
-  { num: '4', title: 'Conversation happens', desc: 'AI asks what they need, gets postcode, gives a ballpark price if you\'ve pre-approved it.' },
-  { num: '5', title: 'You review and finish', desc: 'Back in the van, check your dashboard, approve the quote, take the job. They never booked the next guy.' },
-]
-
-const faqs = [
-  {
-    q: 'Do I have to change my phone number?',
-    a: 'No. You keep your existing number on the van, the cards, Google Business Profile and everywhere else. You just set call forwarding on your phone so unanswered calls divert to TradGo. That\'s the only change.',
+    q: 'Which channels does TradGo cover?',
+    a: 'Three channels, one inbox: missed-call text-back on your landline or mobile, WhatsApp Business responses, and a website chat widget you drop into your existing site with one line of code. Same AI across all three.',
   },
   {
-    q: 'Will the customer know they\'re talking to AI?',
-    a: 'The short voice message sounds like you — warm, brief, honest. The text conversation uses your tone and phrases. Most customers experience it as a responsive tradesman who texts back fast. You\'re not deceiving anyone — you\'re just answering quickly instead of missing them.',
+    q: 'How much does TradGo cost?',
+    a: 'Fifty-nine pounds a month. Fourteen-day free trial. Cancel anytime. One job caught from a missed call pays for the year.',
   },
   {
-    q: 'How is this different from an answerphone or answering service?',
-    a: 'An answerphone loses the customer the moment they hear "leave a message." An answering service hands them to someone who doesn\'t know your prices or your area. TradGo has an actual conversation, qualifies the enquiry, gives a ballpark, and keeps them engaged until you\'re free. The customer gets answers, not a callback promise.',
+    q: 'What does the website chat widget need?',
+    a: 'One line of code pasted into your site. Works on WordPress, Wix, Squarespace, Shopify, and any hand-coded site. No plugin to configure, no CMS lock-in. If you can edit your site, you can install the widget.',
   },
   {
-    q: 'What happens with pricing quotes?',
-    a: 'The AI drafts ballpark quotes based on the job description and pricing rules you\'ve set up. Every quote with a number on it lands in your dashboard for approval before it\'s sent to the customer. You can edit, approve or reject. Nothing goes out with a price you haven\'t signed off on.',
+    q: 'Does TradGo book jobs into my calendar?',
+    a: 'It can propose times based on slots you define, then push confirmed bookings into your calendar (Google, Apple, Outlook). You keep final say — TradGo drafts, you approve.',
   },
   {
-    q: 'What about emergencies — out-of-hours callouts?',
-    a: 'You set the rules. TradGo can flag urgent jobs, escalate after-hours enquiries to your phone by SMS, or just take the details and let you decide in the morning. The workflow is shaped around how you actually run your business, not a generic template.',
+    q: 'Does TradGo ask for Google reviews?',
+    a: 'Yes. There\'s a manual Google review request button on the dashboard. When you\'ve finished a job and the customer is happy, tap the button and TradGo sends a polite review request with your review link. No auto-spam — you pick the moment.',
   },
   {
-    q: 'Can I really cancel anytime?',
-    a: 'Yes. Monthly rolling, no annual lock-in, no cancellation fee. If it\'s not paying for itself in saved jobs, stop. We\'d rather earn your £59 every month than trap you for a year.',
+    q: 'What about GDPR and customer data?',
+    a: 'TradGo is built on EU-region infrastructure with encryption in transit and at rest. Conversations are stored against the customer record for your audit trail, but can be deleted on request. Standard GDPR data subject rights supported.',
   },
   {
-    q: 'How long does setup take?',
-    a: 'Under an hour. Call forwarding on your phone is a two-minute job. Adding the website widget is one line of code, or we\'ll help if you\'ve never touched code before. WhatsApp business setup is the slowest bit, and even that\'s done in a sitting.',
+    q: 'Is TradGo just for electricians?',
+    a: 'It\'s built around trades — electricians, plumbers, heating engineers, builders, roofers, gas safe engineers. The voice training and pricing logic work for any trade where customers call for a ballpark and then book. If you\'re unsure, contact us and we\'ll tell you straight.',
   },
   {
-    q: 'What about review requests?',
-    a: 'There\'s a one-tap button on completed jobs to send a Google review request to the customer. Manual, because fake review clusters get flagged — but dead easy when the job\'s gone well and the moment is right.',
+    q: 'What happens if TradGo gets it wrong?',
+    a: 'Because every pricing message requires your sign-off before it leaves the dashboard, the AI can\'t commit you to anything you haven\'t approved. For non-price responses, the conversation is logged and you can jump in at any point. The human is always the final word.',
   },
 ]
 
-export default function TradGoPage() {
-  const schemas: Record<string, unknown>[] = [
+const SCHEMA_GRAPH = {
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'TradGo',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web, iOS, Android',
-      description:
-        'AI agent for UK electricians and trades. Catches missed calls, WhatsApp messages and website chat enquiries — responds in the tradesman\'s voice and tone, with human approval on every quoted price.',
-      url: 'https://tradgo.co.uk',
-      offers: {
-        '@type': 'Offer',
-        price: '59',
-        priceCurrency: 'GBP',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '59',
-          priceCurrency: 'GBP',
-          unitText: 'MONTH',
-        },
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Autaimate',
-        url: 'https://autaimate.com',
+      '@type': 'Organization',
+      '@id': 'https://autaimate.com/#organization',
+      name: 'Autaimate',
+      url: 'https://autaimate.com',
+      logo: 'https://autaimate.com/logo.png',
+      sameAs: ['https://www.linkedin.com/company/autaimate'],
+      email: 'hello@autaimate.com',
+      telephone: '+44-7501-439406',
+      founder: {
+        '@type': 'Person',
+        name: 'Mick',
+        jobTitle: 'Founder',
+        description: '40 years in UK construction and trades before founding Autaimate',
       },
     },
     {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
+      '@type': 'WebPage',
+      '@id': 'https://autaimate.com/products/tradgo#webpage',
+      url: 'https://autaimate.com/products/tradgo',
+      name: 'TradGo | AI Agent for UK Electricians & Trades | Autaimate',
+      description: 'TradGo catches the customers you miss while working. Missed-call text-back, WhatsApp, and website chat — all in your voice. £59/month, 14-day free trial.',
+      isPartOf: { '@id': 'https://autaimate.com/#website' },
+      inLanguage: 'en-GB',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['#quick-answer', 'h1'],
+      },
     },
     {
-      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://autaimate.com/' },
@@ -125,173 +99,353 @@ export default function TradGoPage() {
         { '@type': 'ListItem', position: 3, name: 'TradGo', item: 'https://autaimate.com/products/tradgo' },
       ],
     },
-  ]
+    {
+      '@type': 'SoftwareApplication',
+      name: 'TradGo',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, iOS, Android',
+      description: 'AI agent for UK electricians and trades. Missed-call text-back, WhatsApp, and website chat in one inbox.',
+      url: 'https://tradgo.co.uk',
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'GBP',
+        price: '59',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '59',
+          priceCurrency: 'GBP',
+          unitText: 'MONTH',
+        },
+        description: '£59 per month. 14-day free trial. Cancel anytime.',
+      },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      featureList: [
+        'Missed call text-back with voice greeting',
+        'WhatsApp Business auto-response',
+        'Website chat widget (one line of code)',
+        'AI trained on your voice and tone',
+        'Pricing approval workflow',
+        'Google review request button',
+        'Unified inbox across all channels',
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'How to set up TradGo on your trade business',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'Sign up', text: 'Start the 14-day free trial at tradgo.co.uk. No card needed to begin.' },
+        { '@type': 'HowToStep', position: 2, name: 'Train the voice', text: 'Answer a short onboarding so TradGo picks up your tone, key phrases, and trade-specific wording.' },
+        { '@type': 'HowToStep', position: 3, name: 'Divert unanswered calls', text: 'Set your phone to forward unanswered calls to the TradGo number. Takes minutes on any UK mobile.' },
+        { '@type': 'HowToStep', position: 4, name: 'Connect WhatsApp', text: 'Link your WhatsApp Business number so TradGo can reply to WhatsApp enquiries.' },
+        { '@type': 'HowToStep', position: 5, name: 'Drop the chat widget in', text: 'Paste one line of code into your website. Works on WordPress, Wix, Squarespace, Shopify, and plain HTML.' },
+        { '@type': 'HowToStep', position: 6, name: 'Approve prices from the dashboard', text: 'Every pricing response waits for your tap before it sends. Get back to the customer in seconds without losing control.' },
+      ],
+    },
+    {
+      '@type': 'Article',
+      '@id': 'https://autaimate.com/products/tradgo#article',
+      headline: 'TradGo: The AI Agent That Catches the Customers You Miss While Working',
+      description: 'How TradGo converts missed calls, WhatsApp messages, and website enquiries into booked jobs without the tradesman typing a reply.',
+      author: { '@type': 'Person', name: 'Mick', url: 'https://www.linkedin.com/company/autaimate' },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      datePublished: '2026-03-15',
+      dateModified: '2026-04-21',
+      mainEntityOfPage: { '@id': 'https://autaimate.com/products/tradgo#webpage' },
+    },
+    {
+      '@type': 'DefinedTermSet',
+      name: 'TradGo Terminology',
+      hasDefinedTerm: [
+        { '@type': 'DefinedTerm', name: 'Missed call text-back', description: 'An automated SMS sent to a caller whose call was not answered, turning a missed call into a live conversation.' },
+        { '@type': 'DefinedTerm', name: 'AI agent', description: 'A software assistant that holds a conversation with a customer on behalf of a business, within rules and approvals set by the owner.' },
+        { '@type': 'DefinedTerm', name: 'Unified inbox', description: 'A single interface that combines messages from multiple channels — phone, WhatsApp, web chat — into one thread per customer.' },
+        { '@type': 'DefinedTerm', name: 'Call forwarding', description: 'A network feature where unanswered calls are automatically sent to another number.' },
+        { '@type': 'DefinedTerm', name: 'Pricing approval', description: 'A workflow where any message containing a price must be signed off by the business owner before being sent to the customer.' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+}
 
+export default function TradGoPage() {
   return (
-    <>
+    <Layout>
       <SEO
-        title="TradGo | AI Missed Call & Chat Agent for UK Electricians & Trades"
-        description="TradGo catches the customers you can't get to while you're working. Missed calls, WhatsApp and website chat — one AI agent in your voice, with human approval on every quote. £59/month, 14-day free trial, cancel anytime."
-        canonical="/products/tradgo"
-        keywords="missed call text back UK, AI agent for electricians, AI receptionist tradesmen, electrician missed call software, tradesman answering service UK, WhatsApp automation trades, website chat for tradesmen, AI chatbot for electricians, trade business lead capture, missed call conversion UK"
-        schemas={schemas}
+        title="TradGo | AI Agent for UK Electricians & Trades | Autaimate"
+        description="TradGo catches the customers you miss while working. Missed-call text-back, WhatsApp, and website chat — all in your voice. £59/month, 14-day free trial."
+        canonical="https://autaimate.com/products/tradgo"
+        ogImage="https://autaimate.com/og-image.jpg"
       />
-      <Layout>
-        <div className="cosmic-bg" />
-        <div className="stars" />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
+      </Helmet>
 
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
-            <li>/</li>
-            <li><Link to="/#products" className="hover:text-orange-500">Products</Link></li>
-            <li>/</li>
-            <li className="text-white/70">TradGo</li>
-          </ol>
-        </nav>
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+        <ol className="flex items-center gap-2">
+          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li className="text-white/90">TradGo</li>
+        </ol>
+      </nav>
 
-        {/* Hero */}
-        <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-16 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-amber-500/15 border border-amber-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-amber-400 rounded-full pulse-dot" />
-            <span className="text-amber-400 text-sm font-semibold uppercase tracking-wider">AI Agent · UK Trades</span>
-          </div>
-
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Missed the call?{' '}
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">TradGo didn't.</span>
-          </h1>
-
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            The customer who called while you were up a ladder just rang the next electrician. TradGo is the AI agent that catches them first — missed call text-back, WhatsApp, and website chat, all in your tone, with you approving every price before it goes out.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://tradgo.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Try TradGo free
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </a>
-            <Link to="/#products" className="btn-secondary">See all products</Link>
-          </div>
-
-          <p className="mt-8 text-sm text-white/50">
-            £59/month · 14-day free trial · Cancel anytime · Keep your existing phone number
-          </p>
-        </section>
-
-        {/* Three channels */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Three channels. <span className="text-orange-500">One inbox.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Customers don\'t care how they reach you — as long as someone replies fast. TradGo makes sure that happens on every channel.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {channels.map((c) => (
-              <div key={c.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-amber-500/[0.06] hover:border-amber-500/30 transition-all">
-                <h3 className="font-display text-lg font-bold text-amber-400 mb-3">{c.title}</h3>
-                <p className="text-white/60 leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Differentiators */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Why TradGo <span className="text-orange-500">actually works.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Because it respects how you already run your business — and the customer\'s time.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {differentiators.map((d) => (
-              <div key={d.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-amber-400 mb-3">{d.title}</h3>
-                <p className="text-white/60 leading-relaxed">{d.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* How it works */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              What happens when <span className="text-orange-500">the phone rings.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              From ringing phone to approved quote, without leaving the job you\'re on.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {flowSteps.map((s) => (
-              <div key={s.num} className="text-center p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-amber-500/[0.06] hover:border-amber-500/30 transition-all">
-                <div className="process-number mx-auto mb-4">{s.num}</div>
-                <h3 className="font-display text-sm font-bold text-amber-400 uppercase tracking-wide mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Pricing callout */}
-        <section className="py-12 px-6 lg:px-12 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-3xl p-8 lg:p-10 text-center">
-            <h3 className="font-display text-2xl lg:text-3xl font-extrabold mb-4 tracking-tight">
-              £59 a month. Catch one job. It\'s paid for itself.
-            </h3>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-              Fourteen-day free trial. Rolling monthly after that — no contract, no hidden charges, no annual lock-in. Cancel with a tap the day it stops working for you.
-            </p>
-            <a href="https://tradgo.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Start the 14-day free trial
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </a>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
-            Frequently asked questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-amber-500/30 transition-colors">
-                <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
-                  <span>{f.q}</span>
-                  <span className="text-amber-400 text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
-            The next missed call is the one that costs you the job.
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Two weeks free. Keep your number, keep your website, keep doing the work you\'re already doing. Let TradGo handle the rest.
-          </p>
-          <a href="https://tradgo.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Start the free trial
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium mb-6">
+          <Bot className="w-3 h-3" /> AI agent · Missed calls · WhatsApp · Web chat
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          You can't answer the phone <span className="text-orange-400">up a ladder.</span>
+        </h1>
+        <p className="text-xl text-white/75 max-w-3xl mb-8">
+          TradGo does. It picks up the missed calls, the WhatsApp messages, and the enquiries coming off your website — replies in your voice, keeps customers warm, and lines up jobs while you're elbow-deep in a fuse board. £59 a month. Catch one job and it's paid for itself.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            Start 14-day free trial <ArrowRight className="w-4 h-4" />
           </a>
-        </section>
-      </Layout>
-    </>
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            Ask us a question
+          </Link>
+        </div>
+      </section>
+
+      {/* Quick Answer */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10 border border-white/10">
+          <div className="text-xs uppercase tracking-wider text-amber-300 mb-2">Quick Answer</div>
+          <p className="text-lg text-white/90">
+            TradGo is an AI agent for UK electricians and trades. It handles missed calls, WhatsApp, and website chat in your voice — turning enquiries you'd otherwise lose into booked jobs. £59/month, 14-day free trial.
+          </p>
+        </div>
+      </section>
+
+      {/* The problem */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">The cost of a missed call</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+          <div>
+            <p className="mb-4">
+              The average trade business in the UK misses a third of its inbound calls. That's not laziness — that's physics. You can't answer the phone when you're on a stepladder or pulling cable through a ceiling. By the time you call back, the customer has already rung the next sparky on Google and booked them in.
+            </p>
+            <p>
+              Every missed call that doesn't come back is a job lost. Over a year, that's thousands of pounds gone to a competitor who was luckier with timing, not better at the trade.
+            </p>
+          </div>
+          <div>
+            <p className="mb-4">
+              The old fix is an answering service. Expensive. Generic. Scripted like a call centre. The customer knows within ten seconds they're talking to someone who has no idea what an RCD is. They hang up and try the next name on the list.
+            </p>
+            <p>
+              TradGo is the modern fix. An AI agent trained on your voice that replies within seconds, sounds like you, and — crucially — never quotes a price without your sign-off.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Three channels */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">Three channels. One inbox. Your voice.</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <PhoneMissed className="w-8 h-8 text-orange-400 mb-3" />
+            <div className="font-semibold text-lg mb-2">Missed call text-back</div>
+            <p className="text-white/70">Unanswered calls get a short voice message from TradGo, then an SMS within seconds. The AI keeps the conversation going until you're free.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <MessageSquare className="w-8 h-8 text-orange-400 mb-3" />
+            <div className="font-semibold text-lg mb-2">WhatsApp Business</div>
+            <p className="text-white/70">Plug your WhatsApp Business number into TradGo and the same AI agent handles enquiries the moment they land. No app-switching for the customer.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <MessageCircle className="w-8 h-8 text-orange-400 mb-3" />
+            <div className="font-semibold text-lg mb-2">Website chat widget</div>
+            <p className="text-white/70">One line of code dropped into your existing site. Visitors get instant replies, you get leads captured 24/7 without building a new website.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Keep your number */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">You keep your number. Nothing changes on the van.</h2>
+          <p className="text-white/75 mb-3">
+            The thing tradesmen worry about with any phone tech is being told to change their number. Decades of customers know your mobile. It's on the van, the business cards, the Google listing, your Facebook page, the fridge magnet you handed out in 2012. Changing it is out of the question.
+          </p>
+          <p className="text-white/75">
+            TradGo doesn't touch your number. You set call forwarding on your phone so unanswered calls divert to TradGo, and that's the whole setup. Customers still ring the number they've always rung. You still answer it when you can. TradGo only steps in when you can't.
+          </p>
+        </div>
+      </section>
+
+      {/* Approval workflow */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Every price needs your sign-off</h2>
+        <div className="space-y-4 text-white/75 max-w-4xl">
+          <p>
+            The fear with any AI handling customer conversations is that it gives the wrong price. Quotes £200 for a job that should be £600. Commits you to a callout rate you'd never have offered. Turns a polite enquiry into a binding quote before you've seen the job.
+          </p>
+          <p>
+            TradGo blocks that completely. Any response containing a price — ballpark, callout fee, hourly rate, anything numeric with a pound sign — is held in your dashboard for approval before it sends. You tap approve, edit, or reject. Customer gets the reply in seconds either way because the AI can hold the conversation with holding-pattern messages ("let me get you a proper figure on that, bear with me").
+          </p>
+          <p>
+            The AI is fast. You're in control. Those two things are not mutually exclusive if the software is built properly.
+          </p>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <div className="flex items-center gap-3 mb-4">
+            <Star className="w-6 h-6 text-orange-400" />
+            <h2 className="text-2xl md:text-3xl font-bold">Google reviews, on your terms</h2>
+          </div>
+          <p className="text-white/75 mb-3">
+            Reviews win jobs. Most review software is auto-spam — a pushy email the moment a job's invoiced, whether the customer's happy or not. That's how you get one-star reviews from people who didn't want to be chased.
+          </p>
+          <p className="text-white/75">
+            TradGo has a manual Google review request button on the dashboard. Job finished, customer happy, you press the button. Polite, personal, timed by you. The customer gets your review link and leaves a proper five-star review because you asked at the right moment — not because a robot spammed them at 9pm.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
+        <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-white/10">
+          <div className="flex items-center gap-2 mb-2">
+            <PoundSterling className="w-6 h-6 text-orange-400" />
+            <div className="text-3xl font-bold">59 / month</div>
+          </div>
+          <p className="text-white/80 mb-4">14-day free trial. No card needed to start. Cancel anytime.</p>
+          <ul className="grid md:grid-cols-2 gap-2 text-white/80">
+            {['All three channels (calls, WhatsApp, web chat)', 'AI trained on your voice', 'Pricing approval workflow', 'Unified inbox', 'Google review request button', 'UK support'].map((f) => (
+              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-orange-400" /> {f}</li>
+            ))}
+          </ul>
+        </div>
+        <p className="text-sm text-white/60 mt-4">Catch one missed job a month and TradGo is paid for. Most trades catch that in the first week.</p>
+      </section>
+
+      {/* Who it's for */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for UK trades</h2>
+        <div className="grid md:grid-cols-3 gap-4 text-white/75">
+          {['Electricians', 'Plumbers', 'Heating engineers', 'Gas Safe engineers', 'Builders & general trades', 'Roofers', 'Locksmiths', 'Decorators', 'Landscapers'].map((t) => (
+            <div key={t} className="p-4 rounded-xl bg-white/5 border border-white/10">
+              <CheckCircle2 className="w-5 h-5 text-orange-400 mb-2" />
+              <div className="font-semibold text-white">{t}</div>
+            </div>
+          ))}
+        </div>
+        <p className="text-white/70 mt-6 max-w-3xl">
+          The common thread: one-van or small-team operations where customers ring for a ballpark, the guv'nor is on the tools, and a missed call is a job lost. If that's you, TradGo is built for you.
+        </p>
+      </section>
+
+      {/* Security & GDPR */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield className="w-6 h-6 text-orange-400" />
+            <h2 className="text-2xl md:text-3xl font-bold">GDPR and data, sorted properly</h2>
+          </div>
+          <p className="text-white/75 mb-3">
+            TradGo runs on EU-region infrastructure. Conversations are encrypted in transit and at rest. Customer records are tied to your account and can be exported or deleted on request, which keeps you on the right side of GDPR without you having to think about it.
+          </p>
+          <p className="text-white/75">
+            WhatsApp integration uses the official WhatsApp Business API — no grey-area third-party scrapers. SMS goes through UK-licensed carriers. Web chat data never leaves our infrastructure and isn't shared with ad networks.
+          </p>
+        </div>
+      </section>
+
+      {/* Provenance / E-E-A-T */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <h2 className="text-3xl font-bold mb-4">Built for trades by someone who's been on the tools</h2>
+          <p className="text-white/75 mb-4">
+            TradGo comes out of Autaimate. Our founder spent 40 years in UK construction and trades before building software. The reason TradGo sounds like a sparky on the phone instead of a call-centre script is that it was designed by someone who picked up the phone on a job for four decades.
+          </p>
+          <p className="text-white/75 mb-4">
+            TradGo isn't a repurposed American chatbot with a UK flag on the homepage. It's built in the UK for UK trades, with UK phone networks, UK carriers, and UK GDPR requirements in mind from day one.
+          </p>
+          <p className="text-white/60 text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <div className="space-y-3">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+                {f.q}
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+              </summary>
+              <p className="mt-3 text-white/75">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">TradeCalcs</div>
+            <p className="text-sm text-white/70">Free BS 7671 calculators for UK electricians and heating engineers.</p>
+          </Link>
+          <Link to="/products/certvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">CertVoice</div>
+            <p className="text-sm text-white/70">Voice-first BS 7671 electrical certificates — finish the paperwork on site.</p>
+          </Link>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">SnagLog</div>
+            <p className="text-sm text-white/70">AI-powered snagging reports for property inspectors and builders.</p>
+          </Link>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">Software for UK construction & trades</div>
+            <p className="text-sm text-white/70">Every Autaimate product built for the industry, in one place.</p>
+          </Link>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">Commission a niche product</div>
+            <p className="text-sm text-white/70">Got a trade problem that needs its own software? See how it gets built.</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="p-10 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-white/10 text-center">
+          <Zap className="w-10 h-10 text-orange-400 mx-auto mb-4" />
+          <h2 className="text-3xl font-bold mb-4">Stop losing jobs to the next sparky on Google</h2>
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            TradGo picks up what you can't. Start the free trial — no card, no lock-in, fourteen days to see it work on your actual business.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+              Start 14-day free trial <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+              Ask us a question
+            </Link>
+          </div>
+        </div>
+      </section>
+    </Layout>
   )
 }
