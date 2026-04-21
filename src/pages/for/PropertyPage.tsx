@@ -52,13 +52,13 @@ const problems = [
   },
 ]
 
-const customBuildFeatures = [
-  'Fixed price. Clear scope. You know the final cost before we start.',
+const commissionFeatures = [
+  'Fixed price. Clear scope. No time-and-materials meter running.',
   'Typically live in 4 weeks from kick-off.',
-  'You own the code. No licence lock-in.',
+  'You own the code and the product — not a licence we can revoke.',
   'Secure, GDPR-compliant infrastructure from day one.',
   'Integrates with SmartSuite, Twilio, WhatsApp, Stripe, Clerk, your existing CRM.',
-  'Built by people who understand UK property, not US SaaS.',
+  'Built by people who understand UK property, not US proptech imports.',
 ]
 
 export default function ForPropertyPage() {
@@ -66,16 +66,16 @@ export default function ForPropertyPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: 'Property Automation Software & Custom Builds',
+      name: 'Property Automation Software for UK Letting & Estate Agents',
       provider: {
         '@type': 'Organization',
         name: 'Autaimate',
         url: 'https://autaimate.com',
       },
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
-      serviceType: 'Custom automation software for UK property and lettings',
+      serviceType: 'Niche SaaS products for UK property and lettings',
       description:
-        'Ready-to-use automation tools and fixed-price custom software builds for UK landlords, letting agents, property managers and developers.',
+        'A portfolio of niche SaaS products for UK landlords, letting agents, property managers and developers — plus new products commissioned when an operation has a gap the existing tools don\'t cover.',
       audience: {
         '@type': 'Audience',
         audienceType: 'UK property, lettings and estate agency businesses',
@@ -84,7 +84,7 @@ export default function ForPropertyPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Property software by Autaimate',
+      name: 'Property products by Autaimate',
       itemListElement: propertyProducts.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
@@ -105,10 +105,10 @@ export default function ForPropertyPage() {
   return (
     <>
       <SEO
-        title="Property Automation Software UK | Custom Builds for Letting Agents & Landlords | Autaimate"
-        description="Automation software and custom-built tools for UK landlords, letting agents, property managers and developers. Ready-made apps for inventories, approvals and compliance — plus fixed-price custom builds in 4 weeks."
+        title="Property Software UK | Niche Products for Lettings, Landlords & Agents | Autaimate"
+        description="Niche SaaS products for UK landlords, letting agents and property managers — AI snagging, client approvals, multi-channel lead capture and multilingual tenant briefings. Built for UK property, not US proptech."
         canonical="/for/property"
-        keywords="property management automation UK, letting agent software UK, custom property software, property inspection app UK, landlord software UK, bespoke letting agent software, property compliance automation UK, UK property tech, estate agent automation"
+        keywords="property management software UK, letting agent software UK, landlord software UK, property inspection app UK, UK proptech, estate agent automation, property compliance software UK"
         schemas={schemas}
       />
       <Layout>
@@ -132,20 +132,20 @@ export default function ForPropertyPage() {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Automation for UK property businesses{' '}
+            Niche software for UK property businesses{' '}
             <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-orange-400 bg-clip-text text-transparent">that actually runs a portfolio.</span>
           </h1>
 
           <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Ready-made apps for inventories, condition reports, client approvals and lead capture — plus fixed-price custom builds for whatever your operation actually needs. Built for UK landlords, letting agents and property managers, not American property-tech imports.
+            Four Autaimate products serve UK property — AI snagging, one-click client approvals, multi-channel lead capture and multilingual tenant safety. Each one solves a specific problem the generic UK proptech platforms gloss over. Every product started as a commission from one customer.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#custom-build" className="btn-primary">
-              Build something custom
+            <a href="#products" className="btn-primary">
+              Browse the products
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a href="#products" className="btn-secondary">Browse the tools</a>
+            <a href="#commission" className="btn-secondary">Commission the next one</a>
           </div>
         </section>
 
@@ -156,7 +156,7 @@ export default function ForPropertyPage() {
               Where UK property operations <span className="text-orange-500">bleed time.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              The problems scale with your portfolio. The admin doesn't have to.
+              The problems scale with your portfolio. The admin doesn\'t have to.
             </p>
           </div>
 
@@ -174,10 +174,10 @@ export default function ForPropertyPage() {
         <section id="products" className="py-20 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Ready-made tools <span className="text-orange-500">for property.</span>
+              Products built <span className="text-orange-500">for UK property.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Four of our products apply directly to landlords, letting agents and property managers.
+              Four niche products serving landlords, letting agents and property managers. Each one solves a specific problem — none of them try to replace your CRM.
             </p>
           </div>
 
@@ -212,20 +212,20 @@ export default function ForPropertyPage() {
           </div>
         </section>
 
-        {/* Custom build */}
-        <section id="custom-build" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        {/* Commission the next one */}
+        <section id="commission" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-5xl font-extrabold mb-5 tracking-tight">
-              Or build something <span className="text-orange-500">bespoke.</span>
+              Every product here started as <span className="text-orange-500">one customer\'s problem.</span>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              The ready-made tools don't quite fit? That usually means you've built a way of working worth protecting. We wrap custom automation around your process on a fixed-price basis, and you own the code when it ships.
+              SnagLog. Approv. LeadFortress. Every product in the Autaimate portfolio started as a specific gap a UK business asked us to close — and became a niche SaaS product that serves an industry. If your property operation has a gap the existing tools don\'t cover, that gap could be the next product we build.
             </p>
           </div>
 
           <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-8 lg:p-12 mb-10">
             <div className="grid md:grid-cols-2 gap-5">
-              {customBuildFeatures.map((f) => (
+              {commissionFeatures.map((f) => (
                 <div key={f} className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -238,7 +238,7 @@ export default function ForPropertyPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/micro-saas" className="btn-primary">
-              See how we build
+              How a new product gets built
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
             <Link to="/#contact" className="btn-secondary">Talk to us</Link>
@@ -251,7 +251,7 @@ export default function ForPropertyPage() {
             Made in the UK, for UK property.
           </h2>
           <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Not a US property-tech platform with the serial numbers filed off. Real software for the way the UK market actually works.
+            Not a US proptech platform with the serial numbers filed off. Real niche products for the way the UK market actually works.
           </p>
           <Link to="/#contact" className="btn-primary">
             Start a conversation
