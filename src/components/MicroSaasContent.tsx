@@ -704,7 +704,7 @@ export default function MicroSaasContent() {
               {
                 icon: Briefcase,
                 title: 'Built by someone who understands the industries',
-                text: 'Autaimate is run by a 58-year-old with 40 years in UK construction, trades, and business operations. That means a deep understanding of compliance and safety requirements, industry-specific workflows, what features actually matter to end users, and how to spot what will and will not work in the real world. Domain experience combined with AI-assisted development is a rare combination — and it's why the commissioned products actually fit the industries they serve.',
+                text: "Autaimate is run by a 58-year-old with 40 years in UK construction, trades, and business operations. That means a deep understanding of compliance and safety requirements, industry-specific workflows, what features actually matter to end users, and how to spot what will and will not work in the real world. Domain experience combined with AI-assisted development is a rare combination — and it's why the commissioned products actually fit the industries they serve.",
               },
             ].map((card, i) => {
               const Icon = card.icon
