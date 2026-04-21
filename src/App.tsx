@@ -67,11 +67,11 @@ const icons: Record<string, JSX.Element> = {
 }
 
 const steps = [
-  { num: '1', title: 'Discover', desc: 'A UK business brings us a specific problem the existing tools don\'t solve' },
-  { num: '2', title: 'Validate', desc: 'We confirm the problem is real and widespread enough to be worth building for' },
-  { num: '3', title: 'Build', desc: 'Focused niche product that does one thing exceptionally well' },
-  { num: '4', title: 'Launch', desc: 'Priced for small businesses, not enterprises — with a clear fixed scope' },
-  { num: '5', title: 'Iterate', desc: 'Real customer feedback shapes every update — the product keeps getting sharper' },
+  { num: '1', title: 'Discover', desc: 'A UK business brings us a specific problem the existing tools don\u2019t solve. We listen to the shape of it — who it affects, how often, how much time or money it costs, and why the obvious fixes haven\u2019t worked.' },
+  { num: '2', title: 'Validate', desc: 'We confirm the problem is real and widespread enough to be worth building a product for. If it\u2019s a one-off workflow quirk, a spreadsheet solves it. If it\u2019s an industry pattern, we build.' },
+  { num: '3', title: 'Build', desc: 'Focused niche product that does one thing exceptionally well. Fixed scope, fixed price. No feature creep. No "while we\u2019re at it, let\u2019s add..." — that\u2019s how 4-week builds become 4-month builds.' },
+  { num: '4', title: 'Launch', desc: 'Priced for small businesses, not enterprises. The commissioning client gets a working product. Others in the industry can buy access later if that\u2019s the right call for everyone involved.' },
+  { num: '5', title: 'Iterate', desc: 'Real customer feedback shapes every update. The product keeps getting sharper. We don\u2019t chase features — we sharpen the specific problem the product was built to solve.' },
 ]
 
 const industryHubs = [
@@ -103,6 +103,107 @@ const hubAccents: Record<string, { border: string; text: string; hoverBorder: st
   sky:    { border: 'border-sky-500/20',    text: 'text-sky-400',    hoverBorder: 'hover:border-sky-500/50',    hoverBg: 'hover:bg-sky-500/[0.04]' },
   pink:   { border: 'border-pink-500/20',   text: 'text-pink-400',   hoverBorder: 'hover:border-pink-500/50',   hoverBg: 'hover:bg-pink-500/[0.04]' },
 }
+
+const nicheArguments = [
+  {
+    title: 'Generic SaaS forces every industry through the same workflows.',
+    desc: 'A tool that tries to serve plumbers, letting agents, care homes and restaurants ends up serving none of them well. Every workflow is a lowest-common-denominator compromise. Every menu is cluttered with tabs that don\u2019t apply to your business. Every onboarding flow asks questions that mean something in someone else\u2019s industry and nothing in yours.',
+  },
+  {
+    title: 'UK industries are underserved by US-first platforms.',
+    desc: 'BS 7671 is not the US National Electrical Code. CQC is not a US joint commission accreditation. Natasha\u2019s Law is UK-specific. EHO inspections are not health department audits. When US SaaS "localises" for the UK market, it usually means adding a pound sign — not rebuilding the compliance workflow to match what UK regulators actually check.',
+  },
+  {
+    title: 'Enterprise pricing for SMB problems is a broken market.',
+    desc: 'The established UK vendors in regulated industries price for local authorities and national chains. A three-van sparks business, an independent kitchen, or a single-site care home cannot justify £500 a month and a six-month onboarding process. Which is why most UK small businesses end up on spreadsheets and WhatsApp — the tools they could afford were built for someone else.',
+  },
+  {
+    title: 'Niche products fit the problem exactly.',
+    desc: 'TradeCalcs knows the calculations UK electricians actually use, not the ones an international textbook covers. SafeEat knows Natasha\u2019s Law and the evidence an EHO officer asks for, not a generic allergen field on a US restaurant POS. InspectVoice knows BS EN 1176 and what "operational inspection" means in UK local authority procurement. That specificity is the product.',
+  },
+  {
+    title: 'One customer\u2019s commission becomes an industry\u2019s product.',
+    desc: 'Every product in the Autaimate portfolio started as a specific problem from a specific business. The first build serves them. The second customer confirms the problem is real across the industry. By the time the fifth customer signs up, there\u2019s a proper SaaS product in the market that nobody else has — because nobody else built for that niche.',
+  },
+]
+
+const provenancePoints = [
+  {
+    title: '40 years on the tools before writing code.',
+    desc: 'Mick spent four decades in UK construction and trades before founding Autaimate. The products in the portfolio aren\u2019t theoretical — they\u2019re built by someone who knows what a site looks like at 7am in January, what paperwork an EICR inspection actually generates, and why generic construction software ends up in a drawer.',
+  },
+  {
+    title: 'Every product in active use.',
+    desc: 'These aren\u2019t concept demos. TradeCalcs is used daily by UK electricians. SnagLog is producing live snagging reports. DetailRecon is turning CP advance photos into professional PDFs for paying customers. SafeEat and InspectVoice are in production pilots with real UK venues and inspection companies. The portfolio is earning its keep.',
+  },
+  {
+    title: 'UK-built, UK-hosted, UK-focused.',
+    desc: 'No offshore development teams. No outsourced support. Every product hosted on UK-friendly infrastructure (Railway, Cloudflare, Neon EU) with UK data residency available on request. Built for the regulations and expectations that apply here — not translated from elsewhere.',
+  },
+  {
+    title: 'Security and compliance aren\u2019t an afterthought.',
+    desc: 'Every Autaimate build follows the same published standard: Clerk authentication, pgcrypto encryption for Article 9 data, Row-Level Security on every tenant table, signed URLs for file storage, uniform GDPR responses, audit logging on every state change. The full build standard is public. We don\u2019t hide how we build — we stand behind it.',
+  },
+]
+
+const faqs = [
+  {
+    q: 'What does Autaimate build?',
+    a: 'Autaimate builds niche SaaS products for UK small businesses — each one solving a specific problem within a specific industry. The portfolio includes eighteen live products covering construction, trades, property, care, hospitality, inspection and close protection. New niche products are also commissioned fixed-price.',
+  },
+  {
+    q: 'Who are Autaimate\u2019s products for?',
+    a: 'UK small and medium businesses in construction, trades, property, lettings, care homes, hospitality, playground inspection, close protection and other regulated or underserved industries. Every product is built for one specific audience — not a generic business customer.',
+  },
+  {
+    q: 'How is Autaimate different from generic SaaS platforms?',
+    a: 'Generic SaaS flattens every industry into the same workflows. Autaimate builds each product around one specific industry — its regulations, its language, its pricing reality. A BS 7671 calculator built for UK electricians is not the same as a US electrical app with a Celsius toggle, and small UK businesses know the difference.',
+  },
+  {
+    q: 'What does it cost to commission a new niche product?',
+    a: 'Fixed-price, scoped per commission. Pricing is set before the build starts and doesn\u2019t change on the fly — no time-and-materials meter running. Most commissions are delivered for a fraction of what enterprise software houses charge for equivalent work.',
+  },
+  {
+    q: 'How long does it take to build a new niche product?',
+    a: 'Typically four weeks from kick-off to live product. Some commissions are shorter, some larger scopes take longer — but four weeks is the rhythm we design to. Faster than enterprise consulting projects and slower than throwaway no-code builds, by design.',
+  },
+  {
+    q: 'Do I own the code if I commission a product?',
+    a: 'Yes. When a commissioned product ships, the client owns the code and the product. No licence we can revoke. No platform dependency that locks you in. You decide what happens to it next — keep it private, share it with peers, or expand it into its own SaaS venture.',
+  },
+  {
+    q: 'Can a commissioned product be sold to others in my industry later?',
+    a: 'That\u2019s the Autaimate model, actually — every product in the portfolio started as one customer\u2019s commission and then served the wider industry. If the commissioning client wants to keep it exclusive, we honour that. If they want it productised for the industry, we help with that too.',
+  },
+  {
+    q: 'What technology stack does Autaimate use?',
+    a: 'React 18 with TypeScript and Tailwind CSS on the frontend. Hono on Node.js or Cloudflare Workers for APIs. Neon PostgreSQL with Row-Level Security and pgcrypto encryption for data. Clerk for authentication, Stripe for payments, Resend for email, Cloudflare R2 for files, Railway for hosting. Modern, secure, UK-compliant from day one.',
+  },
+  {
+    q: 'Is Autaimate GDPR compliant?',
+    a: 'GDPR compliance is built into every product from the first commit — not bolted on later. Encryption at rest for Article 9 special-category data, audit logs on every state-changing operation, uniform responses on delete endpoints to prevent enumeration, and a documented security posture for each build.',
+  },
+  {
+    q: 'Where are Autaimate products hosted?',
+    a: 'Primarily on Railway with Cloudflare CDN in front. Data sits in Neon (EU region available) or at the edge via Cloudflare Workers when latency matters. UK data residency available on request for commissions that require it — particularly for care, legal and regulated sectors.',
+  },
+  {
+    q: 'How do I buy access to an existing Autaimate product?',
+    a: 'Each product has its own purchase route — some are one-off per-report payments (DetailRecon at £29.99), some are monthly subscriptions (SafeEat at £29.99 a month, TradGo at £59 a month), some are entirely free (TradeCalcs, HorseCost). Visit the individual product page for current pricing.',
+  },
+  {
+    q: 'Does Autaimate work with US or international businesses?',
+    a: 'Autaimate is UK-focused by design — every product is built around UK regulations, UK language and UK pricing norms. International businesses with UK operations or UK-serving SaaS plans are welcome to commission builds, but we do not localise for markets we do not know well. Our moat is specificity.',
+  },
+]
+
+const relatedPages = [
+  { title: 'Construction & Trades products', desc: 'All nine Autaimate products built for UK construction, trades and site businesses.', href: '/for/construction' },
+  { title: 'Property & Lettings products', desc: 'Snagging, approvals, lead capture and tenant safety for UK property operators.', href: '/for/property' },
+  { title: 'SafeEat — QR allergen system', desc: 'The Cornwall-built allergen and retention platform for independent UK food venues.', href: '/products/safeeat' },
+  { title: 'TradGo — AI agent for trades', desc: 'Catch missed calls, WhatsApp and web chat enquiries in your voice. £59/month.', href: '/products/tradgo' },
+  { title: 'How a new product gets commissioned', desc: 'The fixed-price, 4-week build process for commissioning a niche Autaimate product.', href: '/micro-saas' },
+]
 
 function ProductCard({ p }: { p: typeof products[0] }) {
   const c = colorClasses[p.color]
@@ -149,8 +250,8 @@ export default function App() {
             <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">generic software forgets.</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/50 mb-5 max-w-2xl mx-auto leading-relaxed">
-            Every product here started as one customer\'s problem. Construction, trades, property, care, hospitality, inspection, close protection — each industry has gaps the big platforms gloss over. We fill them.
+          <p className="text-lg lg:text-xl text-white/60 mb-5 max-w-2xl mx-auto leading-relaxed">
+            Every product here started as one customer&rsquo;s problem. Construction, trades, property, care, hospitality, inspection, close protection — each industry has gaps the big platforms gloss over. Autaimate fills them, one niche at a time, built by someone who&rsquo;s been on the tools.
           </p>
 
           <p className="text-xl lg:text-2xl text-white/85 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
@@ -167,11 +268,23 @@ export default function App() {
         </div>
       </section>
 
+      {/* Quick Answer (Speakable for voice search) */}
+      <section className="px-6 lg:px-12 max-w-4xl mx-auto -mt-10 mb-20">
+        <div id="quick-answer" className="bg-gradient-to-br from-teal-500/10 to-orange-500/5 border border-teal-500/20 rounded-3xl p-8 lg:p-10">
+          <div className="text-xs font-semibold uppercase tracking-wider text-teal-400 mb-3">Quick Answer</div>
+          <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
+            Autaimate builds niche SaaS products for UK industries. Eighteen live today, each solving one specific problem. New niche products commissioned fixed-price, typically live in four weeks.
+          </p>
+        </div>
+      </section>
+
       {/* Products */}
       <section id="products" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">The <span className="text-orange-500">Products</span></h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">Each tool solves one specific problem for one specific industry. No bloat, no enterprise pricing.</p>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            Each tool solves one specific problem for one specific industry. No bloat, no enterprise pricing, no generic workflows that half-fit a dozen sectors. These are focused niche products — built because nobody else was building for that niche, and used daily by UK businesses that were tired of paying for software that didn&rsquo;t fit.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -185,7 +298,9 @@ export default function App() {
       <section id="industries" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Industries we <span className="text-orange-500">build for</span></h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">Products aggregated by the sector they serve — for buyers who want to see everything for their industry in one place.</p>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            Products aggregated by the sector they serve — for buyers who want to see every Autaimate tool for their industry in one place. Each hub lists the relevant products, explains the recurring problems we&rsquo;ve built for, and points to the commissioning process for industries where we haven&rsquo;t yet.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -212,20 +327,116 @@ export default function App() {
         </div>
       </section>
 
-      {/* How we build */}
+      {/* Why niche beats generic */}
+      <section id="why-niche" className="py-24 lg:py-32 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        <div className="text-center mb-14">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Why niche <span className="text-orange-500">beats generic</span></h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            The argument for building one focused product per industry, instead of one sprawling platform that tries to serve everyone.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {nicheArguments.map((n) => (
+            <div key={n.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
+              <h3 className="font-display text-lg font-bold text-orange-400 mb-3">{n.title}</h3>
+              <p className="text-white/70 leading-relaxed">{n.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How a product gets born */}
       <section id="process" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">How a product <span className="text-orange-500">gets born</span></h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">We don\'t build software looking for problems. One UK business brings us real pain, and the fix becomes a niche product that serves the industry.</p>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            We don&rsquo;t build software looking for problems. One UK business brings us real pain, and if the problem is industry-wide, the fix becomes a niche product. Five steps, four weeks, fixed price.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s) => (
             <div key={s.num} className="text-center p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-teal-500/[0.08] hover:border-teal-500/30 transition-all">
               <div className="process-number mx-auto mb-4">{s.num}</div>
-              <h4 className="font-display text-base font-bold text-orange-500 uppercase tracking-wide mb-2">{s.title}</h4>
-              <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+              <h4 className="font-display text-base font-bold text-orange-500 uppercase tracking-wide mb-3">{s.title}</h4>
+              <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Provenance / E-E-A-T */}
+      <section id="provenance" className="py-24 lg:py-32 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        <div className="text-center mb-14">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Built by someone who&rsquo;s <span className="text-orange-500">been on the tools</span></h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            Autaimate is a one-person product studio with four decades of UK industry experience behind every build. Plain-spoken, direct, and happy to push back when a commission doesn&rsquo;t hold up.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {provenancePoints.map((p) => (
+            <div key={p.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
+              <h3 className="font-display text-lg font-bold text-teal-400 mb-3">{p.title}</h3>
+              <p className="text-white/70 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center text-sm text-white/50">
+          Founded and written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-24 lg:py-32 px-6 lg:px-12 max-w-4xl mx-auto scroll-mt-20">
+        <div className="text-center mb-14">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Frequently asked <span className="text-orange-500">questions</span></h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            Everything worth knowing before you buy an existing product or commission a new one.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((f) => (
+            <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-orange-500/30 transition-colors">
+              <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
+                <span>{f.q}</span>
+                <span className="text-orange-400 text-xl group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Related */}
+      <section id="related" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">Where to go <span className="text-orange-500">next</span></h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            Five starting points depending on why you&rsquo;re here.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {relatedPages.map((r) => (
+            <Link
+              key={r.href}
+              to={r.href}
+              className="block p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-orange-500/[0.04] hover:border-orange-500/30 transition-all group"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">{r.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{r.desc}</p>
+                </div>
+                <svg className="w-5 h-5 text-white/40 group-hover:text-orange-400 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -234,8 +445,8 @@ export default function App() {
       <section id="contact" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Got a gap the existing tools don\'t close?</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-10">Every product in the portfolio started with a conversation like this. Tell us what\'s slowing your industry down, and we\'ll tell you whether the problem is worth building a niche product around.</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Got a gap the existing tools don&rsquo;t close?</h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-10">Every product in the portfolio started with a conversation like this. Tell us what&rsquo;s slowing your industry down, and we&rsquo;ll tell you whether the problem is worth building a niche product around.</p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-5">
@@ -274,7 +485,6 @@ export default function App() {
     </Layout>
   )
 }
-
 
 
 
