@@ -38,7 +38,7 @@ const problems = [
   },
 ]
 
-const customBuildFeatures = [
+const commissionFeatures = [
   'Fixed price. Scoped around your setting, not a generic care platform.',
   'Typically live in 4 weeks.',
   'Data Protection Act and GDPR compliant from day one — essential for care settings.',
@@ -52,16 +52,16 @@ export default function ForCareHomesPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: 'Care Home Automation Software & CQC Compliance Tools',
+      name: 'Care Home Compliance Software UK',
       provider: {
         '@type': 'Organization',
         name: 'Autaimate',
         url: 'https://autaimate.com',
       },
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
-      serviceType: 'Custom automation and compliance software for UK care homes',
+      serviceType: 'Niche SaaS products for UK care homes and CQC-regulated providers',
       description:
-        'CQC-aware automation tools and fixed-price custom software for UK care homes, domiciliary care providers and supported living services.',
+        'Multilingual compliance products for UK care homes — plus new products commissioned when a provider has a specific gap the existing tools don\'t cover.',
       audience: {
         '@type': 'Audience',
         audienceType: 'UK care home operators and CQC-regulated providers',
@@ -70,12 +70,12 @@ export default function ForCareHomesPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Care sector software by Autaimate',
+      name: 'Care sector products by Autaimate',
       itemListElement: careProducts.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         name: p.name,
-        url: p.external ? p.href : `https://autaimate.com${p.href}`,
+        url: p.href,
       })),
     },
     {
@@ -91,10 +91,10 @@ export default function ForCareHomesPage() {
   return (
     <>
       <SEO
-        title="Care Home Software UK | CQC Compliance Automation | Autaimate"
-        description="Automation software and custom-built compliance tools for UK care homes. Multilingual equipment safety, CQC-ready audit trails, and fixed-price custom builds in 4 weeks. Built for the UK care sector."
+        title="Care Home Software UK | CQC Compliance Products | Autaimate"
+        description="Niche SaaS products for UK care homes and CQC-regulated providers — multilingual equipment safety and H&S comprehension verification. Plus new products commissioned when your setting has a specific gap."
         canonical="/for/care-homes"
-        keywords="care home software UK, CQC compliance software, care home automation, CQC equipment safety app, multilingual care home software, care sector automation UK, care home audit trail software, custom care home software UK, domiciliary care software"
+        keywords="care home software UK, CQC compliance software, care home automation, multilingual care home software, CQC equipment safety app, care sector automation UK, care home audit trail software, domiciliary care software"
         schemas={schemas}
       />
       <Layout>
@@ -123,15 +123,15 @@ export default function ForCareHomesPage() {
           </h1>
 
           <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Multilingual equipment safety, training audit trails, and custom automation built for UK care homes, domiciliary care and supported living. Your next inspection should be proof of compliance — not a scramble to assemble it.
+            Two Autaimate products serve UK care — multilingual equipment safety with a CQC audit trail, and H&S comprehension verification that proves staff actually understood the brief. Both started as specific asks from real care providers. Both were built because generic care platforms weren\'t solving the real problem.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#custom-build" className="btn-primary">
-              Build something custom
+            <a href="#products" className="btn-primary">
+              Browse the products
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a href="#products" className="btn-secondary">Browse the tools</a>
+            <a href="#commission" className="btn-secondary">Commission the next one</a>
           </div>
         </section>
 
@@ -142,7 +142,7 @@ export default function ForCareHomesPage() {
               Where care home compliance <span className="text-orange-500">breaks down.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Not because managers aren't trying — because the tools are wrong.
+              Not because managers aren\'t trying — because the tools are wrong.
             </p>
           </div>
 
@@ -160,58 +160,43 @@ export default function ForCareHomesPage() {
         <section id="products" className="py-20 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Ready-made tools <span className="text-orange-500">for care settings.</span>
+              Products built <span className="text-orange-500">for care settings.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Two of our products are built specifically for the CQC-regulated care sector.
+              Two niche products specifically for the CQC-regulated care sector. Neither tries to replace your rota or HR platform.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {careProducts.map((p) => {
-              const Inner = (
-                <>
-                  <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${p.accent}`}>{p.name}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
-                </>
-              )
-              return p.external ? (
-                <a
-                  key={p.name}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-pink-500/[0.06] hover:border-pink-500/30 transition-all"
-                >
-                  {Inner}
-                </a>
-              ) : (
-                <Link
-                  key={p.name}
-                  to={p.href}
-                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-pink-500/[0.06] hover:border-pink-500/30 transition-all"
-                >
-                  {Inner}
-                </Link>
-              )
-            })}
+            {careProducts.map((p) => (
+              <a
+                key={p.name}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-pink-500/[0.06] hover:border-pink-500/30 transition-all"
+              >
+                <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${p.accent}`}>{p.name}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
+              </a>
+            ))}
           </div>
         </section>
 
-        {/* Custom build */}
-        <section id="custom-build" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        {/* Commission the next one */}
+        <section id="commission" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-5xl font-extrabold mb-5 tracking-tight">
-              Or build something <span className="text-orange-500">for your setting.</span>
+              Every product here started as <span className="text-orange-500">one provider\'s problem.</span>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              Care providers have processes shaped by residents, staff mix and regulator history — generic platforms flatten all of that. We build around the specifics. Fixed price, clear scope, you own the code.
+              EquipSafety and ClearProof both started as specific asks from real UK care providers who couldn\'t find what they needed. If your setting has a gap the generic platforms don\'t close — an incident pattern, a family-facing concern, a regulator finding — that gap could be the next product we build.
             </p>
           </div>
 
           <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-8 lg:p-12 mb-10">
             <div className="grid md:grid-cols-2 gap-5">
-              {customBuildFeatures.map((f) => (
+              {commissionFeatures.map((f) => (
                 <div key={f} className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -224,7 +209,7 @@ export default function ForCareHomesPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/micro-saas" className="btn-primary">
-              See how we build
+              How a new product gets built
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
             <Link to="/#contact" className="btn-secondary">Talk to us</Link>
