@@ -1,104 +1,93 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { ArrowRight, QrCode, Mail, BarChart3, Shield, CheckCircle2, Star, ChevronRight, PoundSterling, Utensils, HeartHandshake } from 'lucide-react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
 
-const steps = [
-  { num: '1', title: 'Diner scans the QR', desc: 'On the table, in the menu, on the door — wherever suits. No app. No login.' },
-  { num: '2', title: 'They select allergens', desc: 'Fourteen recognised allergens, plus dietary preferences. Takes seconds.' },
-  { num: '3', title: 'The menu filters', desc: 'Only dishes that are safe for them appear. Nothing to cross-reference. Nothing to ask the waiter.' },
-  { num: '4', title: 'You get the audit trail', desc: 'Every interaction logged. EHO inspections become a conversation, not a panic.' },
-  { num: '5', title: 'They come back', desc: 'Opt-in diner database, review prompts, targeted emails. Loyal customers turned into repeat bookings.' },
-]
-
-const benefits = [
+const FAQS = [
   {
-    title: 'Allergy diners are loyal.',
-    desc: 'One in three UK adults lives with someone who has a food allergy or intolerance. The venues that look after them are the ones they bring their family, their mates and their workmates to — week after week.',
+    q: 'What is SafeEat?',
+    a: 'SafeEat is a QR-powered allergen and customer retention system for independent UK food venues. Customers scan a code at the table, select their allergens, and see the menu filtered to what is safe to eat — before they order. Venues get a complete EHO-ready audit trail and a database of opted-in allergy diners for retention marketing.',
   },
   {
-    title: 'Natasha\'s Law, handled.',
-    desc: 'Allergen information is accurate, accessible and always current — because it\'s tied to your menu, not a laminated sheet that was right three months ago. One source of truth, automatically updated.',
+    q: 'How does SafeEat protect us during an EHO inspection?',
+    a: 'Every allergen interaction is timestamped and logged against the menu version in use that day. When an Environmental Health Officer asks for evidence of your allergen process, you hand them a full audit trail showing exactly what information each diner was given and when. That is the level of due diligence inspectors want to see post-Natasha\'s Law.',
   },
   {
-    title: 'EHO visits become a conversation.',
-    desc: 'When environmental health asks how you manage allergens, you show them the system. Process. Evidence. A running audit trail they can inspect live, not a consultant\'s folder somewhere in the office.',
+    q: 'Is SafeEat Natasha\'s Law compliant?',
+    a: 'SafeEat is built around the allergen information requirements that apply to UK food businesses, including the PPDS rules introduced by Natasha\'s Law. It gives diners clear, accurate allergen information before they order and keeps the audit trail that proves you did.',
   },
   {
-    title: 'A retention engine, not just compliance.',
-    desc: 'SafeEat captures opted-in allergy diners, prompts reviews at the right moment, and runs targeted emails for quiet weeks. The compliance tool that also fills tables on a wet Tuesday.',
-  },
-]
-
-const faqs = [
-  {
-    q: 'How much does SafeEat cost?',
-    a: '£29.99 a month. Rolling monthly, no annual contract. If the 30-day inspection-ready guarantee isn\'t met, the next three months are on us. Designed so tight-margin independents can actually afford it.',
+    q: 'Do customers need to download an app?',
+    a: 'No. SafeEat runs in any phone browser. The diner scans the QR on the table, selects their allergens on a web page, and browses the filtered menu. Zero friction, zero app-store downloads, works on any phone made in the last decade.',
   },
   {
-    q: 'What\'s the 30-day inspection-ready guarantee?',
-    a: 'Within 30 days of signing up, your allergen management and audit trail should be ready to show an EHO officer. If it isn\'t, the next three months of SafeEat are free. We believe in the system enough to back it.',
+    q: 'What does it cost?',
+    a: '£29.99 per month. No setup fee, no long-term contract. We back it with a 30-day inspection-ready guarantee: if SafeEat doesn\'t get your allergen process to a standard you can defend in an EHO inspection within 30 days, you get three months free.',
   },
   {
-    q: 'Do diners need to download an app?',
-    a: 'No. They scan the QR code on the table with their phone camera — same as they\'d scan any QR menu. Everything runs in the browser. No app store, no login, no account creation. One in ten seconds of friction and they\'re gone.',
+    q: 'How long does setup take?',
+    a: 'A typical independent pub or café is live within a few hours. You upload your menu, tag allergens against dishes, get your QR codes printed, and place them on tables. Our team supports you through the first setup — you are not left to figure it out alone.',
   },
   {
-    q: 'How does it integrate with our menu?',
-    a: 'Your menu lives in SafeEat with allergen data tied to each dish. When the kitchen changes a recipe — new supplier, different sauce — you update once, and every customer-facing touchpoint (QR menu, printouts, staff reference) reflects the change. No "we forgot to update the PDF" moments.',
+    q: 'Can I update the menu myself?',
+    a: 'Yes. The venue dashboard lets you update dishes, adjust allergens, mark specials, and take items off sale in real time. Changes are live within seconds of you saving them.',
   },
   {
-    q: 'What about staff training?',
-    a: 'The audit trail covers allergen-related customer interactions, which is the part EHO inspectors care most about. For wider food safety training records, SafeEat pairs well with our other products — or the generic platforms you already use.',
+    q: 'How does the customer database work?',
+    a: 'Diners who scan can opt in to hear from the venue. You build an owned, GDPR-compliant database of customers who have told you exactly which allergens they have. That is an extraordinarily valuable marketing asset — allergy diners are the most loyal customers in hospitality because safe venues are hard to find.',
   },
   {
-    q: 'Where is SafeEat built?',
-    a: 'In Cornwall, by people who understand independent hospitality. It\'s not a repurposed US restaurant-tech platform with UK bolt-ons — it was built for UK venues, UK allergen rules, and UK EHO expectations from day one.',
+    q: 'What about review prompts?',
+    a: 'SafeEat automatically triggers a review prompt at the right moment in the diner\'s visit — after they\'ve eaten safely, not before. You choose which platform (Google, TripAdvisor, or both). Polite, well-timed, and not the spammy post-invoice chase other systems use.',
   },
   {
-    q: 'Can I really cancel anytime?',
-    a: 'Yes. Monthly billing, no lock-in, no exit fee. If it stops being worth £29.99 a month to you, cancel. We\'d rather earn your subscription every month than trap you for a year.',
+    q: 'Does SafeEat integrate with my till or booking system?',
+    a: 'SafeEat runs alongside your existing till and booking system, not through them. That keeps setup simple and avoids breaking whatever is already working. Custom integrations with specific till systems can be built as a commission.',
+  },
+  {
+    q: 'What are the weekly insight reports?',
+    a: 'Every Monday you get a short report showing which allergens your diners most commonly have, which dishes are most filtered out, conversion to bookings from email campaigns, and review momentum. It\'s the commercial picture of your allergy diner base in one scroll.',
+  },
+  {
+    q: 'Who built SafeEat?',
+    a: 'SafeEat is built in Cornwall by Autaimate, a UK product studio. It was built for independent pubs, cafés, and restaurants — the kind of venues that take their regulars seriously and want to be the place a family with allergies can go without fear.',
   },
 ]
 
-export default function SafeEatPage() {
-  const schemas: Record<string, unknown>[] = [
+const SCHEMA_GRAPH = {
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'SafeEat',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web, iOS, Android',
-      description:
-        'QR-powered allergen and customer retention system for independent UK food venues. Diners scan, select allergens, and see the menu filtered to what\'s safe — with an EHO audit trail and opt-in diner database built in.',
-      url: 'https://safeeat.co.uk',
-      offers: {
-        '@type': 'Offer',
-        price: '29.99',
-        priceCurrency: 'GBP',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '29.99',
-          priceCurrency: 'GBP',
-          unitText: 'MONTH',
-        },
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Autaimate',
-        url: 'https://autaimate.com',
+      '@type': 'Organization',
+      '@id': 'https://autaimate.com/#organization',
+      name: 'Autaimate',
+      url: 'https://autaimate.com',
+      logo: 'https://autaimate.com/logo.png',
+      sameAs: ['https://www.linkedin.com/company/autaimate'],
+      email: 'hello@autaimate.com',
+      telephone: '+44-7501-439406',
+      founder: {
+        '@type': 'Person',
+        name: 'Mick',
+        jobTitle: 'Founder',
+        description: '40 years in UK construction and trades before founding Autaimate',
       },
     },
     {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
+      '@type': 'WebPage',
+      '@id': 'https://autaimate.com/products/safeeat#webpage',
+      url: 'https://autaimate.com/products/safeeat',
+      name: 'SafeEat | QR Allergen & Retention System for UK Food Venues | Autaimate',
+      description: 'SafeEat filters your menu for allergies, keeps an EHO audit trail, and turns allergy diners into regulars. £29.99/month. Built in Cornwall for independent venues.',
+      isPartOf: { '@id': 'https://autaimate.com/#website' },
+      inLanguage: 'en-GB',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['#quick-answer', 'h1'],
+      },
     },
     {
-      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://autaimate.com/' },
@@ -106,148 +95,341 @@ export default function SafeEatPage() {
         { '@type': 'ListItem', position: 3, name: 'SafeEat', item: 'https://autaimate.com/products/safeeat' },
       ],
     },
-  ]
+    {
+      '@type': 'SoftwareApplication',
+      name: 'SafeEat',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web (any device)',
+      description: 'QR-powered allergen and customer retention system for independent UK food venues.',
+      url: 'https://safeeat.co.uk',
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'GBP',
+        price: '29.99',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '29.99',
+          priceCurrency: 'GBP',
+          unitText: 'MONTH',
+        },
+        description: '£29.99 per month. 30-day inspection-ready guarantee — three months free if we do not deliver.',
+      },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      featureList: [
+        'QR code allergen menu filtering',
+        'Full EHO audit trail',
+        'Customer database of opted-in allergy diners',
+        'Targeted email marketing',
+        'Automated review prompts',
+        'Weekly insight reports',
+        'Real-time menu editor',
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'How SafeEat protects a food venue and grows its regulars',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'Customer scans the table QR', text: 'The diner scans your table QR with their phone camera. No app, no download.' },
+        { '@type': 'HowToStep', position: 2, name: 'Select allergens', text: 'They tick the allergens that apply to their party. SafeEat supports the full UK allergen list.' },
+        { '@type': 'HowToStep', position: 3, name: 'Filtered menu appears', text: 'The menu instantly shows only what is safe for them to eat. No guesswork. No awkward questions.' },
+        { '@type': 'HowToStep', position: 4, name: 'Every interaction is logged', text: 'The scan, the allergens selected, the menu version shown, and the timestamp are all logged. Full EHO audit trail.' },
+        { '@type': 'HowToStep', position: 5, name: 'They opt in to hear from you', text: 'If they loved the meal, they opt in to your database. You now have a permissioned allergy diner who knows you can look after them.' },
+        { '@type': 'HowToStep', position: 6, name: 'They come back', text: 'Targeted email marketing, review prompts at the right moment, and weekly insight reports turn that one scan into a regular.' },
+      ],
+    },
+    {
+      '@type': 'Article',
+      '@id': 'https://autaimate.com/products/safeeat#article',
+      headline: 'SafeEat: Why Allergy Diners Are the Most Loyal Customers in Hospitality',
+      description: 'How SafeEat turns the hardest-to-please diners into the most loyal — and gives independent UK food venues an EHO-ready audit trail in the process.',
+      author: { '@type': 'Person', name: 'Mick', url: 'https://www.linkedin.com/company/autaimate' },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      datePublished: '2026-02-20',
+      dateModified: '2026-04-21',
+      mainEntityOfPage: { '@id': 'https://autaimate.com/products/safeeat#webpage' },
+    },
+    {
+      '@type': 'DefinedTermSet',
+      name: 'SafeEat Terminology',
+      hasDefinedTerm: [
+        { '@type': 'DefinedTerm', name: 'Natasha\'s Law', description: 'The UK law requiring full ingredient labelling on Prepacked for Direct Sale (PPDS) food, in force since October 2021.' },
+        { '@type': 'DefinedTerm', name: 'EHO', description: 'Environmental Health Officer — the local authority inspector responsible for food safety compliance at UK food venues.' },
+        { '@type': 'DefinedTerm', name: 'PPDS', description: 'Prepacked for Direct Sale — food packaged on the premises before the customer selects it.' },
+        { '@type': 'DefinedTerm', name: 'Allergen audit trail', description: 'A time-stamped, immutable log proving what allergen information was given to each customer on each visit.' },
+        { '@type': 'DefinedTerm', name: 'Allergy diner', description: 'A customer with one or more food allergies or intolerances that restrict their menu choices.' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+}
 
+export default function SafeEatPage() {
   return (
-    <>
+    <Layout>
       <SEO
-        title="SafeEat | QR Allergen Menu & Customer Retention for UK Food Venues"
-        description="QR-powered allergen system for UK restaurants, pubs and cafes. Diners scan, select allergens, see safe menu. EHO audit trail, opt-in diner database, 30-day inspection-ready guarantee. £29.99/month, built in Cornwall."
-        canonical="/products/safeeat"
-        keywords="restaurant allergen software UK, QR allergen menu, Natasha's Law software, EHO audit trail software, pub allergen system, cafe compliance software, customer retention restaurant, allergy menu app UK, independent restaurant software"
-        schemas={schemas}
+        title="SafeEat | QR Allergen & Retention System for UK Food Venues | Autaimate"
+        description="SafeEat filters your menu for allergies, keeps an EHO audit trail, and turns allergy diners into regulars. £29.99/month. Built in Cornwall for independent venues."
+        canonical="https://autaimate.com/products/safeeat"
+        ogImage="https://autaimate.com/og-image.jpg"
       />
-      <Layout>
-        <div className="cosmic-bg" />
-        <div className="stars" />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
+      </Helmet>
 
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
-            <li>/</li>
-            <li><Link to="/#products" className="hover:text-orange-500">Products</Link></li>
-            <li>/</li>
-            <li className="text-white/70">SafeEat</li>
-          </ol>
-        </nav>
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+        <ol className="flex items-center gap-2">
+          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li className="text-white/90">SafeEat</li>
+        </ol>
+      </nav>
 
-        {/* Hero */}
-        <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-16 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-red-500/15 border border-red-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-red-400 rounded-full pulse-dot" />
-            <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">UK Restaurants · Pubs · Cafés</span>
-          </div>
-
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Allergy diners are the most loyal customers{' '}
-            <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">in hospitality.</span>
-          </h1>
-
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            The venues that look after them are the ones that fill up on a wet Tuesday in November. SafeEat turns allergen compliance into a customer retention engine — QR-powered menus, EHO audit trail, and a diner database that brings them back. Built in Cornwall for independent UK food venues.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://safeeat.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Open SafeEat
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </a>
-            <Link to="/#products" className="btn-secondary">See all products</Link>
-          </div>
-
-          <p className="mt-8 text-sm text-white/50">
-            £29.99/month · 30-day inspection-ready guarantee · Built in Cornwall
-          </p>
-        </section>
-
-        {/* How SafeEat works */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              How SafeEat <span className="text-orange-500">works.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Five steps from QR scan to repeat booking. Nothing for the diner to install. Nothing new for the kitchen to learn.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {steps.map((s) => (
-              <div key={s.num} className="text-center p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-red-500/[0.06] hover:border-red-500/30 transition-all">
-                <div className="process-number mx-auto mb-4">{s.num}</div>
-                <h3 className="font-display text-sm font-bold text-red-400 uppercase tracking-wide mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Guarantee callout */}
-        <section className="py-12 px-6 lg:px-12 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-red-500/10 to-orange-500/5 border border-red-500/30 rounded-3xl p-8 lg:p-10 text-center">
-            <h3 className="font-display text-2xl lg:text-3xl font-extrabold mb-4 tracking-tight">
-              30-day inspection-ready guarantee.
-            </h3>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-              If SafeEat doesn\'t have you inspection-ready within 30 days, the next three months are on us. Built in Cornwall, for venues that take allergies seriously — because the ones who do are the ones that last.
-            </p>
-          </div>
-        </section>
-
-        {/* Benefits */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Why independent venues <span className="text-orange-500">choose SafeEat.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Compliance that doesn\'t feel like punishment. Retention that doesn\'t feel like marketing.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {benefits.map((b) => (
-              <div key={b.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-red-400 mb-3">{b.title}</h3>
-                <p className="text-white/60 leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
-            Frequently asked questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-red-500/30 transition-colors">
-                <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
-                  <span>{f.q}</span>
-                  <span className="text-red-400 text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
-            Fill up on a wet Tuesday in November.
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            The venues that look after allergy diners are the venues that stay open. £29.99 a month to start. Thirty days to prove it works.
-          </p>
-          <a href="https://safeeat.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Open SafeEat
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-medium mb-6">
+          <Utensils className="w-3 h-3" /> £29.99/month · Built in Cornwall · 30-day guarantee
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          Allergy diners are the most <span className="text-orange-400">loyal customers</span> in hospitality.
+        </h1>
+        <p className="text-xl text-white/75 max-w-3xl mb-8">
+          The venues that look after them are the ones that fill up on a wet Tuesday in November. SafeEat is how you become one of those venues — a QR-powered allergen menu that makes dining safe, an EHO audit trail that keeps you compliant, and a retention system that turns allergy diners into regulars.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            See SafeEat <ArrowRight className="w-4 h-4" />
           </a>
-        </section>
-      </Layout>
-    </>
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            Book a demo
+          </Link>
+        </div>
+      </section>
+
+      {/* Quick Answer */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-red-500/10 via-transparent to-orange-500/10 border border-white/10">
+          <div className="text-xs uppercase tracking-wider text-red-300 mb-2">Quick Answer</div>
+          <p className="text-lg text-white/90">
+            SafeEat is a UK QR allergen system for independent pubs, cafés, and restaurants. Diners scan, select allergens, see a filtered menu, and opt in to come back. You get Natasha's-Law-ready compliance and a customer database of loyal regulars. £29.99/month.
+          </p>
+        </div>
+      </section>
+
+      {/* The insight */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">The insight most venues miss</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+          <div>
+            <p className="mb-4">
+              An allergy diner doesn't just pick a restaurant. They commit to it. Finding somewhere safe to eat with a severe allergy is genuinely stressful, and once a family has found a venue that treats allergens seriously, they don't shop around. They come back. They bring the grandparents. They book the birthday. They leave reviews that say "finally, somewhere we can all eat."
+            </p>
+            <p>
+              That's why the venues looking after allergy diners properly are the ones full on a wet Tuesday in November, while the place down the road with the bigger menu is half empty.
+            </p>
+          </div>
+          <div>
+            <p className="mb-4">
+              The problem is the system most venues use for allergens is a laminated sheet, a verbal conversation with a flustered waiter, and a hope that everyone remembers what was said if anything goes wrong. That's not a compliance strategy post-Natasha's Law. And it's not a growth strategy either.
+            </p>
+            <p>
+              SafeEat fixes both. Compliance becomes automatic. Growth becomes compound.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">How SafeEat works</h2>
+        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {[
+            { n: '1', t: 'Scan the QR', d: 'Diner scans the table code with their phone. No app.' },
+            { n: '2', t: 'Select allergens', d: 'They tick what they have. Full UK allergen list supported.' },
+            { n: '3', t: 'Filtered menu', d: 'Menu shows only what is safe to order. No awkward questions.' },
+            { n: '4', t: 'Audit logged', d: 'Scan, allergens, menu version, timestamp — all saved for EHO.' },
+            { n: '5', t: 'Opt in', d: 'If they loved it, they join your allergy diner database.' },
+            { n: '6', t: 'They come back', d: 'Targeted emails, review prompts, insight reports — they become regulars.' },
+          ].map((s) => (
+            <div key={s.n} className="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-orange-400 font-bold text-xl mb-1">{s.n}</div>
+              <div className="font-semibold text-sm mb-1">{s.t}</div>
+              <p className="text-xs text-white/70">{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">What's in the box</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { i: QrCode, t: 'QR allergen menu', d: 'Every table gets a code. Diners select their allergens and see the menu filtered to safe dishes in real time.' },
+            { i: Shield, t: 'EHO-ready audit trail', d: 'Every scan logged with timestamp, allergens selected, and menu version. Hand the inspector evidence, not excuses.' },
+            { i: HeartHandshake, t: 'Opted-in customer database', d: 'A permissioned list of allergy diners who have told you exactly what they have. GDPR-clean and hospitality-gold.' },
+            { i: Mail, t: 'Targeted email marketing', d: 'Send a gluten-free Sunday lunch promo to your gluten-free diners. Send nothing to the rest. That\'s how you drive midweek covers.' },
+            { i: Star, t: 'Automated review prompts', d: 'Polite, well-timed requests after a safe meal — not spammy post-invoice chases. Better reviews, fewer opt-outs.' },
+            { i: BarChart3, t: 'Weekly insight reports', d: 'Every Monday, a short report on allergen trends, menu performance, email conversion, and review velocity.' },
+          ].map((f) => (
+            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <f.i className="w-6 h-6 text-orange-400 mb-3" />
+              <div className="font-semibold text-lg mb-2">{f.t}</div>
+              <p className="text-white/70">{f.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* The guarantee */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield className="w-7 h-7 text-orange-400" />
+            <h2 className="text-2xl md:text-3xl font-bold">30-day inspection-ready guarantee</h2>
+          </div>
+          <p className="text-white/80 mb-3">
+            If SafeEat does not get your allergen process to a standard you can confidently defend in an EHO inspection within 30 days of going live, you get three months free. That's it. No lawyer-speak, no hidden conditions.
+          </p>
+          <p className="text-white/80">
+            We can offer this because we know what it takes to get a venue compliant — because we've done it. If we don't deliver, the cost is on us, not on you.
+          </p>
+        </div>
+      </section>
+
+      {/* Who it's for */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for independent UK venues</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-white/75">
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Independent pubs</div>
+            <p>Freehouses, gastropubs, country pubs with kitchens. SafeEat turns your Sunday lunch into a destination for the allergy-aware family.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Cafés and coffee shops</div>
+            <p>Lunch spots, brunch cafés, coffee-and-cake shops where PPDS rules apply. Natasha's-Law-ready from day one.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Independent restaurants</div>
+            <p>Bistros, neighbourhood restaurants, seasonal menu spots. SafeEat keeps your audit tidy even when your specials change daily.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why niche */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why SafeEat isn't just another hospitality SaaS</h2>
+        <div className="space-y-4 text-white/75 max-w-4xl">
+          <p>
+            There are generic hospitality platforms that claim to handle allergens as one feature among fifty. They don't handle them well — because they're built for chains, not for independents, and they treat allergens like a compliance checkbox rather than the commercial opportunity they actually are.
+          </p>
+          <p>
+            SafeEat is the opposite: a single-purpose product built for independent UK venues by a UK team. It does one thing — safe eating and customer retention for allergy diners — and it does it better than the generic platforms because that's the only thing it's trying to do.
+          </p>
+          <p>
+            The result: it's cheaper (£29.99/month, not £200+), faster to set up (hours, not weeks), easier to use (designed for a busy kitchen, not a head-office IT team), and focused on the commercial outcome that actually matters — turning careful diners into loyal regulars.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
+        <div className="p-8 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10">
+          <div className="flex items-center gap-2 mb-2">
+            <PoundSterling className="w-6 h-6 text-orange-400" />
+            <div className="text-3xl font-bold">29.99 / month</div>
+          </div>
+          <p className="text-white/80 mb-4">30-day inspection-ready guarantee. No setup fee. No long-term contract. Cancel anytime.</p>
+          <ul className="grid md:grid-cols-2 gap-2 text-white/80">
+            {['QR allergen menu filtering', 'Full EHO audit trail', 'Opted-in customer database', 'Targeted email marketing', 'Review prompts', 'Weekly insight reports', 'Real-time menu editor', 'UK support from the team that built it'].map((f) => (
+              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-orange-400" /> {f}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Provenance / E-E-A-T */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <h2 className="text-3xl font-bold mb-4">Built in Cornwall. For the venues that give a damn.</h2>
+          <p className="text-white/75 mb-4">
+            SafeEat is a product from Autaimate. It's built for the independents — the family-run pub, the neighbourhood café, the restaurant where the owner still works the pass on a Saturday. Not for a chain head office, not for a board, not for a hospitality group with a compliance department.
+          </p>
+          <p className="text-white/75 mb-4">
+            We made it in Cornwall because this is where a lot of those independents are. We priced it at £29.99/month because a Cornish café isn't going to pay £200/month for compliance software and shouldn't have to. We backed it with a 30-day guarantee because if you're going to trust a small software team with your EHO readiness, you deserve a promise that we'll deliver.
+          </p>
+          <p className="text-white/60 text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <div className="space-y-3">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+                {f.q}
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+              </summary>
+              <p className="mt-3 text-white/75">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">TradGo</div>
+            <p className="text-sm text-white/70">AI agent that catches missed calls, WhatsApp, and website chat — useful for independent hospitality too.</p>
+          </Link>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">SnagLog</div>
+            <p className="text-sm text-white/70">AI-powered snagging reports — if you're renovating a venue or fit-out space.</p>
+          </Link>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">Commission a niche product</div>
+            <p className="text-sm text-white/70">Got a hospitality problem that needs its own software? See how a new product gets born.</p>
+          </Link>
+          <Link to="/" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">See all Autaimate products</div>
+            <p className="text-sm text-white/70">The full portfolio of niche SaaS products for UK industries.</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="p-10 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10 text-center">
+          <h2 className="text-3xl font-bold mb-4">Be the venue allergy families tell each other about</h2>
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            £29.99/month. 30-day inspection-ready guarantee. Built in Cornwall for the independents who want to fill the dining room on a wet Tuesday in November.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+              See SafeEat <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+              Book a demo
+            </Link>
+          </div>
+        </div>
+      </section>
+    </Layout>
   )
 }
