@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom'
 import Layout from './components/Layout'
 
+// URLs starting with '/' route internally to a landing page on autaimate.com
+// URLs starting with 'http' go straight to the live product
 const products = [
   { name: 'AutoReplyChat', url: 'https://autoreplychat.com', desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.', color: 'blue' },
-  { name: 'TradeCalcs', url: 'https://tradecalcs.co.uk', desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.', color: 'yellow' },
-  { name: 'SnagLog', url: 'https://app.snaglog.co.uk', desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.', color: 'teal' },
+  { name: 'TradeCalcs', url: '/products/tradecalcs', desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.', color: 'yellow' },
+  { name: 'SnagLog', url: '/products/snaglog', desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.', color: 'teal' },
   { name: 'DetailRecon', url: 'https://detailrecon.com', desc: 'AI security reconnaissance for close protection. Professional advance reports in minutes.', color: 'purple' },
   { name: 'LeadFortress', url: 'https://leadfortress.co.uk', desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.', color: 'orange' },
   { name: 'HorseCost', url: 'https://horsecost.co.uk', desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.', color: 'green' },
@@ -13,7 +16,7 @@ const products = [
   { name: 'ShootSync', url: 'https://shootsync.co.uk', desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.', color: 'emerald' },
   { name: 'CraneQuote', url: 'https://cranequote.co.uk', desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.', color: 'amber' },
   { name: 'LabCalcs', url: '#', desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.', color: 'indigo' },
-  { name: 'CertVoice', url: 'https://certvoice.co.uk', desc: 'Voice-first electrical certification. Speak your findings on-site and AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.', color: 'rose' },
+  { name: 'CertVoice', url: '/products/certvoice', desc: 'Voice-first electrical certification. Speak your findings on-site and AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.', color: 'rose' },
   { name: 'WorkProof', url: 'https://workproof.co.uk', desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.', color: 'cyan' },
   { name: 'InspectVoice', url: 'https://inspectvoice.co.uk', desc: 'Voice-to-report for playground inspectors. Dictate findings on-site, AI generates BS EN 1176/1177 compliant reports.', color: 'violet' },
   { name: 'UKTradeApps', url: 'https://uktradeapps.co.uk', desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.', color: 'fuchsia' },
@@ -67,13 +70,26 @@ const steps = [
 
 function ProductCard({ p }: { p: typeof products[0] }) {
   const c = colorClasses[p.color]
-  return (
-    <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={`product-card text-center transition-transform duration-300 hover:-translate-y-2.5`}>
+  const isInternal = p.url.startsWith('/')
+  const className = 'product-card text-center transition-transform duration-300 hover:-translate-y-2.5'
+
+  const inner = (
+    <>
       <div className={`product-circle mx-auto mb-6 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
         <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-20 h-20 ${c.stroke}`}>{icons[p.name]}</svg>
       </div>
       <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
       <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
+    </>
+  )
+
+  if (isInternal) {
+    return <Link to={p.url} className={className}>{inner}</Link>
+  }
+
+  return (
+    <a href={p.url} target="_blank" rel="noopener noreferrer" className={className}>
+      {inner}
     </a>
   )
 }
@@ -126,6 +142,13 @@ export default function App() {
           {products.map((p) => (
             <ProductCard key={p.name} p={p} />
           ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <Link to="/for/construction" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+            See everything built for UK construction & trades
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
         </div>
       </section>
 
@@ -191,7 +214,6 @@ export default function App() {
     </Layout>
   )
 }
-
 
 
 
