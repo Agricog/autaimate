@@ -18,6 +18,13 @@ const constructionProducts = [
     accent: 'text-rose-400',
   },
   {
+    name: 'TradGo',
+    desc: 'AI agent that catches missed calls, WhatsApp and web chat enquiries in your voice. 14-day free trial.',
+    href: '/products/tradgo',
+    external: false,
+    accent: 'text-amber-400',
+  },
+  {
     name: 'SnagLog',
     desc: 'AI snagging reports for site handover, new builds and end-of-tenancy.',
     href: '/products/snaglog',
@@ -47,9 +54,9 @@ const constructionProducts = [
   },
   {
     name: 'InspectVoice',
-    desc: 'Voice-to-report for playground inspectors. BS EN 1176/1177 compliant.',
-    href: 'https://inspectvoice.co.uk',
-    external: true,
+    desc: 'Voice-to-report for playground inspectors. BS EN 1176-compliant, offline-first.',
+    href: '/products/inspectvoice',
+    external: false,
     accent: 'text-violet-400',
   },
   {
@@ -80,13 +87,13 @@ const problems = [
   },
 ]
 
-const customBuildFeatures = [
-  'Fixed price. Clear scope. No £40k surprise invoices.',
+const commissionFeatures = [
+  'Fixed price. Clear scope. No time-and-materials meter running.',
   'Typically live in 4 weeks from kick-off.',
-  'You own the code. Not us. Not a licence.',
-  'Built on secure, modern infrastructure — not legacy PHP.',
+  'You own the code and the product — not a licence we can revoke.',
+  'Secure, modern infrastructure — not legacy PHP from a template shop.',
   'GDPR, auth, encryption and audit trails baked in from day one.',
-  'Integrates with SmartSuite, Twilio, WhatsApp, Stripe, Clerk.',
+  'Integrates with SmartSuite, Twilio, WhatsApp, Stripe, Clerk, what you already use.',
 ]
 
 export default function ForConstructionPage() {
@@ -94,19 +101,16 @@ export default function ForConstructionPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: 'Construction Automation Software & Custom Builds',
+      name: 'Construction Automation Software for UK Trades',
       provider: {
         '@type': 'Organization',
         name: 'Autaimate',
         url: 'https://autaimate.com',
       },
-      areaServed: {
-        '@type': 'Country',
-        name: 'United Kingdom',
-      },
-      serviceType: 'Custom automation software for UK construction and trades',
+      areaServed: { '@type': 'Country', name: 'United Kingdom' },
+      serviceType: 'Niche SaaS products for UK construction and trades',
       description:
-        'Ready-to-use automation tools and fixed-price custom software builds for UK construction, trades and regulated industries.',
+        'A portfolio of niche SaaS products built by Autaimate for UK construction, trades and site-based businesses — with new products commissioned when an industry has a gap the existing tools don\'t cover.',
       audience: {
         '@type': 'Audience',
         audienceType: 'UK construction and trades businesses',
@@ -115,7 +119,7 @@ export default function ForConstructionPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Construction software by Autaimate',
+      name: 'Construction products by Autaimate',
       itemListElement: constructionProducts.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
@@ -136,10 +140,10 @@ export default function ForConstructionPage() {
   return (
     <>
       <SEO
-        title="Construction Automation Software UK | Custom Builds for Trades | Autaimate"
-        description="Automation software and custom-built tools for UK construction, trades and site businesses. Ready-made apps for electricians, inspectors and site teams — plus fixed-price custom builds in 4 weeks."
+        title="Construction Software UK | Niche Products for Trades & Site | Autaimate"
+        description="Niche SaaS products for UK construction, trades and site-based businesses — BS 7671 calculators, voice-first certification, snagging, missed-call AI, lead capture, photo evidence. Built by people who've been on the tools."
         canonical="/for/construction"
-        keywords="construction automation software UK, software for UK construction trades, custom automation construction, trades software UK, construction SaaS UK, site management software UK, electrician software UK, construction compliance software, fixed price construction software, bespoke construction app UK"
+        keywords="construction software UK, software for UK trades, construction SaaS UK, site management software UK, electrician software UK, trades automation UK, construction compliance software, UK construction tech, trades app UK"
         schemas={schemas}
       />
       <Layout>
@@ -163,20 +167,20 @@ export default function ForConstructionPage() {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Automation software built by people{' '}
-            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">who've been on the tools.</span>
+            Niche software built by people{' '}
+            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">who\'ve been on the tools.</span>
           </h1>
 
           <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Ready-made apps for UK electricians, site managers, inspectors and trades — plus fixed-price custom builds for the automation your business actually needs. 40 years of construction experience behind every tool.
+            Nine Autaimate products serve UK construction and trades — BS 7671 calculators, voice-first certification, missed-call AI, snagging, crane hire, playground inspection, photo evidence, lead capture and multilingual H&S. Every one started as a specific problem from a specific business. 40 years of construction experience behind the portfolio.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#custom-build" className="btn-primary">
-              Build something custom
+            <a href="#products" className="btn-primary">
+              Browse the products
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a href="#products" className="btn-secondary">Browse the tools</a>
+            <a href="#commission" className="btn-secondary">Commission the next one</a>
           </div>
         </section>
 
@@ -184,10 +188,10 @@ export default function ForConstructionPage() {
         <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              What's slowing UK construction businesses <span className="text-orange-500">down.</span>
+              What slows UK construction businesses <span className="text-orange-500">down.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              We've lived it. We build software for it.
+              We\'ve lived it. Every product in the portfolio exists because one of these problems bit hard enough to build the solution.
             </p>
           </div>
 
@@ -205,14 +209,14 @@ export default function ForConstructionPage() {
         <section id="products" className="py-20 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Ready-made tools <span className="text-orange-500">for the trade.</span>
+              Products built <span className="text-orange-500">for the trade.</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Eight of our products are built specifically for UK construction and trades. Use what fits. Skip what doesn't.
+              Nine niche products across calculations, certification, reporting, lead capture, inspection and evidence. Each one solves a specific problem — none of them try to be everything.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {constructionProducts.map((p) => {
               const Inner = (
                 <>
@@ -243,20 +247,20 @@ export default function ForConstructionPage() {
           </div>
         </section>
 
-        {/* Custom build */}
-        <section id="custom-build" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
+        {/* Commission the next one */}
+        <section id="commission" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl lg:text-5xl font-extrabold mb-5 tracking-tight">
-              Or build something <span className="text-orange-500">bespoke.</span>
+              Every product here started as <span className="text-orange-500">one customer\'s problem.</span>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-              None of the ready-made tools fit exactly? Good — that's usually the sign of a business doing something worth automating. We build custom construction software on a fixed-price, fixed-scope basis. You own the code when it ships.
+              TradeCalcs. SnagLog. CertVoice. TradGo. WorkProof. InspectVoice. Every product in the Autaimate portfolio started as a specific gap a UK business asked us to close — and became a niche SaaS product that serves an industry. If your operation has a gap the existing tools don\'t cover, that gap could be the next product we build.
             </p>
           </div>
 
           <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-8 lg:p-12 mb-10">
             <div className="grid md:grid-cols-2 gap-5">
-              {customBuildFeatures.map((f) => (
+              {commissionFeatures.map((f) => (
                 <div key={f} className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -269,7 +273,7 @@ export default function ForConstructionPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/micro-saas" className="btn-primary">
-              See how we build
+              How a new product gets built
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
             <Link to="/#contact" className="btn-secondary">Talk to us</Link>
@@ -282,7 +286,7 @@ export default function ForConstructionPage() {
             Built in the UK. For UK construction.
           </h2>
           <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            No offshore build teams. No generic SaaS. Just software that understands what you do.
+            No offshore build teams. No generic SaaS. Just niche products that understand what you do.
           </p>
           <Link to="/#contact" className="btn-primary">
             Start a conversation
