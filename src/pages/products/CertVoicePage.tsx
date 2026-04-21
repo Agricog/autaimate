@@ -1,77 +1,93 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { ArrowRight, CheckCircle2, Mic, FileCheck, Zap, Shield, Clock, ChevronRight } from 'lucide-react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
 
-const faqs = [
+const FAQS = [
   {
-    q: 'What certificates does CertVoice produce?',
-    a: 'EICR (Electrical Installation Condition Report), EIC (Electrical Installation Certificate) and Minor Works Certificate — the three BS 7671 documents UK electricians issue most. Every output is structured against the model forms in the Regulations, not a generic template.',
+    q: 'What is CertVoice?',
+    a: 'CertVoice is a voice-first UK electrical certificate platform. Electricians dictate test results on site — CertVoice turns the dictation into a compliant BS 7671 certificate PDF, automatically, before they leave the job.',
   },
   {
-    q: 'How does voice-first actually work?',
-    a: 'You speak your findings on site — circuit, measurement, observation, code. CertVoice extracts the relevant information and drops it into the correct fields. You don\'t have to recite in a particular order and you don\'t have to touch a keyboard with dirty hands or while holding a torch.',
+    q: 'Which certificates does CertVoice generate?',
+    a: 'Electrical Installation Certificates (EIC), Electrical Installation Condition Reports (EICR), Minor Electrical Installation Works Certificates, and Domestic/Non-Domestic variants. All outputs align with the current edition of BS 7671.',
   },
   {
-    q: 'Is it actually BS 7671 compliant?',
-    a: 'The forms follow the BS 7671 model certificates. Coding is against the current IET classification (C1, C2, C3, FI), disconnection times are checked against the table values, and Zs values are compared to the published maxima. The document you sign is the document the assessor expects to see.',
+    q: 'Does CertVoice work offline?',
+    a: 'Yes. The platform is built as a progressive web app with offline-first dictation. You can record, tag circuits, and draft a certificate in a loft with no signal. It syncs and finalises when the connection returns.',
   },
   {
-    q: 'What happens to my voice data?',
-    a: 'Voice is processed for transcription and field extraction — nothing more. It\'s not used to train models, not sold on to third parties, and certificate data is encrypted at rest. GDPR is baked in from day one, not added after someone complains.',
+    q: 'How accurate is the voice transcription for electrical terminology?',
+    a: 'CertVoice uses a domain-tuned model that recognises UK electrical terminology, BS 7671 regulation references, circuit designations, and common test values. Every transcription is surfaced for review before the certificate is finalised.',
   },
   {
-    q: 'Does it work without a signal on site?',
-    a: 'Voice capture is buffered locally when there\'s no signal. Processing happens when you reconnect — which is almost always by the time you\'re back in the van. The report is ready to finalise before you get home.',
+    q: 'Can I edit a certificate after dictation?',
+    a: 'Yes. Every field extracted from the dictation is editable in a structured form. You approve or amend values before generating the final PDF, so the engineer always stays in control.',
   },
   {
-    q: 'Can it handle multiple circuits on one job?',
-    a: 'Yes. You dictate as you work through the board, and each circuit is added to the test results schedule. Periodic inspections with thirty-plus circuits take the length of the inspection itself, not twice that with a write-up afterwards.',
+    q: 'Does CertVoice replace my calibrated test equipment?',
+    a: 'No. CertVoice is a reporting and certification platform — it captures, structures, and outputs the readings you take with calibrated equipment. Your test gear remains the source of truth for measurements.',
+  },
+  {
+    q: 'Is the PDF output legally compliant?',
+    a: 'CertVoice certificates follow the prescribed format for BS 7671 installation certificates and condition reports. You sign off as the competent person — CertVoice is the tool that prepares the paperwork to the required standard.',
+  },
+  {
+    q: 'What data is stored and where?',
+    a: 'Certificate data is held in SmartSuite on EU-region infrastructure. Audio dictations can be auto-deleted after transcription. Data is encrypted in transit and at rest. Full GDPR controls including data export and erasure on request.',
+  },
+  {
+    q: 'How is CertVoice priced?',
+    a: 'CertVoice is a monthly subscription with a free trial. Pricing scales with the number of engineers and certificates. Contact us for a current quote — there is no long-term contract.',
+  },
+  {
+    q: 'Can multiple engineers use one account?',
+    a: 'Yes. Accounts support multiple engineers with individual logins, per-engineer certificate histories, and a shared client database. Senior engineers can review and countersign certificates produced by apprentices.',
+  },
+  {
+    q: 'Does CertVoice integrate with job management software?',
+    a: 'CertVoice can export completed certificates as PDF and structured data. Direct integrations with common UK trade job management platforms can be built on request as part of a commission.',
+  },
+  {
+    q: 'Who built CertVoice?',
+    a: 'CertVoice is built by Autaimate, a UK product studio. It is one of several voice-first tools in the portfolio alongside InspectVoice for playground inspection. Our founder spent 40 years in construction and trades before building software.',
   },
 ]
 
-const problems = [
-  {
-    title: 'The inspection is the fast bit.',
-    desc: 'You did the walk, the dead tests, the live tests — three hours. Then it\'s another two hours in the van typing it all out, trying to remember which circuit had what reading, which observation was C2 and which was C3.',
-  },
-  {
-    title: 'A torch, a meter, and a biro.',
-    desc: 'Writing in a notebook, transcribing later, mis-copying a figure, issuing a certificate with a typo that comes back on you. All because certification was designed for a desk and you work up a ladder.',
-  },
-  {
-    title: 'Generic apps don\'t know electrical.',
-    desc: 'Most voice apps are glorified dictation. CertVoice understands C1, C2, C3, FI, Zs, R1+R2, insulation resistance, polarity, earth electrode. The vocabulary of the trade, not a best guess from a general model.',
-  },
-]
-
-export default function CertVoicePage() {
-  const schemas: Record<string, unknown>[] = [
+const SCHEMA_GRAPH = {
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'CertVoice',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web, iOS, Android (PWA)',
-      description:
-        'Voice-first BS 7671 certification for UK electricians. Dictate findings on site and CertVoice builds compliant EICR, EIC and Minor Works certificates.',
-      url: 'https://certvoice.co.uk',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Autaimate',
-        url: 'https://autaimate.com',
+      '@type': 'Organization',
+      '@id': 'https://autaimate.com/#organization',
+      name: 'Autaimate',
+      url: 'https://autaimate.com',
+      logo: 'https://autaimate.com/logo.png',
+      sameAs: ['https://www.linkedin.com/company/autaimate'],
+      email: 'hello@autaimate.com',
+      telephone: '+44-7501-439406',
+      founder: {
+        '@type': 'Person',
+        name: 'Mick',
+        jobTitle: 'Founder',
+        description: '40 years in UK construction and trades before founding Autaimate',
       },
     },
     {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
+      '@type': 'WebPage',
+      '@id': 'https://autaimate.com/products/certvoice#webpage',
+      url: 'https://autaimate.com/products/certvoice',
+      name: 'CertVoice | Voice-First BS 7671 Electrical Certificates | Autaimate',
+      description: 'CertVoice turns spoken electrical test results into BS 7671 certificates on site. Voice-to-EIC, EICR, and Minor Works — finished before you leave.',
+      isPartOf: { '@id': 'https://autaimate.com/#website' },
+      inLanguage: 'en-GB',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['#quick-answer', 'h1'],
+      },
     },
     {
-      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://autaimate.com/' },
@@ -79,131 +95,303 @@ export default function CertVoicePage() {
         { '@type': 'ListItem', position: 3, name: 'CertVoice', item: 'https://autaimate.com/products/certvoice' },
       ],
     },
-  ]
+    {
+      '@type': 'SoftwareApplication',
+      name: 'CertVoice',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, iOS, Android (PWA)',
+      description: 'Voice-first platform for producing BS 7671 compliant electrical certificates on site.',
+      url: 'https://certvoice.co.uk',
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'GBP',
+        price: '0',
+        description: 'Free trial available; monthly subscription thereafter.',
+      },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      featureList: [
+        'Voice-to-certificate dictation',
+        'BS 7671 compliant output',
+        'Offline-first PWA',
+        'Multi-engineer accounts',
+        'PDF generation on device',
+        'Certificate history and client database',
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'How to produce a BS 7671 electrical certificate with CertVoice',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'Start a new certificate', text: 'Open CertVoice on site, select the client and certificate type — EIC, EICR, or Minor Works.' },
+        { '@type': 'HowToStep', position: 2, name: 'Dictate the readings', text: 'Speak your test results circuit by circuit. CertVoice recognises BS 7671 terminology and circuit designations.' },
+        { '@type': 'HowToStep', position: 3, name: 'Review the extracted data', text: 'CertVoice structures the dictation into certificate fields. Correct anything that needs it before sign-off.' },
+        { '@type': 'HowToStep', position: 4, name: 'Generate the PDF', text: 'The compliant BS 7671 PDF is generated on the device — no wait for a back-office admin team.' },
+        { '@type': 'HowToStep', position: 5, name: 'Issue to the client', text: 'Email, download, or log the certificate in the CertVoice history. You leave the site with the job closed.' },
+      ],
+    },
+    {
+      '@type': 'Article',
+      '@id': 'https://autaimate.com/products/certvoice#article',
+      headline: 'CertVoice: Voice-First Electrical Certificates That Finish on Site',
+      description: 'How CertVoice removes evening admin from BS 7671 certification by turning dictation into a compliant PDF before the engineer leaves the job.',
+      author: { '@type': 'Person', name: 'Mick', url: 'https://www.linkedin.com/company/autaimate' },
+      publisher: { '@id': 'https://autaimate.com/#organization' },
+      datePublished: '2026-03-01',
+      dateModified: '2026-04-21',
+      mainEntityOfPage: { '@id': 'https://autaimate.com/products/certvoice#webpage' },
+    },
+    {
+      '@type': 'DefinedTermSet',
+      name: 'CertVoice Terminology',
+      hasDefinedTerm: [
+        { '@type': 'DefinedTerm', name: 'BS 7671', description: 'The British Standard for electrical installations — the IET Wiring Regulations.' },
+        { '@type': 'DefinedTerm', name: 'EIC', description: 'Electrical Installation Certificate — issued for new electrical work.' },
+        { '@type': 'DefinedTerm', name: 'EICR', description: 'Electrical Installation Condition Report — issued after periodic inspection of an existing installation.' },
+        { '@type': 'DefinedTerm', name: 'Minor Works Certificate', description: 'Certificate for minor additions or alterations that do not form a new circuit.' },
+        { '@type': 'DefinedTerm', name: 'PWA', description: 'Progressive Web App — installs to a home screen and works offline without an app store.' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: FAQS.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+}
 
+export default function CertVoicePage() {
   return (
-    <>
+    <Layout>
       <SEO
-        title="CertVoice | Voice-First BS 7671 EICR & EIC Certificate App"
-        description="Speak your findings on site. CertVoice builds BS 7671-compliant EICR, EIC and Minor Works certificates for UK electricians. Voice-first inspection reporting — no keyboard, no evening write-ups."
-        canonical="/products/certvoice"
-        keywords="EICR voice app, voice electrical certificate app, BS 7671 voice reporting, EIC generator app, minor works voice app, electrician voice to report, voice first EICR, UK electrician reporting app"
-        schemas={schemas}
+        title="CertVoice | Voice-First BS 7671 Electrical Certificates | Autaimate"
+        description="CertVoice turns spoken electrical test results into BS 7671 certificates on site. Voice-to-EIC, EICR, and Minor Works — finished before you leave."
+        canonical="https://autaimate.com/products/certvoice"
+        ogImage="https://autaimate.com/og-image.jpg"
       />
-      <Layout>
-        <div className="cosmic-bg" />
-        <div className="stars" />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
+      </Helmet>
 
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
-            <li>/</li>
-            <li><Link to="/#products" className="hover:text-orange-500">Products</Link></li>
-            <li>/</li>
-            <li className="text-white/70">CertVoice</li>
-          </ol>
-        </nav>
+      {/* Breadcrumb */}
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+        <ol className="flex items-center gap-2">
+          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><ChevronRight className="w-3 h-3" /></li>
+          <li className="text-white/90">CertVoice</li>
+        </ol>
+      </nav>
 
-        {/* Hero */}
-        <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-16 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-rose-500/15 border border-rose-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-rose-400 rounded-full pulse-dot" />
-            <span className="text-rose-400 text-sm font-semibold uppercase tracking-wider">Voice-First · BS 7671</span>
-          </div>
-
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Speak the findings.{' '}
-            <span className="bg-gradient-to-r from-rose-400 via-pink-300 to-orange-400 bg-clip-text text-transparent">The certificate builds itself.</span>
-          </h1>
-
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
-            CertVoice turns your voice into BS 7671-compliant EICR, EIC and Minor Works certificates. Dictate on site — circuit, reading, observation, code — and the right information lands in the right field. No keyboard. No 9pm write-up.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://certvoice.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Try CertVoice
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-            </a>
-            <Link to="/#products" className="btn-secondary">See all products</Link>
-          </div>
-        </section>
-
-        {/* The problem */}
-        <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Why certification is <span className="text-orange-500">broken.</span>
-            </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Most electrical software was built by developers who've never stood on a ladder in a roof space with a meter and a torch in their mouth.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {problems.map((p) => (
-              <div key={p.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-rose-400 mb-3">{p.title}</h3>
-                <p className="text-white/60 leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What CertVoice does */}
-        <section className="py-20 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-center">
-            Speak like an <span className="text-orange-500">electrician.</span>
-          </h2>
-          <p className="text-white/60 text-lg mb-10 text-center max-w-2xl mx-auto">
-            CertVoice is trained on the vocabulary of UK electrical inspection — not generic dictation.
-          </p>
-          <div className="space-y-5 text-white/70 text-lg leading-relaxed">
-            <p>
-              You talk the way you'd talk to an apprentice. "Circuit 4, ring final, 2.5 twin and earth, Zs at the furthest point 0.52, R1+R2 0.81, insulation resistance above 299 megohm on all combinations, one observation, C3, plastic CU." CertVoice extracts the circuit, the measurements, the observation, the code — and fills the correct boxes on the correct schedule.
-            </p>
-            <p>
-              When you're done, the certificate is ready. Review it, sign it, issue it. The whole inspection — including the paperwork — is finished in the time it used to take just to walk the board.
-            </p>
-            <p>
-              Pair CertVoice with <a href="https://workproof.co.uk" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">WorkProof</a> for photographic evidence your assessor can't dispute, or <Link to="/products/tradecalcs" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">TradeCalcs</Link> for the BS 7671 calculations behind the results.
-            </p>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-20 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
-            Frequently asked questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-rose-500/30 transition-colors">
-                <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
-                  <span>{f.q}</span>
-                  <span className="text-rose-400 text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
-            The job's done when the job's done.
-          </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            No evening write-ups. No transcription errors. No missing observations because you forgot by the time you got home.
-          </p>
-          <a href="https://certvoice.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Try CertVoice
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium mb-6">
+          <Mic className="w-3 h-3" /> Voice-first · BS 7671 compliant · Offline-ready
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          Finish the <span className="text-orange-400">certificate</span> before you leave the site.
+        </h1>
+        <p className="text-xl text-white/75 max-w-3xl mb-8">
+          CertVoice is a voice-first electrical certificate platform for UK electricians. Dictate your test results on the job — CertVoice turns what you said into a compliant BS 7671 certificate PDF before the van leaves the kerb. No evening paperwork. No Sunday admin.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            Open CertVoice <ArrowRight className="w-4 h-4" />
           </a>
-        </section>
-      </Layout>
-    </>
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            Talk to us
+          </Link>
+        </div>
+      </section>
+
+      {/* Quick Answer */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-teal-500/10 via-transparent to-orange-500/10 border border-white/10">
+          <div className="text-xs uppercase tracking-wider text-teal-300 mb-2">Quick Answer</div>
+          <p className="text-lg text-white/90">
+            CertVoice is a UK voice-first electrical certificate app. Electricians dictate test results on site — it produces a compliant BS 7671 EIC, EICR, or Minor Works PDF automatically, offline, before you leave the job.
+          </p>
+        </div>
+      </section>
+
+      {/* The problem */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">The problem every electrician knows</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+          <div>
+            <p className="mb-4">
+              You finish the test. You pack up the kit. You get home at half six. Dinner, kids, a sit-down — and then the laptop comes out because the certificate still needs writing up. Your notebook is a mess. Half the readings are on the back of a receipt. You cross-check circuits against your head-torch photos because the scribble makes no sense six hours on.
+            </p>
+            <p>
+              That admin is costing you evenings and weekends. And it's where mistakes get made — a transposed figure, a missed circuit, a client sitting on an outstanding certificate three weeks later because life got in the way of the paperwork.
+            </p>
+          </div>
+          <div>
+            <p className="mb-4">
+              The legacy certificate software on the market makes this worse, not better. Desktop-bound. Endless form fields. No use when you're in a loft with no signal. Priced for a nationwide firm, not a one-van sparky or a small testing crew.
+            </p>
+            <p>
+              CertVoice was built to close this gap. It's priced for the trade, it runs on the phone or tablet you already carry, and the whole job — dictation, structuring, PDF, issue — happens before you drive away.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">How CertVoice works</h2>
+        <div className="grid md:grid-cols-5 gap-6">
+          {[
+            { n: '1', t: 'Start the certificate', d: 'Pick client, install, and certificate type: EIC, EICR, or Minor Works.' },
+            { n: '2', t: 'Dictate the readings', d: 'Speak circuit by circuit. BS 7671 terminology is understood — Zs, R1+R2, IR, PFC, Ze.' },
+            { n: '3', t: 'Review the extract', d: 'Every value appears in a structured form. Correct anything before sign-off.' },
+            { n: '4', t: 'Generate the PDF', d: 'On-device PDF, formatted to the BS 7671 template, ready to issue.' },
+            { n: '5', t: 'Close the job', d: 'Email the client, log it in history, drive away with the paperwork done.' },
+          ].map((s) => (
+            <div key={s.n} className="p-5 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-orange-400 font-bold text-2xl mb-2">{s.n}</div>
+              <div className="font-semibold mb-2">{s.t}</div>
+              <p className="text-sm text-white/70">{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">Built for how sparkies actually work</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { i: Mic, t: 'Voice-first, not form-first', d: 'Most certificate software is a long form with a login. CertVoice reverses it. You speak, it structures. The form is for review, not for entry.' },
+            { i: Zap, t: 'Offline-first PWA', d: 'Lofts, plant rooms, new-build sites in the middle of nowhere — no signal needed. CertVoice records and drafts offline, syncs when you reconnect.' },
+            { i: FileCheck, t: 'BS 7671 compliant output', d: 'The PDF matches the prescribed format for EIC, EICR, and Minor Works certificates. You sign off as the competent person.' },
+            { i: Shield, t: 'GDPR by design', d: 'EU-region storage, encryption in transit and at rest, auto-deletion of audio after transcription. Client data treated properly.' },
+            { i: Clock, t: 'Finished on site', d: 'On-device PDF generation. No "wait for it to process." You issue the certificate before the tools are back in the van.' },
+            { i: CheckCircle2, t: 'Multi-engineer accounts', d: 'Firms with apprentices or multiple testing engineers can share one account, with review and countersign for less-experienced staff.' },
+          ].map((f) => (
+            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <f.i className="w-6 h-6 text-orange-400 mb-3" />
+              <div className="font-semibold text-lg mb-2">{f.t}</div>
+              <p className="text-white/70">{f.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Who it's for */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Who CertVoice is built for</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-white/75">
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Sole-trader electricians</div>
+            <p>One van, domestic and light commercial work, and no office team to write up paperwork. CertVoice gives a one-man operation the certification output of a firm with admin staff.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Small testing & inspection firms</div>
+            <p>Multi-engineer teams doing EICRs day in, day out. CertVoice removes the end-of-day reporting bottleneck and standardises output across engineers of different experience levels.</p>
+          </div>
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="font-semibold text-white mb-2">Facilities & estate teams</div>
+            <p>In-house maintenance electricians at schools, hospitals, housing associations, and commercial estates who need fast, compliant paperwork for their own audit trail.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why voice */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why voice beats typing for testing</h2>
+        <div className="space-y-4 text-white/75 max-w-4xl">
+          <p>
+            Testing is a two-handed job. One hand on the instrument, the other on the board. A clipboard wedged under an arm, a head-torch on, safety glasses steamed up. Anyone who has tried to type test values into a phone in that posture knows it doesn't work — you end up scribbling on paper and retyping at the kitchen table.
+          </p>
+          <p>
+            Voice changes the ergonomics completely. You read the meter, say the reading, move to the next circuit. The phone sits in a pocket or magnetic clamp. The recording keeps up with the pace of the work, not the other way round. And because the dictation happens in real time, accuracy improves — you're reading fresh values, not transcribing a smudged notebook six hours later.
+          </p>
+          <p>
+            The structured extraction behind CertVoice is what makes voice useful rather than just novel. Generic transcription turns speech into a paragraph. CertVoice turns it into a certificate: circuit designation, cable size, protective device, Zs, R1+R2, IR, PFC, test instrument serial, signed off and PDF-ready. The model has been trained on UK electrical terminology and the structure of BS 7671 certificates specifically.
+          </p>
+        </div>
+      </section>
+
+      {/* Provenance / E-E-A-T */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+          <h2 className="text-3xl font-bold mb-4">Built by people who've been on the tools</h2>
+          <p className="text-white/75 mb-4">
+            CertVoice is built by Autaimate. Our founder spent 40 years in UK construction and trades before founding the studio. We don't design in a Shoreditch loft and guess at what sparkies need — we build for the trade because we came from the trade.
+          </p>
+          <p className="text-white/75 mb-4">
+            CertVoice sits in a family of voice-first products. Its sibling is <Link to="/products/inspectvoice" className="text-orange-400 underline">InspectVoice</Link>, which applies the same voice-to-report pattern to BS EN 1176 playground inspections. The approach is the same: dictate on site, structure the data, generate the PDF before you leave.
+          </p>
+          <p className="text-white/60 text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <div className="space-y-3">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+                {f.q}
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+              </summary>
+              <p className="mt-3 text-white/75">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">TradeCalcs</div>
+            <p className="text-sm text-white/70">Free BS 7671 calculators for UK electricians — cable sizing, voltage drop, circuit design.</p>
+          </Link>
+          <Link to="/products/inspectvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">InspectVoice</div>
+            <p className="text-sm text-white/70">The sibling voice-first product — BS EN 1176 playground inspections with the same pattern.</p>
+          </Link>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">Software for UK construction & trades</div>
+            <p className="text-sm text-white/70">See every Autaimate product built for the construction industry.</p>
+          </Link>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">Commission a niche product</div>
+            <p className="text-sm text-white/70">Got a trade workflow that needs its own tool? See how a new product gets born.</p>
+          </Link>
+          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+            <div className="font-semibold mb-1">TradGo</div>
+            <p className="text-sm text-white/70">AI agent that catches missed calls, WhatsApp and web chat while you're working.</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="p-10 rounded-2xl bg-gradient-to-br from-teal-500/20 to-orange-500/20 border border-white/10 text-center">
+          <h2 className="text-3xl font-bold mb-4">Put the paperwork back on site where it belongs</h2>
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            CertVoice is built for UK electricians who'd rather test circuits than type them. Dictate the certificate, review it, issue it — before you leave.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+              Open CertVoice <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+              Ask us a question
+            </Link>
+          </div>
+        </div>
+      </section>
+    </Layout>
   )
 }
