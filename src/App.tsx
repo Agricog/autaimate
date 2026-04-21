@@ -3,42 +3,46 @@ import Layout from './components/Layout'
 
 // URLs starting with '/' route internally to a landing page on autaimate.com
 // URLs starting with 'http' go straight to the live product
+// Internal-page products grouped first for strongest internal linking
 const products = [
-  { name: 'AutoReplyChat', url: 'https://autoreplychat.com', desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.', color: 'blue' },
-  { name: 'TradeCalcs', url: '/products/tradecalcs', desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.', color: 'yellow' },
-  { name: 'SnagLog', url: '/products/snaglog', desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.', color: 'teal' },
-  { name: 'DetailRecon', url: 'https://detailrecon.com', desc: 'AI security reconnaissance for close protection. Professional advance reports in minutes.', color: 'purple' },
-  { name: 'LeadFortress', url: 'https://leadfortress.co.uk', desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.', color: 'orange' },
-  { name: 'HorseCost', url: 'https://horsecost.co.uk', desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.', color: 'green' },
-  { name: 'EquipSafety', url: 'https://equipsafety.co.uk', desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.', color: 'pink' },
-  { name: 'ClearProof', url: 'https://clearproof.co.uk', desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.', color: 'lime' },
-  { name: 'Approv', url: 'https://approv.co.uk', desc: 'Client approval workflow for architects and designers. One-click approvals via email, no client login required.', color: 'sky' },
-  { name: 'ShootSync', url: 'https://shootsync.co.uk', desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.', color: 'emerald' },
-  { name: 'CraneQuote', url: 'https://cranequote.co.uk', desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.', color: 'amber' },
-  { name: 'LabCalcs', url: '#', desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.', color: 'indigo' },
-  { name: 'CertVoice', url: '/products/certvoice', desc: 'Voice-first electrical certification. Speak your findings on-site and AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.', color: 'rose' },
-  { name: 'WorkProof', url: 'https://workproof.co.uk', desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.', color: 'cyan' },
-  { name: 'InspectVoice', url: 'https://inspectvoice.co.uk', desc: 'Voice-to-report for playground inspectors. Dictate findings on-site, AI generates BS EN 1176/1177 compliant reports.', color: 'violet' },
-  { name: 'UKTradeApps', url: 'https://uktradeapps.co.uk', desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.', color: 'fuchsia' },
+  { name: 'TradeCalcs',    url: '/products/tradecalcs',   desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.',                                              color: 'yellow' },
+  { name: 'SnagLog',       url: '/products/snaglog',      desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.',                                                  color: 'teal' },
+  { name: 'CertVoice',     url: '/products/certvoice',    desc: 'Voice-first electrical certification. Speak your findings on-site, AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.',          color: 'rose' },
+  { name: 'TradGo',        url: '/products/tradgo',       desc: 'AI agent catching missed calls, WhatsApp and web chat enquiries — in your voice, with your approval on every quote. £59/month, 14-day trial.',   color: 'amber' },
+  { name: 'DetailRecon',   url: '/products/detailrecon',  desc: 'AI security reconnaissance for close protection. Professional advance recon reports in minutes. £29.99/report.',                                  color: 'purple' },
+  { name: 'InspectVoice',  url: '/products/inspectvoice', desc: 'Offline-first PWA for BS EN 1176 playground inspections. Voice-driven defect capture, AI extraction, PDF on-device.',                              color: 'violet' },
+  { name: 'SafeEat',       url: '/products/safeeat',      desc: 'QR-powered allergen system for UK food venues. Diners scan, see the safe menu, EHO audit trail built in. £29.99/month.',                          color: 'red' },
+  { name: 'AutoReplyChat', url: 'https://autoreplychat.com',      desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.',                color: 'blue' },
+  { name: 'LeadFortress',  url: 'https://leadfortress.co.uk',     desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.',                                              color: 'orange' },
+  { name: 'WorkProof',     url: 'https://workproof.co.uk',        desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.',              color: 'cyan' },
+  { name: 'CraneQuote',    url: 'https://cranequote.co.uk',       desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.',                                    color: 'amber' },
+  { name: 'EquipSafety',   url: 'https://equipsafety.co.uk',      desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.',                                                     color: 'pink' },
+  { name: 'ClearProof',    url: 'https://clearproof.co.uk',       desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.',                                color: 'lime' },
+  { name: 'HorseCost',     url: 'https://horsecost.co.uk',        desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.',                                               color: 'green' },
+  { name: 'Approv',        url: 'https://approv.co.uk',           desc: 'Client approval workflow for architects and designers. One-click approvals via email, no client login required.',                         color: 'sky' },
+  { name: 'ShootSync',     url: 'https://shootsync.co.uk',        desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.',                                     color: 'emerald' },
+  { name: 'UKTradeApps',   url: 'https://uktradeapps.co.uk',      desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.',           color: 'fuchsia' },
+  { name: 'LabCalcs',      url: '#',                              desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.',                              color: 'indigo' },
 ]
 
 const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
-  blue: { border: 'border-blue-500/50', glow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]', stroke: 'stroke-blue-400', text: 'text-blue-400' },
-  yellow: { border: 'border-yellow-500/50', glow: 'hover:shadow-[0_0_50px_rgba(251,191,36,0.3)]', stroke: 'stroke-yellow-400', text: 'text-yellow-400' },
-  teal: { border: 'border-teal-500/60', glow: 'hover:shadow-[0_0_50px_rgba(45,138,138,0.4)]', stroke: 'stroke-teal-400', text: 'text-teal-400' },
-  purple: { border: 'border-purple-500/50', glow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.3)]', stroke: 'stroke-purple-400', text: 'text-purple-400' },
-  orange: { border: 'border-orange-500/50', glow: 'hover:shadow-[0_0_50px_rgba(249,115,22,0.3)]', stroke: 'stroke-orange-400', text: 'text-orange-400' },
-  green: { border: 'border-green-500/50', glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]', stroke: 'stroke-green-400', text: 'text-green-400' },
-  pink: { border: 'border-pink-500/50', glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]', stroke: 'stroke-pink-400', text: 'text-pink-400' },
-  lime: { border: 'border-lime-500/50', glow: 'hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]', stroke: 'stroke-lime-400', text: 'text-lime-400' },
-  sky: { border: 'border-sky-500/50', glow: 'hover:shadow-[0_0_50px_rgba(14,165,233,0.3)]', stroke: 'stroke-sky-400', text: 'text-sky-400' },
-  emerald: { border: 'border-emerald-500/50', glow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.3)]', stroke: 'stroke-emerald-400', text: 'text-emerald-400' },
-  amber: { border: 'border-amber-500/50', glow: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]', stroke: 'stroke-amber-400', text: 'text-amber-400' },
-  indigo: { border: 'border-indigo-500/50', glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]', stroke: 'stroke-indigo-400', text: 'text-indigo-400' },
-  rose: { border: 'border-rose-500/50', glow: 'hover:shadow-[0_0_50px_rgba(244,63,94,0.3)]', stroke: 'stroke-rose-400', text: 'text-rose-400' },
-  cyan: { border: 'border-cyan-500/50', glow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]', stroke: 'stroke-cyan-400', text: 'text-cyan-400' },
-  violet: { border: 'border-violet-500/50', glow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.3)]', stroke: 'stroke-violet-400', text: 'text-violet-400' },
-  fuchsia: { border: 'border-fuchsia-500/50', glow: 'hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]', stroke: 'stroke-fuchsia-400', text: 'text-fuchsia-400' },
+  blue:    { border: 'border-blue-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]',  stroke: 'stroke-blue-400',    text: 'text-blue-400' },
+  yellow:  { border: 'border-yellow-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(251,191,36,0.3)]',  stroke: 'stroke-yellow-400',  text: 'text-yellow-400' },
+  teal:    { border: 'border-teal-500/60',    glow: 'hover:shadow-[0_0_50px_rgba(45,138,138,0.4)]',  stroke: 'stroke-teal-400',    text: 'text-teal-400' },
+  purple:  { border: 'border-purple-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.3)]',  stroke: 'stroke-purple-400',  text: 'text-purple-400' },
+  orange:  { border: 'border-orange-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(249,115,22,0.3)]',  stroke: 'stroke-orange-400',  text: 'text-orange-400' },
+  green:   { border: 'border-green-500/50',   glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]',   stroke: 'stroke-green-400',   text: 'text-green-400' },
+  pink:    { border: 'border-pink-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]',  stroke: 'stroke-pink-400',    text: 'text-pink-400' },
+  lime:    { border: 'border-lime-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]',  stroke: 'stroke-lime-400',    text: 'text-lime-400' },
+  sky:     { border: 'border-sky-500/50',     glow: 'hover:shadow-[0_0_50px_rgba(14,165,233,0.3)]',  stroke: 'stroke-sky-400',     text: 'text-sky-400' },
+  emerald: { border: 'border-emerald-500/50', glow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.3)]',  stroke: 'stroke-emerald-400', text: 'text-emerald-400' },
+  amber:   { border: 'border-amber-500/50',   glow: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]',  stroke: 'stroke-amber-400',   text: 'text-amber-400' },
+  indigo:  { border: 'border-indigo-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]',  stroke: 'stroke-indigo-400',  text: 'text-indigo-400' },
+  rose:    { border: 'border-rose-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(244,63,94,0.3)]',   stroke: 'stroke-rose-400',    text: 'text-rose-400' },
+  cyan:    { border: 'border-cyan-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]',   stroke: 'stroke-cyan-400',    text: 'text-cyan-400' },
+  violet:  { border: 'border-violet-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.3)]',  stroke: 'stroke-violet-400',  text: 'text-violet-400' },
+  fuchsia: { border: 'border-fuchsia-500/50', glow: 'hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]',  stroke: 'stroke-fuchsia-400', text: 'text-fuchsia-400' },
+  red:     { border: 'border-red-500/50',     glow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.3)]',   stroke: 'stroke-red-400',     text: 'text-red-400' },
 }
 
 const icons: Record<string, JSX.Element> = {
@@ -58,15 +62,47 @@ const icons: Record<string, JSX.Element> = {
   WorkProof: <><rect x="28" y="18" width="30" height="45" rx="4" /><circle cx="43" cy="35" r="10" /><path d="M33 50h20" /><circle cx="68" cy="28" r="8" /><path d="M64 28h8M68 24v8" /><path d="M60 55 L25 70 L25 82 L75 82 L75 70 Z" /><path d="M35 75 l5 5 10-10" strokeWidth="2" /></>,
   InspectVoice: <><path d="M50 15 L50 40" strokeWidth="3" /><rect x="43" y="10" width="14" height="35" rx="7" /><path d="M35 38 Q35 55 50 55 Q65 55 65 38" /><line x1="50" y1="55" x2="50" y2="62" /><line x1="42" y1="62" x2="58" y2="62" /><rect x="20" y="68" width="60" height="22" rx="3" /><path d="M28 75 l4 4 8-8" strokeWidth="2" /><line x1="48" y1="76" x2="72" y2="76" /><line x1="48" y1="82" x2="65" y2="82" /></>,
   UKTradeApps: <><rect x="15" y="20" width="28" height="22" rx="3" /><rect x="57" y="20" width="28" height="22" rx="3" /><rect x="15" y="56" width="28" height="22" rx="3" /><rect x="57" y="56" width="28" height="22" rx="3" /><path d="M25 31h8M25 36h5" /><path d="M67 31h8M67 36h5" /><path d="M25 67h8M25 72h5" /><path d="M67 67h8M67 72h5" /><circle cx="50" cy="50" r="10" /><path d="M46 50h8M50 46v8" /></>,
+  TradGo: <><rect x="35" y="15" width="30" height="55" rx="4" /><line x1="40" y1="22" x2="60" y2="22" /><circle cx="50" cy="75" r="1.5" /><path d="M25 30 q-5 5 0 10" /><path d="M20 25 q-9 10 0 20" /><path d="M75 30 q5 5 0 10" /><path d="M80 25 q9 10 0 20" /><circle cx="50" cy="45" r="5" /><path d="M47 43h6M47 47h4" /></>,
+  SafeEat: <><circle cx="50" cy="50" r="28" /><rect x="38" y="38" width="6" height="6" /><rect x="56" y="38" width="6" height="6" /><rect x="38" y="56" width="6" height="6" /><rect x="47" y="47" width="6" height="6" /><rect x="56" y="56" width="3" height="3" /><rect x="60" y="60" width="2" height="2" /><line x1="18" y1="38" x2="18" y2="68" strokeWidth="2" /><path d="M15 38 v10 q0 3 3 3 h0 q3 0 3 -3 v-10" /><line x1="82" y1="38" x2="82" y2="68" strokeWidth="2" /><line x1="80" y1="38" x2="84" y2="38" strokeWidth="2" /></>,
 }
 
 const steps = [
-  { num: '1', title: 'Discover', desc: 'We identify manual processes and pain points in your industry' },
-  { num: '2', title: 'Validate', desc: 'We confirm the problem is real and widespread' },
-  { num: '3', title: 'Build', desc: 'Focused solutions that do one thing exceptionally well' },
-  { num: '4', title: 'Launch', desc: 'Priced for small businesses, not enterprises' },
-  { num: '5', title: 'Iterate', desc: 'Real feedback shapes every update' },
+  { num: '1', title: 'Discover', desc: 'A UK business brings us a specific problem the existing tools don\'t solve' },
+  { num: '2', title: 'Validate', desc: 'We confirm the problem is real and widespread enough to be worth building for' },
+  { num: '3', title: 'Build', desc: 'Focused niche product that does one thing exceptionally well' },
+  { num: '4', title: 'Launch', desc: 'Priced for small businesses, not enterprises — with a clear fixed scope' },
+  { num: '5', title: 'Iterate', desc: 'Real customer feedback shapes every update — the product keeps getting sharper' },
 ]
+
+const industryHubs = [
+  {
+    title: 'Construction & Trades',
+    count: '9 products',
+    desc: 'BS 7671 calculations, voice-first certification, AI missed-call, snagging, photo evidence, lead capture, crane hire, playground inspection, multilingual H&S.',
+    href: '/for/construction',
+    accent: 'orange',
+  },
+  {
+    title: 'Property & Lettings',
+    count: '4 products',
+    desc: 'AI snagging reports, one-click client approvals, multi-channel lead capture, multilingual tenant safety briefings.',
+    href: '/for/property',
+    accent: 'sky',
+  },
+  {
+    title: 'Care Homes',
+    count: '2 products',
+    desc: 'QR-based multilingual equipment safety with CQC audit trail, plus H&S comprehension verification for diverse staff.',
+    href: '/for/care-homes',
+    accent: 'pink',
+  },
+]
+
+const hubAccents: Record<string, { border: string; text: string; hoverBorder: string; hoverBg: string }> = {
+  orange: { border: 'border-orange-500/20', text: 'text-orange-400', hoverBorder: 'hover:border-orange-500/50', hoverBg: 'hover:bg-orange-500/[0.04]' },
+  sky:    { border: 'border-sky-500/20',    text: 'text-sky-400',    hoverBorder: 'hover:border-sky-500/50',    hoverBg: 'hover:bg-sky-500/[0.04]' },
+  pink:   { border: 'border-pink-500/20',   text: 'text-pink-400',   hoverBorder: 'hover:border-pink-500/50',   hoverBg: 'hover:bg-pink-500/[0.04]' },
+}
 
 function ProductCard({ p }: { p: typeof products[0] }) {
   const c = colorClasses[p.color]
@@ -105,28 +141,28 @@ export default function App() {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-500/15 border border-teal-500/40 rounded-full mb-10">
             <span className="w-2 h-2 bg-teal-500 rounded-full pulse-dot" />
-            <span className="text-teal-400 text-sm font-semibold uppercase tracking-wider">UK Small Business Software</span>
+            <span className="text-teal-400 text-sm font-semibold uppercase tracking-wider">UK Niche SaaS Studio</span>
           </div>
-          
+
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
-            Your systems should save you time,{' '}
-            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">not waste it.</span>
+            Niche SaaS products for the industries{' '}
+            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">generic software forgets.</span>
           </h1>
-          
+
           <p className="text-lg lg:text-xl text-white/50 mb-5 max-w-2xl mx-auto leading-relaxed">
-            You're running a business, not a filing system. Hours lost to manual calculations, compliance paperwork, and tools that weren't built for your industry.
+            Every product here started as one customer\'s problem. Construction, trades, property, care, hospitality, inspection, close protection — each industry has gaps the big platforms gloss over. We fill them.
           </p>
-          
+
           <p className="text-xl lg:text-2xl text-white/85 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            We build automation tools and AI chatbots for UK trades, construction, property and regulated industries.
+            Eighteen niche products serving UK small businesses — plus new ones commissioned fixed-price when an industry has a gap worth closing.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#products" className="btn-primary">
-              See Our Tools
+              See the products
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a href="#contact" className="btn-secondary">Talk to Us</a>
+            <a href="#contact" className="btn-secondary">Commission a new one</a>
           </div>
         </div>
       </section>
@@ -134,31 +170,55 @@ export default function App() {
       {/* Products */}
       <section id="products" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Our <span className="text-orange-500">Products</span></h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">Each tool solves one specific problem exceptionally well. No bloat, no enterprise pricing.</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">The <span className="text-orange-500">Products</span></h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto">Each tool solves one specific problem for one specific industry. No bloat, no enterprise pricing.</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((p) => (
             <ProductCard key={p.name} p={p} />
           ))}
         </div>
+      </section>
 
-        <div className="text-center mt-16">
-          <Link to="/for/construction" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors">
-            See everything built for UK construction & trades
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </Link>
+      {/* Industries we build for */}
+      <section id="industries" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Industries we <span className="text-orange-500">build for</span></h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto">Products aggregated by the sector they serve — for buyers who want to see everything for their industry in one place.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {industryHubs.map((h) => {
+            const a = hubAccents[h.accent]
+            return (
+              <Link
+                key={h.href}
+                to={h.href}
+                className={`p-8 bg-white/[0.02] border rounded-2xl transition-all ${a.border} ${a.hoverBorder} ${a.hoverBg} hover:-translate-y-1`}
+              >
+                <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${a.text}`}>{h.count}</div>
+                <h3 className={`font-display text-xl font-bold mb-3 ${a.text}`}>{h.title}</h3>
+                <p className="text-white/60 leading-relaxed mb-6">{h.desc}</p>
+                <div className={`inline-flex items-center gap-2 text-sm font-semibold ${a.text}`}>
+                  View hub
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
-      {/* Process */}
+      {/* How we build */}
       <section id="process" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">How We <span className="text-orange-500">Work</span></h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">We don't build software looking for problems. We find real pain and fix it.</p>
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">How a product <span className="text-orange-500">gets born</span></h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto">We don\'t build software looking for problems. One UK business brings us real pain, and the fix becomes a niche product that serves the industry.</p>
         </div>
-        
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s) => (
             <div key={s.num} className="text-center p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-teal-500/[0.08] hover:border-teal-500/30 transition-all">
@@ -174,9 +234,9 @@ export default function App() {
       <section id="contact" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Let's talk about your business</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-10">Got a manual process eating your time? Drowning in compliance paperwork? Need a chatbot to handle enquiries? We'd love to hear what's slowing you down.</p>
-            
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Got a gap the existing tools don\'t close?</h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-10">Every product in the portfolio started with a conversation like this. Tell us what\'s slowing your industry down, and we\'ll tell you whether the problem is worth building a niche product around.</p>
+
             <div className="space-y-6">
               <div className="flex items-center gap-5">
                 <div className="contact-icon">
@@ -198,12 +258,12 @@ export default function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-2 overflow-hidden">
-            <iframe 
-              src="https://app.smartsuite.com/form/sba974gi/0TfuCx5I40?header=false" 
-              width="100%" 
-              height="600" 
+            <iframe
+              src="https://app.smartsuite.com/form/sba974gi/0TfuCx5I40?header=false"
+              width="100%"
+              height="600"
               frameBorder="0"
               title="Contact Form"
               className="rounded-2xl"
