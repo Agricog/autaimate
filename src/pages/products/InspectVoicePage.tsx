@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mic, WifiOff, FileText, Zap, Shield, CheckCircle2, ChevronRight, PoundSterling, Tablet, MapPin } from 'lucide-react'
+import { ArrowRight, Mic, WifiOff, FileText, Zap, Shield, ChevronRight, PoundSterling, Tablet, MapPin } from 'lucide-react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/SEO'
 
