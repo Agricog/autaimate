@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Point 5: Viewport with max-scale -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <!-- Point 5: Viewport (removed maximum-scale for a11y) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Point 1: Title Tag (55-60 chars, Primary | Secondary | Brand) -->
     <title>Niche SaaS for UK Industries | Fixed-Price Builds | Autaimate</title>
@@ -44,10 +44,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- Theme -->
     <meta name="theme-color" content="#0a0a12" />
     <meta name="msapplication-TileColor" content="#0a0a12" />
@@ -55,6 +51,29 @@
     <!-- Geo -->
     <meta name="geo.region" content="GB" />
     <meta name="geo.placename" content="United Kingdom" />
+
+    <!-- ============================================================ -->
+    <!-- FONTS: Bunny Fonts (GDPR-compliant Google Fonts replacement) -->
+    <!-- Loaded async so they don't block render — biggest LCP win    -->
+    <!-- ============================================================ -->
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.bunny.net/css?family=outfit:400,600,700,800|space-grotesk:400,600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.bunny.net/css?family=outfit:400,600,700,800|space-grotesk:400,600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.bunny.net/css?family=outfit:400,600,700,800|space-grotesk:400,600&display=swap"
+      />
+    </noscript>
 
     <!-- =========================================================== -->
     <!-- Point 11: JSON-LD — all 8 required schema types              -->
@@ -272,9 +291,6 @@
       ]
     }
     </script>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
