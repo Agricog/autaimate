@@ -193,32 +193,31 @@ export default function SnagLogPage() {
       />
       <Layout>
         <div className="cosmic-bg" />
-        <div className="stars" />
 
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-slate">
+            <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
             <li>/</li>
-            <li><Link to="/#products" className="hover:text-orange-500">Products</Link></li>
+            <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
             <li>/</li>
-            <li className="text-white/70">SnagLog</li>
+            <li className="text-ink">SnagLog</li>
           </ol>
         </nav>
 
         {/* Hero */}
         <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-12 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-500/15 border border-teal-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-teal-400 rounded-full pulse-dot" />
-            <span className="text-teal-400 text-sm font-semibold uppercase tracking-wider">AI Snagging &middot; UK Property</span>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-soft border border-teal/20 rounded-full mb-8">
+            <span className="w-2 h-2 bg-teal rounded-full pulse-dot" />
+            <span className="text-teal text-sm font-semibold uppercase tracking-wider">AI Snagging &middot; UK Property</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight text-ink">
             Walk the property.{' '}
-            <span className="bg-gradient-to-r from-teal-400 via-teal-300 to-orange-400 bg-clip-text text-transparent">The snagging report writes itself.</span>
+            <span className="text-teal">The snagging report writes itself.</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-slate mb-10 max-w-3xl mx-auto leading-relaxed">
             Photograph a defect. SnagLog\u2019s AI identifies the issue, categorises severity, assigns the trade, and drops it into a structured PDF report. What used to be an evening of typing is now done by the time you are back in the van.
           </p>
 
@@ -230,14 +229,14 @@ export default function SnagLogPage() {
             <Link to="/#products" className="btn-secondary">See all products</Link>
           </div>
 
-          <p className="mt-8 text-sm text-white/50">Pay per report &middot; From £19.99 &middot; No subscription</p>
+          <p className="mt-8 text-sm text-slate">Pay per report &middot; From £19.99 &middot; No subscription</p>
         </section>
 
         {/* Quick Answer */}
         <section className="px-6 lg:px-12 max-w-4xl mx-auto mb-20">
-          <div id="quick-answer" className="bg-gradient-to-br from-teal-500/10 to-orange-500/5 border border-teal-500/20 rounded-3xl p-8 lg:p-10">
-            <div className="text-xs font-semibold uppercase tracking-wider text-teal-400 mb-3">Quick Answer</div>
-            <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
+          <div id="quick-answer" className="bg-teal-soft border border-teal/20 rounded-3xl p-8 lg:p-10">
+            <div className="text-xs font-semibold uppercase tracking-wider text-teal mb-3">Quick Answer</div>
+            <p className="text-lg lg:text-xl text-ink leading-relaxed">
               SnagLog is an AI-powered snagging app for UK property inspections. Photograph defects, the AI writes the report, download a professional PDF. Pay per report, no subscription, from around £19.99.
             </p>
           </div>
@@ -246,19 +245,19 @@ export default function SnagLogPage() {
         {/* How it works */}
         <section className="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              How SnagLog <span className="text-orange-500">works.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              How SnagLog <span className="text-teal">works.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Four steps. No typing. No template wrestling. No late-night write-ups.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {steps.map((s) => (
-              <div key={s.num} className="text-center p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-teal-500/[0.08] hover:border-teal-500/30 transition-all">
+              <div key={s.num} className="text-center p-8 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
                 <div className="process-number mx-auto mb-4">{s.num}</div>
-                <h3 className="font-display text-base font-bold text-orange-500 uppercase tracking-wide mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-base font-bold text-ink uppercase tracking-wide mb-2">{s.title}</h3>
+                <p className="text-slate text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -266,14 +265,14 @@ export default function SnagLogPage() {
 
         {/* Who it's for */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
-            Built for anyone who walks a property <span className="text-orange-500">and writes it up.</span>
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center text-ink">
+            Built for anyone who walks a property <span className="text-teal">and writes it up.</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {audiences.map((item) => (
-              <div key={item.title} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-teal-400 mb-2">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-lg font-bold text-ink mb-2">{item.title}</h3>
+                <p className="text-slate leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -282,18 +281,18 @@ export default function SnagLogPage() {
         {/* Differentiators */}
         <section className="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Why SnagLog works <span className="text-orange-500">differently.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Why SnagLog works <span className="text-teal">differently.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Most property inspection apps make you do the typing. SnagLog does the typing for you.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {differentiators.map((d) => (
-              <div key={d.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-teal-400 mb-3">{d.title}</h3>
-                <p className="text-white/70 leading-relaxed">{d.desc}</p>
+              <div key={d.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-lg font-bold text-ink mb-3">{d.title}</h3>
+                <p className="text-slate leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -302,74 +301,74 @@ export default function SnagLogPage() {
         {/* Provenance */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Built for UK property, <span className="text-orange-500">by the UK.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Built for UK property, <span className="text-teal">by the UK.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {provenancePoints.map((p) => (
-              <div key={p.title} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-base font-bold text-teal-400 mb-3">{p.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
+              <div key={p.title} className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-base font-bold text-teal mb-3">{p.title}</h3>
+                <p className="text-slate text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
-          <div className="text-center text-sm text-white/50 mt-8">
-            Written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
+          <div className="text-center text-sm text-slate mt-8">
+            Written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
           </div>
         </section>
 
         {/* Types of snags */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              The kinds of defects SnagLog <span className="text-orange-500">picks up.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              The kinds of defects SnagLog <span className="text-teal">picks up.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               A run-down of what UK property inspectors actually find on walks, and how SnagLog categorises each one for the report.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Cosmetic and finish defects</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Paint defects, scuffed skirting, damaged trim, uneven fillers, mis-matched edges. The most common new-build findings. SnagLog classifies these as minor unless the affected area is substantial, in which case severity auto-escalates to moderate.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Cosmetic and finish defects</h3>
+              <p className="text-slate text-sm leading-relaxed">Paint defects, scuffed skirting, damaged trim, uneven fillers, mis-matched edges. The most common new-build findings. SnagLog classifies these as minor unless the affected area is substantial, in which case severity auto-escalates to moderate.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Sealant and grout failures</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Failed bathroom sealant, cracked grout, gaps around fittings. Moderate severity by default — these are functional failures rather than cosmetic, and they need remediation to prevent water ingress. Assigned to the relevant trade (tiler, plumber or general builder) based on context.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Sealant and grout failures</h3>
+              <p className="text-slate text-sm leading-relaxed">Failed bathroom sealant, cracked grout, gaps around fittings. Moderate severity by default — these are functional failures rather than cosmetic, and they need remediation to prevent water ingress. Assigned to the relevant trade (tiler, plumber or general builder) based on context.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Fixture and fitting issues</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Mis-aligned doors, drawers that do not close, loose taps, incorrectly installed sockets. These get assigned to the relevant trade (joiner, plumber, electrician) with severity depending on whether it is a quick adjustment or a full refit.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Fixture and fitting issues</h3>
+              <p className="text-slate text-sm leading-relaxed">Mis-aligned doors, drawers that do not close, loose taps, incorrectly installed sockets. These get assigned to the relevant trade (joiner, plumber, electrician) with severity depending on whether it is a quick adjustment or a full refit.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Structural and mechanical concerns</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Cracks wider than cosmetic, movement at junctions, damp patches, suspected drainage issues. Major severity by default — these are the findings that need urgent attention and SnagLog flags them for escalation in the report summary.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Structural and mechanical concerns</h3>
+              <p className="text-slate text-sm leading-relaxed">Cracks wider than cosmetic, movement at junctions, damp patches, suspected drainage issues. Major severity by default — these are the findings that need urgent attention and SnagLog flags them for escalation in the report summary.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Incomplete work</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Missing tiles, unfilled holes, unpainted areas, missing trims. Common on handover walks where the site has been rushed. Categorised as the original trade responsible and reported as punch-list items for completion.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Incomplete work</h3>
+              <p className="text-slate text-sm leading-relaxed">Missing tiles, unfilled holes, unpainted areas, missing trims. Common on handover walks where the site has been rushed. Categorised as the original trade responsible and reported as punch-list items for completion.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-teal-400 mb-3">Cleaning and handover readiness</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Protective film left on, building dust not cleared, adhesive residue on windows. Minor category but frequent on new-build handover. SnagLog groups these under a single "handover preparation" heading in the report so the builder can address them in one pass.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Cleaning and handover readiness</h3>
+              <p className="text-slate text-sm leading-relaxed">Protective film left on, building dust not cleared, adhesive residue on windows. Minor category but frequent on new-build handover. SnagLog groups these under a single "handover preparation" heading in the report so the builder can address them in one pass.</p>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
         <section id="faq" className="py-16 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center text-ink">
             Frequently asked questions
           </h2>
           <div className="space-y-4">
             {faqs.map((f) => (
-              <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-teal-500/30 transition-colors">
-                <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
+              <details key={f.q} className="group p-6 bg-white border border-sand rounded-2xl shadow-card hover:border-teal/40 transition-colors">
+                <summary className="font-display text-base font-bold text-ink cursor-pointer list-none flex justify-between items-center gap-4">
                   <span>{f.q}</span>
-                  <span className="text-teal-400 text-xl group-open:rotate-45 transition-transform">+</span>
+                  <span className="text-teal text-xl group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
+                <p className="mt-4 text-slate leading-relaxed">{f.a}</p>
               </details>
             ))}
           </div>
@@ -378,22 +377,22 @@ export default function SnagLogPage() {
         {/* Related */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">Where to go <span className="text-orange-500">next</span></h2>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">Where to go <span className="text-teal">next</span></h2>
           </div>
           <div className="space-y-3">
             {relatedPages.map((r) => {
               const inner = (
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-teal-400 transition-colors">{r.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{r.desc}</p>
+                    <h3 className="font-display text-lg font-bold text-ink mb-1 group-hover:text-teal transition-colors">{r.title}</h3>
+                    <p className="text-slate text-sm leading-relaxed">{r.desc}</p>
                   </div>
-                  <svg className="w-5 h-5 text-white/40 group-hover:text-teal-400 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-slate group-hover:text-teal flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
               )
-              const className = 'block p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-teal-500/[0.04] hover:border-teal-500/30 transition-all group'
+              const className = 'block p-6 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all group'
               return r.external
                 ? <a key={r.href} href={r.href} target="_blank" rel="noopener noreferrer" className={className}>{inner}</a>
                 : <Link key={r.href} to={r.href} className={className}>{inner}</Link>
@@ -403,10 +402,10 @@ export default function SnagLogPage() {
 
         {/* Final CTA */}
         <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-ink">
             Get your evenings back.
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-slate text-lg mb-10 max-w-xl mx-auto">
             Pay per report. No subscription. The job is done when the job is done.
           </p>
           <a href="https://app.snaglog.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
