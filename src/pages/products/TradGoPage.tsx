@@ -187,33 +187,35 @@ export default function TradGoPage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">TradGo</li>
+          <li className="text-ink">TradGo</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Bot className="w-3 h-3" /> AI agent · Missed calls · WhatsApp · Web chat
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          You can't answer the phone <span className="text-orange-400">up a ladder.</span>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          You can't answer the phone <span className="text-teal">up a ladder.</span>
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           TradGo does. It picks up the missed calls, the WhatsApp messages, and the enquiries coming off your website — replies in your voice, keeps customers warm, and lines up jobs while you're elbow-deep in a fuse board. £59 a month. Catch one job and it's paid for itself.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Start 14-day free trial <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Ask us a question
           </Link>
         </div>
@@ -221,9 +223,9 @@ export default function TradGoPage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-amber-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             TradGo is an AI agent for UK electricians and trades. It handles missed calls, WhatsApp, and website chat in your voice — turning enquiries you'd otherwise lose into booked jobs. £59/month, 14-day free trial.
           </p>
         </div>
@@ -231,8 +233,8 @@ export default function TradGoPage() {
 
       {/* The problem */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The cost of a missed call</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The cost of a missed call</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-slate">
           <div>
             <p className="mb-4">
               The average trade business in the UK misses a third of its inbound calls. That's not laziness — that's physics. You can't answer the phone when you're on a stepladder or pulling cable through a ceiling. By the time you call back, the customer has already rung the next sparky on Google and booked them in.
@@ -254,34 +256,34 @@ export default function TradGoPage() {
 
       {/* Three channels */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">Three channels. One inbox. Your voice.</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">Three channels. One inbox. Your voice.</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <PhoneMissed className="w-8 h-8 text-orange-400 mb-3" />
-            <div className="font-semibold text-lg mb-2">Missed call text-back</div>
-            <p className="text-white/70">Unanswered calls get a short voice message from TradGo, then an SMS within seconds. The AI keeps the conversation going until you're free.</p>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <PhoneMissed className="w-8 h-8 text-teal mb-3" />
+            <div className="font-semibold text-lg mb-2 text-ink">Missed call text-back</div>
+            <p className="text-slate">Unanswered calls get a short voice message from TradGo, then an SMS within seconds. The AI keeps the conversation going until you're free.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <MessageSquare className="w-8 h-8 text-orange-400 mb-3" />
-            <div className="font-semibold text-lg mb-2">WhatsApp Business</div>
-            <p className="text-white/70">Plug your WhatsApp Business number into TradGo and the same AI agent handles enquiries the moment they land. No app-switching for the customer.</p>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <MessageSquare className="w-8 h-8 text-teal mb-3" />
+            <div className="font-semibold text-lg mb-2 text-ink">WhatsApp Business</div>
+            <p className="text-slate">Plug your WhatsApp Business number into TradGo and the same AI agent handles enquiries the moment they land. No app-switching for the customer.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <MessageCircle className="w-8 h-8 text-orange-400 mb-3" />
-            <div className="font-semibold text-lg mb-2">Website chat widget</div>
-            <p className="text-white/70">One line of code dropped into your existing site. Visitors get instant replies, you get leads captured 24/7 without building a new website.</p>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <MessageCircle className="w-8 h-8 text-teal mb-3" />
+            <div className="font-semibold text-lg mb-2 text-ink">Website chat widget</div>
+            <p className="text-slate">One line of code dropped into your existing site. Visitors get instant replies, you get leads captured 24/7 without building a new website.</p>
           </div>
         </div>
       </section>
 
       {/* Keep your number */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">You keep your number. Nothing changes on the van.</h2>
-          <p className="text-white/75 mb-3">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-ink">You keep your number. Nothing changes on the van.</h2>
+          <p className="text-slate mb-3">
             The thing tradesmen worry about with any phone tech is being told to change their number. Decades of customers know your mobile. It's on the van, the business cards, the Google listing, your Facebook page, the fridge magnet you handed out in 2012. Changing it is out of the question.
           </p>
-          <p className="text-white/75">
+          <p className="text-slate">
             TradGo doesn't touch your number. You set call forwarding on your phone so unanswered calls divert to TradGo, and that's the whole setup. Customers still ring the number they've always rung. You still answer it when you can. TradGo only steps in when you can't.
           </p>
         </div>
@@ -289,8 +291,8 @@ export default function TradGoPage() {
 
       {/* Approval workflow */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Every price needs your sign-off</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Every price needs your sign-off</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             The fear with any AI handling customer conversations is that it gives the wrong price. Quotes £200 for a job that should be £600. Commits you to a callout rate you'd never have offered. Turns a polite enquiry into a binding quote before you've seen the job.
           </p>
@@ -305,15 +307,15 @@ export default function TradGoPage() {
 
       {/* Reviews */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
           <div className="flex items-center gap-3 mb-4">
-            <Star className="w-6 h-6 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">Google reviews, on your terms</h2>
+            <Star className="w-6 h-6 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">Google reviews, on your terms</h2>
           </div>
-          <p className="text-white/75 mb-3">
+          <p className="text-slate mb-3">
             Reviews win jobs. Most review software is auto-spam — a pushy email the moment a job's invoiced, whether the customer's happy or not. That's how you get one-star reviews from people who didn't want to be chased.
           </p>
-          <p className="text-white/75">
+          <p className="text-slate">
             TradGo has a manual Google review request button on the dashboard. Job finished, customer happy, you press the button. Polite, personal, timed by you. The customer gets your review link and leaves a proper five-star review because you asked at the right moment — not because a robot spammed them at 9pm.
           </p>
         </div>
@@ -321,49 +323,49 @@ export default function TradGoPage() {
 
       {/* Pricing */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-white/10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Pricing</h2>
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="flex items-center gap-2 mb-2">
-            <PoundSterling className="w-6 h-6 text-orange-400" />
-            <div className="text-3xl font-bold">59 / month</div>
+            <PoundSterling className="w-6 h-6 text-teal" />
+            <div className="text-3xl font-bold text-ink">59 / month</div>
           </div>
-          <p className="text-white/80 mb-4">14-day free trial. No card needed to start. Cancel anytime.</p>
-          <ul className="grid md:grid-cols-2 gap-2 text-white/80">
+          <p className="text-slate mb-4">14-day free trial. No card needed to start. Cancel anytime.</p>
+          <ul className="grid md:grid-cols-2 gap-2 text-ink">
             {['All three channels (calls, WhatsApp, web chat)', 'AI trained on your voice', 'Pricing approval workflow', 'Unified inbox', 'Google review request button', 'UK support'].map((f) => (
-              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-orange-400" /> {f}</li>
+              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal" /> {f}</li>
             ))}
           </ul>
         </div>
-        <p className="text-sm text-white/60 mt-4">Catch one missed job a month and TradGo is paid for. Most trades catch that in the first week.</p>
+        <p className="text-sm text-slate mt-4">Catch one missed job a month and TradGo is paid for. Most trades catch that in the first week.</p>
       </section>
 
       {/* Who it's for */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for UK trades</h2>
-        <div className="grid md:grid-cols-3 gap-4 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Built for UK trades</h2>
+        <div className="grid md:grid-cols-3 gap-4 text-slate">
           {['Electricians', 'Plumbers', 'Heating engineers', 'Gas Safe engineers', 'Builders & general trades', 'Roofers', 'Locksmiths', 'Decorators', 'Landscapers'].map((t) => (
-            <div key={t} className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <CheckCircle2 className="w-5 h-5 text-orange-400 mb-2" />
-              <div className="font-semibold text-white">{t}</div>
+            <div key={t} className="p-4 rounded-xl bg-white border border-sand shadow-card">
+              <CheckCircle2 className="w-5 h-5 text-teal mb-2" />
+              <div className="font-semibold text-ink">{t}</div>
             </div>
           ))}
         </div>
-        <p className="text-white/70 mt-6 max-w-3xl">
+        <p className="text-slate mt-6 max-w-3xl">
           The common thread: one-van or small-team operations where customers ring for a ballpark, the guv'nor is on the tools, and a missed call is a job lost. If that's you, TradGo is built for you.
         </p>
       </section>
 
       {/* Security & GDPR */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-6 h-6 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">GDPR and data, sorted properly</h2>
+            <Shield className="w-6 h-6 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">GDPR and data, sorted properly</h2>
           </div>
-          <p className="text-white/75 mb-3">
+          <p className="text-slate mb-3">
             TradGo runs on EU-region infrastructure. Conversations are encrypted in transit and at rest. Customer records are tied to your account and can be exported or deleted on request, which keeps you on the right side of GDPR without you having to think about it.
           </p>
-          <p className="text-white/75">
+          <p className="text-slate">
             WhatsApp integration uses the official WhatsApp Business API — no grey-area third-party scrapers. SMS goes through UK-licensed carriers. Web chat data never leaves our infrastructure and isn't shared with ad networks.
           </p>
         </div>
@@ -371,31 +373,31 @@ export default function TradGoPage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built for trades by someone who's been on the tools</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built for trades by someone who's been on the tools</h2>
+          <p className="text-slate mb-4">
             TradGo comes out of Autaimate. Our founder spent 40 years in UK construction and trades before building software. The reason TradGo sounds like a sparky on the phone instead of a call-centre script is that it was designed by someone who picked up the phone on a job for four decades.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             TradGo isn't a repurposed American chatbot with a UK flag on the homepage. It's built in the UK for UK trades, with UK phone networks, UK carriers, and UK GDPR requirements in mind from day one.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -403,44 +405,44 @@ export default function TradGoPage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradeCalcs</div>
-            <p className="text-sm text-white/70">Free BS 7671 calculators for UK electricians and heating engineers.</p>
+          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradeCalcs</div>
+            <p className="text-sm text-slate">Free BS 7671 calculators for UK electricians and heating engineers.</p>
           </Link>
-          <Link to="/products/certvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">CertVoice</div>
-            <p className="text-sm text-white/70">Voice-first BS 7671 electrical certificates — finish the paperwork on site.</p>
+          <Link to="/products/certvoice" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">CertVoice</div>
+            <p className="text-sm text-slate">Voice-first BS 7671 electrical certificates — finish the paperwork on site.</p>
           </Link>
-          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">SnagLog</div>
-            <p className="text-sm text-white/70">AI-powered snagging reports for property inspectors and builders.</p>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">SnagLog</div>
+            <p className="text-sm text-slate">AI-powered snagging reports for property inspectors and builders.</p>
           </Link>
-          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK construction & trades</div>
-            <p className="text-sm text-white/70">Every Autaimate product built for the industry, in one place.</p>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK construction & trades</div>
+            <p className="text-sm text-slate">Every Autaimate product built for the industry, in one place.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Got a trade problem that needs its own software? See how it gets built.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Got a trade problem that needs its own software? See how it gets built.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-white/10 text-center">
-          <Zap className="w-10 h-10 text-orange-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Stop losing jobs to the next sparky on Google</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <Zap className="w-10 h-10 text-teal mx-auto mb-4" />
+          <h2 className="text-3xl font-bold mb-4 text-ink">Stop losing jobs to the next sparky on Google</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             TradGo picks up what you can't. Start the free trial — no card, no lock-in, fourteen days to see it work on your actual business.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <a href="https://tradgo.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Start 14-day free trial <ArrowRight className="w-4 h-4" />
             </a>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Ask us a question
             </Link>
           </div>
