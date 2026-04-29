@@ -6,135 +6,125 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  background: #0a0a12;
-  color: #ffffff;
+  font-family: 'DM Sans', 'Space Grotesk', system-ui, sans-serif;
+  background: #f7f5f0;
+  color: #1a2332;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Selection — uses brand teal */
+::selection {
+  background: rgba(10, 157, 128, 0.2);
+  color: #1a2332;
+}
+
+/* Subtle warm gradient — replaces cosmic-bg, deliberately understated */
 .cosmic-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(ellipse at 20% 20%, rgba(45, 138, 138, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(15, 15, 30, 1) 0%, #0a0a12 100%);
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(10, 157, 128, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(229, 225, 216, 0.4) 0%, transparent 50%);
   z-index: -2;
   pointer-events: none;
 }
 
+/* Stars removed — kept as no-op so legacy <div className="stars" /> markup doesn't break */
 .stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.2), transparent),
-    radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(2px 2px at 200px 50px, rgba(255,255,255,0.15), transparent),
-    radial-gradient(1px 1px at 250px 160px, rgba(255,255,255,0.25), transparent),
-    radial-gradient(2px 2px at 300px 90px, rgba(255,255,255,0.2), transparent);
-  background-size: 400px 400px;
-  animation: twinkle 8s ease-in-out infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  display: none;
 }
 
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.2); }
 }
-
 .pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* Logo wordmark — span used to be orange, now teal-deep */
 .logo-text {
   font-family: 'Outfit', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  color: #fff;
+  color: #1a2332;
   text-decoration: none;
   letter-spacing: -0.5px;
 }
-
 .logo-text span {
-  color: #f97316;
+  color: #0a9d80;
 }
 
+/* Primary CTA — solid teal-deep, white text, soft shadow */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 36px;
-  background: linear-gradient(135deg, #f97316, #ea580c);
-  color: white;
+  padding: 16px 32px;
+  background: #0a9d80;
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
   border-radius: 12px;
   text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 0 40px rgba(249, 115, 22, 0.3);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(10, 157, 128, 0.25);
+  border: 1px solid #0a9d80;
 }
-
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(249, 115, 22, 0.5);
+  background: #087a64;
+  border-color: #087a64;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(10, 157, 128, 0.35);
 }
 
+/* Secondary CTA — outlined, ink text */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 36px;
-  background: transparent;
-  color: white;
+  padding: 16px 32px;
+  background: #ffffff;
+  color: #1a2332;
   font-weight: 600;
   font-size: 16px;
   border-radius: 12px;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.3s;
+  border: 1px solid #e5e1d8;
+  transition: all 0.2s ease;
 }
-
 .btn-secondary:hover {
-  border-color: #2d8a8a;
-  color: #5bbfbf;
+  border-color: #0a9d80;
+  color: #0a9d80;
 }
 
+/* Product card circle — white card, sand border, subtle shadow on hover */
 .product-circle {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(30, 30, 50, 0.8), rgba(15, 15, 25, 0.95));
-  border: 2px solid;
+  background: #ffffff;
+  border: 1px solid #e5e1d8;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
-
 .product-card:hover .product-circle {
-  box-shadow: 0 0 50px var(--glow-color);
+  border-color: #0a9d80;
+  box-shadow: 0 4px 20px rgba(10, 157, 128, 0.15);
 }
 
+/* Process step number — teal block, white digit */
 .process-number {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #2d8a8a, #3aa3a3);
+  background: #0a9d80;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -142,23 +132,32 @@ body {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 22px;
-  color: white;
+  color: #ffffff;
 }
 
+/* Contact icons — soft teal pill */
 .contact-icon {
   width: 50px;
   height: 50px;
-  background: rgba(45, 138, 138, 0.15);
-  border: 1px solid rgba(45, 138, 138, 0.3);
+  background: #e6f4f0;
+  border: 1px solid rgba(10, 157, 128, 0.2);
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Scrollbar — quiet, sand-toned */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a12; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #444; }
+::-webkit-scrollbar-track { background: #f7f5f0; }
+::-webkit-scrollbar-thumb { background: #e5e1d8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #5a6470; }
+
+/* Focus rings — teal, accessible */
+*:focus-visible {
+  outline: 2px solid #0a9d80;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 
