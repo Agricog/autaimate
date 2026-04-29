@@ -175,33 +175,35 @@ export default function CertVoicePage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">CertVoice</li>
+          <li className="text-ink">CertVoice</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Mic className="w-3 h-3" /> Voice-first · BS 7671 compliant · Offline-ready
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Finish the <span className="text-orange-400">certificate</span> before you leave the site.
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Finish the <span className="text-teal">certificate</span> before you leave the site.
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           CertVoice is a voice-first electrical certificate platform for UK electricians. Dictate your test results on the job — CertVoice turns what you said into a compliant BS 7671 certificate PDF before the van leaves the kerb. No evening paperwork. No Sunday admin.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Open CertVoice <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Talk to us
           </Link>
         </div>
@@ -209,9 +211,9 @@ export default function CertVoicePage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-teal-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-teal-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             CertVoice is a UK voice-first electrical certificate app. Electricians dictate test results on site — it produces a compliant BS 7671 EIC, EICR, or Minor Works PDF automatically, offline, before you leave the job.
           </p>
         </div>
@@ -219,8 +221,8 @@ export default function CertVoicePage() {
 
       {/* The problem */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The problem every electrician knows</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The problem every electrician knows</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-slate">
           <div>
             <p className="mb-4">
               You finish the test. You pack up the kit. You get home at half six. Dinner, kids, a sit-down — and then the laptop comes out because the certificate still needs writing up. Your notebook is a mess. Half the readings are on the back of a receipt. You cross-check circuits against your head-torch photos because the scribble makes no sense six hours on.
@@ -242,7 +244,7 @@ export default function CertVoicePage() {
 
       {/* How it works */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How CertVoice works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How CertVoice works</h2>
         <div className="grid md:grid-cols-5 gap-6">
           {[
             { n: '1', t: 'Start the certificate', d: 'Pick client, install, and certificate type: EIC, EICR, or Minor Works.' },
@@ -251,10 +253,10 @@ export default function CertVoicePage() {
             { n: '4', t: 'Generate the PDF', d: 'On-device PDF, formatted to the BS 7671 template, ready to issue.' },
             { n: '5', t: 'Close the job', d: 'Email the client, log it in history, drive away with the paperwork done.' },
           ].map((s) => (
-            <div key={s.n} className="p-5 rounded-xl bg-white/5 border border-white/10">
-              <div className="text-orange-400 font-bold text-2xl mb-2">{s.n}</div>
-              <div className="font-semibold mb-2">{s.t}</div>
-              <p className="text-sm text-white/70">{s.d}</p>
+            <div key={s.n} className="p-5 rounded-xl bg-white border border-sand shadow-card">
+              <div className="text-teal font-bold text-2xl mb-2">{s.n}</div>
+              <div className="font-semibold mb-2 text-ink">{s.t}</div>
+              <p className="text-sm text-slate">{s.d}</p>
             </div>
           ))}
         </div>
@@ -262,7 +264,7 @@ export default function CertVoicePage() {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">Built for how sparkies actually work</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">Built for how sparkies actually work</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             { i: Mic, t: 'Voice-first, not form-first', d: 'Most certificate software is a long form with a login. CertVoice reverses it. You speak, it structures. The form is for review, not for entry.' },
@@ -272,10 +274,10 @@ export default function CertVoicePage() {
             { i: Clock, t: 'Finished on site', d: 'On-device PDF generation. No "wait for it to process." You issue the certificate before the tools are back in the van.' },
             { i: CheckCircle2, t: 'Multi-engineer accounts', d: 'Firms with apprentices or multiple testing engineers can share one account, with review and countersign for less-experienced staff.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -283,18 +285,18 @@ export default function CertVoicePage() {
 
       {/* Who it's for */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Who CertVoice is built for</h2>
-        <div className="grid md:grid-cols-3 gap-6 text-white/75">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Sole-trader electricians</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Who CertVoice is built for</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-slate">
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Sole-trader electricians</div>
             <p>One van, domestic and light commercial work, and no office team to write up paperwork. CertVoice gives a one-man operation the certification output of a firm with admin staff.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Small testing & inspection firms</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Small testing & inspection firms</div>
             <p>Multi-engineer teams doing EICRs day in, day out. CertVoice removes the end-of-day reporting bottleneck and standardises output across engineers of different experience levels.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Facilities & estate teams</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Facilities & estate teams</div>
             <p>In-house maintenance electricians at schools, hospitals, housing associations, and commercial estates who need fast, compliant paperwork for their own audit trail.</p>
           </div>
         </div>
@@ -302,8 +304,8 @@ export default function CertVoicePage() {
 
       {/* Why voice */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why voice beats typing for testing</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Why voice beats typing for testing</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             Testing is a two-handed job. One hand on the instrument, the other on the board. A clipboard wedged under an arm, a head-torch on, safety glasses steamed up. Anyone who has tried to type test values into a phone in that posture knows it doesn't work — you end up scribbling on paper and retyping at the kitchen table.
           </p>
@@ -318,31 +320,31 @@ export default function CertVoicePage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built by people who've been on the tools</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built by people who've been on the tools</h2>
+          <p className="text-slate mb-4">
             CertVoice is built by Autaimate. Our founder spent 40 years in UK construction and trades before founding the studio. We don't design in a Shoreditch loft and guess at what sparkies need — we build for the trade because we came from the trade.
           </p>
-          <p className="text-white/75 mb-4">
-            CertVoice sits in a family of voice-first products. Its sibling is <Link to="/products/inspectvoice" className="text-orange-400 underline">InspectVoice</Link>, which applies the same voice-to-report pattern to BS EN 1176 playground inspections. The approach is the same: dictate on site, structure the data, generate the PDF before you leave.
+          <p className="text-slate mb-4">
+            CertVoice sits in a family of voice-first products. Its sibling is <Link to="/products/inspectvoice" className="text-teal hover:text-teal-dark underline">InspectVoice</Link>, which applies the same voice-to-report pattern to BS EN 1176 playground inspections. The approach is the same: dictate on site, structure the data, generate the PDF before you leave.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -350,43 +352,43 @@ export default function CertVoicePage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradeCalcs</div>
-            <p className="text-sm text-white/70">Free BS 7671 calculators for UK electricians — cable sizing, voltage drop, circuit design.</p>
+          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradeCalcs</div>
+            <p className="text-sm text-slate">Free BS 7671 calculators for UK electricians — cable sizing, voltage drop, circuit design.</p>
           </Link>
-          <Link to="/products/inspectvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">InspectVoice</div>
-            <p className="text-sm text-white/70">The sibling voice-first product — BS EN 1176 playground inspections with the same pattern.</p>
+          <Link to="/products/inspectvoice" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">InspectVoice</div>
+            <p className="text-sm text-slate">The sibling voice-first product — BS EN 1176 playground inspections with the same pattern.</p>
           </Link>
-          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK construction & trades</div>
-            <p className="text-sm text-white/70">See every Autaimate product built for the construction industry.</p>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK construction & trades</div>
+            <p className="text-sm text-slate">See every Autaimate product built for the construction industry.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Got a trade workflow that needs its own tool? See how a new product gets born.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Got a trade workflow that needs its own tool? See how a new product gets born.</p>
           </Link>
-          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradGo</div>
-            <p className="text-sm text-white/70">AI agent that catches missed calls, WhatsApp and web chat while you're working.</p>
+          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradGo</div>
+            <p className="text-sm text-slate">AI agent that catches missed calls, WhatsApp and web chat while you're working.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-teal-500/20 to-orange-500/20 border border-white/10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Put the paperwork back on site where it belongs</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Put the paperwork back on site where it belongs</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             CertVoice is built for UK electricians who'd rather test circuits than type them. Dictate the certificate, review it, issue it — before you leave.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <a href="https://certvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Open CertVoice <ArrowRight className="w-4 h-4" />
             </a>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Ask us a question
             </Link>
           </div>
