@@ -383,10 +383,10 @@ export default function MicroSaasPage() {
       <div className="max-w-5xl mx-auto px-6 pt-28 pb-0">
         <div
           id="quick-answer"
-          className="p-6 rounded-2xl bg-gradient-to-br from-teal-500/10 via-transparent to-orange-500/10 border border-white/10"
+          className="p-6 rounded-2xl bg-teal-soft border border-teal/20"
         >
-          <div className="text-xs uppercase tracking-wider text-teal-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             {quickAnswer}
           </p>
         </div>
