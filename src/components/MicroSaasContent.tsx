@@ -250,40 +250,40 @@ export default function MicroSaasContent() {
         <div className="max-w-5xl mx-auto px-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-teal-400 transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-sm text-slate hover:text-teal transition-colors mb-6"
           >
             <ArrowRight className="w-4 h-4 rotate-180" />
             Back to Homepage
           </Link>
 
-          <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full border border-teal-500/20 bg-teal-500/10 text-teal-400 text-sm font-medium">
-            <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full border border-teal/20 bg-teal-soft text-teal text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
             Commissions open for Q2 2026 delivery
           </div>
 
           <h1
             id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white mb-7"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-ink mb-7"
           >
             Your problem becomes the next{' '}
-            <span className="text-orange-400">Autaimate product</span>.
+            <span className="text-teal">Autaimate product</span>.
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="text-teal">
               Fixed price. You own the code.
             </span>
           </h1>
 
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-5 leading-relaxed">
+          <p className="text-lg text-slate max-w-3xl mx-auto mb-5 leading-relaxed">
             Every product in the Autaimate portfolio started as one UK customer's commission. TradeCalcs,
             SnagLog, CertVoice, InspectVoice, TradGo, SafeEat — every one of them began with a specific
             industry problem and a customer who needed a tool that didn't exist yet.
           </p>
 
-          <p className="text-base text-slate-500 italic mb-4">
+          <p className="text-base text-slate italic mb-4">
             Describe the workflow &rarr; Agree a fixed price and scope &rarr; Build the product in roughly 4 weeks &rarr; Deploy and hand over the code
           </p>
 
-          <p className="text-xl font-bold text-orange-400 mb-10">
+          <p className="text-xl font-bold text-teal mb-10">
             Your industry is next.
           </p>
 
@@ -292,29 +292,29 @@ export default function MicroSaasContent() {
               href="https://calendar.app.google/8Yq1jNXtPFhF3YCr7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-xl shadow-[0_0_30px_rgba(251,146,60,0.3)] hover:shadow-[0_0_50px_rgba(251,146,60,0.5)] hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-teal hover:bg-teal-dark text-white font-bold text-lg rounded-xl shadow-cta hover:shadow-cta-hover hover:-translate-y-0.5 transition-all duration-300"
             >
               Book Discovery Call
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
               href="#products"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-teal-500/30 text-teal-400 font-semibold rounded-xl hover:bg-teal-500/10 hover:border-teal-500/50 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold rounded-xl transition-all duration-300"
             >
               See the portfolio
               <ChevronDown className="w-4 h-4" />
             </a>
           </div>
-          <p className="mt-6 text-sm text-slate-500">
+          <p className="mt-6 text-sm text-slate">
             Or call directly:{' '}
-            <a href="tel:+447501439406" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors">
+            <a href="tel:+447501439406" className="text-teal font-semibold hover:text-teal-dark transition-colors">
               07501 439406
             </a>
           </p>
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           COMMISSION VS CONSULTANCY (Product-house framing)
@@ -322,16 +322,16 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="commission-heading">
         <div className="max-w-5xl mx-auto px-6">
           <SectionLabel>Commission, not consultancy</SectionLabel>
-          <h2 id="commission-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-6">
+          <h2 id="commission-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-6">
             What you actually get when you commission a product
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed mb-4">
+          <p className="text-base text-slate leading-relaxed mb-4">
             Autaimate is a product studio. That word matters. A consultancy delivers a report,
             a set of recommendations, a slide deck. A product studio delivers a working product — the
             software, the deployment, the documentation, and the code ownership. You walk away with something
             your industry can actually use, not a file of suggestions.
           </p>
-          <p className="text-base text-slate-400 leading-relaxed mb-8">
+          <p className="text-base text-slate leading-relaxed mb-8">
             Every product currently on autaimate.com started the same way: one UK business described a
             specific workflow that needed its own tool, and that conversation became the next product.
             TradeCalcs came from an electrician. SnagLog came from a property inspector. CertVoice came
@@ -341,37 +341,37 @@ export default function MicroSaasContent() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/[0.02] border border-teal-500/20 rounded-2xl p-7">
-              <h3 className="text-lg font-bold text-teal-400 mb-4 flex items-center gap-2">
+            <div className="bg-teal-soft border border-teal/20 rounded-2xl p-7">
+              <h3 className="text-lg font-bold text-teal mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5" aria-hidden="true" />
                 A product commission gives you
               </h3>
-              <ul className="space-y-3 text-sm text-slate-300 leading-relaxed" role="list">
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />A live, deployed product on your own domain and infrastructure</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />Complete source code — your own GitHub repository, not a locked vendor account</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />Documentation you can hand to any developer in the world</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />The right to run the product as-is, extend it, or sell it</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />A fixed price quoted up front — no hourly surprises</li>
+              <ul className="space-y-3 text-sm text-ink leading-relaxed" role="list">
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />A live, deployed product on your own domain and infrastructure</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />Complete source code — your own GitHub repository, not a locked vendor account</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />Documentation you can hand to any developer in the world</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />The right to run the product as-is, extend it, or sell it</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />A fixed price quoted up front — no hourly surprises</li>
               </ul>
             </div>
-            <div className="bg-white/[0.02] border border-orange-500/20 rounded-2xl p-7">
-              <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2">
+            <div className="bg-white border border-sand shadow-card rounded-2xl p-7">
+              <h3 className="text-lg font-bold text-slate mb-4 flex items-center gap-2">
                 <XCircle className="w-5 h-5" aria-hidden="true" />
                 What a commission is <em>not</em>
               </h3>
-              <ul className="space-y-3 text-sm text-slate-300 leading-relaxed" role="list">
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400/60 flex-shrink-0" aria-hidden="true" />A consultancy report or strategy deck</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400/60 flex-shrink-0" aria-hidden="true" />A SaaS subscription where you rent access from us forever</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400/60 flex-shrink-0" aria-hidden="true" />An hourly engagement with scope creep and surprise invoices</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400/60 flex-shrink-0" aria-hidden="true" />A co-founder arrangement — you own the business and the code outright</li>
-                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400/60 flex-shrink-0" aria-hidden="true" />A managed service where you can't move suppliers</li>
+              <ul className="space-y-3 text-sm text-slate leading-relaxed" role="list">
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />A consultancy report or strategy deck</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />A SaaS subscription where you rent access from us forever</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />An hourly engagement with scope creep and surprise invoices</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />A co-founder arrangement — you own the business and the code outright</li>
+                <li className="flex gap-3"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />A managed service where you can't move suppliers</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           PRODUCTS — Current Autaimate portfolio
@@ -379,23 +379,23 @@ export default function MicroSaasContent() {
       <section id="products" className="py-24" aria-labelledby="products-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Portfolio</SectionLabel>
-          <h2 id="products-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
+          <h2 id="products-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-4">
             Real products, real industries, real customers
           </h2>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-4">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-4">
             Every product listed below is live. No mockups, no concept designs, no vaporware. Each one is
             a deployed application serving real UK customers across wildly different industries. The diversity
             is the point: the commissioning methodology works across every sector.
           </p>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-12">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-12">
             Each one began life exactly the way your commission will begin: a conversation with a UK business
             who had a specific, concrete workflow problem. The domain knowledge came from the customer. The
             product, built in roughly four weeks, came from Autaimate. That's the model.
           </p>
 
-          <div className="rounded-2xl border border-white/5 overflow-hidden">
+          <div className="rounded-2xl border border-sand shadow-card overflow-hidden bg-white">
             {/* Header */}
-            <div className="hidden sm:grid grid-cols-[1.2fr_1fr_2fr_0.8fr] gap-0 px-6 py-3.5 bg-white/[0.03] font-mono text-xs font-semibold text-slate-500 uppercase tracking-widest">
+            <div className="hidden sm:grid grid-cols-[1.2fr_1fr_2fr_0.8fr] gap-0 px-6 py-3.5 bg-teal-soft font-mono text-xs font-semibold text-teal uppercase tracking-widest">
               <span>Product</span>
               <span>Industry</span>
               <span>What it does</span>
@@ -405,16 +405,16 @@ export default function MicroSaasContent() {
             {PRODUCTS.map((p, i) => (
               <div
                 key={i}
-                className="grid grid-cols-1 sm:grid-cols-[1.2fr_1fr_2fr_0.8fr] gap-1 sm:gap-0 px-6 py-4 bg-white/[0.02] border-t border-white/5 hover:bg-white/[0.04] transition-colors"
+                className="grid grid-cols-1 sm:grid-cols-[1.2fr_1fr_2fr_0.8fr] gap-1 sm:gap-0 px-6 py-4 bg-white border-t border-sand hover:bg-teal-soft/40 transition-colors"
               >
-                <span className="font-bold text-white text-sm">{p.name}</span>
-                <span className="text-sm text-slate-400">{p.industry}</span>
-                <span className="text-sm text-slate-400 hidden sm:block">{p.desc}</span>
+                <span className="font-bold text-ink text-sm">{p.name}</span>
+                <span className="text-sm text-slate">{p.industry}</span>
+                <span className="text-sm text-slate hidden sm:block">{p.desc}</span>
                 <span className="text-sm">
                   {p.to ? (
                     <Link
                       to={p.to}
-                      className="font-mono text-xs text-teal-400/70 hover:text-teal-400 transition-colors"
+                      className="font-mono text-xs text-teal hover:text-teal-dark transition-colors"
                     >
                       Read more &rarr;
                     </Link>
@@ -423,7 +423,7 @@ export default function MicroSaasContent() {
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-xs text-teal-400/70 hover:text-teal-400 transition-colors"
+                      className="inline-flex items-center gap-1 font-mono text-xs text-teal hover:text-teal-dark transition-colors"
                     >
                       {p.url?.replace('https://', '')}
                       <ExternalLink className="w-3 h-3" />
@@ -434,16 +434,16 @@ export default function MicroSaasContent() {
             ))}
           </div>
 
-          <p className="mt-6 text-center text-sm text-slate-500">
+          <p className="mt-6 text-center text-sm text-slate">
             Every product built with{' '}
-            <span className="font-semibold text-teal-400">
+            <span className="font-semibold text-teal">
               Claude AI + GitHub + Railway
             </span>
           </p>
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           HOW IT WORKS
@@ -451,15 +451,15 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="process-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Process</SectionLabel>
-          <h2 id="process-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
+          <h2 id="process-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-4">
             How a commission runs
           </h2>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-4">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-4">
             A proven 5-week process, refined across 18+ deliveries. Every commission follows the same shape:
             one week of validation, three weeks of building, one week of handover. Predictable, boring, and
             that's the point — the interesting part is your product, not the logistics of getting it built.
           </p>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-12">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-12">
             The fixed four-ish-week build window is not arbitrary. It's the outcome of disciplining scope
             and using a proven stack. By constraining the build to a narrow window, we stay focused on the
             features that genuinely matter to end users rather than piling up speculative functionality
@@ -472,20 +472,20 @@ export default function MicroSaasContent() {
               return (
                 <div
                   key={i}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+                  className="bg-white border border-sand shadow-card rounded-2xl p-8 hover:shadow-card-hover hover:border-teal/40 transition-all duration-300"
                 >
-                  <Icon className="w-6 h-6 text-orange-400 mb-4" aria-hidden="true" />
-                  <p className="font-mono text-xs font-semibold text-orange-400 uppercase tracking-widest mb-2">
+                  <Icon className="w-6 h-6 text-teal mb-4" aria-hidden="true" />
+                  <p className="font-mono text-xs font-semibold text-teal uppercase tracking-widest mb-2">
                     {step.week}
                   </p>
-                  <h3 className="text-xl font-bold text-white mb-5">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-ink mb-5">{step.title}</h3>
                   <ul className="space-y-3" role="list">
                     {step.items.map((item, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed"
+                        className="flex items-start gap-3 text-sm text-slate leading-relaxed"
                       >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal-400/60 flex-shrink-0" aria-hidden="true" />
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
@@ -497,7 +497,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           PRICING
@@ -505,10 +505,10 @@ export default function MicroSaasContent() {
       <section id="pricing" className="py-24" aria-labelledby="pricing-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Pricing</SectionLabel>
-          <h2 id="pricing-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
+          <h2 id="pricing-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-4">
             Fixed price. Clear scope.
           </h2>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-12">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-12">
             50% upfront, 50% on delivery. Every commission includes a clearly agreed scope, deployment
             support, documentation, and full ownership of the delivered codebase. Anything outside the
             agreed scope is quoted separately before any extra work begins. No hidden fees, no hourly
@@ -520,41 +520,41 @@ export default function MicroSaasContent() {
               <div
                 key={i}
                 className={`
-                  relative flex flex-col bg-white/[0.02] border rounded-2xl p-9
-                  transition-all duration-300 hover:bg-white/[0.04]
+                  relative flex flex-col bg-white border rounded-2xl p-9 shadow-card
+                  transition-all duration-300 hover:shadow-card-hover
                   ${tier.popular
-                    ? 'border-teal-500/30 bg-teal-500/[0.03]'
-                    : 'border-white/5 hover:border-white/10'
+                    ? 'border-teal/40 bg-teal-soft'
+                    : 'border-sand hover:border-teal/40'
                   }
                 `}
               >
                 {tier.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-teal-400 text-[#060610] text-xs font-bold rounded-full uppercase tracking-wider">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-teal text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-cta">
                     Most Popular
                   </span>
                 )}
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <p className="text-xs font-semibold text-slate uppercase tracking-wider mb-2">
                   {tier.tier}
                 </p>
-                <p className="text-4xl font-black text-white tracking-tight mb-1">
-                  <span className="text-lg font-normal text-slate-500">£</span>
+                <p className="text-4xl font-black text-ink tracking-tight mb-1">
+                  <span className="text-lg font-normal text-slate">£</span>
                   {tier.price}
                 </p>
-                <p className="text-sm text-teal-400 font-medium mb-6">
+                <p className="text-sm text-teal font-medium mb-6">
                   Best for: {tier.best}
                 </p>
                 <ul className="space-y-2.5 mb-6 flex-1" role="list">
                   {tier.features.map((f, j) => (
                     <li
                       key={j}
-                      className="flex items-start gap-2.5 text-sm text-slate-400 leading-relaxed"
+                      className="flex items-start gap-2.5 text-sm text-ink leading-relaxed"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-teal-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <CheckCircle2 className="w-4 h-4 text-teal mt-0.5 flex-shrink-0" aria-hidden="true" />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-slate-500 italic pt-4 border-t border-white/5">
+                <p className="text-xs text-slate italic pt-4 border-t border-sand">
                   Examples: {tier.examples}
                 </p>
               </div>
@@ -562,8 +562,8 @@ export default function MicroSaasContent() {
           </div>
 
           {/* Scope protection */}
-          <div className="mt-8 bg-white/[0.01] border border-white/5 rounded-xl px-6 py-5">
-            <p className="font-mono text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Scope &amp; terms</p>
+          <div className="mt-8 bg-white border border-sand shadow-card rounded-xl px-6 py-5">
+            <p className="font-mono text-xs font-semibold text-teal uppercase tracking-widest mb-3">Scope &amp; terms</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
               {[
                 'Prices apply to clearly defined project scopes only',
@@ -573,8 +573,8 @@ export default function MicroSaasContent() {
                 'Complex integrations or data migrations may require a separate quote',
                 'Post-delivery support requires a maintenance plan',
               ].map((item, i) => (
-                <p key={i} className="flex items-start gap-2 text-xs text-slate-500 leading-relaxed">
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-600 flex-shrink-0" aria-hidden="true" />
+                <p key={i} className="flex items-start gap-2 text-xs text-slate leading-relaxed">
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-slate flex-shrink-0" aria-hidden="true" />
                   {item}
                 </p>
               ))}
@@ -582,11 +582,11 @@ export default function MicroSaasContent() {
           </div>
 
           {/* Retainer */}
-          <div className="mt-12 bg-white/[0.02] border border-white/5 rounded-2xl p-9">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="mt-12 bg-white border border-sand shadow-card rounded-2xl p-9">
+            <h3 className="text-xl font-bold text-ink mb-2">
               Optional: maintenance retainer
             </h3>
-            <p className="text-sm text-slate-400 mb-6">
+            <p className="text-sm text-slate mb-6">
               Post-delivery support is not included unless covered by a maintenance plan. You submit
               requests, I implement. Retainer clients receive priority response times and regular check-ins
               to discuss feature roadmaps and improvements.
@@ -595,13 +595,13 @@ export default function MicroSaasContent() {
               {RETAINERS.map((r, i) => (
                 <div
                   key={i}
-                  className="p-5 bg-white/[0.02] border border-white/5 rounded-xl"
+                  className="p-5 bg-teal-soft border border-teal/20 rounded-xl"
                 >
-                  <p className="text-2xl font-extrabold text-white mb-1">
+                  <p className="text-2xl font-extrabold text-ink mb-1">
                     £{r.price}
-                    <span className="text-sm font-normal text-slate-500">/month</span>
+                    <span className="text-sm font-normal text-slate">/month</span>
                   </p>
-                  <p className="text-sm text-slate-400">{r.desc}</p>
+                  <p className="text-sm text-slate">{r.desc}</p>
                 </div>
               ))}
             </div>
@@ -609,7 +609,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           TECH STACK
@@ -617,10 +617,10 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="stack-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Tech stack</SectionLabel>
-          <h2 id="stack-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
+          <h2 id="stack-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-4">
             What you'll get
           </h2>
-          <p className="text-base text-slate-400 max-w-2xl leading-relaxed mb-12">
+          <p className="text-base text-slate max-w-2xl leading-relaxed mb-12">
             Modern, maintainable technology — no expensive legacy systems. Every tool in the stack has
             been selected for reliability, ease of maintenance, and cost-effectiveness for UK small and
             medium businesses. Your commissioned product ships on the same stack every other Autaimate
@@ -655,13 +655,13 @@ export default function MicroSaasContent() {
               return (
                 <div
                   key={i}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl p-7"
+                  className="bg-white border border-sand shadow-card rounded-2xl p-7"
                 >
-                  <Icon className="w-5 h-5 text-orange-400 mb-3" aria-hidden="true" />
-                  <h3 className="font-mono text-xs font-semibold text-orange-400 uppercase tracking-widest mb-3">
+                  <Icon className="w-5 h-5 text-teal mb-3" aria-hidden="true" />
+                  <h3 className="font-mono text-xs font-semibold text-teal uppercase tracking-widest mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate leading-relaxed">
                     {card.text}
                   </p>
                 </div>
@@ -671,7 +671,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           WHY THIS WORKS
@@ -679,7 +679,7 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="why-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Advantage</SectionLabel>
-          <h2 id="why-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-12">
+          <h2 id="why-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-12">
             Why the commission model works
           </h2>
 
@@ -711,13 +711,13 @@ export default function MicroSaasContent() {
               return (
                 <div
                   key={i}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors"
+                  className="bg-white border border-sand shadow-card rounded-2xl p-8 hover:shadow-card-hover hover:border-teal/40 transition-all"
                 >
-                  <Icon className="w-5 h-5 text-teal-400 mb-4" aria-hidden="true" />
-                  <h3 className="text-lg font-bold text-white mb-3">{card.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{card.text}</p>
+                  <Icon className="w-5 h-5 text-teal mb-4" aria-hidden="true" />
+                  <h3 className="text-lg font-bold text-ink mb-3">{card.title}</h3>
+                  <p className="text-sm text-slate leading-relaxed">{card.text}</p>
                   {'stat' in card && card.stat && (
-                    <p className="mt-4 font-mono text-xs text-teal-400">
+                    <p className="mt-4 font-mono text-xs text-teal">
                       {card.stat}
                     </p>
                   )}
@@ -728,7 +728,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           WHO THIS IS FOR
@@ -736,58 +736,58 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="fit-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Fit</SectionLabel>
-          <h2 id="fit-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-12">
+          <h2 id="fit-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-12">
             Who commissioning is for
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-teal-400 mb-5 flex items-center gap-2">
+            <div className="bg-teal-soft border border-teal/20 rounded-2xl p-8">
+              <h3 className="text-lg font-bold text-teal mb-5 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5" aria-hidden="true" />
                 Perfect fit
               </h3>
               <ul className="space-y-4" role="list">
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-teal-400 font-semibold">You have deep domain expertise</strong> — you know your industry
+                <li className="text-sm text-ink leading-relaxed">
+                  <strong className="text-teal font-semibold">You have deep domain expertise</strong> — you know your industry
                   inside and out, you have decades of experience, and you have spotted a specific problem
                   that needs a software solution
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-teal-400 font-semibold">You have business experience but not a tech team</strong> — you know
+                <li className="text-sm text-ink leading-relaxed">
+                  <strong className="text-teal font-semibold">You have business experience but not a tech team</strong> — you know
                   exactly what tool your market needs, who will pay for it, and can describe the workflow clearly
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-teal-400 font-semibold">You want to own the product</strong> — you don't want to rent software
+                <li className="text-sm text-ink leading-relaxed">
+                  <strong className="text-teal font-semibold">You want to own the product</strong> — you don't want to rent software
                   forever, you want full control and flexibility, and you're thinking long-term about building an asset
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-teal-400 font-semibold">You're ready to start focused</strong> — you understand the principle
+                <li className="text-sm text-ink leading-relaxed">
+                  <strong className="text-teal font-semibold">You're ready to start focused</strong> — you understand the principle
                   of starting with the essential workflow and iterating later, you want to test the market quickly,
                   and you're willing to refine based on real user feedback
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-orange-400 mb-5 flex items-center gap-2">
+            <div className="bg-white border border-sand shadow-card rounded-2xl p-8">
+              <h3 className="text-lg font-bold text-slate mb-5 flex items-center gap-2">
                 <XCircle className="w-5 h-5" aria-hidden="true" />
                 Not a fit
               </h3>
               <ul className="space-y-4" role="list">
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-orange-400 font-semibold">Financial services apps</strong> — banking, lending, and investment
+                <li className="text-sm text-slate leading-relaxed">
+                  <strong className="text-ink font-semibold">Financial services apps</strong> — banking, lending, and investment
                   platforms involve regulatory complexity and compliance requirements that fall outside this service's specialisation
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-orange-400 font-semibold">Consumer social apps</strong> — commissions here deliver B2B and niche
+                <li className="text-sm text-slate leading-relaxed">
+                  <strong className="text-ink font-semibold">Consumer social apps</strong> — commissions here deliver B2B and niche
                   tools, not social networks or consumer-facing platforms that require viral growth mechanics
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-orange-400 font-semibold">Native mobile apps</strong> — commissioned products are web
+                <li className="text-sm text-slate leading-relaxed">
+                  <strong className="text-ink font-semibold">Native mobile apps</strong> — commissioned products are web
                   applications that work excellently on mobile devices, but we do not build iOS or Android native apps
                 </li>
-                <li className="text-sm text-slate-400 leading-relaxed">
-                  <strong className="text-orange-400 font-semibold">Vague or unvalidated ideas</strong> — a clear problem and solution
+                <li className="text-sm text-slate leading-relaxed">
+                  <strong className="text-ink font-semibold">Vague or unvalidated ideas</strong> — a clear problem and solution
                   is required. Ideas that cannot be described in terms of specific user workflows and pain points
                   are not yet ready for commissioning
                 </li>
@@ -797,7 +797,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           HOW TO GET STARTED
@@ -805,7 +805,7 @@ export default function MicroSaasContent() {
       <section id="start" className="py-24" aria-labelledby="start-heading">
         <div className="max-w-6xl mx-auto px-6">
           <SectionLabel>Get started</SectionLabel>
-          <h2 id="start-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-12">
+          <h2 id="start-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-12">
             How to commission a product
           </h2>
 
@@ -840,14 +840,14 @@ export default function MicroSaasContent() {
               return (
                 <div
                   key={i}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl p-7 text-center"
+                  className="bg-white border border-sand shadow-card rounded-2xl p-7 text-center"
                 >
-                  <p className="font-mono text-3xl font-extrabold text-teal-400/30 mb-3" aria-hidden="true">
+                  <p className="font-mono text-3xl font-extrabold text-teal/30 mb-3" aria-hidden="true">
                     {step.num}
                   </p>
-                  <Icon className="w-5 h-5 text-orange-400 mx-auto mb-3" aria-hidden="true" />
-                  <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{step.text}</p>
+                  <Icon className="w-5 h-5 text-teal mx-auto mb-3" aria-hidden="true" />
+                  <h3 className="text-base font-bold text-ink mb-2">{step.title}</h3>
+                  <p className="text-sm text-slate leading-relaxed">{step.text}</p>
                 </div>
               )
             })}
@@ -855,7 +855,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           FAQ
@@ -863,30 +863,30 @@ export default function MicroSaasContent() {
       <section id="faq" className="py-24" aria-labelledby="faq-heading">
         <div className="max-w-3xl mx-auto px-6">
           <SectionLabel>FAQ</SectionLabel>
-          <h2 id="faq-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-12">
+          <h2 id="faq-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-12">
             Frequently asked questions
           </h2>
 
-          <div className="rounded-2xl border border-white/5 overflow-hidden" role="list">
+          <div className="rounded-2xl border border-sand shadow-card overflow-hidden bg-white" role="list">
             {FAQS.map((faq, i) => (
               <div
                 key={i}
-                className={`border-t border-white/5 first:border-t-0 ${
-                  openFaq === i ? 'bg-white/[0.03]' : 'bg-white/[0.01]'
+                className={`border-t border-sand first:border-t-0 ${
+                  openFaq === i ? 'bg-teal-soft' : 'bg-white'
                 }`}
                 role="listitem"
               >
                 <button
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/[0.03] transition-colors"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-teal-soft/60 transition-colors"
                   aria-expanded={openFaq === i}
                   aria-controls={`faq-answer-${i}`}
                 >
-                  <span className="font-semibold text-sm text-white pr-4">
+                  <span className="font-semibold text-sm text-ink pr-4">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-teal-400 flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-teal flex-shrink-0 transition-transform duration-300 ${
                       openFaq === i ? 'rotate-180' : ''
                     }`}
                     aria-hidden="true"
@@ -899,7 +899,7 @@ export default function MicroSaasContent() {
                   }`}
                   role="region"
                 >
-                  <p className="px-6 text-sm text-slate-400 leading-relaxed">
+                  <p className="px-6 text-sm text-slate leading-relaxed">
                     {faq.a}
                   </p>
                 </div>
@@ -909,7 +909,7 @@ export default function MicroSaasContent() {
         </div>
       </section>
 
-      <hr className="border-white/5" />
+      <hr className="border-sand" />
 
       {/* ═══════════════════════════════════════════════════════════
           ABOUT
@@ -917,26 +917,26 @@ export default function MicroSaasContent() {
       <section className="py-24" aria-labelledby="about-heading">
         <div className="max-w-3xl mx-auto px-6">
           <SectionLabel>About</SectionLabel>
-          <h2 id="about-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-8">
+          <h2 id="about-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-8">
             About me
           </h2>
 
           <div className="space-y-6">
-            <p className="text-base text-slate-400 leading-relaxed">
+            <p className="text-base text-slate leading-relaxed">
               I'm 58. I spent 40 years in UK construction, trades, and business operations. Three years
               ago I couldn't write a line of code. Today Autaimate has{' '}
-              <strong className="text-white font-semibold">18+ live products</strong> across wildly different
+              <strong className="text-ink font-semibold">18+ live products</strong> across wildly different
               industries — shooting syndicates, laboratories, architects, electricians, property inspectors,
               playground safety, close protection, independent restaurants, and more.
             </p>
-            <p className="text-base text-slate-400 leading-relaxed">
+            <p className="text-base text-slate leading-relaxed">
               The secret isn't coding talent, and it never was. The real advantages are domain expertise
               built over four decades of understanding real business problems, AI-assisted development using
               Claude to generate clean and maintainable code, a simple repeatable deployment process using
               GitHub and Railway that requires no terminal knowledge, and the pattern recognition that comes
               from having done this 18+ times across wildly different industries.
             </p>
-            <p className="text-base text-slate-400 leading-relaxed">
+            <p className="text-base text-slate leading-relaxed">
               Each of those four elements compounds with every new commission. Your product benefits from
               everything learned in the builds before it — industry compliance patterns, field-tested UI
               choices, data management strategies for non-technical end users, the lot. That compounding
@@ -950,16 +950,16 @@ export default function MicroSaasContent() {
                 'Simple deployment — GitHub + Railway, no terminal',
                 'Pattern recognition — 18+ products across the portfolio',
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
-                  <span className="w-2 h-2 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true" />
+                <div key={i} className="flex items-center gap-3 text-sm text-ink">
+                  <span className="w-2 h-2 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />
                   {item}
                 </div>
               ))}
             </div>
 
-            <p className="text-lg text-slate-300 font-semibold mt-4">
+            <p className="text-lg text-ink font-semibold mt-4">
               I'm not here to impress you with technical jargon. I'm here to{' '}
-              <span className="text-white">build the product your industry needs.</span>
+              <span className="text-teal">build the product your industry needs.</span>
             </p>
           </div>
         </div>
@@ -970,12 +970,12 @@ export default function MicroSaasContent() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="pb-24" aria-labelledby="cta-heading">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="relative bg-white/[0.02] border border-white/5 rounded-3xl p-16 text-center overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[radial-gradient(circle,rgba(251,146,60,0.08)_0%,transparent_70%)] pointer-events-none" aria-hidden="true" />
-            <h2 id="cta-heading" className="relative text-2xl sm:text-3xl font-extrabold text-white mb-3">
+          <div className="relative bg-teal-soft border border-teal/20 rounded-3xl p-16 text-center overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[radial-gradient(circle,rgba(10,157,128,0.10)_0%,transparent_70%)] pointer-events-none" aria-hidden="true" />
+            <h2 id="cta-heading" className="relative text-2xl sm:text-3xl font-extrabold text-ink mb-3">
               Commissions open for Q2 2026
             </h2>
-            <p className="relative text-base text-slate-400 mb-8">
+            <p className="relative text-base text-slate mb-8">
               Capacity is deliberately limited to keep quality and attention where it belongs. A few commission
               slots are currently available.
             </p>
@@ -983,14 +983,14 @@ export default function MicroSaasContent() {
               href="https://calendar.app.google/8Yq1jNXtPFhF3YCr7"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-xl shadow-[0_0_30px_rgba(251,146,60,0.3)] hover:shadow-[0_0_50px_rgba(251,146,60,0.5)] hover:-translate-y-0.5 transition-all duration-300"
+              className="relative inline-flex items-center gap-2.5 px-8 py-4 bg-teal hover:bg-teal-dark text-white font-bold text-lg rounded-xl shadow-cta hover:shadow-cta-hover hover:-translate-y-0.5 transition-all duration-300"
             >
               Book Discovery Call
               <ArrowRight className="w-5 h-5" />
             </a>
-            <p className="relative mt-4 text-sm text-slate-500">
+            <p className="relative mt-4 text-sm text-slate">
               Or call directly:{' '}
-              <a href="tel:+447501439406" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors">
+              <a href="tel:+447501439406" className="text-teal font-semibold hover:text-teal-dark transition-colors">
                 07501 439406
               </a>
             </p>
@@ -1003,41 +1003,41 @@ export default function MicroSaasContent() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="pb-16" aria-label="Related pages">
         <div className="max-w-4xl mx-auto px-6">
-          <h4 className="font-mono text-xs font-semibold text-slate-600 uppercase tracking-widest mb-4">
+          <h4 className="font-mono text-xs font-semibold text-slate uppercase tracking-widest mb-4">
             Explore the portfolio
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Link to="/" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/" className="text-sm text-teal hover:text-teal-dark transition-colors">
               Autaimate homepage &rarr;
             </Link>
-            <Link to="/for/construction" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/for/construction" className="text-sm text-teal hover:text-teal-dark transition-colors">
               Software for UK construction & trades &rarr;
             </Link>
-            <Link to="/for/property" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/for/property" className="text-sm text-teal hover:text-teal-dark transition-colors">
               Software for UK property &rarr;
             </Link>
-            <Link to="/for/care-homes" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/for/care-homes" className="text-sm text-teal hover:text-teal-dark transition-colors">
               Software for UK care homes &rarr;
             </Link>
-            <Link to="/products/tradecalcs" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/tradecalcs" className="text-sm text-teal hover:text-teal-dark transition-colors">
               TradeCalcs — BS 7671 calculators &rarr;
             </Link>
-            <Link to="/products/snaglog" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/snaglog" className="text-sm text-teal hover:text-teal-dark transition-colors">
               SnagLog — AI snagging reports &rarr;
             </Link>
-            <Link to="/products/certvoice" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/certvoice" className="text-sm text-teal hover:text-teal-dark transition-colors">
               CertVoice — voice-first electrical certs &rarr;
             </Link>
-            <Link to="/products/tradgo" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/tradgo" className="text-sm text-teal hover:text-teal-dark transition-colors">
               TradGo — AI agent for UK trades &rarr;
             </Link>
-            <Link to="/products/safeeat" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/safeeat" className="text-sm text-teal hover:text-teal-dark transition-colors">
               SafeEat — QR allergen system for UK hospitality &rarr;
             </Link>
-            <Link to="/products/inspectvoice" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/inspectvoice" className="text-sm text-teal hover:text-teal-dark transition-colors">
               InspectVoice — BS EN 1176 playground inspection &rarr;
             </Link>
-            <Link to="/products/detailrecon" className="text-sm text-teal-400/70 hover:text-teal-400 transition-colors">
+            <Link to="/products/detailrecon" className="text-sm text-teal hover:text-teal-dark transition-colors">
               DetailRecon — AI recon reports for UK CP &rarr;
             </Link>
           </div>
@@ -1051,8 +1051,8 @@ export default function MicroSaasContent() {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-teal-400 uppercase tracking-[0.1em] mb-4">
-      <span className="w-6 h-px bg-teal-400" aria-hidden="true" />
+    <p className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-teal uppercase tracking-[0.1em] mb-4">
+      <span className="w-6 h-px bg-teal" aria-hidden="true" />
       {children}
     </p>
   )
