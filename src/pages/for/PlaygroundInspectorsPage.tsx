@@ -8,7 +8,6 @@ const playgroundProducts = [
     desc: 'Offline-first PWA for playground and public space asset inspections. Voice dictation on-site, AI extracts structured defect data, BS EN 1176-compliant PDF generated on-device — before you\'re back in the van.',
     href: 'https://inspectvoice.co.uk',
     external: true,
-    accent: 'text-violet-400',
   },
 ]
 
@@ -119,30 +118,29 @@ export default function ForPlaygroundInspectorsPage() {
       />
       <Layout>
         <div className="cosmic-bg" />
-        <div className="stars" />
 
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-slate">
+            <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
             <li>/</li>
-            <li className="text-white/70">For Playground Inspectors</li>
+            <li className="text-ink">For Playground Inspectors</li>
           </ol>
         </nav>
 
         {/* Hero */}
         <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-16 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-violet-500/15 border border-violet-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-violet-400 rounded-full pulse-dot" />
-            <span className="text-violet-400 text-sm font-semibold uppercase tracking-wider">BS EN 1176 · Offline-First · PWA</span>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-soft border border-teal/20 rounded-full mb-8">
+            <span className="w-2 h-2 bg-teal rounded-full pulse-dot" />
+            <span className="text-teal text-sm font-semibold uppercase tracking-wider">BS EN 1176 · Offline-First · PWA</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight text-ink">
             Inspection software for UK fields{' '}
-            <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-orange-400 bg-clip-text text-transparent">without a 4G signal.</span>
+            <span className="text-teal">without a 4G signal.</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-slate mb-10 max-w-3xl mx-auto leading-relaxed">
             InspectVoice is an offline-first PWA for playground and public space asset inspections. Voice-driven defect capture, AI that extracts structured data from what you said, and BS EN 1176-compliant PDF reports generated on-device. Built for inspection companies and local authorities that work in real weather, not office lighting.
           </p>
 
@@ -154,7 +152,7 @@ export default function ForPlaygroundInspectorsPage() {
             <a href="#custom-build" className="btn-secondary">Build something custom</a>
           </div>
 
-          <p className="mt-8 text-sm text-white/50">
+          <p className="mt-8 text-sm text-slate">
             Monthly pricing · No annual lock-in · Roughly a third the cost of the legacy name
           </p>
         </section>
@@ -162,19 +160,19 @@ export default function ForPlaygroundInspectorsPage() {
         {/* Differentiators */}
         <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              What makes InspectVoice <span className="text-orange-500">different.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              What makes InspectVoice <span className="text-teal">different.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Built by people who understand that inspectors work where signal doesn't reach and deadlines don't wait.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {differentiators.map((d) => (
-              <div key={d.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-violet-400 mb-3">{d.title}</h3>
-                <p className="text-white/60 leading-relaxed">{d.desc}</p>
+              <div key={d.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-lg font-bold text-ink mb-3">{d.title}</h3>
+                <p className="text-slate leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -183,19 +181,19 @@ export default function ForPlaygroundInspectorsPage() {
         {/* The problems */}
         <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Where inspection companies <span className="text-orange-500">lose the week.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Where inspection companies <span className="text-teal">lose the week.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               The walk takes a couple of hours. The paperwork takes the rest of the day. Then the next day. Then the weekend.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {problems.map((p) => (
-              <div key={p.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-violet-400 mb-3">{p.title}</h3>
-                <p className="text-white/60 leading-relaxed">{p.desc}</p>
+              <div key={p.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-lg font-bold text-ink mb-3">{p.title}</h3>
+                <p className="text-slate leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -204,20 +202,20 @@ export default function ForPlaygroundInspectorsPage() {
         {/* How it works */}
         <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Site walk to signed PDF, <span className="text-orange-500">without leaving the site.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Site walk to signed PDF, <span className="text-teal">without leaving the site.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Five steps. The whole inspection — including the paperwork — done before the kettle boils back at the office.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {workflowSteps.map((s) => (
-              <div key={s.num} className="text-center p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-violet-500/[0.06] hover:border-violet-500/30 transition-all">
+              <div key={s.num} className="text-center p-6 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
                 <div className="process-number mx-auto mb-4">{s.num}</div>
-                <h3 className="font-display text-sm font-bold text-violet-400 uppercase tracking-wide mb-2">{s.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-sm font-bold text-ink uppercase tracking-wide mb-2">{s.title}</h3>
+                <p className="text-slate text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -225,31 +223,31 @@ export default function ForPlaygroundInspectorsPage() {
 
         {/* Who it's for */}
         <section className="py-20 px-6 lg:px-12 max-w-5xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
-            Built specifically <span className="text-orange-500">for UK inspection work.</span>
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center text-ink">
+            Built specifically <span className="text-teal">for UK inspection work.</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-violet-400 mb-2">UK playground inspection companies</h3>
-              <p className="text-white/60 leading-relaxed">
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-ink mb-2">UK playground inspection companies</h3>
+              <p className="text-slate leading-relaxed">
                 Independent inspection businesses covering parish councils, schools, housing associations and private sites. Consistency across inspectors, fewer evening write-ups, more sites per week.
               </p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-violet-400 mb-2">Local authority inspection teams</h3>
-              <p className="text-white/60 leading-relaxed">
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-ink mb-2">Local authority inspection teams</h3>
+              <p className="text-slate leading-relaxed">
                 In-house teams covering routine and operational inspections across council play areas and public spaces. Audit-ready documentation, comparable year-on-year records, standard templates across the whole team.
               </p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-violet-400 mb-2">Public space asset managers</h3>
-              <p className="text-white/60 leading-relaxed">
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-ink mb-2">Public space asset managers</h3>
+              <p className="text-slate leading-relaxed">
                 Benches, bins, shelters, outdoor gym equipment, skate parks — InspectVoice handles any inspectable public asset, not just play equipment. One platform across a portfolio.
               </p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-violet-400 mb-2">Active in the field, not in beta</h3>
-              <p className="text-white/60 leading-relaxed">
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-ink mb-2">Active in the field, not in beta</h3>
+              <p className="text-slate leading-relaxed">
                 Currently in live use with a UK inspection company in Cornwall — real inspectors, real sites, real weather. Not a proof-of-concept waiting for its first customer.
               </p>
             </div>
@@ -265,10 +263,10 @@ export default function ForPlaygroundInspectorsPage() {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-violet-500/[0.06] hover:border-violet-500/30 transition-all"
+                className="p-8 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all"
               >
-                <h3 className={`font-display text-xl font-bold uppercase tracking-wide mb-3 ${p.accent}`}>{p.name}</h3>
-                <p className="text-white/60 leading-relaxed">{p.desc}</p>
+                <h3 className="font-display text-xl font-bold uppercase tracking-wide mb-3 text-teal">{p.name}</h3>
+                <p className="text-slate leading-relaxed">{p.desc}</p>
               </a>
             ))}
           </div>
@@ -277,22 +275,22 @@ export default function ForPlaygroundInspectorsPage() {
         {/* Custom build */}
         <section id="custom-build" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-5xl font-extrabold mb-5 tracking-tight">
-              Or build something <span className="text-orange-500">for your team.</span>
+            <h2 className="font-display text-3xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">
+              Or build something <span className="text-teal">for your team.</span>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
               Larger inspection operations have their own SOPs, their own client reporting formats, their own QA workflows. Off-the-shelf software forces a compromise. We build around your operation instead. Fixed price. You own the code.
             </p>
           </div>
 
-          <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-8 lg:p-12 mb-10">
+          <div className="bg-white border border-sand rounded-3xl shadow-card p-8 lg:p-12 mb-10">
             <div className="grid md:grid-cols-2 gap-5">
               {customBuildFeatures.map((f) => (
                 <div key={f} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-white/80 leading-relaxed">{f}</span>
+                  <span className="text-ink leading-relaxed">{f}</span>
                 </div>
               ))}
             </div>
@@ -309,10 +307,10 @@ export default function ForPlaygroundInspectorsPage() {
 
         {/* Final CTA */}
         <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-ink">
             The inspection ends. The paperwork does too.
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-slate text-lg mb-10 max-w-xl mx-auto">
             More sites in a day. Less admin in a week. Built in the UK for inspectors who work where the signal doesn't reach.
           </p>
           <a href="https://inspectvoice.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
