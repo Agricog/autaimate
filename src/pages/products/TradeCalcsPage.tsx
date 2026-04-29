@@ -197,32 +197,31 @@ export default function TradeCalcsPage() {
       />
       <Layout>
         <div className="cosmic-bg" />
-        <div className="stars" />
 
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="pt-32 px-6 lg:px-12 max-w-7xl mx-auto">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
-            <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-slate">
+            <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
             <li>/</li>
-            <li><Link to="/#products" className="hover:text-orange-500">Products</Link></li>
+            <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
             <li>/</li>
-            <li className="text-white/70">TradeCalcs</li>
+            <li className="text-ink">TradeCalcs</li>
           </ol>
         </nav>
 
         {/* Hero */}
         <section className="px-6 lg:px-12 max-w-5xl mx-auto pt-10 pb-12 text-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-yellow-500/15 border border-yellow-500/40 rounded-full mb-8">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full pulse-dot" />
-            <span className="text-yellow-400 text-sm font-semibold uppercase tracking-wider">BS 7671 &middot; 18th Edition &middot; Free</span>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-soft border border-teal/20 rounded-full mb-8">
+            <span className="w-2 h-2 bg-teal rounded-full pulse-dot" />
+            <span className="text-teal text-sm font-semibold uppercase tracking-wider">BS 7671 &middot; 18th Edition &middot; Free</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight text-ink">
             Free BS 7671 calculators for{' '}
-            <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">UK electricians.</span>
+            <span className="text-teal">UK electricians.</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-slate mb-10 max-w-3xl mx-auto leading-relaxed">
             Cable sizing, voltage drop, Zs, disconnection times, maximum circuit length, PFC, conduit fill. The calculations you do every day, built against the latest IET Wiring Regulations. No login. No subscription. Works on your phone on site.
           </p>
 
@@ -237,9 +236,9 @@ export default function TradeCalcsPage() {
 
         {/* Quick Answer */}
         <section className="px-6 lg:px-12 max-w-4xl mx-auto mb-20">
-          <div id="quick-answer" className="bg-gradient-to-br from-yellow-500/10 to-orange-500/5 border border-yellow-500/20 rounded-3xl p-8 lg:p-10">
-            <div className="text-xs font-semibold uppercase tracking-wider text-yellow-400 mb-3">Quick Answer</div>
-            <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
+          <div id="quick-answer" className="bg-teal-soft border border-teal/20 rounded-3xl p-8 lg:p-10">
+            <div className="text-xs font-semibold uppercase tracking-wider text-teal mb-3">Quick Answer</div>
+            <p className="text-lg lg:text-xl text-ink leading-relaxed">
               TradeCalcs is a free PWA offering BS 7671-compliant electrical calculators for UK electricians — cable sizing, voltage drop, Zs, disconnection times and more. No login, ad-supported, built for site use.
             </p>
           </div>
@@ -248,19 +247,19 @@ export default function TradeCalcsPage() {
         {/* What's included */}
         <section className="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              The calculations UK electricians <span className="text-orange-500">actually use.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              The calculations UK electricians <span className="text-teal">actually use.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Built from real on-site work, not a rewrite of a textbook. If it is something you calculate on a job, it is here.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {calcs.map((c) => (
-              <div key={c.name} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-yellow-500/[0.06] hover:border-yellow-500/30 transition-all">
-                <h3 className="font-display text-base font-bold text-yellow-400 uppercase tracking-wide mb-2">{c.name}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{c.desc}</p>
+              <div key={c.name} className="p-6 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+                <h3 className="font-display text-base font-bold text-ink uppercase tracking-wide mb-2">{c.name}</h3>
+                <p className="text-slate text-sm leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -269,19 +268,19 @@ export default function TradeCalcsPage() {
         {/* Differentiators */}
         <section className="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Why TradeCalcs is built <span className="text-orange-500">differently.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Why TradeCalcs is built <span className="text-teal">differently.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               Most electrical calculators online are either locked behind a subscription, built for US wiring, or pulled from a textbook with no thought for how you actually use them. TradeCalcs is the opposite.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {differentiators.map((d) => (
-              <div key={d.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-lg font-bold text-yellow-400 mb-3">{d.title}</h3>
-                <p className="text-white/70 leading-relaxed">{d.desc}</p>
+              <div key={d.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-lg font-bold text-ink mb-3">{d.title}</h3>
+                <p className="text-slate leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -289,10 +288,10 @@ export default function TradeCalcsPage() {
 
         {/* Why we built it */}
         <section className="py-16 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-center">
-            Why we built <span className="text-orange-500">TradeCalcs.</span>
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-center text-ink">
+            Why we built <span className="text-teal">TradeCalcs.</span>
           </h2>
-          <div className="space-y-5 text-white/70 text-lg leading-relaxed">
+          <div className="space-y-5 text-slate text-lg leading-relaxed">
             <p>
               Most electrical calculators online are either locked behind a subscription, built for US wiring (which does not apply here), or pulled straight from a textbook with no thought for how you actually use them in a van or up a ladder.
             </p>
@@ -300,7 +299,7 @@ export default function TradeCalcsPage() {
               TradeCalcs is the opposite. It is mobile-first, because that is where you are. It is BS 7671, because that is what governs your work. It is free, because every UK electrician should have the basics to hand without paying a subscription for sums they did in college.
             </p>
             <p>
-              If you want something more &mdash; voice-driven certification, photo evidence, audit-proof job packs &mdash; that is what <Link to="/products/certvoice" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">CertVoice</Link> and <a href="https://workproof.co.uk" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">WorkProof</a> are for. TradeCalcs covers the arithmetic. Those cover the certification.
+              If you want something more &mdash; voice-driven certification, photo evidence, audit-proof job packs &mdash; that is what <Link to="/products/certvoice" className="text-teal hover:text-teal-dark underline underline-offset-4">CertVoice</Link> and <a href="https://workproof.co.uk" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline underline-offset-4">WorkProof</a> are for. TradeCalcs covers the arithmetic. Those cover the certification.
             </p>
           </div>
         </section>
@@ -308,66 +307,66 @@ export default function TradeCalcsPage() {
         {/* Provenance */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Built by someone who knows <span className="text-orange-500">the site.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Built by someone who knows <span className="text-teal">the site.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {provenancePoints.map((p) => (
-              <div key={p.title} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-                <h3 className="font-display text-base font-bold text-yellow-400 mb-3">{p.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
+              <div key={p.title} className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+                <h3 className="font-display text-base font-bold text-teal mb-3">{p.title}</h3>
+                <p className="text-slate text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
-          <div className="text-center text-sm text-white/50 mt-8">
-            Written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
+          <div className="text-center text-sm text-slate mt-8">
+            Written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
           </div>
         </section>
 
         {/* Common mistakes */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              Common BS 7671 calculation mistakes <span className="text-orange-500">TradeCalcs catches.</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">
+              Common BS 7671 calculation mistakes <span className="text-teal">TradeCalcs catches.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               The pitfalls that trip up both trainees and experienced electricians. The calculators flag them automatically so you do not sign off something that will come back on you.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-yellow-400 mb-3">Forgetting the 80% rule on measured Zs</h3>
-              <p className="text-white/60 text-sm leading-relaxed">Published Zs values in BS 7671 are for conductors at 70 degrees C. On a cold install the measurement will be lower than the eventual warm value. The rule of thumb is the measured Zs should be no more than 80% of the published maximum to allow for heating. TradeCalcs applies this correction automatically when you enter a measured value.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Forgetting the 80% rule on measured Zs</h3>
+              <p className="text-slate text-sm leading-relaxed">Published Zs values in BS 7671 are for conductors at 70 degrees C. On a cold install the measurement will be lower than the eventual warm value. The rule of thumb is the measured Zs should be no more than 80% of the published maximum to allow for heating. TradeCalcs applies this correction automatically when you enter a measured value.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-yellow-400 mb-3">Volt drop passes but Zs fails</h3>
-              <p className="text-white/60 text-sm leading-relaxed">A long cable run can satisfy BS 7671 Appendix 4 volt drop limits while still exceeding the maximum Zs for the protective device. Both checks must pass independently. TradeCalcs runs both and tells you which one is pulling the run length down so you know exactly where the constraint is.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Volt drop passes but Zs fails</h3>
+              <p className="text-slate text-sm leading-relaxed">A long cable run can satisfy BS 7671 Appendix 4 volt drop limits while still exceeding the maximum Zs for the protective device. Both checks must pass independently. TradeCalcs runs both and tells you which one is pulling the run length down so you know exactly where the constraint is.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-yellow-400 mb-3">Wrong disconnection time for the circuit type</h3>
-              <p className="text-white/60 text-sm leading-relaxed">BS 7671 requires 0.4s disconnection on final circuits up to 63A in TN systems, and 5s on distribution circuits. Using the wrong target silently causes installations to pass calculations they should fail. TradeCalcs asks what the circuit is and applies the correct target.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Wrong disconnection time for the circuit type</h3>
+              <p className="text-slate text-sm leading-relaxed">BS 7671 requires 0.4s disconnection on final circuits up to 63A in TN systems, and 5s on distribution circuits. Using the wrong target silently causes installations to pass calculations they should fail. TradeCalcs asks what the circuit is and applies the correct target.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-base font-bold text-yellow-400 mb-3">Current capacity corrected for ambient and grouping</h3>
-              <p className="text-white/60 text-sm leading-relaxed">A 32A cable rating on a tag does not mean 32A in every installation. Ambient temperature above 30 degrees, bunching with other circuits, and thermal insulation all reduce the true capacity. TradeCalcs prompts for these factors and applies the correction — so the sized cable actually carries what you think it does.</p>
+            <div className="p-6 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-base font-bold text-ink mb-3">Current capacity corrected for ambient and grouping</h3>
+              <p className="text-slate text-sm leading-relaxed">A 32A cable rating on a tag does not mean 32A in every installation. Ambient temperature above 30 degrees, bunching with other circuits, and thermal insulation all reduce the true capacity. TradeCalcs prompts for these factors and applies the correction — so the sized cable actually carries what you think it does.</p>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
         <section id="faq" className="py-16 px-6 lg:px-12 max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight text-center text-ink">
             Frequently asked questions
           </h2>
           <div className="space-y-4">
             {faqs.map((f) => (
-              <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-yellow-500/30 transition-colors">
-                <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
+              <details key={f.q} className="group p-6 bg-white border border-sand rounded-2xl shadow-card hover:border-teal/40 transition-colors">
+                <summary className="font-display text-base font-bold text-ink cursor-pointer list-none flex justify-between items-center gap-4">
                   <span>{f.q}</span>
-                  <span className="text-yellow-400 text-xl group-open:rotate-45 transition-transform">+</span>
+                  <span className="text-teal text-xl group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
+                <p className="mt-4 text-slate leading-relaxed">{f.a}</p>
               </details>
             ))}
           </div>
@@ -376,22 +375,22 @@ export default function TradeCalcsPage() {
         {/* Related */}
         <section className="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">Where to go <span className="text-orange-500">next</span></h2>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">Where to go <span className="text-teal">next</span></h2>
           </div>
           <div className="space-y-3">
             {relatedPages.map((r) => {
               const inner = (
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-yellow-400 transition-colors">{r.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{r.desc}</p>
+                    <h3 className="font-display text-lg font-bold text-ink mb-1 group-hover:text-teal transition-colors">{r.title}</h3>
+                    <p className="text-slate text-sm leading-relaxed">{r.desc}</p>
                   </div>
-                  <svg className="w-5 h-5 text-white/40 group-hover:text-yellow-400 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-slate group-hover:text-teal flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
               )
-              const className = 'block p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-yellow-500/[0.04] hover:border-yellow-500/30 transition-all group'
+              const className = 'block p-6 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all group'
               return r.external
                 ? <a key={r.href} href={r.href} target="_blank" rel="noopener noreferrer" className={className}>{inner}</a>
                 : <Link key={r.href} to={r.href} className={className}>{inner}</Link>
@@ -401,10 +400,10 @@ export default function TradeCalcsPage() {
 
         {/* Final CTA */}
         <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight text-ink">
             Ready when you are.
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-slate text-lg mb-10 max-w-xl mx-auto">
             No signup. No email. Open it, use it, bookmark it.
           </p>
           <a href="https://tradecalcs.co.uk" target="_blank" rel="noopener noreferrer" className="btn-primary">
