@@ -182,33 +182,35 @@ export default function ConstructionPage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#industries" className="hover:text-orange-400">Industries</Link></li>
+          <li><Link to="/#industries" className="hover:text-teal transition-colors">Industries</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">Construction</li>
+          <li className="text-ink">Construction</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <HardHat className="w-3 h-3" /> For UK construction, trades & inspection
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Nine niche SaaS products. Built <span className="text-orange-400">on the tools.</span>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Nine niche SaaS products. Built <span className="text-teal">on the tools.</span>
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           Autaimate builds niche SaaS products for UK construction and trades — electrical compliance, fieldwork reporting, lead capture, H&S, inspection. Nine products live today. The tenth might be the one you commission when you've got a workflow the generic software doesn't cover.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             See the products <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Commission a new one
           </Link>
         </div>
@@ -216,9 +218,9 @@ export default function ConstructionPage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 via-transparent to-teal-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-orange-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             Autaimate is a UK product studio with nine niche SaaS products for construction and trades — covering electrical calculation and certification, snagging, playground inspection, H&S, lead capture, and missed-call AI. Fixed-price commissions available for workflows not yet built.
           </p>
         </div>
@@ -226,27 +228,27 @@ export default function ConstructionPage() {
 
       {/* Product grid */}
       <section id="products" className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">The construction portfolio</h2>
-        <p className="text-white/70 mb-10">Nine products, each built for a specific problem in the industry.</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-ink">The construction portfolio</h2>
+        <p className="text-slate mb-10">Nine products, each built for a specific problem in the industry.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {CONSTRUCTION_PRODUCTS.map((p) => (
             p.to ? (
-              <Link key={p.name} to={p.to} className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+              <Link key={p.name} to={p.to} className="group p-6 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="font-semibold text-lg text-white">{p.name}</div>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20">{p.tag}</span>
+                  <div className="font-semibold text-lg text-ink">{p.name}</div>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-teal-soft text-teal border border-teal/20">{p.tag}</span>
                 </div>
-                <p className="text-white/70 text-sm mb-3">{p.desc}</p>
-                <div className="text-orange-400 text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Read more <ArrowRight className="w-3 h-3" /></div>
+                <p className="text-slate text-sm mb-3">{p.desc}</p>
+                <div className="text-teal text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Read more <ArrowRight className="w-3 h-3" /></div>
               </Link>
             ) : (
-              <a key={p.name} href={p.ext} className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition" rel="noopener noreferrer">
+              <a key={p.name} href={p.ext} className="group p-6 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all" rel="noopener noreferrer">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="font-semibold text-lg text-white">{p.name}</div>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20">{p.tag}</span>
+                  <div className="font-semibold text-lg text-ink">{p.name}</div>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-teal-soft text-teal border border-teal/20">{p.tag}</span>
                 </div>
-                <p className="text-white/70 text-sm mb-3">{p.desc}</p>
-                <div className="text-orange-400 text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Visit site <ArrowRight className="w-3 h-3" /></div>
+                <p className="text-slate text-sm mb-3">{p.desc}</p>
+                <div className="text-teal text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Visit site <ArrowRight className="w-3 h-3" /></div>
               </a>
             )
           ))}
@@ -255,8 +257,8 @@ export default function ConstructionPage() {
 
       {/* Why niche */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why niche beats generic in construction software</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Why niche beats generic in construction software</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             Generic construction software tries to be everything for everyone. One platform, forty features, priced at £200/month, and most of the features are irrelevant to any individual firm. You pay for a scaffolding module you'll never open. The electrical side is an afterthought. The snagging workflow assumes you're a 50-person firm, not a one-van operator.
           </p>
@@ -271,15 +273,15 @@ export default function ConstructionPage() {
 
       {/* Commission section */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-orange-500/20 to-teal-500/20 border border-white/10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Every product here started as one customer's problem</h2>
-          <p className="text-white/80 mb-4">
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">Every product here started as one customer's problem</h2>
+          <p className="text-slate mb-4">
             TradeCalcs, SnagLog, CertVoice, TradGo, WorkProof, InspectVoice — every product in the construction portfolio started life as one UK customer describing a specific workflow that needed a tool. We built the tool, shipped it, and turned it into a product that now serves the whole industry.
           </p>
-          <p className="text-white/80 mb-6">
+          <p className="text-slate mb-6">
             If you've got a workflow that isn't covered yet — the bit of your operation that still runs on spreadsheets, or the manual process eating your admin budget — that's how the next product gets born. Fixed-price. Typically around four weeks. You own the code at the end.
           </p>
-          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Commission the next one <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -287,8 +289,8 @@ export default function ConstructionPage() {
 
       {/* The fieldwork pattern */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The fieldwork pattern that runs through the portfolio</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The fieldwork pattern that runs through the portfolio</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             Look across the construction products and you'll see the same pattern repeated: dictate or capture on site, let the software structure the data, generate the PDF before you leave the job. CertVoice does it for electrical certification. InspectVoice does it for playground inspection. SnagLog does it for property snagging. WorkProof does it for proof-of-work documentation.
           </p>
@@ -303,8 +305,8 @@ export default function ConstructionPage() {
 
       {/* Compliance landscape */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for the UK compliance landscape</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Built for the UK compliance landscape</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             UK construction has its own compliance landscape — BS 7671 for electrical, BS EN 1176 for playgrounds, CDM 2015 for construction safety, CQC for regulated care environments, Building Safety Act post-Grenfell, UK GDPR for any data handling. The standards and regulations that apply to a UK trade or inspection firm are not the same as the American equivalents, and generic American construction software consistently fails to meet them.
           </p>
@@ -316,8 +318,8 @@ export default function ConstructionPage() {
 
       {/* Electrical focus */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">A particular focus on UK electrical work</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">A particular focus on UK electrical work</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             The electrical trade gets specific attention in the Autaimate portfolio because it's one of the most compliance-heavy trades in UK construction and one of the most poorly served by existing software. TradeCalcs covers the day-to-day calculations — cable sizing, voltage drop, earth fault loop impedance, adiabatic equation. CertVoice handles the certification output that ties every job off with proper BS 7671 paperwork. Together they cover the design-side and compliance-side of an electrician's week.
           </p>
@@ -332,22 +334,22 @@ export default function ConstructionPage() {
 
       {/* Trades served */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Trades and disciplines we build for</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 text-white/80">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Trades and disciplines we build for</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 text-ink">
           {['Electricians', 'Heating engineers', 'Plumbers', 'Gas Safe engineers', 'Builders', 'Roofers', 'Decorators', 'Playground inspectors', 'Property inspectors', 'Snagging specialists', 'Fire safety assessors', 'H&S consultants', 'Construction managers', 'Site managers', 'Facilities teams', 'Local authority maintenance'].map((t) => (
-            <div key={t} className="p-3 rounded-lg bg-white/5 border border-white/10 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-orange-400 inline mr-2" />{t}
+            <div key={t} className="p-3 rounded-lg bg-white border border-sand shadow-card text-sm">
+              <CheckCircle2 className="w-4 h-4 text-teal inline mr-2" />{t}
             </div>
           ))}
         </div>
-        <p className="text-white/70 mt-6 max-w-3xl">
+        <p className="text-slate mt-6 max-w-3xl">
           If you don't see your trade in the list, that doesn't mean we can't build for you. It just means we haven't yet. Commission a product and you'll be the first.
         </p>
       </section>
 
       {/* Commission features */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How a commission works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How a commission works</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { i: Hammer, t: 'Fixed price, up front', d: 'You know what it costs before we start. No hourly billing, no scope creep.' },
@@ -357,10 +359,10 @@ export default function ConstructionPage() {
             { i: Wrench, t: 'Modern infrastructure', d: 'React, TypeScript, SmartSuite, Railway, Cloudflare, Stripe, Clerk. Stable, documented, maintainable.' },
             { i: CheckCircle2, t: 'Integrations on request', d: 'Hook into your existing job management, CRM, or accounting software as part of the build.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -368,34 +370,34 @@ export default function ConstructionPage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Forty years in construction. Then the software.</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Forty years in construction. Then the software.</h2>
+          <p className="text-slate mb-4">
             The reason Autaimate products fit construction workflows is that they were designed by someone who has spent 40 years in UK construction and trades. The founder has been on the tools, run sites, dealt with inspectors, lost jobs to missed calls, written certificates at the kitchen table at 10pm. That background shows up everywhere — in the language the products use, the decisions about what to include, the understanding of what "compliant" actually feels like on a Tuesday morning.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             The products are built on a modern stack — React, TypeScript, SmartSuite, Railway — but the sensibility behind them is trades, not tech. That's the bit generic construction software gets wrong, and it's the bit we get right.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             That background also shapes the commercial approach. Pricing designed so independents can afford to use it. Fixed-price commissions because tradespeople know what "time and materials" looks like when it's applied to a job that should be fixed. Code ownership because no trade wants to be locked into a supplier who could put the prices up next year.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline underline-offset-4">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -403,43 +405,43 @@ export default function ConstructionPage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/for/property" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK property</div>
-            <p className="text-sm text-white/70">Adjacent industry hub — products for landlords, letting agents, and property managers.</p>
+          <Link to="/for/property" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK property</div>
+            <p className="text-sm text-slate">Adjacent industry hub — products for landlords, letting agents, and property managers.</p>
           </Link>
-          <Link to="/for/care-homes" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK care homes</div>
-            <p className="text-sm text-white/70">CQC-focused products for regulated care operators.</p>
+          <Link to="/for/care-homes" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK care homes</div>
+            <p className="text-sm text-slate">CQC-focused products for regulated care operators.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Fixed price, typically 4 weeks, you own the code at the end.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Fixed price, typically 4 weeks, you own the code at the end.</p>
           </Link>
-          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradeCalcs</div>
-            <p className="text-sm text-white/70">Our free BS 7671 calculator platform — a good way to see what we build.</p>
+          <Link to="/products/tradecalcs" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradeCalcs</div>
+            <p className="text-sm text-slate">Our free BS 7671 calculator platform — a good way to see what we build.</p>
           </Link>
-          <Link to="/" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Back to the full portfolio</div>
-            <p className="text-sm text-white/70">Every Autaimate product across every industry.</p>
+          <Link to="/" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Back to the full portfolio</div>
+            <p className="text-sm text-slate">Every Autaimate product across every industry.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-orange-500/20 to-teal-500/20 border border-white/10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Got a workflow the generic software doesn't fit?</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Got a workflow the generic software doesn't fit?</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             That's how nine construction products got built. The tenth might be yours. Fixed price. Typically four weeks. You own the code at the end.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Commission a product <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Talk to us first
             </Link>
           </div>
