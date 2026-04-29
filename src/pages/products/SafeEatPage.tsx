@@ -183,33 +183,35 @@ export default function SafeEatPage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">SafeEat</li>
+          <li className="text-ink">SafeEat</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Utensils className="w-3 h-3" /> £29.99/month · Built in Cornwall · 30-day guarantee
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Allergy diners are the most <span className="text-orange-400">loyal customers</span> in hospitality.
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Allergy diners are the most <span className="text-teal">loyal customers</span> in hospitality.
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           The venues that look after them are the ones that fill up on a wet Tuesday in November. SafeEat is how you become one of those venues — a QR-powered allergen menu that makes dining safe, an EHO audit trail that keeps you compliant, and a retention system that turns allergy diners into regulars.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             See SafeEat <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Book a demo
           </Link>
         </div>
@@ -217,9 +219,9 @@ export default function SafeEatPage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-red-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-red-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             SafeEat is a UK QR allergen system for independent pubs, cafés, and restaurants. Diners scan, select allergens, see a filtered menu, and opt in to come back. You get Natasha's-Law-ready compliance and a customer database of loyal regulars. £29.99/month.
           </p>
         </div>
@@ -227,8 +229,8 @@ export default function SafeEatPage() {
 
       {/* The insight */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The insight most venues miss</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The insight most venues miss</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-slate">
           <div>
             <p className="mb-4">
               An allergy diner doesn't just pick a restaurant. They commit to it. Finding somewhere safe to eat with a severe allergy is genuinely stressful, and once a family has found a venue that treats allergens seriously, they don't shop around. They come back. They bring the grandparents. They book the birthday. They leave reviews that say "finally, somewhere we can all eat."
@@ -250,7 +252,7 @@ export default function SafeEatPage() {
 
       {/* How it works */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How SafeEat works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How SafeEat works</h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             { n: '1', t: 'Scan the QR', d: 'Diner scans the table code with their phone. No app.' },
@@ -260,10 +262,10 @@ export default function SafeEatPage() {
             { n: '5', t: 'Opt in', d: 'If they loved it, they join your allergy diner database.' },
             { n: '6', t: 'They come back', d: 'Targeted emails, review prompts, insight reports — they become regulars.' },
           ].map((s) => (
-            <div key={s.n} className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <div className="text-orange-400 font-bold text-xl mb-1">{s.n}</div>
-              <div className="font-semibold text-sm mb-1">{s.t}</div>
-              <p className="text-xs text-white/70">{s.d}</p>
+            <div key={s.n} className="p-4 rounded-xl bg-white border border-sand shadow-card">
+              <div className="text-teal font-bold text-xl mb-1">{s.n}</div>
+              <div className="font-semibold text-sm mb-1 text-ink">{s.t}</div>
+              <p className="text-xs text-slate">{s.d}</p>
             </div>
           ))}
         </div>
@@ -271,7 +273,7 @@ export default function SafeEatPage() {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">What's in the box</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">What's in the box</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             { i: QrCode, t: 'QR allergen menu', d: 'Every table gets a code. Diners select their allergens and see the menu filtered to safe dishes in real time.' },
@@ -281,10 +283,10 @@ export default function SafeEatPage() {
             { i: Star, t: 'Automated review prompts', d: 'Polite, well-timed requests after a safe meal — not spammy post-invoice chases. Better reviews, fewer opt-outs.' },
             { i: BarChart3, t: 'Weekly insight reports', d: 'Every Monday, a short report on allergen trends, menu performance, email conversion, and review velocity.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -292,15 +294,15 @@ export default function SafeEatPage() {
 
       {/* The guarantee */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10">
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-7 h-7 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">30-day inspection-ready guarantee</h2>
+            <Shield className="w-7 h-7 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">30-day inspection-ready guarantee</h2>
           </div>
-          <p className="text-white/80 mb-3">
+          <p className="text-slate mb-3">
             If SafeEat does not get your allergen process to a standard you can confidently defend in an EHO inspection within 30 days of going live, you get three months free. That's it. No lawyer-speak, no hidden conditions.
           </p>
-          <p className="text-white/80">
+          <p className="text-slate">
             We can offer this because we know what it takes to get a venue compliant — because we've done it. If we don't deliver, the cost is on us, not on you.
           </p>
         </div>
@@ -308,18 +310,18 @@ export default function SafeEatPage() {
 
       {/* Who it's for */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for independent UK venues</h2>
-        <div className="grid md:grid-cols-3 gap-6 text-white/75">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Independent pubs</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Built for independent UK venues</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-slate">
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Independent pubs</div>
             <p>Freehouses, gastropubs, country pubs with kitchens. SafeEat turns your Sunday lunch into a destination for the allergy-aware family.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Cafés and coffee shops</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Cafés and coffee shops</div>
             <p>Lunch spots, brunch cafés, coffee-and-cake shops where PPDS rules apply. Natasha's-Law-ready from day one.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Independent restaurants</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Independent restaurants</div>
             <p>Bistros, neighbourhood restaurants, seasonal menu spots. SafeEat keeps your audit tidy even when your specials change daily.</p>
           </div>
         </div>
@@ -327,8 +329,8 @@ export default function SafeEatPage() {
 
       {/* Why niche */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why SafeEat isn't just another hospitality SaaS</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Why SafeEat isn't just another hospitality SaaS</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             There are generic hospitality platforms that claim to handle allergens as one feature among fifty. They don't handle them well — because they're built for chains, not for independents, and they treat allergens like a compliance checkbox rather than the commercial opportunity they actually are.
           </p>
@@ -343,16 +345,16 @@ export default function SafeEatPage() {
 
       {/* Pricing */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Pricing</h2>
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="flex items-center gap-2 mb-2">
-            <PoundSterling className="w-6 h-6 text-orange-400" />
-            <div className="text-3xl font-bold">29.99 / month</div>
+            <PoundSterling className="w-6 h-6 text-teal" />
+            <div className="text-3xl font-bold text-ink">29.99 / month</div>
           </div>
-          <p className="text-white/80 mb-4">30-day inspection-ready guarantee. No setup fee. No long-term contract. Cancel anytime.</p>
-          <ul className="grid md:grid-cols-2 gap-2 text-white/80">
+          <p className="text-slate mb-4">30-day inspection-ready guarantee. No setup fee. No long-term contract. Cancel anytime.</p>
+          <ul className="grid md:grid-cols-2 gap-2 text-ink">
             {['QR allergen menu filtering', 'Full EHO audit trail', 'Opted-in customer database', 'Targeted email marketing', 'Review prompts', 'Weekly insight reports', 'Real-time menu editor', 'UK support from the team that built it'].map((f) => (
-              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-orange-400" /> {f}</li>
+              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal" /> {f}</li>
             ))}
           </ul>
         </div>
@@ -360,31 +362,31 @@ export default function SafeEatPage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built in Cornwall. For the venues that give a damn.</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built in Cornwall. For the venues that give a damn.</h2>
+          <p className="text-slate mb-4">
             SafeEat is a product from Autaimate. It's built for the independents — the family-run pub, the neighbourhood café, the restaurant where the owner still works the pass on a Saturday. Not for a chain head office, not for a board, not for a hospitality group with a compliance department.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             We made it in Cornwall because this is where a lot of those independents are. We priced it at £29.99/month because a Cornish café isn't going to pay £200/month for compliance software and shouldn't have to. We backed it with a 30-day guarantee because if you're going to trust a small software team with your EHO readiness, you deserve a promise that we'll deliver.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -392,39 +394,39 @@ export default function SafeEatPage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradGo</div>
-            <p className="text-sm text-white/70">AI agent that catches missed calls, WhatsApp, and website chat — useful for independent hospitality too.</p>
+          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradGo</div>
+            <p className="text-sm text-slate">AI agent that catches missed calls, WhatsApp, and website chat — useful for independent hospitality too.</p>
           </Link>
-          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">SnagLog</div>
-            <p className="text-sm text-white/70">AI-powered snagging reports — if you're renovating a venue or fit-out space.</p>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">SnagLog</div>
+            <p className="text-sm text-slate">AI-powered snagging reports — if you're renovating a venue or fit-out space.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Got a hospitality problem that needs its own software? See how a new product gets born.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Got a hospitality problem that needs its own software? See how a new product gets born.</p>
           </Link>
-          <Link to="/" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">See all Autaimate products</div>
-            <p className="text-sm text-white/70">The full portfolio of niche SaaS products for UK industries.</p>
+          <Link to="/" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">See all Autaimate products</div>
+            <p className="text-sm text-slate">The full portfolio of niche SaaS products for UK industries.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-white/10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Be the venue allergy families tell each other about</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Be the venue allergy families tell each other about</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             £29.99/month. 30-day inspection-ready guarantee. Built in Cornwall for the independents who want to fill the dining room on a wet Tuesday in November.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <a href="https://safeeat.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               See SafeEat <ArrowRight className="w-4 h-4" />
             </a>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Book a demo
             </Link>
           </div>
