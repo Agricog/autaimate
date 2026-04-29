@@ -5,45 +5,25 @@ import Layout from './components/Layout'
 // URLs starting with 'http' go straight to the live product
 // Internal-page products grouped first for strongest internal linking
 const products = [
-  { name: 'TradeCalcs',    url: '/products/tradecalcs',   desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.',                                              color: 'yellow' },
-  { name: 'SnagLog',       url: '/products/snaglog',      desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.',                                                  color: 'teal' },
-  { name: 'CertVoice',     url: '/products/certvoice',    desc: 'Voice-first electrical certification. Speak your findings on-site, AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.',          color: 'rose' },
-  { name: 'TradGo',        url: '/products/tradgo',       desc: 'AI agent catching missed calls, WhatsApp and web chat enquiries — in your voice, with your approval on every quote. £59/month, 14-day trial.',   color: 'amber' },
-  { name: 'DetailRecon',   url: '/products/detailrecon',  desc: 'AI security reconnaissance for close protection. Professional advance recon reports in minutes. £29.99/report.',                                  color: 'purple' },
-  { name: 'InspectVoice',  url: '/products/inspectvoice', desc: 'Offline-first PWA for BS EN 1176 playground inspections. Voice-driven defect capture, AI extraction, PDF on-device.',                              color: 'violet' },
-  { name: 'SafeEat',       url: '/products/safeeat',      desc: 'QR-powered allergen system for UK food venues. Diners scan, see the safe menu, EHO audit trail built in. £29.99/month.',                          color: 'red' },
-  { name: 'AutoReplyChat', url: 'https://autoreplychat.com',      desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.',                color: 'blue' },
-  { name: 'LeadFortress',  url: 'https://leadfortress.co.uk',     desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.',                                              color: 'orange' },
-  { name: 'WorkProof',     url: 'https://workproof.co.uk',        desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.',              color: 'cyan' },
-  { name: 'CraneQuote',    url: 'https://cranequote.co.uk',       desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.',                                    color: 'amber' },
-  { name: 'EquipSafety',   url: 'https://equipsafety.co.uk',      desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.',                                                     color: 'pink' },
-  { name: 'ClearProof',    url: 'https://clearproof.co.uk',       desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.',                                color: 'lime' },
-  { name: 'HorseCost',     url: 'https://horsecost.co.uk',        desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.',                                               color: 'green' },
-  { name: 'Approv',        url: 'https://approv.co.uk',           desc: 'Client approval workflow for architects and designers. One-click approvals via email, no client login required.',                         color: 'sky' },
-  { name: 'ShootSync',     url: 'https://shootsync.co.uk',        desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.',                                     color: 'emerald' },
-  { name: 'UKTradeApps',   url: 'https://uktradeapps.co.uk',      desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.',           color: 'fuchsia' },
-  { name: 'LabCalcs',      url: '#',                              desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.',                              color: 'indigo' },
+  { name: 'TradeCalcs',    url: '/products/tradecalcs',   desc: 'BS 7671-compliant calculators for UK electricians. Cable sizing, voltage drop, circuit calculations.' },
+  { name: 'SnagLog',       url: '/products/snaglog',      desc: 'AI-powered snagging reports. Photograph defects, AI categorises and generates professional PDF.' },
+  { name: 'CertVoice',     url: '/products/certvoice',    desc: 'Voice-first electrical certification. Speak your findings on-site, AI builds BS 7671-compliant EICR, Minor Works, and EIC certificates.' },
+  { name: 'TradGo',        url: '/products/tradgo',       desc: 'AI agent catching missed calls, WhatsApp and web chat enquiries — in your voice, with your approval on every quote. £59/month, 14-day trial.' },
+  { name: 'DetailRecon',   url: '/products/detailrecon',  desc: 'AI security reconnaissance for close protection. Professional advance recon reports in minutes. £29.99/report.' },
+  { name: 'InspectVoice',  url: '/products/inspectvoice', desc: 'Offline-first PWA for BS EN 1176 playground inspections. Voice-driven defect capture, AI extraction, PDF on-device.' },
+  { name: 'SafeEat',       url: '/products/safeeat',      desc: 'QR-powered allergen system for UK food venues. Diners scan, see the safe menu, EHO audit trail built in. £29.99/month.' },
+  { name: 'AutoReplyChat', url: 'https://autoreplychat.com',      desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.' },
+  { name: 'LeadFortress',  url: 'https://leadfortress.co.uk',     desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.' },
+  { name: 'WorkProof',     url: 'https://workproof.co.uk',        desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.' },
+  { name: 'CraneQuote',    url: 'https://cranequote.co.uk',       desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.' },
+  { name: 'EquipSafety',   url: 'https://equipsafety.co.uk',      desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.' },
+  { name: 'ClearProof',    url: 'https://clearproof.co.uk',       desc: 'Multilingual H&S comprehension verification. Prove workers understood safety documents, not just signed.' },
+  { name: 'HorseCost',     url: 'https://horsecost.co.uk',        desc: 'UK horse ownership calculators. Livery comparison, annual costs, feed and farrier budgets.' },
+  { name: 'Approv',        url: 'https://approv.co.uk',           desc: 'Client approval workflow for architects and designers. One-click approvals via email, no client login required.' },
+  { name: 'ShootSync',     url: 'https://shootsync.co.uk',        desc: 'Shooting syndicate management. Members, beaters, shoot days, pegs, bags, and payments in one place.' },
+  { name: 'UKTradeApps',   url: 'https://uktradeapps.co.uk',      desc: 'Independent software directory for UK construction trades. Compare apps, verify compliance, get personalised recommendations.' },
+  { name: 'LabCalcs',      url: '#',                              desc: 'Laboratory calculator suite. Molarity, dilutions, buffer prep, and unit conversions for research workflows.' },
 ]
-
-const colorClasses: Record<string, { border: string; glow: string; stroke: string; text: string }> = {
-  blue:    { border: 'border-blue-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]',  stroke: 'stroke-blue-400',    text: 'text-blue-400' },
-  yellow:  { border: 'border-yellow-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(251,191,36,0.3)]',  stroke: 'stroke-yellow-400',  text: 'text-yellow-400' },
-  teal:    { border: 'border-teal-500/60',    glow: 'hover:shadow-[0_0_50px_rgba(45,138,138,0.4)]',  stroke: 'stroke-teal-400',    text: 'text-teal-400' },
-  purple:  { border: 'border-purple-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.3)]',  stroke: 'stroke-purple-400',  text: 'text-purple-400' },
-  orange:  { border: 'border-orange-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(249,115,22,0.3)]',  stroke: 'stroke-orange-400',  text: 'text-orange-400' },
-  green:   { border: 'border-green-500/50',   glow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]',   stroke: 'stroke-green-400',   text: 'text-green-400' },
-  pink:    { border: 'border-pink-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.3)]',  stroke: 'stroke-pink-400',    text: 'text-pink-400' },
-  lime:    { border: 'border-lime-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(132,204,22,0.3)]',  stroke: 'stroke-lime-400',    text: 'text-lime-400' },
-  sky:     { border: 'border-sky-500/50',     glow: 'hover:shadow-[0_0_50px_rgba(14,165,233,0.3)]',  stroke: 'stroke-sky-400',     text: 'text-sky-400' },
-  emerald: { border: 'border-emerald-500/50', glow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.3)]',  stroke: 'stroke-emerald-400', text: 'text-emerald-400' },
-  amber:   { border: 'border-amber-500/50',   glow: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]',  stroke: 'stroke-amber-400',   text: 'text-amber-400' },
-  indigo:  { border: 'border-indigo-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(99,102,241,0.3)]',  stroke: 'stroke-indigo-400',  text: 'text-indigo-400' },
-  rose:    { border: 'border-rose-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(244,63,94,0.3)]',   stroke: 'stroke-rose-400',    text: 'text-rose-400' },
-  cyan:    { border: 'border-cyan-500/50',    glow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]',   stroke: 'stroke-cyan-400',    text: 'text-cyan-400' },
-  violet:  { border: 'border-violet-500/50',  glow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.3)]',  stroke: 'stroke-violet-400',  text: 'text-violet-400' },
-  fuchsia: { border: 'border-fuchsia-500/50', glow: 'hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]',  stroke: 'stroke-fuchsia-400', text: 'text-fuchsia-400' },
-  red:     { border: 'border-red-500/50',     glow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.3)]',   stroke: 'stroke-red-400',     text: 'text-red-400' },
-}
 
 const icons: Record<string, JSX.Element> = {
   AutoReplyChat: <><rect x="20" y="25" width="60" height="45" rx="8"/><path d="M35 45h30M35 55h20"/><circle cx="70" cy="80" r="12"/><path d="M66 80h8M70 76v8"/></>,
@@ -63,7 +43,7 @@ const icons: Record<string, JSX.Element> = {
   InspectVoice: <><path d="M50 15 L50 40" strokeWidth="3" /><rect x="43" y="10" width="14" height="35" rx="7" /><path d="M35 38 Q35 55 50 55 Q65 55 65 38" /><line x1="50" y1="55" x2="50" y2="62" /><line x1="42" y1="62" x2="58" y2="62" /><rect x="20" y="68" width="60" height="22" rx="3" /><path d="M28 75 l4 4 8-8" strokeWidth="2" /><line x1="48" y1="76" x2="72" y2="76" /><line x1="48" y1="82" x2="65" y2="82" /></>,
   UKTradeApps: <><rect x="15" y="20" width="28" height="22" rx="3" /><rect x="57" y="20" width="28" height="22" rx="3" /><rect x="15" y="56" width="28" height="22" rx="3" /><rect x="57" y="56" width="28" height="22" rx="3" /><path d="M25 31h8M25 36h5" /><path d="M67 31h8M67 36h5" /><path d="M25 67h8M25 72h5" /><path d="M67 67h8M67 72h5" /><circle cx="50" cy="50" r="10" /><path d="M46 50h8M50 46v8" /></>,
   TradGo: <><rect x="35" y="15" width="30" height="55" rx="4" /><line x1="40" y1="22" x2="60" y2="22" /><circle cx="50" cy="75" r="1.5" /><path d="M25 30 q-5 5 0 10" /><path d="M20 25 q-9 10 0 20" /><path d="M75 30 q5 5 0 10" /><path d="M80 25 q9 10 0 20" /><circle cx="50" cy="45" r="5" /><path d="M47 43h6M47 47h4" /></>,
-  SafeEat: <><circle cx="50" cy="50" r="28" /><rect x="38" y="38" width="6" height="6" /><rect x="56" y="38" width="6" height="6" /><rect x="38" y="56" width="6" height="6" /><rect x="47" y="47" width="6" height="6" /><rect x="56" y="56" width="3" height="3" /><rect x="60" y="60" width="2" height="2" /><line x1="18" y1="38" x2="18" y2="68" strokeWidth="2" /><path d="M15 38 v10 q0 3 3 3 h0 q3 0 3 -3 v-10" /><line x1="82" y1="38" x2="82" y2="68" strokeWidth="2" /><line x1="80" y1="38" x2="84" y2="38" strokeWidth="2" /></>,
+  SafeEat: <><circle cx="50" cy="50" r="28" /><rect x="38" y="38" width="6" height="6" /><rect x="56" y="38" width="6" height="6" /><rect x="38" y="56" width="6" height="6" /><rect x="47" y="47" width="6" height="6" /><rect x="56" y="56" width="3" height="3" /><rect x="60" y="60" width="2" height="2" /><line x1="18" y1="38" x2="18" y2="68" strokeWidth="2" /><path d="M15 38 v10 q0 3 3 3 h0 q3 0 3 -3 v-10" /><line x1="82" y1="38" x2="84" y2="38" strokeWidth="2" /></>,
 }
 
 const steps = [
@@ -80,29 +60,20 @@ const industryHubs = [
     count: '9 products',
     desc: 'BS 7671 calculations, voice-first certification, AI missed-call, snagging, photo evidence, lead capture, crane hire, playground inspection, multilingual H&S.',
     href: '/for/construction',
-    accent: 'orange',
   },
   {
     title: 'Property & Lettings',
     count: '4 products',
     desc: 'AI snagging reports, one-click client approvals, multi-channel lead capture, multilingual tenant safety briefings.',
     href: '/for/property',
-    accent: 'sky',
   },
   {
     title: 'Care Homes',
     count: '2 products',
     desc: 'QR-based multilingual equipment safety with CQC audit trail, plus H&S comprehension verification for diverse staff.',
     href: '/for/care-homes',
-    accent: 'pink',
   },
 ]
-
-const hubAccents: Record<string, { border: string; text: string; hoverBorder: string; hoverBg: string }> = {
-  orange: { border: 'border-orange-500/20', text: 'text-orange-400', hoverBorder: 'hover:border-orange-500/50', hoverBg: 'hover:bg-orange-500/[0.04]' },
-  sky:    { border: 'border-sky-500/20',    text: 'text-sky-400',    hoverBorder: 'hover:border-sky-500/50',    hoverBg: 'hover:bg-sky-500/[0.04]' },
-  pink:   { border: 'border-pink-500/20',   text: 'text-pink-400',   hoverBorder: 'hover:border-pink-500/50',   hoverBg: 'hover:bg-pink-500/[0.04]' },
-}
 
 const nicheArguments = [
   {
@@ -206,17 +177,16 @@ const relatedPages = [
 ]
 
 function ProductCard({ p }: { p: typeof products[0] }) {
-  const c = colorClasses[p.color]
   const isInternal = p.url.startsWith('/')
   const className = 'product-card text-center transition-transform duration-300 hover:-translate-y-2.5'
 
   const inner = (
     <>
-      <div className={`product-circle mx-auto mb-6 ${c.border} ${c.glow}`} style={{ '--glow-color': 'currentColor' } as React.CSSProperties}>
-        <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className={`w-20 h-20 ${c.stroke}`}>{icons[p.name]}</svg>
+      <div className="product-circle mx-auto mb-6">
+        <svg viewBox="0 0 100 100" fill="none" strokeWidth="1.5" className="w-20 h-20 stroke-teal">{icons[p.name]}</svg>
       </div>
-      <h3 className={`font-display text-base font-bold uppercase tracking-wide mb-3 ${c.text}`}>{p.name}</h3>
-      <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
+      <h3 className="font-display text-base font-bold uppercase tracking-wide mb-3 text-ink">{p.name}</h3>
+      <p className="text-slate text-sm leading-relaxed max-w-xs mx-auto">{p.desc}</p>
     </>
   )
 
@@ -235,26 +205,25 @@ export default function App() {
   return (
     <Layout>
       <div className="cosmic-bg" />
-      <div className="stars" />
 
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center px-6 lg:px-12 pt-32 pb-20 text-center">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-500/15 border border-teal-500/40 rounded-full mb-10">
-            <span className="w-2 h-2 bg-teal-500 rounded-full pulse-dot" />
-            <span className="text-teal-400 text-sm font-semibold uppercase tracking-wider">UK Niche SaaS Studio</span>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-teal-soft border border-teal/20 rounded-full mb-10">
+            <span className="w-2 h-2 bg-teal rounded-full pulse-dot" />
+            <span className="text-teal text-sm font-semibold uppercase tracking-wider">UK Niche SaaS Studio</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 tracking-tight text-ink">
             Niche SaaS products for the industries{' '}
-            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">generic software forgets.</span>
+            <span className="text-teal">generic software forgets.</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-white/60 mb-5 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-slate mb-5 max-w-2xl mx-auto leading-relaxed">
             Every product here started as one customer&rsquo;s problem. Construction, trades, property, care, hospitality, inspection, close protection — each industry has gaps the big platforms gloss over. Autaimate fills them, one niche at a time, built by someone who&rsquo;s been on the tools.
           </p>
 
-          <p className="text-xl lg:text-2xl text-white/85 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl lg:text-2xl text-ink mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
             Eighteen niche products serving UK small businesses — plus new ones commissioned fixed-price when an industry has a gap worth closing.
           </p>
 
@@ -270,9 +239,9 @@ export default function App() {
 
       {/* Quick Answer (Speakable for voice search) */}
       <section className="px-6 lg:px-12 max-w-4xl mx-auto -mt-10 mb-20">
-        <div id="quick-answer" className="bg-gradient-to-br from-teal-500/10 to-orange-500/5 border border-teal-500/20 rounded-3xl p-8 lg:p-10">
-          <div className="text-xs font-semibold uppercase tracking-wider text-teal-400 mb-3">Quick Answer</div>
-          <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
+        <div id="quick-answer" className="bg-teal-soft border border-teal/20 rounded-3xl p-8 lg:p-10">
+          <div className="text-xs font-semibold uppercase tracking-wider text-teal mb-3">Quick Answer</div>
+          <p className="text-lg lg:text-xl text-ink leading-relaxed">
             Autaimate builds niche SaaS products for UK industries. Eighteen live today, each solving one specific problem. New niche products commissioned fixed-price, typically live in four weeks.
           </p>
         </div>
@@ -281,8 +250,8 @@ export default function App() {
       {/* Products */}
       <section id="products" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">The <span className="text-orange-500">Products</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">The <span className="text-teal">Products</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             Each tool solves one specific problem for one specific industry. No bloat, no enterprise pricing, no generic workflows that half-fit a dozen sectors. These are focused niche products — built because nobody else was building for that niche, and used daily by UK businesses that were tired of paying for software that didn&rsquo;t fit.
           </p>
         </div>
@@ -297,50 +266,47 @@ export default function App() {
       {/* Industries we build for */}
       <section id="industries" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Industries we <span className="text-orange-500">build for</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">Industries we <span className="text-teal">build for</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             Products aggregated by the sector they serve — for buyers who want to see every Autaimate tool for their industry in one place. Each hub lists the relevant products, explains the recurring problems we&rsquo;ve built for, and points to the commissioning process for industries where we haven&rsquo;t yet.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {industryHubs.map((h) => {
-            const a = hubAccents[h.accent]
-            return (
-              <Link
-                key={h.href}
-                to={h.href}
-                className={`p-8 bg-white/[0.02] border rounded-2xl transition-all ${a.border} ${a.hoverBorder} ${a.hoverBg} hover:-translate-y-1`}
-              >
-                <div className={`text-xs font-semibold uppercase tracking-wider mb-3 ${a.text}`}>{h.count}</div>
-                <h3 className={`font-display text-xl font-bold mb-3 ${a.text}`}>{h.title}</h3>
-                <p className="text-white/60 leading-relaxed mb-6">{h.desc}</p>
-                <div className={`inline-flex items-center gap-2 text-sm font-semibold ${a.text}`}>
-                  View hub
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </Link>
-            )
-          })}
+          {industryHubs.map((h) => (
+            <Link
+              key={h.href}
+              to={h.href}
+              className="p-8 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 hover:-translate-y-1 transition-all"
+            >
+              <div className="text-xs font-semibold uppercase tracking-wider mb-3 text-teal">{h.count}</div>
+              <h3 className="font-display text-xl font-bold mb-3 text-ink">{h.title}</h3>
+              <p className="text-slate leading-relaxed mb-6">{h.desc}</p>
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-teal">
+                View hub
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* Why niche beats generic */}
       <section id="why-niche" className="py-24 lg:py-32 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Why niche <span className="text-orange-500">beats generic</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">Why niche <span className="text-teal">beats generic</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             The argument for building one focused product per industry, instead of one sprawling platform that tries to serve everyone.
           </p>
         </div>
 
         <div className="space-y-6">
           {nicheArguments.map((n) => (
-            <div key={n.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-orange-400 mb-3">{n.title}</h3>
-              <p className="text-white/70 leading-relaxed">{n.desc}</p>
+            <div key={n.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-ink mb-3">{n.title}</h3>
+              <p className="text-slate leading-relaxed">{n.desc}</p>
             </div>
           ))}
         </div>
@@ -349,18 +315,18 @@ export default function App() {
       {/* How a product gets born */}
       <section id="process" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">How a product <span className="text-orange-500">gets born</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">How a product <span className="text-teal">gets born</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             We don&rsquo;t build software looking for problems. One UK business brings us real pain, and if the problem is industry-wide, the fix becomes a niche product. Five steps, four weeks, fixed price.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s) => (
-            <div key={s.num} className="text-center p-8 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-teal-500/[0.08] hover:border-teal-500/30 transition-all">
+            <div key={s.num} className="text-center p-8 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
               <div className="process-number mx-auto mb-4">{s.num}</div>
-              <h4 className="font-display text-base font-bold text-orange-500 uppercase tracking-wide mb-3">{s.title}</h4>
-              <p className="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+              <h4 className="font-display text-base font-bold text-ink uppercase tracking-wide mb-3">{s.title}</h4>
+              <p className="text-slate text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -369,43 +335,43 @@ export default function App() {
       {/* Provenance / E-E-A-T */}
       <section id="provenance" className="py-24 lg:py-32 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Built by someone who&rsquo;s <span className="text-orange-500">been on the tools</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">Built by someone who&rsquo;s <span className="text-teal">been on the tools</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             Autaimate is a one-person product studio with four decades of UK industry experience behind every build. Plain-spoken, direct, and happy to push back when a commission doesn&rsquo;t hold up.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {provenancePoints.map((p) => (
-            <div key={p.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-teal-400 mb-3">{p.title}</h3>
-              <p className="text-white/70 leading-relaxed">{p.desc}</p>
+            <div key={p.title} className="p-8 bg-white border border-sand rounded-2xl shadow-card">
+              <h3 className="font-display text-lg font-bold text-teal mb-3">{p.title}</h3>
+              <p className="text-slate leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center text-sm text-white/50">
-          Founded and written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
+        <div className="text-center text-sm text-slate">
+          Founded and written by <a href="https://uk.linkedin.com/in/mickstevenson" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline underline-offset-4">Mick Stevenson</a>, Founder of Autaimate.
         </div>
       </section>
 
       {/* FAQ */}
       <section id="faq" className="py-24 lg:py-32 px-6 lg:px-12 max-w-4xl mx-auto scroll-mt-20">
         <div className="text-center mb-14">
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight">Frequently asked <span className="text-orange-500">questions</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight text-ink">Frequently asked <span className="text-teal">questions</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto leading-relaxed">
             Everything worth knowing before you buy an existing product or commission a new one.
           </p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((f) => (
-            <details key={f.q} className="group p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-orange-500/30 transition-colors">
-              <summary className="font-display text-base font-bold text-white cursor-pointer list-none flex justify-between items-center gap-4">
+            <details key={f.q} className="group p-6 bg-white border border-sand rounded-2xl shadow-card hover:border-teal/40 transition-colors">
+              <summary className="font-display text-base font-bold text-ink cursor-pointer list-none flex justify-between items-center gap-4">
                 <span>{f.q}</span>
-                <span className="text-orange-400 text-xl group-open:rotate-45 transition-transform">+</span>
+                <span className="text-teal text-xl group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="mt-4 text-white/70 leading-relaxed">{f.a}</p>
+              <p className="mt-4 text-slate leading-relaxed">{f.a}</p>
             </details>
           ))}
         </div>
@@ -414,8 +380,8 @@ export default function App() {
       {/* Related */}
       <section id="related" className="py-24 px-6 lg:px-12 max-w-5xl mx-auto scroll-mt-20">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">Where to go <span className="text-orange-500">next</span></h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <h2 className="font-display text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-ink">Where to go <span className="text-teal">next</span></h2>
+          <p className="text-slate text-lg max-w-2xl mx-auto">
             Five starting points depending on why you&rsquo;re here.
           </p>
         </div>
@@ -425,14 +391,14 @@ export default function App() {
             <Link
               key={r.href}
               to={r.href}
-              className="block p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-orange-500/[0.04] hover:border-orange-500/30 transition-all group"
+              className="block p-6 bg-white border border-sand rounded-2xl shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all group"
             >
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h3 className="font-display text-lg font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">{r.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{r.desc}</p>
+                  <h3 className="font-display text-lg font-bold text-ink mb-1 group-hover:text-teal transition-colors">{r.title}</h3>
+                  <p className="text-slate text-sm leading-relaxed">{r.desc}</p>
                 </div>
-                <svg className="w-5 h-5 text-white/40 group-hover:text-orange-400 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-slate group-hover:text-teal flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </div>
@@ -445,32 +411,32 @@ export default function App() {
       <section id="contact" className="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">Got a gap the existing tools don&rsquo;t close?</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-10">Every product in the portfolio started with a conversation like this. Tell us what&rsquo;s slowing your industry down, and we&rsquo;ll tell you whether the problem is worth building a niche product around.</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight text-ink">Got a gap the existing tools don&rsquo;t close?</h2>
+            <p className="text-slate text-lg leading-relaxed mb-10">Every product in the portfolio started with a conversation like this. Tell us what&rsquo;s slowing your industry down, and we&rsquo;ll tell you whether the problem is worth building a niche product around.</p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-5">
                 <div className="contact-icon">
-                  <svg className="w-6 h-6 stroke-teal-400" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  <svg className="w-6 h-6 stroke-teal" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
-                  <div className="text-sm text-white/50 mb-1">Email us</div>
-                  <a href="mailto:mick@autaimate.com" className="text-lg font-semibold hover:text-orange-500 transition-colors">mick@autaimate.com</a>
+                  <div className="text-sm text-slate mb-1">Email us</div>
+                  <a href="mailto:mick@autaimate.com" className="text-lg font-semibold text-ink hover:text-teal transition-colors">mick@autaimate.com</a>
                 </div>
               </div>
               <div className="flex items-center gap-5">
                 <div className="contact-icon">
-                  <svg className="w-6 h-6 stroke-teal-400" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  <svg className="w-6 h-6 stroke-teal" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                  <div className="text-sm text-white/50 mb-1">Location</div>
-                  <div className="text-lg font-semibold">United Kingdom</div>
+                  <div className="text-sm text-slate mb-1">Location</div>
+                  <div className="text-lg font-semibold text-ink">United Kingdom</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white/[0.02] border border-white/[0.08] rounded-3xl p-2 overflow-hidden">
+          <div className="bg-white border border-sand rounded-3xl p-2 overflow-hidden shadow-card">
             <iframe
               src="https://app.smartsuite.com/form/sba974gi/0TfuCx5I40?header=false"
               width="100%"
