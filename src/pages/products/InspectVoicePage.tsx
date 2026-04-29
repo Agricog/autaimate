@@ -177,33 +177,35 @@ export default function InspectVoicePage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">InspectVoice</li>
+          <li className="text-ink">InspectVoice</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Mic className="w-3 h-3" /> BS EN 1176 · Offline-first · On-device PDF
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Playground inspection that works in a <span className="text-orange-400">field without a signal.</span>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Playground inspection that works in a <span className="text-teal">field without a signal.</span>
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           InspectVoice is a voice-first BS EN 1176 inspection platform for UK inspection companies and local authority teams. Dictate defects on site, let AI structure the data, generate the PDF on the iPad before you leave — at roughly a third the cost of the legacy name, with no annual lock-in.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="https://inspectvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="https://inspectvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Open InspectVoice <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Book a demo
           </Link>
         </div>
@@ -211,9 +213,9 @@ export default function InspectVoicePage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-emerald-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             InspectVoice is a UK voice-first BS EN 1176 playground inspection app. Offline-first, AI-powered defect extraction, on-device PDF generation — built for UK inspection companies and local authorities, at about a third the cost of the legacy platform.
           </p>
         </div>
@@ -221,8 +223,8 @@ export default function InspectVoicePage() {
 
       {/* The problem */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The post-inspection admin problem</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The post-inspection admin problem</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-slate">
           <div>
             <p className="mb-4">
               Ask any RPII inspector where their day really goes. It's not walking playgrounds — that's the job they trained for. It's the hours at the laptop afterwards, transcribing notebook scribbles, matching photos to defects, formatting reports to the template the local authority wants, and chasing sync on a clunky cloud tool that was never built for fieldwork.
@@ -244,7 +246,7 @@ export default function InspectVoicePage() {
 
       {/* How it works */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How InspectVoice works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How InspectVoice works</h2>
         <div className="grid md:grid-cols-5 gap-6">
           {[
             { n: '1', t: 'Load the site', d: 'Pull up the asset register. Works fully offline.' },
@@ -253,10 +255,10 @@ export default function InspectVoicePage() {
             { n: '4', t: 'Generate the PDF', d: 'On-device PDF before you leave the site.' },
             { n: '5', t: 'Sync when online', d: 'Report syncs to the register. Office has it in seconds.' },
           ].map((s) => (
-            <div key={s.n} className="p-5 rounded-xl bg-white/5 border border-white/10">
-              <div className="text-orange-400 font-bold text-2xl mb-2">{s.n}</div>
-              <div className="font-semibold mb-2">{s.t}</div>
-              <p className="text-sm text-white/70">{s.d}</p>
+            <div key={s.n} className="p-5 rounded-xl bg-white border border-sand shadow-card">
+              <div className="text-teal font-bold text-2xl mb-2">{s.n}</div>
+              <div className="font-semibold mb-2 text-ink">{s.t}</div>
+              <p className="text-sm text-slate">{s.d}</p>
             </div>
           ))}
         </div>
@@ -264,7 +266,7 @@ export default function InspectVoicePage() {
 
       {/* Differentiators */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">What makes InspectVoice different</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">What makes InspectVoice different</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             { i: WifiOff, t: 'Offline-first PWA', d: 'Most inspection platforms are cloud-only. A rural park with no 4G breaks them. InspectVoice was designed around the opposite assumption: assume no signal, and work fine.' },
@@ -274,10 +276,10 @@ export default function InspectVoicePage() {
             { i: Tablet, t: 'Built for iPads', d: 'Designed for the device inspectors actually carry in the field, not repurposed from a desktop web app.' },
             { i: Shield, t: 'UK data residency', d: 'Data stored in UK/EU infrastructure, encrypted in transit and at rest. Local authority data handling requirements met.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -285,18 +287,18 @@ export default function InspectVoicePage() {
 
       {/* Who it's for */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Who InspectVoice is built for</h2>
-        <div className="grid md:grid-cols-3 gap-6 text-white/75">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">UK playground inspection companies</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Who InspectVoice is built for</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-slate">
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">UK playground inspection companies</div>
             <p>Independent firms covering routine, operational, and annual main inspections for councils, schools, and housing associations. Fieldwork efficiency is the game — InspectVoice adds hours back to every inspector's week.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Local authority play teams</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Local authority play teams</div>
             <p>In-house inspection teams managing council-owned play assets. Standardised reports, an audit trail that stands up to scrutiny, and pricing that won't draw awkward questions from procurement.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Public space asset managers</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Public space asset managers</div>
             <p>Benches, bins, shelters, outdoor gyms, skate parks, park furniture — anywhere a council or estate needs defect records and condition reports, InspectVoice handles the workflow.</p>
           </div>
         </div>
@@ -304,8 +306,8 @@ export default function InspectVoicePage() {
 
       {/* Competitive positioning */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The first serious alternative to the legacy platform</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The first serious alternative to the legacy platform</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             UK playground inspection software has been dominated by a single expensive incumbent for years. It's cloud-only. It's desktop-biased. It locks firms into annual contracts. And because there was no real alternative, inspection companies put up with it.
           </p>
@@ -320,8 +322,8 @@ export default function InspectVoicePage() {
 
       {/* The inspection regime */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Built around the full BS EN 1176 inspection regime</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Built around the full BS EN 1176 inspection regime</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             BS EN 1176 requires three types of inspection: routine visual checks (often weekly), operational inspections (monthly to quarterly), and an annual main inspection that goes into equipment, foundations, and surfacing in depth. Each has its own report template, its own level of detail, and its own audit expectation.
           </p>
@@ -336,8 +338,8 @@ export default function InspectVoicePage() {
 
       {/* Fieldwork efficiency */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The fieldwork efficiency argument</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The fieldwork efficiency argument</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             Talk to any inspection company owner and they'll tell you the constraint on the business is inspector-hours. More inspections per inspector per week means more revenue without hiring. And the quickest way to get more inspections out of the same team is to remove the admin bottleneck that currently eats the afternoon.
           </p>
@@ -349,12 +351,12 @@ export default function InspectVoicePage() {
 
       {/* Social proof */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
           <div className="flex items-center gap-3 mb-4">
-            <MapPin className="w-6 h-6 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">In live use in Cornwall</h2>
+            <MapPin className="w-6 h-6 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">In live use in Cornwall</h2>
           </div>
-          <p className="text-white/75">
+          <p className="text-slate">
             InspectVoice is currently in live use with a UK inspection company in Cornwall, with inspectors working daily from iPads in the field. That active pilot is where the voice model, offline reliability, and PDF output have been hardened against real fieldwork — not against a spec sheet.
           </p>
         </div>
@@ -362,31 +364,31 @@ export default function InspectVoicePage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built by a studio that builds voice-first tools for trades</h2>
-          <p className="text-white/75 mb-4">
-            InspectVoice is built by Autaimate. It's one of a family of voice-first products in the portfolio — its sibling is <Link to="/products/certvoice" className="text-orange-400 underline">CertVoice</Link>, which applies the same voice-to-report pattern to BS 7671 electrical certification. Both products share the same principles: dictate on site, structure the data, PDF before you leave.
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built by a studio that builds voice-first tools for trades</h2>
+          <p className="text-slate mb-4">
+            InspectVoice is built by Autaimate. It's one of a family of voice-first products in the portfolio — its sibling is <Link to="/products/certvoice" className="text-teal hover:text-teal-dark underline">CertVoice</Link>, which applies the same voice-to-report pattern to BS 7671 electrical certification. Both products share the same principles: dictate on site, structure the data, PDF before you leave.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             Our founder spent 40 years in UK construction and trades. The reason these products fit fieldwork is that they were designed by someone who has done fieldwork, not by a developer designing from a requirements document.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -394,44 +396,44 @@ export default function InspectVoicePage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/products/certvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">CertVoice</div>
-            <p className="text-sm text-white/70">The sibling voice-first product — BS 7671 electrical certificates for UK sparkies.</p>
+          <Link to="/products/certvoice" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">CertVoice</div>
+            <p className="text-sm text-slate">The sibling voice-first product — BS 7671 electrical certificates for UK sparkies.</p>
           </Link>
-          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">SnagLog</div>
-            <p className="text-sm text-white/70">AI-powered snagging reports — the property inspection cousin to InspectVoice.</p>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">SnagLog</div>
+            <p className="text-sm text-slate">AI-powered snagging reports — the property inspection cousin to InspectVoice.</p>
           </Link>
-          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK construction & trades</div>
-            <p className="text-sm text-white/70">Every Autaimate product built for the built environment, in one place.</p>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK construction & trades</div>
+            <p className="text-sm text-slate">Every Autaimate product built for the built environment, in one place.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Got a fieldwork process that needs its own tool? See how a new product gets built.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Got a fieldwork process that needs its own tool? See how a new product gets built.</p>
           </Link>
-          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">TradGo</div>
-            <p className="text-sm text-white/70">AI agent for catching missed calls and enquiries while you're out on site.</p>
+          <Link to="/products/tradgo" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">TradGo</div>
+            <p className="text-sm text-slate">AI agent for catching missed calls and enquiries while you're out on site.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-orange-500/20 border border-white/10 text-center">
-          <Zap className="w-10 h-10 text-orange-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Put the evenings back where they belong</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <Zap className="w-10 h-10 text-teal mx-auto mb-4" />
+          <h2 className="text-3xl font-bold mb-4 text-ink">Put the evenings back where they belong</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             No more laptop nights writing up playgrounds. Dictate, review, PDF, leave the site with the job closed. At a third the cost of the legacy platform.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="https://inspectvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <a href="https://inspectvoice.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Open InspectVoice <ArrowRight className="w-4 h-4" />
             </a>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Book a demo
             </Link>
           </div>
