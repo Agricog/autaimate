@@ -176,33 +176,35 @@ export default function DetailReconPage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#products" className="hover:text-orange-400">Products</Link></li>
+          <li><Link to="/#products" className="hover:text-teal transition-colors">Products</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">DetailRecon</li>
+          <li className="text-ink">DetailRecon</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-500/10 border border-slate-400/20 text-slate-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Shield className="w-3 h-3" /> Close protection · £29.99/report · Pay-as-you-go
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Recon reports in <span className="text-orange-400">minutes,</span> not afternoons.
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Recon reports in <span className="text-teal">minutes,</span> not afternoons.
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           DetailRecon is an AI reconnaissance reporting tool for UK close protection operatives. Upload advance photos — DetailRecon surfaces entry and exit points, cover, crowd flow, lighting, and sightlines, and generates a branded PDF recon report before your coffee goes cold. £29.99 per report. No subscription.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="https://detailrecon.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="https://detailrecon.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Open DetailRecon <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Talk to us
           </Link>
         </div>
@@ -210,9 +212,9 @@ export default function DetailReconPage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-slate-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-slate-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             DetailRecon is a UK close protection tool that turns advance reconnaissance photos into a professional branded recon PDF in minutes. AI-assisted analysis, operative sign-off, £29.99 per report, no subscription.
           </p>
         </div>
@@ -220,8 +222,8 @@ export default function DetailReconPage() {
 
       {/* The problem */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Advance work eats hours that should be operational</h2>
-        <div className="grid md:grid-cols-2 gap-8 text-white/75">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Advance work eats hours that should be operational</h2>
+        <div className="grid md:grid-cols-2 gap-8 text-slate">
           <div>
             <p className="mb-4">
               Every CP operative knows the same pattern: you do the advance at a venue, take a hundred photos, then spend the afternoon at a laptop writing it up. Reviewing each image, noting operational features, structuring the report to the format the principal expects, cross-referencing back to photos you took three hours ago.
@@ -243,7 +245,7 @@ export default function DetailReconPage() {
 
       {/* What it analyses */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">What DetailRecon looks for</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">What DetailRecon looks for</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { i: MapPin, t: 'Entry & exit points', d: 'Primary, secondary, and emergency routes in and out. Vehicle access, pedestrian access, staff-only routes.' },
@@ -253,10 +255,10 @@ export default function DetailReconPage() {
             { i: Camera, t: 'Environmental features', d: 'Vehicle access routes, loading areas, service corridors, rooftops, and terrain features that affect operational planning.' },
             { i: FileText, t: 'Structured output', d: 'Every observation is organised against the relevant photo, with location tagging and severity flags where appropriate.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -264,7 +266,7 @@ export default function DetailReconPage() {
 
       {/* How it works */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How DetailRecon works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How DetailRecon works</h2>
         <div className="grid md:grid-cols-5 gap-6">
           {[
             { n: '1', t: 'Do the advance', d: 'Walk the venue, take photos. Phone or drone.' },
@@ -273,10 +275,10 @@ export default function DetailReconPage() {
             { n: '4', t: 'Operative review', d: 'You amend, add, remove, and sign off. Your judgement is the final word.' },
             { n: '5', t: 'Branded PDF', d: 'Export the recon report with your company branding. Ready to send.' },
           ].map((s) => (
-            <div key={s.n} className="p-5 rounded-xl bg-white/5 border border-white/10">
-              <div className="text-orange-400 font-bold text-2xl mb-2">{s.n}</div>
-              <div className="font-semibold mb-2">{s.t}</div>
-              <p className="text-sm text-white/70">{s.d}</p>
+            <div key={s.n} className="p-5 rounded-xl bg-white border border-sand shadow-card">
+              <div className="text-teal font-bold text-2xl mb-2">{s.n}</div>
+              <div className="font-semibold mb-2 text-ink">{s.t}</div>
+              <p className="text-sm text-slate">{s.d}</p>
             </div>
           ))}
         </div>
@@ -284,15 +286,15 @@ export default function DetailReconPage() {
 
       {/* Operative in control */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-7 h-7 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">The operative is always the author</h2>
+            <Shield className="w-7 h-7 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">The operative is always the author</h2>
           </div>
-          <p className="text-white/75 mb-3">
+          <p className="text-slate mb-3">
             DetailRecon is a tool that speeds up reporting. It is not — and will never be — a substitute for operator judgement. Every observation surfaced by the AI is reviewed by the operative before the report is finalised. You amend what needs amending. You add what the AI missed. You sign off as the author.
           </p>
-          <p className="text-white/75">
+          <p className="text-slate">
             The discipline of close protection does not change because AI entered the workflow. Attention to detail, local knowledge, threat assessment, and operator experience remain where they have always been — with the operative. DetailRecon just stops the admin eating the day.
           </p>
         </div>
@@ -300,22 +302,22 @@ export default function DetailReconPage() {
 
       {/* Operational scenarios */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Where DetailRecon earns its keep</h2>
-        <div className="grid md:grid-cols-2 gap-6 text-white/75">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Venue advances for public appearances</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Where DetailRecon earns its keep</h2>
+        <div className="grid md:grid-cols-2 gap-6 text-slate">
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Venue advances for public appearances</div>
             <p>Corporate events, award ceremonies, book signings, press appearances. A thorough photo-based recon turns into a structured report the same day, giving the principal's team clarity before the arrival walk-through.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Hotel and residence surveys</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Hotel and residence surveys</div>
             <p>New hotel stays, temporary residences, holiday accommodation. Capture the standard survey shots and let DetailRecon structure the recon output — lobby, corridors, room access, fire exits, service routes.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Route and approach reconnaissance</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Route and approach reconnaissance</div>
             <p>Driveway approaches, drop-off points, pedestrian last-mile. Photos from multiple vantage points get consolidated into a coherent picture of the approach — not a disconnected photo dump.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <div className="font-semibold text-white mb-2">Event and conference venues</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <div className="font-semibold text-ink mb-2">Event and conference venues</div>
             <p>Stages, green rooms, press pens, crowd flow. Large venues with many zones benefit most — DetailRecon organises observations by zone so nothing is missed and the report stays navigable.</p>
           </div>
         </div>
@@ -323,8 +325,8 @@ export default function DetailReconPage() {
 
       {/* Photo guidance */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Getting the most from DetailRecon</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Getting the most from DetailRecon</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             The quality of the report is a function of the quality of the photos. The AI can only analyse what it can see. A quick walk-through with a dozen blurry shots produces a thin recon; a deliberate advance with good coverage produces a report you're proud to attach your name to.
           </p>
@@ -339,33 +341,33 @@ export default function DetailReconPage() {
 
       {/* Pricing */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Pricing</h2>
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-slate-500/20 to-orange-500/20 border border-white/10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Pricing</h2>
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="flex items-center gap-2 mb-2">
-            <PoundSterling className="w-6 h-6 text-orange-400" />
-            <div className="text-3xl font-bold">29.99 / report</div>
+            <PoundSterling className="w-6 h-6 text-teal" />
+            <div className="text-3xl font-bold text-ink">29.99 / report</div>
           </div>
-          <p className="text-white/80 mb-4">Pay per recon. No subscription, no monthly fee, no lock-in. You pay only for what you actually produce.</p>
-          <ul className="grid md:grid-cols-2 gap-2 text-white/80">
+          <p className="text-slate mb-4">Pay per recon. No subscription, no monthly fee, no lock-in. You pay only for what you actually produce.</p>
+          <ul className="grid md:grid-cols-2 gap-2 text-ink">
             {['AI analysis of uploaded photos', 'Unlimited photos per recon', 'Branded PDF export', 'Multi-operative collaboration', 'Encrypted UK/EU storage', 'Optional auto-delete on export'].map((f) => (
-              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-orange-400" /> {f}</li>
+              <li key={f} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal" /> {f}</li>
             ))}
           </ul>
         </div>
-        <p className="text-sm text-white/60 mt-4">Volume discounts are available for larger security firms running recons weekly. Contact us for a bulk quote.</p>
+        <p className="text-sm text-slate mt-4">Volume discounts are available for larger security firms running recons weekly. Contact us for a bulk quote.</p>
       </section>
 
       {/* Security */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-6 h-6 text-orange-400" />
-            <h2 className="text-2xl md:text-3xl font-bold">Discretion is non-negotiable</h2>
+            <Shield className="w-6 h-6 text-teal" />
+            <h2 className="text-2xl md:text-3xl font-bold text-ink">Discretion is non-negotiable</h2>
           </div>
-          <p className="text-white/75 mb-3">
+          <p className="text-slate mb-3">
             Close protection work depends on confidentiality. DetailRecon runs on UK/EU infrastructure with encryption in transit and at rest. Photos and reports can be auto-deleted after export. Accounts are locked to named operatives — no shared logins, no team-wide visibility unless you configure it.
           </p>
-          <p className="text-white/75">
+          <p className="text-slate">
             GDPR data subject rights are supported. Data export and erasure on request. We treat the data handling side of this product with the same care the industry treats physical security.
           </p>
         </div>
@@ -373,31 +375,31 @@ export default function DetailReconPage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built by a UK studio that builds niche products for UK industries</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built by a UK studio that builds niche products for UK industries</h2>
+          <p className="text-slate mb-4">
             DetailRecon is built by Autaimate. We don't build everything-for-everyone platforms. We build single-purpose products that solve one specific industry problem properly. DetailRecon is our product for the UK close protection industry, priced and built so that independent operatives and small firms can use it — not only the large corporate teams.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             Our founder spent 40 years in UK construction and trades before founding the studio. The discipline of that background — getting things right the first time, understanding the difference between a neat job and a safe one — is what we apply to every product we ship.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -405,40 +407,40 @@ export default function DetailReconPage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/products/inspectvoice" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">InspectVoice</div>
-            <p className="text-sm text-white/70">Another fieldwork-to-PDF product — BS EN 1176 playground inspection, voice-first.</p>
+          <Link to="/products/inspectvoice" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">InspectVoice</div>
+            <p className="text-sm text-slate">Another fieldwork-to-PDF product — BS EN 1176 playground inspection, voice-first.</p>
           </Link>
-          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">SnagLog</div>
-            <p className="text-sm text-white/70">AI-powered photo-to-PDF workflow for property snagging reports.</p>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">SnagLog</div>
+            <p className="text-sm text-slate">AI-powered photo-to-PDF workflow for property snagging reports.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Got a security-industry workflow that needs its own tool? See how a new product gets built.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Got a security-industry workflow that needs its own tool? See how a new product gets built.</p>
           </Link>
-          <Link to="/" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">See all Autaimate products</div>
-            <p className="text-sm text-white/70">The full portfolio of niche SaaS products for UK industries.</p>
+          <Link to="/" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">See all Autaimate products</div>
+            <p className="text-sm text-slate">The full portfolio of niche SaaS products for UK industries.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-slate-500/20 to-orange-500/20 border border-white/10 text-center">
-          <Clock className="w-10 h-10 text-orange-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Get your afternoons back</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <Clock className="w-10 h-10 text-teal mx-auto mb-4" />
+          <h2 className="text-3xl font-bold mb-4 text-ink">Get your afternoons back</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             Advance work on the ground. Reporting in minutes. £29.99 per recon. No subscription, no lock-in — you pay only for the reports you actually produce.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="https://detailrecon.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <a href="https://detailrecon.co.uk" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Open DetailRecon <ArrowRight className="w-4 h-4" />
             </a>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Talk to us
             </Link>
           </div>
