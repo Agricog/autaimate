@@ -177,33 +177,35 @@ export default function PropertyPage() {
         <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
       </Helmet>
 
+      <div className="cosmic-bg" />
+
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-8 text-sm text-white/60">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 pt-32 text-sm text-slate">
         <ol className="flex items-center gap-2">
-          <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
+          <li><Link to="/" className="hover:text-teal transition-colors">Home</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li><Link to="/#industries" className="hover:text-orange-400">Industries</Link></li>
+          <li><Link to="/#industries" className="hover:text-teal transition-colors">Industries</Link></li>
           <li><ChevronRight className="w-3 h-3" /></li>
-          <li className="text-white/90">Property</li>
+          <li className="text-ink">Property</li>
         </ol>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-medium mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-soft border border-teal/20 text-teal text-xs font-medium mb-6">
           <Building2 className="w-3 h-3" /> For UK landlords, agents & property managers
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Niche SaaS for UK property. <span className="text-orange-400">Without the bloat.</span>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
+          Niche SaaS for UK property. <span className="text-teal">Without the bloat.</span>
         </h1>
-        <p className="text-xl text-white/75 max-w-3xl mb-8">
+        <p className="text-xl text-slate max-w-3xl mb-8">
           Four Autaimate products sit in the UK property industry today — snagging, contractor approval, H&S comprehension, and omnichannel lead capture. Each does one thing and does it better than any all-in-one platform. If the tool you need doesn't exist yet, that's how the next Autaimate product gets born.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             See the products <ArrowRight className="w-4 h-4" />
           </a>
-          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
             Commission a new one
           </Link>
         </div>
@@ -211,9 +213,9 @@ export default function PropertyPage() {
 
       {/* Quick Answer */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div id="quick-answer" className="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 via-transparent to-orange-500/10 border border-white/10">
-          <div className="text-xs uppercase tracking-wider text-blue-300 mb-2">Quick Answer</div>
-          <p className="text-lg text-white/90">
+        <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
+          <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
+          <p className="text-lg text-ink">
             Autaimate builds niche SaaS for UK property — four live products covering snagging, contractor approval, H&S comprehension, and omnichannel lead capture. Fixed-price commissions available for property workflows not yet covered.
           </p>
         </div>
@@ -221,27 +223,27 @@ export default function PropertyPage() {
 
       {/* Product grid */}
       <section id="products" className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">The property portfolio</h2>
-        <p className="text-white/70 mb-10">Four products, each built for a specific problem in UK property.</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-ink">The property portfolio</h2>
+        <p className="text-slate mb-10">Four products, each built for a specific problem in UK property.</p>
         <div className="grid md:grid-cols-2 gap-5">
           {PROPERTY_PRODUCTS.map((p) => (
             p.to ? (
-              <Link key={p.name} to={p.to} className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
+              <Link key={p.name} to={p.to} className="group p-6 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="font-semibold text-lg text-white">{p.name}</div>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20">{p.tag}</span>
+                  <div className="font-semibold text-lg text-ink">{p.name}</div>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-teal-soft text-teal border border-teal/20">{p.tag}</span>
                 </div>
-                <p className="text-white/70 text-sm mb-3">{p.desc}</p>
-                <div className="text-orange-400 text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Read more <ArrowRight className="w-3 h-3" /></div>
+                <p className="text-slate text-sm mb-3">{p.desc}</p>
+                <div className="text-teal text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Read more <ArrowRight className="w-3 h-3" /></div>
               </Link>
             ) : (
-              <a key={p.name} href={p.ext} className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition" rel="noopener noreferrer">
+              <a key={p.name} href={p.ext} className="group p-6 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all" rel="noopener noreferrer">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="font-semibold text-lg text-white">{p.name}</div>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20">{p.tag}</span>
+                  <div className="font-semibold text-lg text-ink">{p.name}</div>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-teal-soft text-teal border border-teal/20">{p.tag}</span>
                 </div>
-                <p className="text-white/70 text-sm mb-3">{p.desc}</p>
-                <div className="text-orange-400 text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Visit site <ArrowRight className="w-3 h-3" /></div>
+                <p className="text-slate text-sm mb-3">{p.desc}</p>
+                <div className="text-teal text-sm font-medium group-hover:translate-x-1 transition flex items-center gap-1">Visit site <ArrowRight className="w-3 h-3" /></div>
               </a>
             )
           ))}
@@ -250,8 +252,8 @@ export default function PropertyPage() {
 
       {/* Why niche */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why niche beats generic in property software</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Why niche beats generic in property software</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             UK property is flooded with all-in-one platforms that try to cover letting, management, maintenance, inventories, accounting, and tenant comms in one subscription. The result is software that is expensive (hundreds of pounds a month), slow to learn, full of features you'll never use, and mediocre at every individual job because nothing is its core purpose.
           </p>
@@ -266,8 +268,8 @@ export default function PropertyPage() {
 
       {/* UK property compliance */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">The UK property compliance landscape, respected properly</h2>
-        <div className="space-y-4 text-white/75 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">The UK property compliance landscape, respected properly</h2>
+        <div className="space-y-4 text-slate max-w-4xl">
           <p>
             UK property operates under a specific compliance landscape — Building Safety Act post-Grenfell, ongoing updates to HHSRS, Right to Rent checks, deposit protection, gas and electrical safety requirements, fire risk assessment duties for common parts, and the regulatory framework of ARLA, Propertymark, and RICS for different parts of the industry. Generic international property platforms consistently get this wrong — or ignore it entirely.
           </p>
@@ -282,15 +284,15 @@ export default function PropertyPage() {
 
       {/* Commission section */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500/20 to-orange-500/20 border border-white/10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Every product here started as one property operation's problem</h2>
-          <p className="text-white/80 mb-4">
+        <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">Every product here started as one property operation's problem</h2>
+          <p className="text-slate mb-4">
             SnagLog started as a specific snagging workflow problem. Approv came from a property operator drowning in contractor insurance spreadsheets. ClearProof came from a site that genuinely wanted to prove workers understood the induction, not just signed it. LeadFortress came from a letting agent tired of losing leads to the six different inboxes they came in on.
           </p>
-          <p className="text-white/80 mb-6">
+          <p className="text-slate mb-6">
             If your property business has a gap — the bit still on spreadsheets, the process that falls through the cracks every month, the thing you'd automate if only the software existed — that's how the next Autaimate property product gets born. Fixed-price commission, typically around four weeks, you own the code at the end.
           </p>
-          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+          <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
             Commission the next one <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -298,7 +300,7 @@ export default function PropertyPage() {
 
       {/* Commission features */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">How a commission works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-ink">How a commission works</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { i: Home, t: 'Fixed price, up front', d: 'You know what it costs before we start. No hourly billing, no scope creep, no surprises.' },
@@ -308,10 +310,10 @@ export default function PropertyPage() {
             { i: Wrench, t: 'Modern infrastructure', d: 'React, TypeScript, SmartSuite, Railway, Cloudflare, Stripe, Clerk. Stable, documented, maintainable.' },
             { i: CheckCircle2, t: 'Integrations on request', d: 'Hook into your existing property management, CRM, or accounting system as part of the build.' },
           ].map((f) => (
-            <div key={f.t} className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <f.i className="w-6 h-6 text-orange-400 mb-3" />
-              <div className="font-semibold text-lg mb-2">{f.t}</div>
-              <p className="text-white/70">{f.d}</p>
+            <div key={f.t} className="p-6 rounded-xl bg-white border border-sand shadow-card">
+              <f.i className="w-6 h-6 text-teal mb-3" />
+              <div className="font-semibold text-lg mb-2 text-ink">{f.t}</div>
+              <p className="text-slate">{f.d}</p>
             </div>
           ))}
         </div>
@@ -319,36 +321,36 @@ export default function PropertyPage() {
 
       {/* Who we serve */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Who we build for in UK property</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-white/75">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <ClipboardList className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Letting agents</div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-ink">Who we build for in UK property</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate">
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <ClipboardList className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Letting agents</div>
             <p>Independent and regional agencies looking for focused tools rather than bloated all-in-one platforms. LeadFortress captures enquiries, Approv tracks contractors for maintenance, ClearProof handles H&S for site visits.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Building2 className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Property managers</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <Building2 className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Property managers</div>
             <p>Block managers, residential property managers, and portfolio landlords with multi-unit operations. SnagLog for handovers and periodic inspections, Approv for contractor control.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Home className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Build-to-rent operators</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <Home className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Build-to-rent operators</div>
             <p>BTR operators at any scale. SnagLog for move-in snagging across hundreds of units, Approv for managing a deep contractor panel, ClearProof for onboarding comprehension.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <ClipboardList className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Property inspection firms</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <ClipboardList className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Property inspection firms</div>
             <p>Independent snagging specialists and building inspection companies. SnagLog is already a standard tool in the category; bespoke inspection workflows can be commissioned.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Wrench className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Facilities & estate teams</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <Wrench className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Facilities & estate teams</div>
             <p>In-house teams managing commercial, education, or institutional property. Contractor approval, H&S comprehension, and lead handling tools that fit public-sector governance.</p>
           </div>
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Home className="w-6 h-6 text-orange-400 mb-3" />
-            <div className="font-semibold text-white mb-2">Portfolio landlords</div>
+          <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
+            <Home className="w-6 h-6 text-teal mb-3" />
+            <div className="font-semibold text-ink mb-2">Portfolio landlords</div>
             <p>Private landlords running five, fifty, or five hundred units. Tools priced for independents, built to scale as the portfolio grows without forcing an enterprise contract.</p>
           </div>
         </div>
@@ -356,34 +358,34 @@ export default function PropertyPage() {
 
       {/* Provenance / E-E-A-T */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-          <h2 className="text-3xl font-bold mb-4">Built by a studio that understands property from the construction side</h2>
-          <p className="text-white/75 mb-4">
+        <div className="p-8 rounded-2xl bg-white border border-sand shadow-card">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Built by a studio that understands property from the construction side</h2>
+          <p className="text-slate mb-4">
             Autaimate's founder spent 40 years in UK construction and trades before building software. That background matters in property because most property operations are intimately connected to construction — snagging is a construction handover process, contractor approval is about trades, H&S comprehension is about the people on site, and maintenance is ongoing construction work at reduced scale.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             The property products in the portfolio are built with that understanding baked in. We know what a good snag looks like because we've identified them. We know what contractor insurance paperwork actually gets checked and what gets filed. We know that H&S comprehension requires the workers' actual languages, not a pretend translation. Those are construction insights applied to property software, and they show up in how each product is built.
           </p>
-          <p className="text-white/75 mb-4">
+          <p className="text-slate mb-4">
             The stack is modern — React, TypeScript, SmartSuite, Railway — but the sensibility is the built environment. That combination is what lets the products fit real property operations instead of an abstracted ideal.
           </p>
-          <p className="text-white/60 text-sm">
-            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="underline hover:text-orange-400">LinkedIn</a>
+          <p className="text-slate text-sm">
+            — Mick, Autaimate founder. <a href="https://www.linkedin.com/company/autaimate" className="text-teal hover:text-teal-dark underline">LinkedIn</a>
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">Frequently asked questions</h2>
         <div className="space-y-3">
           {FAQS.map((f) => (
-            <details key={f.q} className="group p-5 rounded-xl bg-white/5 border border-white/10">
-              <summary className="cursor-pointer font-semibold flex items-center justify-between">
+            <details key={f.q} className="group p-5 rounded-xl bg-white border border-sand shadow-card">
+              <summary className="cursor-pointer font-semibold flex items-center justify-between text-ink">
                 {f.q}
-                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition" />
+                <ChevronRight className="w-4 h-4 group-open:rotate-90 transition text-teal" />
               </summary>
-              <p className="mt-3 text-white/75">{f.a}</p>
+              <p className="mt-3 text-slate">{f.a}</p>
             </details>
           ))}
         </div>
@@ -391,43 +393,43 @@ export default function PropertyPage() {
 
       {/* Related */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Where to go next</h2>
+        <h2 className="text-2xl font-bold mb-6 text-ink">Where to go next</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <Link to="/for/construction" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK construction & trades</div>
-            <p className="text-sm text-white/70">The adjacent industry hub — nine products for UK construction, trades, and inspection.</p>
+          <Link to="/for/construction" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK construction & trades</div>
+            <p className="text-sm text-slate">The adjacent industry hub — nine products for UK construction, trades, and inspection.</p>
           </Link>
-          <Link to="/for/care-homes" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Software for UK care homes</div>
-            <p className="text-sm text-white/70">CQC-focused products for regulated care operators.</p>
+          <Link to="/for/care-homes" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Software for UK care homes</div>
+            <p className="text-sm text-slate">CQC-focused products for regulated care operators.</p>
           </Link>
-          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">SnagLog</div>
-            <p className="text-sm text-white/70">Our most-used property product — a good way to see what a focused Autaimate tool looks like.</p>
+          <Link to="/products/snaglog" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">SnagLog</div>
+            <p className="text-sm text-slate">Our most-used property product — a good way to see what a focused Autaimate tool looks like.</p>
           </Link>
-          <Link to="/micro-saas" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Commission a niche product</div>
-            <p className="text-sm text-white/70">Fixed price, typically 4 weeks, you own the code at the end.</p>
+          <Link to="/micro-saas" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Commission a niche product</div>
+            <p className="text-sm text-slate">Fixed price, typically 4 weeks, you own the code at the end.</p>
           </Link>
-          <Link to="/" className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-400 transition">
-            <div className="font-semibold mb-1">Back to the full portfolio</div>
-            <p className="text-sm text-white/70">Every Autaimate product across every industry.</p>
+          <Link to="/" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
+            <div className="font-semibold mb-1 text-ink">Back to the full portfolio</div>
+            <p className="text-sm text-slate">Every Autaimate product across every industry.</p>
           </Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="p-10 rounded-2xl bg-gradient-to-br from-blue-500/20 to-orange-500/20 border border-white/10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Your property workflow, not in the portfolio?</h2>
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+        <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Your property workflow, not in the portfolio?</h2>
+          <p className="text-slate mb-6 max-w-2xl mx-auto">
             Four property products are live today. The fifth is the one you commission because the generic software doesn't fit. Fixed price. Typically four weeks. You own the code at the end.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition">
+            <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
               Commission a product <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:border-orange-400 text-white font-semibold transition">
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white border border-sand hover:border-teal text-ink hover:text-teal font-semibold transition-all">
               Talk to us first
             </Link>
           </div>
