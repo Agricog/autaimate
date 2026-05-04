@@ -8,13 +8,12 @@ const PROPERTY_PRODUCTS = [
   { name: 'SnagLog', to: '/products/snaglog', desc: 'AI-powered snagging reports — photograph property defects, get professional PDF reports in minutes.', tag: 'Inspection' },
   { name: 'Approv', ext: 'https://approv.co.uk', desc: 'Supplier and contractor approval management for property operators — credentials, insurance, compliance tracked in one place.', tag: 'Compliance' },
   { name: 'ClearProof', ext: 'https://clearproof.co.uk', desc: 'Multilingual H&S comprehension — proves workers and contractors understood the brief in the language they actually read.', tag: 'H&S' },
-  { name: 'LeadFortress', ext: 'https://leadfortress.co.uk', desc: 'Omnichannel lead capture for letting agents and property businesses — phone, SMS, WhatsApp, web, email.', tag: 'Lead capture' },
 ]
 
 const FAQS = [
   {
     q: 'Which Autaimate products are built for UK property?',
-    a: 'Four products sit directly in the property industry vertical: SnagLog for AI-powered snagging and defect reporting, Approv for contractor and supplier approval management, ClearProof for multilingual H&S comprehension, and LeadFortress for omnichannel lead capture. Each solves a specific property industry workflow.',
+    a: 'Three products sit directly in the property industry vertical: SnagLog for AI-powered snagging and defect reporting, Approv for contractor and supplier approval management, and ClearProof for multilingual H&S comprehension. Each solves a specific property industry workflow.',
   },
   {
     q: 'Who is the property hub aimed at?',
@@ -86,7 +85,7 @@ const SCHEMA_GRAPH = {
       '@id': 'https://autaimate.com/for/property#webpage',
       url: 'https://autaimate.com/for/property',
       name: 'Software for UK Property | Autaimate',
-      description: 'Niche SaaS products for UK landlords, letting agents, property managers, and build-to-rent operators. Snagging, contractor approval, H&S comprehension, lead capture — plus fixed-price commissions.',
+      description: 'Niche SaaS products for UK landlords, letting agents, property managers, and build-to-rent operators. Snagging, contractor approval, H&S comprehension — plus fixed-price commissions.',
       isPartOf: { '@id': 'https://autaimate.com/#website' },
       inLanguage: 'en-GB',
       speakable: {
@@ -117,7 +116,7 @@ const SCHEMA_GRAPH = {
       name: 'Autaimate Property Portfolio',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web, iOS, Android',
-      description: 'A portfolio of niche SaaS products for UK property — covering snagging, contractor approval, H&S comprehension, and omnichannel lead capture.',
+      description: 'A portfolio of niche SaaS products for UK property — covering snagging, contractor approval, and H&S comprehension.',
       url: 'https://autaimate.com/for/property',
       publisher: { '@id': 'https://autaimate.com/#organization' },
     },
@@ -139,7 +138,7 @@ const SCHEMA_GRAPH = {
       author: { '@type': 'Person', name: 'Mick', url: 'https://www.linkedin.com/company/autaimate' },
       publisher: { '@id': 'https://autaimate.com/#organization' },
       datePublished: '2026-02-15',
-      dateModified: '2026-04-21',
+      dateModified: '2026-05-04',
       mainEntityOfPage: { '@id': 'https://autaimate.com/for/property#webpage' },
     },
     {
@@ -169,7 +168,7 @@ export default function PropertyPage() {
     <Layout>
       <SEO
         title="Software for UK Property | Autaimate"
-        description="Niche SaaS products for UK landlords, letting agents, property managers, and build-to-rent operators. Snagging, contractor approval, H&S comprehension, lead capture."
+        description="Niche SaaS products for UK landlords, letting agents, property managers, and build-to-rent operators. Snagging, contractor approval, H&S comprehension."
         canonical="https://autaimate.com/for/property"
         ogImage="https://autaimate.com/og-image.jpg"
       />
@@ -199,7 +198,7 @@ export default function PropertyPage() {
           Niche SaaS for UK property. <span className="text-teal">Without the bloat.</span>
         </h1>
         <p className="text-xl text-slate max-w-3xl mb-8">
-          Four Autaimate products sit in the UK property industry today — snagging, contractor approval, H&S comprehension, and omnichannel lead capture. Each does one thing and does it better than any all-in-one platform. If the tool you need doesn't exist yet, that's how the next Autaimate product gets born.
+          Three Autaimate products sit in the UK property industry today — snagging, contractor approval, and H&S comprehension. Each does one thing and does it better than any all-in-one platform. If the tool you need doesn't exist yet, that's how the next Autaimate product gets born.
         </p>
         <div className="flex flex-wrap gap-3">
           <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
@@ -216,7 +215,7 @@ export default function PropertyPage() {
         <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
           <p className="text-lg text-ink">
-            Autaimate builds niche SaaS for UK property — four live products covering snagging, contractor approval, H&S comprehension, and omnichannel lead capture. Fixed-price commissions available for property workflows not yet covered.
+            Autaimate builds niche SaaS for UK property — three live products covering snagging, contractor approval, and H&S comprehension. Fixed-price commissions available for property workflows not yet covered.
           </p>
         </div>
       </section>
@@ -224,8 +223,8 @@ export default function PropertyPage() {
       {/* Product grid */}
       <section id="products" className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-2 text-ink">The property portfolio</h2>
-        <p className="text-slate mb-10">Four products, each built for a specific problem in UK property.</p>
-        <div className="grid md:grid-cols-2 gap-5">
+        <p className="text-slate mb-10">Three products, each built for a specific problem in UK property.</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {PROPERTY_PRODUCTS.map((p) => (
             p.to ? (
               <Link key={p.name} to={p.to} className="group p-6 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
@@ -258,7 +257,7 @@ export default function PropertyPage() {
             UK property is flooded with all-in-one platforms that try to cover letting, management, maintenance, inventories, accounting, and tenant comms in one subscription. The result is software that is expensive (hundreds of pounds a month), slow to learn, full of features you'll never use, and mediocre at every individual job because nothing is its core purpose.
           </p>
           <p>
-            The Autaimate portfolio is the opposite approach. SnagLog is built for snagging — that's its whole job and it does it better than any all-in-one's snagging module could. Approv is built for contractor and supplier approval, with the level of detail that property operators actually need to stay compliant. ClearProof is built specifically for proving H&S comprehension in the workers' own languages. LeadFortress is built for lead capture across the six channels modern enquiries actually come through.
+            The Autaimate portfolio is the opposite approach. SnagLog is built for snagging — that's its whole job and it does it better than any all-in-one's snagging module could. Approv is built for contractor and supplier approval, with the level of detail that property operators actually need to stay compliant. ClearProof is built specifically for proving H&S comprehension in the workers' own languages.
           </p>
           <p>
             Each product is focused enough to be genuinely useful and priced for independent property operators rather than national estate agency chains. If you run a portfolio of any size, you can build a stack of Autaimate tools that covers your workflows for a fraction of what one of the big platforms costs — and each tool actually gets used, because it actually fits.
@@ -287,7 +286,7 @@ export default function PropertyPage() {
         <div className="p-8 rounded-2xl bg-teal-soft border border-teal/20">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-ink">Every product here started as one property operation's problem</h2>
           <p className="text-slate mb-4">
-            SnagLog started as a specific snagging workflow problem. Approv came from a property operator drowning in contractor insurance spreadsheets. ClearProof came from a site that genuinely wanted to prove workers understood the induction, not just signed it. LeadFortress came from a letting agent tired of losing leads to the six different inboxes they came in on.
+            SnagLog started as a specific snagging workflow problem. Approv came from a property operator drowning in contractor insurance spreadsheets. ClearProof came from a site that genuinely wanted to prove workers understood the induction, not just signed it.
           </p>
           <p className="text-slate mb-6">
             If your property business has a gap — the bit still on spreadsheets, the process that falls through the cracks every month, the thing you'd automate if only the software existed — that's how the next Autaimate property product gets born. Fixed-price commission, typically around four weeks, you own the code at the end.
@@ -326,7 +325,7 @@ export default function PropertyPage() {
           <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
             <ClipboardList className="w-6 h-6 text-teal mb-3" />
             <div className="font-semibold text-ink mb-2">Letting agents</div>
-            <p>Independent and regional agencies looking for focused tools rather than bloated all-in-one platforms. LeadFortress captures enquiries, Approv tracks contractors for maintenance, ClearProof handles H&S for site visits.</p>
+            <p>Independent and regional agencies looking for focused tools rather than bloated all-in-one platforms. Approv tracks contractors for maintenance, ClearProof handles H&S for site visits, SnagLog covers periodic and end-of-tenancy inspections.</p>
           </div>
           <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
             <Building2 className="w-6 h-6 text-teal mb-3" />
@@ -346,7 +345,7 @@ export default function PropertyPage() {
           <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
             <Wrench className="w-6 h-6 text-teal mb-3" />
             <div className="font-semibold text-ink mb-2">Facilities & estate teams</div>
-            <p>In-house teams managing commercial, education, or institutional property. Contractor approval, H&S comprehension, and lead handling tools that fit public-sector governance.</p>
+            <p>In-house teams managing commercial, education, or institutional property. Contractor approval and H&S comprehension tools that fit public-sector governance.</p>
           </div>
           <div className="p-6 rounded-xl bg-white border border-sand shadow-card">
             <Home className="w-6 h-6 text-teal mb-3" />
@@ -397,7 +396,7 @@ export default function PropertyPage() {
         <div className="grid md:grid-cols-3 gap-4">
           <Link to="/for/construction" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
             <div className="font-semibold mb-1 text-ink">Software for UK construction & trades</div>
-            <p className="text-sm text-slate">The adjacent industry hub — nine products for UK construction, trades, and inspection.</p>
+            <p className="text-sm text-slate">The adjacent industry hub — eight products for UK construction, trades, and inspection.</p>
           </Link>
           <Link to="/for/care-homes" className="p-5 rounded-xl bg-white border border-sand shadow-card hover:shadow-card-hover hover:border-teal/40 transition-all">
             <div className="font-semibold mb-1 text-ink">Software for UK care homes</div>
@@ -423,7 +422,7 @@ export default function PropertyPage() {
         <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
           <h2 className="text-3xl font-bold mb-4 text-ink">Your property workflow, not in the portfolio?</h2>
           <p className="text-slate mb-6 max-w-2xl mx-auto">
-            Four property products are live today. The fifth is the one you commission because the generic software doesn't fit. Fixed price. Typically four weeks. You own the code at the end.
+            Three products live today. The fourth is the one you commission because the generic software doesn't fit. Fixed price. Typically four weeks. You own the code at the end.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
