@@ -12,14 +12,13 @@ const CONSTRUCTION_PRODUCTS = [
   { name: 'InspectVoice', to: '/products/inspectvoice', desc: 'BS EN 1176 playground inspection — voice-first, offline, on-device PDF.', tag: 'Inspection' },
   { name: 'WorkProof', ext: 'https://workproof.co.uk', desc: 'On-site proof-of-work documentation for trades — photos, notes, timestamps, audit trail.', tag: 'Trades' },
   { name: 'EquipSafety', ext: 'https://equipsafety.co.uk', desc: 'QR-based multilingual equipment safety — scan, train, log. Compliance in workers\' languages.', tag: 'H&S' },
-  { name: 'LeadFortress', ext: 'https://leadfortress.co.uk', desc: 'Omnichannel lead capture for UK service businesses — phone, SMS, WhatsApp, web, email.', tag: 'Lead capture' },
   { name: 'ClearProof', ext: 'https://clearproof.co.uk', desc: 'Multilingual H&S comprehension — proves workers understood the induction, not just signed it.', tag: 'H&S' },
 ]
 
 const FAQS = [
   {
     q: 'Which Autaimate products are built for construction and trades?',
-    a: 'Nine Autaimate products are directly built for UK construction, trades, and the built environment: TradeCalcs, CertVoice, TradGo, SnagLog, InspectVoice, WorkProof, EquipSafety, LeadFortress, and ClearProof. Each solves a specific niche problem — together they cover electrical compliance, fieldwork reporting, lead capture, H&S, and inspection workflows.',
+    a: 'Eight Autaimate products are directly built for UK construction, trades, and the built environment: TradeCalcs, CertVoice, TradGo, SnagLog, InspectVoice, WorkProof, EquipSafety, and ClearProof. Each solves a specific niche problem — together they cover electrical compliance, fieldwork reporting, H&S, and inspection workflows.',
   },
   {
     q: 'Is this a consultancy or a product studio?',
@@ -91,7 +90,7 @@ const SCHEMA_GRAPH = {
       '@id': 'https://autaimate.com/for/construction#webpage',
       url: 'https://autaimate.com/for/construction',
       name: 'Software for UK Construction & Trades | Autaimate',
-      description: 'Nine niche SaaS products built for UK construction and trades. Electrical compliance, fieldwork reporting, lead capture, H&S, and inspection — plus fixed-price commissions when the tool you need doesn\'t exist yet.',
+      description: 'Eight niche SaaS products built for UK construction and trades. Electrical compliance, fieldwork reporting, H&S, and inspection — plus fixed-price commissions when the tool you need doesn\'t exist yet.',
       isPartOf: { '@id': 'https://autaimate.com/#website' },
       inLanguage: 'en-GB',
       speakable: {
@@ -122,7 +121,7 @@ const SCHEMA_GRAPH = {
       name: 'Autaimate Construction Portfolio',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web, iOS, Android',
-      description: 'A portfolio of niche SaaS products for UK construction, trades, and the built environment — covering electrical compliance, fieldwork reporting, lead capture, H&S, and inspection.',
+      description: 'A portfolio of niche SaaS products for UK construction, trades, and the built environment — covering electrical compliance, fieldwork reporting, H&S, and inspection.',
       url: 'https://autaimate.com/for/construction',
       publisher: { '@id': 'https://autaimate.com/#organization' },
     },
@@ -139,12 +138,12 @@ const SCHEMA_GRAPH = {
     {
       '@type': 'Article',
       '@id': 'https://autaimate.com/for/construction#article',
-      headline: 'Software for UK Construction & Trades: Nine Products Built on the Tools',
+      headline: 'Software for UK Construction & Trades: Eight Products Built on the Tools',
       description: 'Why the Autaimate construction portfolio covers specific workflows other software ignores — and how new products get born from customer problems.',
       author: { '@type': 'Person', name: 'Mick', url: 'https://www.linkedin.com/company/autaimate' },
       publisher: { '@id': 'https://autaimate.com/#organization' },
       datePublished: '2026-02-01',
-      dateModified: '2026-04-21',
+      dateModified: '2026-05-04',
       mainEntityOfPage: { '@id': 'https://autaimate.com/for/construction#webpage' },
     },
     {
@@ -174,7 +173,7 @@ export default function ConstructionPage() {
     <Layout>
       <SEO
         title="Software for UK Construction & Trades | Autaimate"
-        description="Nine niche SaaS products for UK construction and trades. Electrical compliance, fieldwork reporting, lead capture, H&S, inspection — plus fixed-price commissions."
+        description="Eight niche SaaS products for UK construction and trades. Electrical compliance, fieldwork reporting, H&S, inspection — plus fixed-price commissions."
         canonical="https://autaimate.com/for/construction"
         ogImage="https://autaimate.com/og-image.jpg"
       />
@@ -201,10 +200,10 @@ export default function ConstructionPage() {
           <HardHat className="w-3 h-3" /> For UK construction, trades & inspection
         </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-ink">
-          Nine niche SaaS products. Built <span className="text-teal">on the tools.</span>
+          Eight niche SaaS products. Built <span className="text-teal">on the tools.</span>
         </h1>
         <p className="text-xl text-slate max-w-3xl mb-8">
-          Autaimate builds niche SaaS products for UK construction and trades — electrical compliance, fieldwork reporting, lead capture, H&S, inspection. Nine products live today. The tenth might be the one you commission when you've got a workflow the generic software doesn't cover.
+          Autaimate builds niche SaaS products for UK construction and trades — electrical compliance, fieldwork reporting, H&S, inspection. Eight products live today. The ninth might be the one you commission when you've got a workflow the generic software doesn't cover.
         </p>
         <div className="flex flex-wrap gap-3">
           <a href="#products" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
@@ -221,7 +220,7 @@ export default function ConstructionPage() {
         <div id="quick-answer" className="p-6 rounded-2xl bg-teal-soft border border-teal/20">
           <div className="text-xs uppercase tracking-wider text-teal mb-2 font-semibold">Quick Answer</div>
           <p className="text-lg text-ink">
-            Autaimate is a UK product studio with nine niche SaaS products for construction and trades — covering electrical calculation and certification, snagging, playground inspection, H&S, lead capture, and missed-call AI. Fixed-price commissions available for workflows not yet built.
+            Autaimate is a UK product studio with eight niche SaaS products for construction and trades — covering electrical calculation and certification, snagging, playground inspection, H&S, and missed-call AI. Fixed-price commissions available for workflows not yet built.
           </p>
         </div>
       </section>
@@ -229,7 +228,7 @@ export default function ConstructionPage() {
       {/* Product grid */}
       <section id="products" className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-2 text-ink">The construction portfolio</h2>
-        <p className="text-slate mb-10">Nine products, each built for a specific problem in the industry.</p>
+        <p className="text-slate mb-10">Eight products, each built for a specific problem in the industry.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {CONSTRUCTION_PRODUCTS.map((p) => (
             p.to ? (
@@ -435,7 +434,7 @@ export default function ConstructionPage() {
         <div className="p-10 rounded-2xl bg-teal-soft border border-teal/20 text-center">
           <h2 className="text-3xl font-bold mb-4 text-ink">Got a workflow the generic software doesn't fit?</h2>
           <p className="text-slate mb-6 max-w-2xl mx-auto">
-            That's how nine construction products got built. The tenth might be yours. Fixed price. Typically four weeks. You own the code at the end.
+            That's how eight construction products got built. The ninth might be yours. Fixed price. Typically four weeks. You own the code at the end.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/micro-saas" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal hover:bg-teal-dark text-white font-semibold shadow-cta hover:shadow-cta-hover transition-all">
