@@ -41,7 +41,6 @@ const PRODUCTS: Product[] = [
   { name: 'WorkProof', industry: 'Electrical Compliance', desc: 'GPS-tagged, timestamped, tamper-proof evidence photos for NICEIC audits', url: 'https://workproof.co.uk' },
   { name: 'EquipSafety', industry: 'Care Homes/Facilities', desc: 'QR-based multilingual equipment safety for CQC compliance', url: 'https://equipsafety.co.uk' },
   { name: 'ClearProof', industry: 'Health & Safety', desc: 'Multilingual H&S comprehension verification', url: 'https://clearproof.co.uk' },
-  { name: 'LeadFortress', industry: 'Trade Contractors', desc: 'Six-channel lead capture system for service businesses', url: 'https://leadfortress.co.uk' },
   { name: 'Approv', industry: 'Architecture/Design', desc: 'One-click client approvals via email', url: 'https://approv.co.uk' },
   { name: 'ShootSync', industry: 'Shooting Syndicates', desc: 'Member management, shoot days, payments', url: 'https://shootsync.co.uk' },
   { name: 'HorseCost', industry: 'Equestrian', desc: 'Free horse ownership cost calculators', url: 'https://horsecost.co.uk' },
@@ -455,7 +454,7 @@ export default function MicroSaasContent() {
             How a commission runs
           </h2>
           <p className="text-base text-slate max-w-2xl leading-relaxed mb-4">
-            A proven 5-week process, refined across 18+ deliveries. Every commission follows the same shape:
+            A proven 5-week process, refined across 17+ deliveries. Every commission follows the same shape:
             one week of validation, three weeks of building, one week of handover. Predictable, boring, and
             that's the point — the interesting part is your product, not the logistics of getting it built.
           </p>
@@ -688,7 +687,7 @@ export default function MicroSaasContent() {
               {
                 icon: Clock,
                 title: 'Faster than traditional development',
-                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. A commission here delivers in roughly four weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With 18+ completed builds behind us, the fastest path from idea to deployed product has been mapped and optimised. AI-assisted development does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
+                text: 'Traditional software development takes 3–6 months and costs £30,000–£50,000 or more. A commission here delivers in roughly four weeks for £8,500–£18,500. Claude AI generates code in minutes rather than hours. With 17+ completed builds behind us, the fastest path from idea to deployed product has been mapped and optimised. AI-assisted development does not sacrifice quality — it eliminates the repetitive, time-consuming parts of development so more time is spent on the features that make your product unique.',
                 stat: 'Traditional: 3–6 months, £30K–£50K → Here: ~4 weeks, £8.5K–£18.5K',
               },
               {
@@ -925,7 +924,7 @@ export default function MicroSaasContent() {
             <p className="text-base text-slate leading-relaxed">
               I'm 58. I spent 40 years in UK construction, trades, and business operations. Three years
               ago I couldn't write a line of code. Today Autaimate has{' '}
-              <strong className="text-ink font-semibold">18+ live products</strong> across wildly different
+              <strong className="text-ink font-semibold">17+ live products</strong> across wildly different
               industries — shooting syndicates, laboratories, architects, electricians, property inspectors,
               playground safety, close protection, independent restaurants, and more.
             </p>
@@ -934,7 +933,7 @@ export default function MicroSaasContent() {
               built over four decades of understanding real business problems, AI-assisted development using
               Claude to generate clean and maintainable code, a simple repeatable deployment process using
               GitHub and Railway that requires no terminal knowledge, and the pattern recognition that comes
-              from having done this 18+ times across wildly different industries.
+              from having done this 17+ times across wildly different industries.
             </p>
             <p className="text-base text-slate leading-relaxed">
               Each of those four elements compounds with every new commission. Your product benefits from
@@ -948,7 +947,7 @@ export default function MicroSaasContent() {
                 'Domain expertise — 40 years in real UK industries',
                 'AI-assisted development — Claude generates the code',
                 'Simple deployment — GitHub + Railway, no terminal',
-                'Pattern recognition — 18+ products across the portfolio',
+                'Pattern recognition — 17+ products across the portfolio',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-ink">
                   <span className="w-2 h-2 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />
