@@ -13,7 +13,6 @@ const products = [
   { name: 'InspectVoice',  url: '/products/inspectvoice', desc: 'Offline-first PWA for BS EN 1176 playground inspections. Voice-driven defect capture, AI extraction, PDF on-device.' },
   { name: 'SafeEat',       url: '/products/safeeat',      desc: 'QR-powered allergen system for UK food venues. Diners scan, see the safe menu, EHO audit trail built in. £29.99/month.' },
   { name: 'AutoReplyChat', url: 'https://autoreplychat.com',      desc: 'AI chatbots for UK businesses. Automate customer enquiries, capture leads 24/7, and integrate with your existing systems.' },
-  { name: 'LeadFortress',  url: 'https://leadfortress.co.uk',     desc: 'Six-channel lead capture for trades. Phone, SMS, WhatsApp, web, email, social in one inbox.' },
   { name: 'WorkProof',     url: 'https://workproof.co.uk',        desc: 'Court-grade photo evidence for electricians. GPS-locked, time-stamped, tamper-proof audit packs your assessor wants to see.' },
   { name: 'CraneQuote',    url: 'https://cranequote.co.uk',       desc: 'Crane hire cost calculators. Sizing, hire costs, contract comparison, transport, and project budgets.' },
   { name: 'EquipSafety',   url: 'https://equipsafety.co.uk',      desc: 'QR-based equipment safety for care homes. Multilingual instructions, CQC compliance.' },
@@ -30,7 +29,6 @@ const icons: Record<string, JSX.Element> = {
   TradeCalcs: <><circle cx="50" cy="50" r="20" /><line x1="50" y1="20" x2="50" y2="10" /><line x1="50" y1="90" x2="50" y2="80" /><line x1="20" y1="50" x2="10" y2="50" /><line x1="90" y1="50" x2="80" y2="50" /><line x1="29" y1="29" x2="22" y2="22" /><line x1="78" y1="78" x2="71" y2="71" /><circle cx="50" cy="50" r="35" strokeDasharray="4 4" /></>,
   SnagLog: <><rect x="25" y="15" width="50" height="70" rx="4" /><line x1="35" y1="35" x2="65" y2="35" /><line x1="35" y1="50" x2="55" y2="50" /><line x1="35" y1="65" x2="60" y2="65" /><circle cx="70" cy="70" r="18" /><path d="M64 70l4 4 8-8" /></>,
   DetailRecon: <><circle cx="50" cy="50" r="35" /><circle cx="50" cy="50" r="25" /><circle cx="50" cy="50" r="8" /><line x1="50" y1="5" x2="50" y2="15" /><line x1="50" y1="85" x2="50" y2="95" /><line x1="5" y1="50" x2="15" y2="50" /><line x1="85" y1="50" x2="95" y2="50" /></>,
-  LeadFortress: <><circle cx="30" cy="40" r="15" /><circle cx="70" cy="40" r="15" /><circle cx="50" cy="70" r="15" /><line x1="42" y1="48" x2="42" y2="62" /><line x1="58" y1="48" x2="58" y2="62" /><line x1="45" y1="40" x2="55" y2="40" /></>,
   HorseCost: <><path d="M30 70 Q35 40 50 35 Q65 40 70 70" /><circle cx="50" cy="30" r="12" /><line x1="38" y1="30" x2="30" y2="20" /><line x1="62" y1="30" x2="70" y2="20" /><ellipse cx="50" cy="75" rx="25" ry="10" /></>,
   EquipSafety: <><rect x="30" y="20" width="40" height="50" rx="4" /><rect x="35" y="25" width="30" height="20" rx="2" /><line x1="38" y1="55" x2="62" y2="55" /><line x1="38" y1="62" x2="55" y2="62" /><path d="M45 75 L50 85 L70 65" strokeWidth="2" /></>,
   ClearProof: <><rect x="20" y="15" width="35" height="45" rx="3" /><line x1="27" y1="28" x2="48" y2="28" /><line x1="27" y1="38" x2="45" y2="38" /><line x1="27" y1="48" x2="42" y2="48" /><path d="M60 35 L60 85 L90 85 L90 45 L80 35 L60 35" /><line x1="80" y1="35" x2="80" y2="45" /><line x1="80" y1="45" x2="90" y2="45" /><circle cx="75" cy="62" r="10" /><path d="M71 62 l3 3 6-6" /></>,
@@ -57,14 +55,14 @@ const steps = [
 const industryHubs = [
   {
     title: 'Construction & Trades',
-    count: '9 products',
-    desc: 'BS 7671 calculations, voice-first certification, AI missed-call, snagging, photo evidence, lead capture, crane hire, playground inspection, multilingual H&S.',
+    count: '8 products',
+    desc: 'BS 7671 calculations, voice-first certification, AI missed-call, snagging, photo evidence, crane hire, playground inspection, multilingual H&S.',
     href: '/for/construction',
   },
   {
     title: 'Property & Lettings',
-    count: '4 products',
-    desc: 'AI snagging reports, one-click client approvals, multi-channel lead capture, multilingual tenant safety briefings.',
+    count: '3 products',
+    desc: 'AI snagging reports, one-click client approvals, multilingual tenant safety briefings.',
     href: '/for/property',
   },
   {
@@ -120,7 +118,7 @@ const provenancePoints = [
 const faqs = [
   {
     q: 'What does Autaimate build?',
-    a: 'Autaimate builds niche SaaS products for UK small businesses — each one solving a specific problem within a specific industry. The portfolio includes eighteen live products covering construction, trades, property, care, hospitality, inspection and close protection. New niche products are also commissioned fixed-price.',
+    a: 'Autaimate builds niche SaaS products for UK small businesses — each one solving a specific problem within a specific industry. The portfolio includes seventeen live products covering construction, trades, property, care, hospitality, inspection and close protection. New niche products are also commissioned fixed-price.',
   },
   {
     q: 'Who are Autaimate\u2019s products for?',
@@ -169,8 +167,8 @@ const faqs = [
 ]
 
 const relatedPages = [
-  { title: 'Construction & Trades products', desc: 'All nine Autaimate products built for UK construction, trades and site businesses.', href: '/for/construction' },
-  { title: 'Property & Lettings products', desc: 'Snagging, approvals, lead capture and tenant safety for UK property operators.', href: '/for/property' },
+  { title: 'Construction & Trades products', desc: 'All eight Autaimate products built for UK construction, trades and site businesses.', href: '/for/construction' },
+  { title: 'Property & Lettings products', desc: 'Snagging, approvals and tenant safety for UK property operators.', href: '/for/property' },
   { title: 'SafeEat — QR allergen system', desc: 'The Cornwall-built allergen and retention platform for independent UK food venues.', href: '/products/safeeat' },
   { title: 'TradGo — AI agent for trades', desc: 'Catch missed calls, WhatsApp and web chat enquiries in your voice. £59/month.', href: '/products/tradgo' },
   { title: 'How a new product gets commissioned', desc: 'The fixed-price, 4-week build process for commissioning a niche Autaimate product.', href: '/micro-saas' },
@@ -224,7 +222,7 @@ export default function App() {
           </p>
 
           <p className="text-xl lg:text-2xl text-ink mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            Eighteen niche products serving UK small businesses — plus new ones commissioned fixed-price when an industry has a gap worth closing.
+            Seventeen niche products serving UK small businesses — plus new ones commissioned fixed-price when an industry has a gap worth closing.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -242,7 +240,7 @@ export default function App() {
         <div id="quick-answer" className="bg-teal-soft border border-teal/20 rounded-3xl p-8 lg:p-10">
           <div className="text-xs font-semibold uppercase tracking-wider text-teal mb-3">Quick Answer</div>
           <p className="text-lg lg:text-xl text-ink leading-relaxed">
-            Autaimate builds niche SaaS products for UK industries. Eighteen live today, each solving one specific problem. New niche products commissioned fixed-price, typically live in four weeks.
+            Autaimate builds niche SaaS products for UK industries. Seventeen live today, each solving one specific problem. New niche products commissioned fixed-price, typically live in four weeks.
           </p>
         </div>
       </section>
