@@ -10,12 +10,6 @@ const restaurantProducts = [
     external: true,
   },
   {
-    name: 'LeadFortress',
-    desc: 'Catch reservation requests, function bookings and private-hire enquiries across phone, web, SMS and WhatsApp — all in one inbox.',
-    href: 'https://leadfortress.co.uk',
-    external: true,
-  },
-  {
     name: 'AutoReplyChat',
     desc: 'AI chatbot that handles FAQs, takes bookings and captures leads 24/7. Pairs with your existing website and social channels.',
     href: 'https://autoreplychat.com',
@@ -212,11 +206,11 @@ export default function ForRestaurantsPage() {
               Ready-made tools <span className="text-teal">for hospitality.</span>
             </h2>
             <p className="text-slate text-lg max-w-2xl mx-auto">
-              Three of our products apply directly to restaurants, pubs and independent eateries.
+              Two of our products apply directly to restaurants, pubs and independent eateries.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {restaurantProducts.map((p) => (
               <a
                 key={p.name}
